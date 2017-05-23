@@ -1,0 +1,38 @@
+%--- PACKAGES ---%
+% \usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{amsmath,amssymb}
+\usepackage{bm}
+\usepackage{upgreek}
+\usepackage{xspace}
+\usepackage{units}
+\usepackage[colorlinks,urlcolor=blue,citecolor=blue,linkcolor=blue]{hyperref}
+\graphicspath{{figures/}}
+
+%--- TEXT SHORTCUTS ---%
+\newcommand{\etal}{et~al.\xspace}
+\newcommand{\Rb}{$^{87}$Rb\xspace}
+
+%--- TEXT OPERATORS ---%
+\newcommand{\reffig}[1]{\mbox{Fig.~\ref{#1}}}
+\newcommand{\refeq}[1]{\mbox{Eq.~(\ref{#1})}}
+
+%--- MATH OPERATORS ---%
+\newcommand{\upd}{\text{d}}
+\newcommand{\totalD}[2]{\frac{\upd #1}{\upd #2}}
+\newcommand{\partialD}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\vecop}[1]{\hat{\bum{#1}}\xspace}
+\newcommand{\expect}[1]{\langle #1 \rangle}
+\newcommand{\abs}[1]{\vert #1 \vert \xspace}
+\newcommand{\bra}[1]{\langle #1 \vert \xspace}
+\newcommand{\ket}[1]{\vert #1 \rangle \xspace}
+\newcommand{\braket}[2]{\langle #1 \vert #2 \rangle \xspace}
+\newcommand{\vect}[1]{\boldsymbol{#1}\xspace}
+\newcommand{\uvect}[1]{\hat{\boldsymbol{#1}}\xspace}
+\newcommand{\epvec}{\hat{\boldsymbol{\epsilon}}\xspace}
+\newcommand{\jvect}{\boldsymbol{\tilde{E}}\xspace}
+
+% Underscores in text (from http://tex.stackexchange.com/a/38720)
+\catcode`_=12
+\begingroup\lccode`~=`_\lowercase{\endgroup\let~\sb}
