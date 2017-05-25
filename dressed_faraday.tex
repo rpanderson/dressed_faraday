@@ -54,14 +54,14 @@ This robust system shares the useful hallmarks of quantum metrology platforms; t
 \section{Background + random}
 \label{sec:background}
 \begin{itemize}
-    \item Hamiltonians:
+    \item Hamiltonians (quasi-static field along $z$, coupling field along $x$:
     \begin{align*}
         \hat{H}_{\text{lab}} &= \omega_L \hat{F}_z + q \hat{F}_z^2 + 2\Omega \cos (\omega_{\text{rf}} t) \hat{F}_x \\
         \Rightarrow \hat{H}_{\text{RWA}} &= -\Delta \hat{F}_z - q \hat{F}_z^2 + \Omega \hat{F}_x \, \text{, where} \\
         \omega_L(B) &\equiv (E_{m=-1} - E_{m=+1})/2\hbar \, \text{, and} \\
         q(B) &\equiv (E_{m=+1} + E_{m=-1} - 2 E_{m=0})/2\hbar
     \end{align*}
-    are the Larmor frequency and quadratic shift, respectively, which can be gleaned from the Breit-Rabi equation
+    are the Larmor frequency and quadratic shift, respectively, which can be gleaned from the Breit-Rabi equation. The rf Rabi frequency $\Omega = \gamma B_{\text{rf}}/2$ and detuning $\Delta(B) = \omega_{\text{rf}} - \omega_L(B)$.
     \item At low magnetic field strengths, $\omega_L \propto B$ and $q \propto B^2$, and for our parameters we are justified in taking $\omega_L = \gamma B$ and $q = q_Z B^2$, where $\gamma = 2\pi \times 702379\unit{Hz/G}$ is the gyromagnetic ratio for \Rb $F=1$ and $q_Z = 2\pi \times 71.89\unit{Hz/G^2}$.
     \item For most of the analysis presented here (with $\omega_L$ and $q$ defined as above) these proportionalities need not be met, or the results, e.g. value of $\qmagic$ require a small correction. 
     \item For $q=0$, $\hat{H} \propto \vect{B} \cdot \hat{\vect{F}}$ and is thus a generator of rotations, but $q \hat{F}_z^2 \neq 0$ breaks the $\text{SU}(2)$ symmetry of $\hat{H}$.
@@ -92,7 +92,8 @@ This robust system shares the useful hallmarks of quantum metrology platforms; t
             &= -q/2 \, .
      \end{align*}
     \item Thus $\Omega = \sqrt{\omega_{12} \omega_{23}}_{\Delta=0}$ and $q_D = (\omega_{23} - \omega_{12})_{\Delta=0}/2$, both of which can be attained from the dressed sideband splittings on resonance.
-    Such high-bandwidth measurement of $\Omega$ (magnetic field oscillating along $x$ with amplitude $B_{\text{rf}}$ and frequency $\omega_L$) allows (in principle) closed-loop control of $\Omega$ using the atoms. 
+    Such high-bandwidth measurement of $\Omega$ (magnetic field oscillating along $x$ with amplitude $B_{\text{rf}}$ and frequency $\omega_L$) allows (in principle) closed-loop control of $\Omega$ using the atoms.
+    \item For $q=0$ (low-field limit), the dressed states at $\Delta=0$ are eigenstates of $\hat{F}_x$, and: (i) the spectrum has vanishing linear sensitivity to magnetic fields, with the leading quadratic sensitivity (as in spin-$1/2$), and (ii) fields along $y$ or $z$ oscillating near the Rabi frequency $\Omega$ drive transitions between different $\ket{m_x}$ states. \note{Cite other dressed-ception papers on both of these.}
     \item Curvature of the dressed-state energies can be evaluated using perturbation theory;
     \[
     \partialD{^2\omega_n}{\Delta^2} = \sum_{k \neq n} \frac{\abs{\bra{k} \hat{F}_z \ket{n}}^2}{\omega_n - \omega_k} \, .
