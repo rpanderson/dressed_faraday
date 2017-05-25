@@ -18,3 +18,4 @@ syntax: glob
 *.resolve
 .fuse_hidden*
 diff/*
+calculations/*
