@@ -14,7 +14,7 @@ bibfile = 'dressed_faraday.bib'
 bibfix_only = True
 API_KEY = '6ZeKc1MGmP2pGjZCM5lJ363C'
 GROUP_ID = '1276'
-COLLECTION_ID = '62BIKVKE'
+COLLECTION_ID = 'DRJ6GPQG'
 
 # Backup BibTeX file before overwriting
 if os.path.exists(bibfile):
