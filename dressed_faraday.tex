@@ -61,6 +61,7 @@ Hamiltonians (quasi-static field along $z$, coupling field along $x$:
         q(B) &\equiv (E_{m=+1} + E_{m=-1} - 2 E_{m=0})/2\hbar
     \end{align*}
     are the Larmor frequency and quadratic shift, respectively, which can be gleaned from the Breit-Rabi equation. The rf Rabi frequency $\Omega = \gamma B_{\text{rf}}/2$ and detuning $\Delta(B) = \omega_{\text{rf}} - \omega_L(B)$.
+
 \begin{figure}
     \centering
     \includegraphics[width=\columnwidth]{figure_2.pdf}
@@ -77,6 +78,7 @@ Hamiltonians (quasi-static field along $z$, coupling field along $x$:
        Solid curves in (B) and (C) are theoretical splittings from an eigenspectrum calculation, provided only $f_{\text{rf}}$, $B(t)$, and $\Omega$, i.e. no free parameters.
     }
 \end{figure}
+
 \begin{itemize}
     \item At low magnetic field strengths, $\omega_L \propto B$ and $q \propto B^2$, and for our parameters we are justified in taking $\omega_L = \gamma B$ and $q = q_Z B^2$, where $\gamma = 2\pi \times 702379\unit{Hz/G}$ is the gyromagnetic ratio for \Rb $F=1$ and $q_Z = 2\pi \times 71.89\unit{Hz/G^2}$.
     \item For most of the analysis presented here (with $\omega_L$ and $q$ defined as above) these proportionalities need not be met, or the results, e.g. value of $\qmagic$ require a small correction. 
@@ -143,11 +145,6 @@ A component of the spin (e.g. $\expect{\hat{F}_x}$) transverse to the static mag
 By tuning the probe to a magic-zero wavelength at $\lambda = 790.0\unit{nm}$, and ensuring it is linearly polarized, the probe exerts no scalar or vector light shift on the atoms.
 The former would enact a dipole force on the cloud, perturbing its total density, whereas the latter would be manifest as a fictitious magnetic field and gradient, dephasing the collective spin~\cite{wood_measurement_2016}.
 
-We detect the Faraday rotation of the probe light using a shot-noise limited balanced polarimeter, with bandwidth up to $8\unit{MHz}$, and record the signal using an AlazarTech \textsc{ATS9462} digitizer ($16$-bit, $180\unit{MS/s}$)
-\footnote{The maximum Larmor frequency and thus static magnetic field we can detect Faraday rotation at is limited by the bandwidth of the detector.}.
-Upon applying the radiofrequency (rf) dressing field, $\abs{\expect{\hat{F}_x}} > 0$ and the signature of the coupled spin-1 system is a Faraday signal frequency modulated (FM) about a carrier at the Larmor frequency.
-The frequency difference of each FM sideband from the carrier is a calibration-free measure of each dressed state splitting $\omega_{ij}$.
-
 \begin{figure}
     \centering
     \includegraphics[width=\columnwidth]{figure_3.pdf}
@@ -162,6 +159,11 @@ The frequency difference of each FM sideband from the carrier is a calibration-f
         The left [right] vertical axis shows the curvature $\partial^2 f_{12}/\partial B^2$ [$\Omega\, \partial^2\omega_{12}/\partial \Delta^2$] in absolute units of $\unit{kHz/G^2}$ [dimensionless units, with the splitting and detuning normalized to the Rabi frequency].
     }
 \end{figure}
+
+We detect the Faraday rotation of the probe light using a shot-noise limited balanced polarimeter, with bandwidth up to $8\unit{MHz}$, and record the signal using an AlazarTech \textsc{ATS9462} digitizer ($16$-bit, $180\unit{MS/s}$)
+\footnote{The maximum Larmor frequency and thus static magnetic field we can detect Faraday rotation at is limited by the bandwidth of the detector.}.
+Upon applying the radiofrequency (rf) dressing field, $\abs{\expect{\hat{F}_x}} > 0$ and the signature of the coupled spin-1 system is a Faraday signal frequency modulated (FM) about a carrier at the Larmor frequency.
+The frequency difference of each FM sideband from the carrier is a calibration-free measure of each dressed state splitting $\omega_{ij}$.
 
 As we seek to appraise the robustness of the rf-dressed states to varying magnetic fields, we apply a time dependent $\Delta B(t)$ and observe the dynamical change in the frequency composition of the Faraday signal using the short-time Fourier transform, or spectrogram.
 The time-dependent magnetic field shift $\Delta B(t)$ is the sum of an applied linear ramp and the parasitic background fluctuations at the power-line frequency of $50\unit{Hz}$ and its odd harmonics, and typically ranges from $0$ ($\Delta = 0$, resonance) to $B_{\text{rf}}$ ($\Delta = 2\Omega$), \emph{cf.} \reffig{fig:eigensystem_schematic}.
