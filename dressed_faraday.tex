@@ -27,7 +27,7 @@ This robust system shares the useful hallmarks of quantum metrology platforms; t
 \section{Introduction}
 \label{sec:introduction}
 \begin{itemize}
-    \item Minimally insensitive states in other systems, e.g. $\ket{F=1,m=-1} \leftrightarrow \ket{F=2,m=+1}$ at $B=3.23\unit{G}$, and variants thereof (including those insensitive to Rabi frequency variations reported on at Otago in 2016).
+    \item Minimally insensitive states in other systems, e.g. $\ket{F=1,m=-1} \leftrightarrow \ket{F=2,m=+1}$ at $B=3.23\unit{G}$~\cite{matthews_dynamical_1998}, and variants thereof (including those insensitive to Rabi frequency variations reported on at Otago in 2016).
     \item Wide utility of these states for clocks, magnetometers (including microwave, e.g. Treutlein), quantum computing, etc.
     \item General message of making the eigenspectrum insensitive to one thing while retaining sensitivity to another; quantum version of common-mode rejection.
     \item Dynamical decoupling in this context.
@@ -67,7 +67,7 @@ This robust system shares the useful hallmarks of quantum metrology platforms; t
     \item For $q=0$, $\hat{H} \propto \vect{B} \cdot \hat{\vect{F}}$ and is thus a generator of rotations, but $q \hat{F}_z^2 \neq 0$ breaks the $\text{SU}(2)$ symmetry of $\hat{H}$.
     \item We vary the magnetic field to affect a change in the detuning of $\Delta \in [0, 2\Omega]$, the domain of \reffig{fig:eigensystem_schematic}(B).
     \item Variations in $B \mapsto B_0 + \Delta B$ of order $B_{\text{rf}} = 2\Omega/\gamma$ affect the detuning linearly, \emph{viz.} $\Delta \mapsto \Delta - \gamma \Delta B$, and do not affect $q$ at all for sufficiently small field strengths.
-    \item Indeed, our data corroborate this since we measure $q(B(t))$ across the calibration sweep and find it to be $\sigma(q)/(2\pi) = 20\unit{Hz}$ on average (alternatively, inferring $q$ from $\omega_L$ via Breit-Rabi gives $\sigma(q)/(2\pi) = 1.3\unit{Hz}$).
+    \item Indeed, our data corroborate this since we measure $q(B(t))$ across the calibration sweep and find that $\sigma(q)/(2\pi) = 11.7\unit{Hz}$ on average (alternatively, inferring $q$ from $\omega_L$ via Breit-Rabi gives $\sigma(q)/(2\pi) = 1.2\unit{Hz}$).
     \item Thus the horizontal axis in \reffig{fig:eigensystem_schematic} is a proxy for $\Delta B$, and $\omega_{12}$ at $q=\qmagic$ is has leading-order quartic sensitivity to $\Delta B$.
     \item At high fields ($B\approx 30\unit{G}$) this approximation is no longer valid; $q \approx \qmagic$ varies appreciably across $\Delta B \in [0, B_{\text{rf}}]$ and e.g. $\omega_{12}$ has weak linear dependence on $\Delta B$~\cite{lundblad_pseudo_2017}.
     \item \emph{On varying $\Omega$ or $q$ to change $q_R=q/\Omega$:}
@@ -126,15 +126,22 @@ The three Zeeman states $\ket{m=-1,0,+1}$ of the lowest hyperfine ($F=1$) ground
 A component of the spin (e.g. $\expect{\hat{F}_x}$) transverse to the static magnetic field direction (along $z$) rotates the polarization of an off-resonant probe beam via the paramagnetic Faraday effect.
 By tuning the probe to a magic-zero wavelength at $\lambda = 790.0\unit{nm}$, and ensuring it is linearly polarized, the probe exerts no scalar or vector light shift on the atoms.
 The former would enact a dipole force on the cloud, perturbing its total density, whereas the latter would be manifest as a fictitious magnetic field and gradient, dephasing the collective spin~\cite{wood_measurement_2016}.
+
 We detect the Faraday rotation of the probe light using a shot-noise limited balanced polarimeter, with bandwidth up to $8\unit{MHz}$, and record the signal using an AlazarTech \textsc{ATS9462} digitizer ($16$-bit, $180\unit{MS/s}$)
 \footnote{The maximum Larmor frequency and thus static magnetic field we can detect Faraday rotation at is limited by the bandwidth of the detector.}.
 Upon applying the radiofrequency (rf) dressing field, $\abs{\expect{\hat{F}_x}} > 0$ and the signature of the coupled spin-1 system is a Faraday signal frequency modulated (FM) about a carrier at the Larmor frequency.
 The frequency difference of each FM sideband from the carrier is a calibration-free measure of each dressed state splitting $\omega_{ij}$.
+
 As we seek to appraise the robustness of the rf-dressed states to varying magnetic fields, we apply a time dependent $\Delta B(t)$ and observe the dynamical change in the frequency composition of the Faraday signal using the short-time Fourier transform, or spectrogram.
 The time-dependent magnetic field shift $\Delta B(t)$ is the sum of an applied linear ramp and the parasitic background fluctuations at the power-line frequency of $50\unit{Hz}$ and its odd harmonics, and typically ranges from $0$ ($\Delta = 0$, resonance) to $B_{\text{rf}}$ ($\Delta = 2\Omega$), \emph{cf.} \reffig{fig:eigensystem_schematic}.
 For each realization (or `shot') of the experiment, we directly calibrate this time-dependent field using ac magnetometry; an rf $\pi/2$-pulse (rather than continuous coupling) initiates Larmor precession of the collective spin the $x$--$y$ plane, and the Faraday signal is composed of two tones, at $\omega_\pm = \omega_L \pm q$.
 For $q \, \tau_f \geq 2\pi$, where $\tau_f$ is the length of the overlapping spectrogram windows, the two tones are spectrally resolved and their mean and difference yields the instantaneous $\omega_L(t)$ and $q(t)$, the former of which is used to find $\Delta B(t)$ by inverting the Breit-Rabi equation~\cite{ramsey_molecular_1963}. 
 The experiment is synchronized to the AC power line; the harmonic composition of which varies little between contiguous shots ($20\unit{s}$ apart), and thus the measured $\Delta B(t)$ and $q(t)$ from the calibration shot serve as a good proxy for the values experienced by the atoms in the subsequent rf-dressed shot.
+
+We measured the dressed spectrum for a range of $q_R \in [0.2, 0.5]$ by varying the resonant magnetic field $B_0$ [applied rf frequency $f_{\text{rf}}$] from $3.549\unit{G}$ [$2.493\unit{MHz}$] to $5.568\unit{G}$ [$3.911\unit{MHz}$], with a fixed Rabi frequency of $\Omega/(2\pi) = 4.505(3)\unit{kHz}$.
+For each applied field and applied radiofrequency, we ensured the Rabi frequency was fixed by measuring the voltage drop across the coil at $f_{\text{rf}}$ with a lock-in amplifier which -- in concert with an impedance analyzer -- could be used to ensure the rf current in the coil and thus $B_{\text{rf}}$ and $\Omega$ were constant. 
+The Rabi frequency was ultimately measured using the atoms, by analyzing a subset of the dressed energy spectrum during the magnetic field sweep when $\abs{\Delta}/(2\pi) \leq 100\unit{Hz}$.
+In this way the range of Rabi frequencies used had a standard deviation $\sigma(\Omega) = 9.4\unit{Hz}$.
 
 \bibliography{dressed_faraday}
    
