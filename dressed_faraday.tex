@@ -181,6 +181,14 @@ For each resonant field $B_0$, we ensured the Rabi frequency was fixed by measur
 The Rabi frequency was ultimately measured using the atoms, by analyzing a subset of the dressed energy spectrum during the magnetic field sweep when $\abs{\Delta}/(2\pi) \leq 100\unit{Hz}$.
 The measured Rabi frequencies had a standard deviation $\sigma(\Omega) = 9.4\unit{Hz}$, validating the above method.
 
+Desite long coherence times, the low duty cycle ($D < 0.01$) and large dead time ($T_\text{shot} \gtrsim 10\unit{s}$) of cold quantum gas experiments make challenging achieving metrological sensitivies that are competitive with other platforms per unit bandwidth.
+Although here $D=0.005$ and $T_\text{shot} = 20\unit{s}$, we make many more spin projection measurements (\note{$N_m$ = blah} at a shot-noise limimted SNR of $10$--$100$~\note{faraday_technical}) than traditional cold atom experiments ($N_m = 1$ to several, e.g. absorption or dispersive imaging).
+This intra-shot revelation of the time and freqeuncy domain renders the meaurement of these spectra orders of magnitude more efficient.
+For example, the single spectrum shown in \reffig{fig:acquisition_pipeline} would take $\sim 10$ shots per $\Delta B$ per $\omega_{ij}$, and thus $100 \times 3 \times 10 = 3000$ shots ($100 = 2.5$ times fewer $\Delta B$ values than shown here), or $\sim 6\times10^4\unit{s} = 1000$ minutes of data acquisition.
+We acquire this spectrum in a single shot (2 accounting for the calibration shot, but that would require $2\times$ more traditional shots also), i.e. $20\unit{s}$.
+The data shown in \reffig{fig:curvature_vs_qR} was acquired in only $6$ minutes.  
+
+
 \bibliography{dressed_faraday}
    
 \end{document}
