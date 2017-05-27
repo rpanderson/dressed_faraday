@@ -135,8 +135,8 @@ Hamiltonians (quasi-static field along $z$, coupling field along $x$:
     \end{align*}
     with $B_0$ is in Gauss.
     Thus for $B_0 \lesssim 5\unit{G}$, $\Omega/\omega_L \lesssim 10^{-3}$ and the rotating-wave approximation is justified.
-    \item For $0 \leq \Delta B \leq B_{\text{rf}}/4 = 3.2\unit{mG}$ ($0 \leq \abs{\Delta/\Omega} \leq 0.5$) we observe a variation of the splitting $f_{12}$ of $39\unit{Hz}$ for the data in \reffig{fig:acquisition_pipeline}, compared to the theoretical estimate of $26\unit{Hz}$.
-    These correspond to a normalized variation of $\omega_{12}/\Omega$ of $8.6\times10^{-3}$ and $5.8\times10^{-3}$, respectively.
+    \item For $0 \leq \Delta B \leq B_{\text{rf}}/4 = 3.2\unit{mG}$ ($0 \leq \abs{\Delta/\Omega} \leq 0.5$) we observe a variation in the splitting $f_{12}$ of $39\unit{Hz}$ for the data in \reffig{fig:acquisition_pipeline}, compared to the theoretical estimate of $26\unit{Hz}$.
+    These correspond to a normalized variation in $\omega_{12}/\Omega$ of $8.6\times10^{-3}$ and $5.8\times10^{-3}$, respectively.
     By comparison, the normalized variation at $q_R=0$ is $(\sqrt{5}-2)/2 \approx 0.118$, 14 [20] times higher than the observed [predicted] variation.
 \end{itemize}
 
@@ -181,13 +181,12 @@ For each resonant field $B_0$, we ensured the Rabi frequency was fixed by measur
 The Rabi frequency was ultimately measured using the atoms, by analyzing a subset of the dressed energy spectrum during the magnetic field sweep when $\abs{\Delta}/(2\pi) \leq 100\unit{Hz}$.
 The measured Rabi frequencies had a standard deviation $\sigma(\Omega) = 9.4\unit{Hz}$, validating the above method.
 
-Desite long coherence times, the low duty cycle ($D < 0.01$) and large dead time ($T_\text{shot} \gtrsim 10\unit{s}$) of cold quantum gas experiments make challenging achieving metrological sensitivies that are competitive with other platforms per unit bandwidth.
-Although here $D=0.005$ and $T_\text{shot} = 20\unit{s}$, we make many more spin projection measurements (\note{$N_m$ = blah} at a shot-noise limimted SNR of $10$--$100$~\note{faraday_technical}) than traditional cold atom experiments ($N_m = 1$ to several, e.g. absorption or dispersive imaging).
-This intra-shot revelation of the time and freqeuncy domain renders the meaurement of these spectra orders of magnitude more efficient.
-For example, the single spectrum shown in \reffig{fig:acquisition_pipeline} would take $\sim 10$ shots per $\Delta B$ per $\omega_{ij}$, and thus $100 \times 3 \times 10 = 3000$ shots ($100 = 2.5$ times fewer $\Delta B$ values than shown here), or $\sim 6\times10^4\unit{s} = 1000$ minutes of data acquisition.
-We acquire this spectrum in a single shot (2 accounting for the calibration shot, but that would require $2\times$ more traditional shots also), i.e. $20\unit{s}$.
-The data shown in \reffig{fig:curvature_vs_qR} was acquired in only $6$ minutes.  
-
+Despite long coherence times, the low duty cycle ($D < 0.01$) and large dead time ($T_\text{shot} \gtrsim 10\unit{s}$) of cold quantum gas experiments make challenging achieving metrological sensitivities per unit bandwidth that are competitive with other platforms.
+Here $D=0.005$ and $T_\text{shot} = 20\unit{s}$, yet we make many more spin projection measurements (\note{$N_m$ = blah} at a shot-noise limited SNR of $10$--$100$~\note{faraday technical}) than traditional cold atom experiments ($N_m = 1$ to several, e.g. absorption or dispersive imaging).
+This intra-shot revelation of the time and frequency domain renders the measurement of these spectra orders of magnitude more efficient.
+For example, the single spectrum shown in \reffig{fig:acquisition_pipeline} would take $\sim (10$ shots per $\Delta B$ per $\omega_{ij} ) \times (100$ different $\Delta B$ values) $\times (3 $ different transition frequencies $\omega_{ij}) = 3000$ shots ($2.5$ times fewer $\Delta B$ values than shown here), or $\sim 6\times10^4\unit{s} = 1000$ minutes of data acquisition.
+We acquire this spectrum in a single shot (or two shots accounting for the field calibration, but that would require $\sim 2\times$ more traditional shots also), i.e. $20\unit{s}$.
+The data used to generate \reffig{fig:curvature_vs_qR} was acquired in only $6$ minutes.  
 
 \bibliography{dressed_faraday}
    
