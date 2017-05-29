@@ -32,6 +32,7 @@ This robust system shares the useful hallmarks of quantum metrology platforms; t
     \item General message of making the eigenspectrum insensitive to one thing while retaining sensitivity to another; quantum version of common-mode rejection.
     \item Dynamical decoupling in this context.
     \item Motivate continuous measurement, especially in context of measurement bandwidth; it doesn't make sense to measure something in kHz--MHz band using a shot-based ($0.1\unit{Hz}$ or less) readout. Why? Can't react, can't feedback, can't always assume periodicity/repeatability.
+    \item Whilst the paper is not focused on introducing spectrograms, we can say they provide a new mechanism for measuring the dressed energy spectrum of quantum systems in the continuous domain. 
     \item From magnetometry perspective, breaking rotational symmetry is bad because you want there to be no anisotropy to the sensitivity. How does this relate to this work?
     \item The parameter $q$ has been tuned using static magnetic fields and with microwave ac Stark shifts of an off-resonantly driven hyperfine transition, to e.g. to traverse the magnetic phase space of a spinor quantum gas, driving quantum quenches, etc.    
 \end{itemize}
@@ -83,6 +84,7 @@ Hamiltonians (quasi-static field along $z$, coupling field along $x$:
     \item At low magnetic field strengths, $\omega_L \propto B$ and $q \propto B^2$, and for our parameters we are justified in taking $\omega_L = \gamma B$ and $q = q_Z B^2$, where $\gamma = 2\pi \times 702379\unit{Hz/G}$ is the gyromagnetic ratio for \Rb $F=1$ and $q_Z = 2\pi \times 71.89\unit{Hz/G^2}$.
     \item For most of the analysis presented here (with $\omega_L$ and $q$ defined as above) these proportionalities need not be met, or the results, e.g. value of $\qmagic$ require a small correction. 
     \item For $q=0$, $\hat{H} \propto \vect{B} \cdot \hat{\vect{F}}$ and is thus a generator of rotations, but $q \hat{F}_z^2 \neq 0$ breaks the $\text{SU}(2)$ symmetry of $\hat{H}$.
+    \item This broken symmetry lifts the degeneracy of the \textit{energy splittings} making them distinguishable in our spectrogram measurements.
     \item We vary the magnetic field to affect a change in the detuning of $\Delta \in [0, 2\Omega]$, the domain of \reffig{fig:eigensystem_schematic}(B).
     \item Variations in $B \mapsto B_0 + \Delta B$ of order $B_{\text{rf}} = 2\Omega/\gamma$ affect the detuning linearly, \emph{viz.} $\Delta \mapsto \Delta - \gamma \Delta B$, and do not affect $q$ at all for sufficiently small field strengths.
     \item Indeed, our data corroborate this since we measure $q(B(t))$ across the calibration sweep and find that $\sigma(q)/(2\pi) = 11.7\unit{Hz}$ on average (alternatively, inferring $q$ from $\omega_L$ via Breit-Rabi gives $\sigma(q)/(2\pi) = 1.2\unit{Hz}$).
@@ -91,6 +93,7 @@ Hamiltonians (quasi-static field along $z$, coupling field along $x$:
     \item \emph{On varying $\Omega$ or $q$ to change $q_R=q/\Omega$:}
     For a given static magnetic field, $q_R$ can be modified via the Rabi frequency. However, this is not what is represented in \reffig{fig:eigensystem_schematic}, as the normalization of the horizontal and vertical axes would vary for each $q_R$. Importantly, the insensitivity of $\omega_{12}$ to detuning only gets better for increasing $\Omega$ in absolute terms; if the rf amplitude is unlimited, use it. However, doing so also modifies the absolute dressed state splittings on resonance, and thus the bandwidth of the dressed spin-1 as an ac magnetometer. The take home message is then: use as high an rf amplitude as you can afford (or want to tune the ac-band to), and then modify $q_R$ via $q$ to realize the pseudo-clock states.
     \item \textit{Transitions between dressed states:} $\ket{1} \leftrightarrow \ket{2}$ and $\ket{2} \leftrightarrow \ket{3}$ driven by fields oscillating along $y$ or $z$ near frequencies $\omega_D \mp q_D$, respectively. Alternatively, $\ket{1} \leftrightarrow \ket{3}$ driven by fields oscillating along $x$ near frequency $2\omega_D$. This is very different to the fully polarized bare states $\ket{m=\pm 1}$, which are coupled by a single-photon transition as this would conserve neither photon number nor angular momentum. There is no such restriction on the dressed states however as they are neither eigenstates of $\hat{F}_z$ nor photon number. 
+    \item Mention relation bands signal strength to populations of dressed eigen states. We have done this correct?
 \end{itemize}
 \textit{Lab frame eigenstates:}
 \begin{itemize}
@@ -150,11 +153,12 @@ Hamiltonians (quasi-static field along $z$, coupling field along $x$:
 \section{apparatus}
 \label{sec:apparatus}
 Our spinor quantum gas apparatus~\cite{wood_magnetic_2015} and Faraday atom-light interface are described in greater detail elsewhere~\cite{martijn_faraday_2017}.
-We prepare an ultracold gas of approximately $10^6$ \Rb atoms in a crossed-beam optical dipole trap ($\lambda=1064\unit{nm}$).
+We prepare an ultracold gas ($\sim1\unit{\mu K}$) of approximately $10^6$ \Rb atoms in a crossed-beam optical dipole trap ($\lambda=1064\unit{nm}$).
 The three Zeeman states $\ket{m=-1,0,+1}$ of the lowest hyperfine ($F=1$) ground state are coupled using a radiofrequency field with $\Omega/(2\pi) \leq 100\unit{kHz}$, generated by a single-turn coil placed immediately atop the glass vacuum cell, fed by an amplified radiofrequency source generated using direct-digital synthesis.
 A component of the spin (e.g. $\expect{\hat{F}_x}$) transverse to the static magnetic field direction (along $z$) rotates the polarization of an off-resonant probe beam via the paramagnetic Faraday effect.
-By tuning the probe to a magic-zero wavelength at $\lambda = 790.0\unit{nm}$, and ensuring it is linearly polarized, the probe exerts no scalar or vector light shift on the atoms.
+By tuning the probe to a magic-zero wavelength at $\lambda = 790.0\unit{nm}$ \note{We used a wavelength of $\lambda=781.15\unit{nm}$ due to SNR concerns from RF/noise pickup, we can sight the Faraday paper for our apparatus and spectrograms?}, and ensuring it is linearly polarized, the probe exerts no scalar or vector light shift on the atoms.
 The former would enact a dipole force on the cloud, perturbing its total density, whereas the latter would be manifest as a fictitious magnetic field and gradient, dephasing the collective spin~\cite{wood_measurement_2016}.
+\
 
 \begin{figure}
     \centering
@@ -193,7 +197,14 @@ Here $D=0.005$ and $T_\text{shot} = 20\unit{s}$, yet we make many more spin proj
 This intra-shot revelation of the time and frequency domain renders the measurement of these spectra orders of magnitude more efficient.
 For example, the single spectrum shown in \reffig{fig:acquisition_pipeline} would take $\sim (10$ shots per $\Delta B$ per $\omega_{ij} ) \times (100$ different $\Delta B$ values) $\times (3 $ different transition frequencies $\omega_{ij}) = 3000$ shots ($2.5$ times fewer $\Delta B$ values than shown here), or $\sim 6\times10^4\unit{s} = 1000$ minutes of data acquisition.
 We acquire this spectrum in a single shot (or two shots accounting for the field calibration, but that would require $\sim 2\times$ more traditional shots also), i.e. $20\unit{s}$.
-The data used to generate \reffig{fig:curvature_vs_qR} was acquired in only $6$ minutes.  
+The data used to generate \reffig{fig:curvature_vs_qR} was acquired in only $6$ minutes.
+  
+
+\section{The data - Think of sexier title}
+\label{sec:data}
+Our technique directly measures all the quantities in the dressed energy eigen spectrum using sinc fitting to the spectrogram data in a two shot experiment. 
+The first observation calibrates essential quantities of the magnetic field ($q_{z}, \omega_{L}, \partialD{B}{t} $) \reffig{fig:acquisition_pipeline}A characterising the horizontal axis of \reffig{fig:eigensystem_schematic}B. In the second shot, we repeat the experiment but dress the atoms with RF \reffig{fig:acquisition_pipeline}B from which we measure the energy splitting. 
+
 
 \bibliography{dressed_faraday}
    
