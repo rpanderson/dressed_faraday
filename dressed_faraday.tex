@@ -57,7 +57,7 @@ This robust system shares the useful hallmarks of quantum metrology platforms; t
 Hamiltonians (quasi-static field along $z$, coupling field along $x$:
     \begin{align*}
         \hat{H}_{\text{lab}} &= \omega_L \hat{F}_z + q \hat{F}_z^2 + 2\Omega \cos (\omega_{\text{rf}} t) \hat{F}_x \\
-        \Rightarrow \hat{H}_{\text{RWA}} &= -\Delta \hat{F}_z - q \hat{F}_z^2 + \Omega \hat{F}_x \, \text{, where} \\
+        \Rightarrow \hat{H}_{\text{rwa}} &= -\Delta \hat{F}_z - q \hat{F}_z^2 + \Omega \hat{F}_x \, \text{, where} \\
         \omega_L(B) &\equiv (E_{m=-1} - E_{m=+1})/2\hbar \, \text{, and} \\
         q(B) &\equiv (E_{m=+1} + E_{m=-1} - 2 E_{m=0})/2\hbar
     \end{align*}
@@ -91,9 +91,15 @@ Hamiltonians (quasi-static field along $z$, coupling field along $x$:
     \item Thus the horizontal axis in \reffig{fig:eigensystem_schematic} is a proxy for $\Delta B$, and $\omega_{12}$ at $q=\qmagic$ is has leading-order quartic sensitivity to $\Delta B$.
     \item At high fields ($B\approx 30\unit{G}$) this approximation is no longer valid; $q \approx \qmagic$ varies appreciably across $\Delta B \in [0, B_{\text{rf}}]$ and e.g. $\omega_{12}$ has weak linear dependence on $\Delta B$~\cite{lundblad_pseudo_2017}.
     \item \emph{On varying $\Omega$ or $q$ to change $q_R=q/\Omega$:}
-    For a given static magnetic field, $q_R$ can be modified via the Rabi frequency. However, this is not what is represented in \reffig{fig:eigensystem_schematic}, as the normalization of the horizontal and vertical axes would vary for each $q_R$. Importantly, the insensitivity of $\omega_{12}$ to detuning only gets better for increasing $\Omega$ in absolute terms; if the rf amplitude is unlimited, use it. However, doing so also modifies the absolute dressed state splittings on resonance, and thus the bandwidth of the dressed spin-1 as an ac magnetometer. The take home message is then: use as high an rf amplitude as you can afford (or want to tune the ac-band to), and then modify $q_R$ via $q$ to realize the pseudo-clock states.
-    \item \textit{Transitions between dressed states:} $\ket{1} \leftrightarrow \ket{2}$ and $\ket{2} \leftrightarrow \ket{3}$ driven by fields oscillating along $y$ or $z$ near frequencies $\omega_D \mp q_D$, respectively. Alternatively, $\ket{1} \leftrightarrow \ket{3}$ driven by fields oscillating along $x$ near frequency $2\omega_D$. This is very different to the fully polarized bare states $\ket{m=\pm 1}$, which are coupled by a single-photon transition as this would conserve neither photon number nor angular momentum. There is no such restriction on the dressed states however as they are neither eigenstates of $\hat{F}_z$ nor photon number. 
-    \item Mention relation bands signal strength to populations of dressed eigen states. We have done this correct?
+    For a given static magnetic field, $q_R$ can be modified via the Rabi frequency.
+    However, this is not what is represented in \reffig{fig:eigensystem_schematic}, as the normalization of the horizontal and vertical axes would vary for each $q_R$.
+    Importantly, the insensitivity of $\omega_{12}$ to detuning only gets better for increasing $\Omega$ in absolute terms; if the rf amplitude is unlimited, use it.
+    However, doing so also modifies the absolute dressed state splittings on resonance, and thus the bandwidth of the dressed spin-1 as an ac magnetometer.
+    The take home message is then: use as high an rf amplitude as you can afford (or want to tune the ac-band to), and then modify $q_R$ via $q$ to realize the pseudo-clock states.
+    \item \textit{Transitions between dressed states:} $\ket{1} \leftrightarrow \ket{2}$ and $\ket{2} \leftrightarrow \ket{3}$ driven by fields oscillating along $y$ or $z$ near frequencies $\omega_D \mp q_D$, respectively.
+    Alternatively, $\ket{1} \leftrightarrow \ket{3}$ driven by fields oscillating along $x$ near frequency $2\omega_D$.
+    This is very different to the fully polarized bare states $\ket{m=\pm 1}$, which are coupled by a single-photon transition as this would conserve neither photon number nor angular momentum.
+    There is no such restriction on the dressed states however as they are neither eigenstates of $\hat{F}_z$ nor photon number. 
 \end{itemize}
 \textit{Lab frame eigenstates:}
 \begin{itemize}
@@ -140,15 +146,31 @@ Hamiltonians (quasi-static field along $z$, coupling field along $x$:
     Thus for $B_0 \lesssim 5\unit{G}$, $\Omega/\omega_L \lesssim 10^{-3}$ and the rotating-wave approximation is justified.
     \item For $0 \leq \Delta B \leq B_{\text{rf}}/4 = 3.2\unit{mG}$ ($0 \leq \abs{\Delta/\Omega} \leq 0.5$) we observe a variation in the splitting $f_{12}$ of $39\unit{Hz}$ for the data in \reffig{fig:acquisition_pipeline}, compared to the theoretical estimate of $26\unit{Hz}$.
     These correspond to a normalized variation in $\omega_{12}/\Omega$ of $8.6\times10^{-3}$ and $5.8\times10^{-3}$, respectively.
-    By comparison, the normalized variation at $q_R=0$ is $(\sqrt{5}-2)/2 \approx 0.118$, 14 [20] times higher than the observed [predicted] variation.
+    By comparison, the normalized variation at $q_R=0$ is $(\sqrt{5}-2)/2 \approx 0.118$; 14 [20] times higher than the observed [predicted] variation.
+    Alternatively, the normalized variation of the $\ket{m=\pm1} \leftrightarrow \ket{0}$ transitions at $q=0$ is $0.5$; 58 [86] times higher than the observed [predicted] variation in the synthetic clock transition frequency.
+    \note{Both of these comparisons depend a lot on the range of $\Delta B$! They are far more impressive (theoretically) for smaller ranges.}
     \item The $F=1$ spin operators in the undressed basis do not span all of $\text{SU}(3)$, i.e. $\sigma_x = (\lambda_1 + \lambda_6)/\sqrt{2}$, $\sigma_y = (\lambda_2 + \lambda_7)/\sqrt{2}$, and $\sigma_z = (\lambda_3 + \sqrt{3} \lambda_8)/2$ ($\lambda_4$ and $\lambda_5$ which include off diagonal terms in rows/columns 1 and 3 are absent) where $\lambda_i, i = 1,\dots,8$ are the Gell-Mann matrices.
-    \item The $F=1$ spin operators in the dressed basis span \note{almost} all of $\text{SU}(3)$, as $[\hat{F}_x]_D = q_D/\omega_D Q_{x^2-y^2} - \Omega / \omega_D \sigma_z = q_D/\omega_D \lambda_4 - \Omega / \omega_D ( \lambda_3 +\sqrt{3} \lambda_8) / 2$, $[\hat{F}_y]_D$ is a sum of $\lambda_1, \lambda_2$, and $\lambda_7$, and  $[\hat{F}_z]_D$ is a sum of $\lambda_1$ and $\lambda_6$. \note{The spin operators have no projection onto $\lambda_5$, even for an rf field oscillating along $y$.}
-    \item The Faraday signal we detect is proportional to $\expect{\hat{F}_x}$ in the laboratory frame, which is given by $\bra{\psi}\hat{S}^{\dagger} \hat{F}_x \hat{S} \ket{\psi}$ where $\hat{S} = \exp(-i \omega_{\text{rf}} \hat{F}_z t)$. For an initially polarized $\ket{\psi(t=0)} = \ket{m=1}$ state driven on resonance, we get
-    \begin{align*}
-        \expect{\hat{F}_x}_{\text{lab}} &= -\frac{\Omega}{\omega_D} \cos(q_D t) \sin(\omega_D t) \sin(\omega_{\text{rf}} t) - \frac{\Omega q_D}{\omega_D^2} \sin^2(\omega_D t) \cos(\omega_{\text{rf}} t) \, .
-    \end{align*}
-    The first term has equal-amplitude sidebands at $\pm(\omega_D \pm q_D) = \pm $ and the second term has smaller amplitude sidebands at $\pm 2\omega_D$.
+    \item The $F=1$ spin operators in the dressed basis span \note{almost} all of $\text{SU}(3)$, as $[\hat{F}_x]_D = (q_D/\omega_D) Q_{x^2-y^2} - (\Omega / \omega_D) \sigma_z = (q_D/\omega_D) \lambda_4 - \Omega / \omega_D ( \lambda_3 +\sqrt{3} \lambda_8) / 2$, $[\hat{F}_y]_D$ is a sum of $\lambda_1, \lambda_2$, and $\lambda_7$, and  $[\hat{F}_z]_D$ is a sum of $\lambda_1$ and $\lambda_6$. \note{The spin operators have no projection onto $\lambda_5$, even for an rf field oscillating along $y$.}
 \end{itemize}
+\textit{Analytic Faraday signal on resonance:}
+\begin{table}[]
+\centering
+\caption{Upper sidebands of the carrier (at $\omega_{\text{rf}}$) of the Faraday rotation signal $\propto \expect{\hat{F}_x}$ of a state $\ket{\psi(t=0)}=\ket{m=1}$ driven on resonance ($\Delta = 0$) in the laboratory frame. Frequency and phase are reported relative to the carrier, along with the transition that each sideband corresponds to. For each upper sideband, there is a lower sideband of the same amplitude, relative frequency and opposite \note{$\pi$} relative phase.}
+\label{tab:sidebands}
+\begin{tabular}{cccc}
+frequency & phase & amplitude & transition \\ \hhline{====}
+ $0$ & $-\pi$ & $\frac{q_D \Omega }{2 \omega_D^2}$ & -- \\
+ $\omega_D-q_D$ & $0$ & $\frac{\Omega}{4 \omega_D}$ & $\ket{1} \leftrightarrow \ket{2}$ \\
+ $\omega_D+q_D$ & $0$ & $\frac{\Omega}{4 \omega_D}$ & $\ket{2} \leftrightarrow \ket{3}$\\
+ $2 \omega_D$ & $0$ & $\frac{q_D \Omega}{4 \omega_D^2}$ & $\ket{1} \leftrightarrow \ket{3}$
+\end{tabular}
+\end{table}
+
+The Faraday signal we detect is proportional to $\expect{\hat{F}_x}$ in the laboratory frame, which is given by $\bra{\psi}\hat{S}^{\dagger} \hat{F}_x \hat{S} \ket{\psi}$ where $\hat{S} = \exp(-i \omega_{\text{rf}} \hat{F}_z t)$. For an initially polarized $\ket{\psi(t=0)} = \ket{m=1}$ state driven on resonance, we get
+    \begin{align*}
+        \expect{\hat{F}_x}_{\text{lab}} &= -\frac{\Omega}{\omega_D} \cos(q_D t) \sin(\omega_D t) \sin(\omega_{\text{rf}} t) - \\ &\frac{q_D \Omega}{\omega_D^2} \sin^2(\omega_D t) \cos(\omega_{\text{rf}} t) \, .
+    \end{align*}
+The first term (in quadrature with the carrier at $\omega_{\text{rf}}$) has equal-amplitude sidebands at $\pm(\omega_D \pm q_D)$ and the second term (in phase with the carrier) has smaller amplitude sidebands at $\pm 2\omega_D$.
 
 \section{apparatus}
 \label{sec:apparatus}
@@ -156,7 +178,7 @@ Our spinor quantum gas apparatus~\cite{wood_magnetic_2015} and Faraday atom-ligh
 We prepare an ultracold gas ($\sim1\unit{\mu K}$) of approximately $10^6$ \Rb atoms in a crossed-beam optical dipole trap ($\lambda=1064\unit{nm}$).
 The three Zeeman states $\ket{m=-1,0,+1}$ of the lowest hyperfine ($F=1$) ground state are coupled using a radiofrequency field with $\Omega/(2\pi) \leq 100\unit{kHz}$, generated by a single-turn coil placed immediately atop the glass vacuum cell, fed by an amplified radiofrequency source generated using direct-digital synthesis.
 A component of the spin (e.g. $\expect{\hat{F}_x}$) transverse to the static magnetic field direction (along $z$) rotates the polarization of an off-resonant probe beam via the paramagnetic Faraday effect.
-By tuning the probe to a magic-zero wavelength at $\lambda = 790.0\unit{nm}$ \note{We used a wavelength of $\lambda=781.15\unit{nm}$ due to SNR concerns from RF/noise pickup, we can sight the Faraday paper for our apparatus and spectrograms?}, and ensuring it is linearly polarized, the probe exerts no scalar or vector light shift on the atoms.
+By tuning the probe to a magic-zero wavelength at $\lambda = 790.0\unit{nm}$ \note{We used a wavelength of $\lambda=781.15\unit{nm}$ to boost SNR with respect to rf pickup}, and ensuring it is linearly polarized, the probe exerts no scalar or vector light shift on the atoms.
 The former would enact a dipole force on the cloud, perturbing its total density, whereas the latter would be manifest as a fictitious magnetic field and gradient, dephasing the collective spin~\cite{wood_measurement_2016}.
 \
 
@@ -196,7 +218,7 @@ Despite long coherence times, the low duty cycle ($D < 0.01$) and large dead tim
 Here $D=0.005$ and $T_\text{shot} = 20\unit{s}$, yet we make many more spin projection measurements (\note{$N_m$ = blah} at a shot-noise limited SNR of $10$--$100$~\note{faraday technical}) than traditional cold atom experiments ($N_m = 1$ to several, e.g. absorption or dispersive imaging).
 This intra-shot revelation of the time and frequency domain renders the measurement of these spectra orders of magnitude more efficient.
 For example, the single spectrum shown in \reffig{fig:acquisition_pipeline} would take $\sim (10$ shots per $\Delta B$ per $\omega_{ij} ) \times (100$ different $\Delta B$ values) $\times (3 $ different transition frequencies $\omega_{ij}) = 3000$ shots ($2.5$ times fewer $\Delta B$ values than shown here), or $\sim 6\times10^4\unit{s} = 1000$ minutes of data acquisition.
-We acquire this spectrum in a single shot (or two shots accounting for the field calibration, but that would require $\sim 2\times$ more traditional shots also), i.e. $20\unit{s}$.
+We acquire this spectrum in a single shot \note{two shots accounting for the field calibration, but that would require $\sim 2\times$ more traditional shots}, i.e. $20\unit{s}$.
 The data used to generate \reffig{fig:curvature_vs_qR} was acquired in only $6$ minutes.
   
 
