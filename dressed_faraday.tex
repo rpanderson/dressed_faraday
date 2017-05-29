@@ -28,7 +28,7 @@ This robust system shares the useful hallmarks of quantum metrology platforms; t
 \label{sec:introduction}
 \begin{itemize}
     \item Minimally insensitive states in other systems, e.g. $\ket{F=1,m=-1} \leftrightarrow \ket{F=2,m=+1}$ at $B=3.23\unit{G}$~\cite{matthews_dynamical_1998}, and variants thereof (including those insensitive to Rabi frequency variations reported on at Otago in 2016).
-    \item Wide utility of these states for clocks, magnetometers (including microwave, e.g. Treutlein), quantum computing, etc.
+    \item Wide utility of these states for clocks, magnetometers (including microwave, e.g. Treutlein), quantum information, and quantum emulation, e.g. elusive many-body spin-singlet state which requires unforgiving field stability or dynamical decoupling.
     \item General message of making the eigenspectrum insensitive to one thing while retaining sensitivity to another; quantum version of common-mode rejection.
     \item Dynamical decoupling in this context.
     \item Motivate continuous measurement, especially in context of measurement bandwidth; it doesn't make sense to measure something in kHz--MHz band using a shot-based ($0.1\unit{Hz}$ or less) readout. Why? Can't react, can't feedback, can't always assume periodicity/repeatability.
@@ -83,13 +83,13 @@ Hamiltonians (quasi-static field along $z$, coupling field along $x$:
 \begin{itemize}
     \item At low magnetic field strengths, $\omega_L \propto B$ and $q \propto B^2$, and for our parameters we are justified in taking $\omega_L = \gamma B$ and $q = q_Z B^2$, where $\gamma = 2\pi \times 702379\unit{Hz/G}$ is the gyromagnetic ratio for \Rb $F=1$ and $q_Z = 2\pi \times 71.89\unit{Hz/G^2}$.
     \item For most of the analysis presented here (with $\omega_L$ and $q$ defined as above) these proportionalities need not be met, or the results, e.g. value of $\qmagic$ require a small correction. 
-    \item For $q=0$, $\hat{H} \propto \vect{B} \cdot \hat{\vect{F}}$ and is thus a generator of rotations, but $q \hat{F}_z^2 \neq 0$ breaks the $\text{SU}(2)$ symmetry of $\hat{H}$.
+    \item For $q=0$, $\hat{H}_{\text{lab}}$ and $\hat{H}_{\text{rwa}} \propto \vect{B} \cdot \hat{\vect{F}}$ and are thus a generator of rotations, but $q \hat{F}_z^2 \neq 0$ breaks the $\text{SU}(2)$ symmetry and $\expect{\vect{\hat{F}}}^2$ is not preserved.
     \item This broken symmetry lifts the degeneracy of the \textit{energy splittings} making them distinguishable in our spectrogram measurements.
     \item We vary the magnetic field to affect a change in the detuning of $\Delta \in [0, 2\Omega]$, the domain of \reffig{fig:eigensystem_schematic}(B).
-    \item Variations in $B \mapsto B_0 + \Delta B$ of order $B_{\text{rf}} = 2\Omega/\gamma$ affect the detuning linearly, \emph{viz.} $\Delta \mapsto \Delta - \gamma \Delta B$, and do not affect $q$ at all for sufficiently small field strengths.
+    \item Variations in $B \mapsto B_0 + \Delta B$ of order $B_{\text{rf}} = 2\Omega/\gamma$ affect the detuning linearly, \emph{viz.} $\Delta = - \gamma \Delta B$ for $\omega_L(B_0) = \omega_{\text{rf}}$ (i.e. rf is resonant when $B=B_0$), and do not affect $q$ appreciably for sufficiently small field strengths.
     \item Indeed, our data corroborate this since we measure $q(B(t))$ across the calibration sweep and find that $\sigma(q)/(2\pi) = 11.7\unit{Hz}$ on average (alternatively, inferring $q$ from $\omega_L$ via Breit-Rabi gives $\sigma(q)/(2\pi) = 1.2\unit{Hz}$).
-    \item Thus the horizontal axis in \reffig{fig:eigensystem_schematic} is a proxy for $\Delta B$, and $\omega_{12}$ at $q=\qmagic$ is has leading-order quartic sensitivity to $\Delta B$.
-    \item At high fields ($B\approx 30\unit{G}$) this approximation is no longer valid; $q \approx \qmagic$ varies appreciably across $\Delta B \in [0, B_{\text{rf}}]$ and e.g. $\omega_{12}$ has weak linear dependence on $\Delta B$~\cite{lundblad_pseudo_2017}.
+    \item Thus the horizontal axis $\Delta/\Omega$ in \reffig{fig:eigensystem_schematic} is a proxy for $\Delta B$, and $\omega_{12}$ at $q=\qmagic$ has leading-order quartic sensitivity to $\Delta B$.
+    \item At high fields ($B\approx 30\unit{G}$) this approximation is no longer valid; $q \approx \qmagic$ varies appreciably across $\Delta B \in [0, B_{\text{rf}}]$ and $\omega_{12}$ has weak linear dependence on $\Delta B$~\cite{lundblad_pseudo_2017}.
     \item \emph{On varying $\Omega$ or $q$ to change $q_R=q/\Omega$:}
     For a given static magnetic field, $q_R$ can be modified via the Rabi frequency.
     However, this is not what is represented in \reffig{fig:eigensystem_schematic}, as the normalization of the horizontal and vertical axes would vary for each $q_R$.
