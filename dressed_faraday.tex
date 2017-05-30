@@ -158,20 +158,20 @@ Hamiltonians (quasi-static field along $z$, coupling field along $x$:
 \caption{Upper sidebands of the carrier (at $\omega_{\text{rf}}$) of the Faraday rotation signal $\propto \expect{\hat{F}_x}$ of a state $\ket{\psi(t=0)}=\ket{m=1}$ driven on resonance ($\Delta = 0$) in the laboratory frame. Frequency and phase are reported relative to the carrier, along with the transition that each sideband corresponds to. For each upper sideband, there is a lower sideband of the same amplitude, relative frequency and opposite \note{$\pi$} relative phase.}
 \label{tab:sidebands}
 \begin{tabular}{cccc}
-frequency & phase & amplitude & transition \\ \hhline{====}
- $0$ & $-\pi$ & $\frac{q_D \Omega }{2 \omega_D^2}$ & -- \\
- $\omega_D-q_D$ & $0$ & $\frac{\Omega}{4 \omega_D}$ & $\ket{1} \leftrightarrow \ket{2}$ \\
- $\omega_D+q_D$ & $0$ & $\frac{\Omega}{4 \omega_D}$ & $\ket{2} \leftrightarrow \ket{3}$\\
- $2 \omega_D$ & $0$ & $\frac{q_D \Omega}{4 \omega_D^2}$ & $\ket{1} \leftrightarrow \ket{3}$
+frequency & amplitude & transition \\ \hhline{====}
+ $0$ & $\frac{q_D \Omega }{2 \omega_D^2}$ & -- \\
+ $\omega_D-q_D$ & $\frac{\Omega}{4 \omega_D}$ & $\ket{1} \leftrightarrow \ket{2}$ \\
+ $\omega_D+q_D$ & $\frac{\Omega}{4 \omega_D}$ & $\ket{2} \leftrightarrow \ket{3}$\\
+ $2 \omega_D$ & $\frac{q_D \Omega}{4 \omega_D^2}$ & $\ket{1} \leftrightarrow \ket{3}$
 \end{tabular}
 \end{table}
-
-The Faraday signal we detect is proportional to $\expect{\hat{F}_x}$ in the laboratory frame, which is given by $\bra{\psi}\hat{S}^{\dagger} \hat{F}_x \hat{S} \ket{\psi}$ where $\hat{S} = \exp(-i \omega_{\text{rf}} \hat{F}_z t)$. For an initially polarized $\ket{\psi(t=0)} = \ket{m=1}$ state driven on resonance, we get
+The Faraday signal we detect is proportional to $\expect{\hat{F}_x}$ in the laboratory frame, which is given by $\bra{\psi(t)}\hat{S}^{\dagger} \hat{F}_x \hat{S} \ket{\psi(t)}$ where $\ket{\psi(t)} = \exp(-i \hat{H}_{\text{rwa}} t/\hbar) \ket{\psi(t=0)}$, and $\hat{S} = \exp(-i \omega_{\text{rf}} \hat{F}_z t)$.
+For an initially polarized $\ket{\psi(t=0)} = \ket{m=1}$ state driven on resonance, we get
     \begin{align*}
         \expect{\hat{F}_x}_{\text{lab}} &= -\frac{\Omega}{\omega_D} \cos(q_D t) \sin(\omega_D t) \sin(\omega_{\text{rf}} t) - \\ &\frac{q_D \Omega}{\omega_D^2} \sin^2(\omega_D t) \cos(\omega_{\text{rf}} t) \, .
     \end{align*}
-The first term (in quadrature with the carrier at $\omega_{\text{rf}}$) has equal-amplitude sidebands at $\pm(\omega_D \pm q_D)$ and the second term (in phase with the carrier) has smaller amplitude sidebands at $\pm 2\omega_D$.
-
+The first term has equal-amplitude sidebands at $\pm(\omega_D \pm q_D)$ and the second term has smaller amplitude sidebands at $\pm 2\omega_D$.
+;
 \section{apparatus}
 \label{sec:apparatus}
 Our spinor quantum gas apparatus~\cite{wood_magnetic_2015} and Faraday atom-light interface are described in greater detail elsewhere~\cite{martijn_faraday_2017}.
