@@ -14,12 +14,12 @@
 \date{\today}
 
 \begin{abstract}
-Quantum systems can be engineered so that their spectra are sensitive to a particular measurand whilst simultaneously impervious to parasitic fluctuations of an environment.
-Here we use a minimally perturbative atom-light interface to study the dressed-state energy spectrum of a spin-1 quantum gas continuously and in-situ.
-The spins are coupled by a radio-frequency field, whose amplitude sets the frequency band in which oscillating magnetic fields manifest a linear measurand, and we probe the energy spectrum while the system evolves unitarily.
+Quantum states and spectra can be made sensitive to a particular measurand whilst simultaneously impervious to parasitic fluctuations of an environment.
+Here we use an atom-light interface with minimal backaction to probe the spectrum of a radiofrequency-dressed spin-1 quantum gas continuously and in-situ.
+The dressing amplitude sets the radiofrequency band in which oscillating magnetic fields manifest a linear measurand, and we probe the energy spectrum while the system evolves unitarily.
 By varying a symmetry-breaking parameter of the Hamiltonian, we find a regime in which two of the dressed states are maximally insensitive (up to fourth-order) in magnetic field fluctuations that are slow compared to the dressed-state splittings.
-Moreover, we demonstrate the predictive power of our continuous probe to tune the measurement band and optimize the dynamical decoupling.
-This robust system shares the useful hallmarks of quantum metrology platforms; the states are thus termed ``pseudo-clock'' states in a co-published result by Lundblad~\emph{et al.} (Phys. Rev. Lett. \textbf{118}, 2xxxxx (2017)) and are candidates for band-tunable magnetometry and color charge analogues in quantum gases. 
+Moreover, we demonstrate the predictive power of our continuous probe to optimize the dynamical decoupling and tune the measurement band.
+This robust system shares the useful hallmarks of quantum metrology platforms; the states are thus termed ``synthetic clock'' states in a co-published result by Lundblad~\emph{et al.} (Phys. Rev. Lett. \textbf{118}, 2xxxxx (2017)) and are candidates for band-tunable magnetometry and color charge analogues in quantum gases. 
 \end{abstract}
 
 \maketitle
@@ -27,8 +27,8 @@ This robust system shares the useful hallmarks of quantum metrology platforms; t
 \section{Introduction}
 \label{sec:introduction}
 \begin{itemize}
-    \item Minimally insensitive states in other systems, e.g. $\ket{F=1,m=-1} \leftrightarrow \ket{F=2,m=+1}$ at $B=3.23\unit{G}$~\cite{matthews_dynamical_1998}, and variants thereof (including those insensitive to Rabi frequency variations reported on at Otago in 2016).
-    \item Wide utility of these states for clocks, magnetometers (including microwave, e.g. Treutlein), quantum information, and quantum emulation, e.g. elusive many-body spin-singlet state which requires unforgiving field stability or dynamical decoupling.
+    \item Minimally insensitive states in other systems, e.g. $\ket{F=1,m=-1} \leftrightarrow \ket{F=2,m=+1}$ at $B=3.23\unit{G}$~\cite{matthews_dynamical_1998}, clocks.
+    \item Wide utility of these states for clocks, magnetometers (including microwave, e.g. Treutlein), quantum information, and quantum emulation, e.g. elusive many-body spin-singlet state which requires unforgiving field stability.
     \item General message of making the eigenspectrum insensitive to one thing while retaining sensitivity to another; quantum version of common-mode rejection.
     \item Dynamical decoupling in this context.
 
@@ -50,7 +50,8 @@ This robust system shares the useful hallmarks of quantum metrology platforms; t
     \item Motivate continuous measurement, especially in context of measurement bandwidth; it doesn't make sense to measure something in kHz--MHz band using a shot-based ($0.1\unit{Hz}$ or less) readout. Why? Can't react, can't feedback, can't always assume periodicity/repeatability.
     \item Whilst the paper is not focused on introducing spectrograms, we can say they provide a new mechanism for measuring the dressed energy spectrum of quantum systems in the continuous domain. 
     \item From magnetometry perspective, breaking rotational symmetry is bad because you want there to be no anisotropy to the sensitivity. How does this relate to this work?
-    \item The parameter $q$ has been tuned using static magnetic fields and with microwave ac Stark shifts of an off-resonantly driven hyperfine transition, to e.g. to traverse the magnetic phase space of a spinor quantum gas, driving quantum quenches, etc.
+    \item (How) The $\hat{F}_z^2$ interaction has been controlled using static magnetic fields, microwave ac Stark shifts and tensor-light shifts of off-resonant magnetic and electric dipole transitions, respectively. 
+    \item (What) This nonlinear term has been used to traverse the magnetic phase space of a spinor quantum gas, drive quantum quenches of same, initiate \note{blah, Bloch}, enact spin-squeezing (shear of coherent spin states),     
     \item Paramagnetic Faraday effect has been used to continuously measure spin-mixing dynamics of a polar spinor condensate~\cite{liu_quantum_2009}, and in concert with $\hat{F}_z^2$ can be used to estimate the density-matrix for arbitrary spin systems~\cite{smith_continuous_2004}.
     \item Spin-orbit coupled spin-1 Bose gases exhibit e.g. tricriticality in $(\Omega, q)$ phase diagrams~\cite{martone_tricriticalities_2016}, where the optimal decoupling $q = \qRmagic \Omega$ is a line traversing multiple phases, in the vicinity of a tricritical point of polar-striped and plane-wave phases. Although here the wavevector of the coupling is zero, the essential results may carry over, and the Faraday probe -- used to detect magnetization -- could constitute one of the Raman beams used to generate the spin-orbit coupling.
 \end{itemize}
@@ -100,7 +101,7 @@ Hamiltonians (quasi-static field along $z$, coupling field along $x$:
     However, this is not what is represented in \reffig{fig:eigensystem_schematic}, as the normalization of the horizontal and vertical axes would vary for each $q_R$.
     Importantly, the insensitivity of $\omega_{12}$ to detuning only gets better for increasing $\Omega$ in absolute terms; if the rf amplitude is unlimited, use it.
     However, doing so also modifies the absolute dressed state splittings on resonance, and thus the bandwidth of the dressed spin-1 as an ac magnetometer.
-    The take home message is then: use as high an rf amplitude as you can afford (or want to tune the ac-band to), and then modify $q_R$ via $q$ to realize the pseudo-clock states.
+    The take home message is then: use as high an rf amplitude as you can afford (or want to tune the ac-band to), and then modify $q_R$ via $q$ to realize the synthetic clock states.
     \item \textit{Transitions between dressed states:} $\ket{1} \leftrightarrow \ket{2}$ and $\ket{2} \leftrightarrow \ket{3}$ driven by fields oscillating along $y$ or $z$ near frequencies $\omega_D \mp q_D$, respectively.
     Alternatively, $\ket{1} \leftrightarrow \ket{3}$ driven by fields oscillating along $x$ near frequency $2\omega_D$.
     This is very different to the fully polarized bare states $\ket{m=\pm 1}$, which are coupled by a single-photon transition as this would conserve neither photon number nor angular momentum.
@@ -195,7 +196,7 @@ The former would enact a dipole force on the cloud, perturbing its total density
     \caption{
     \label{fig:curvature_vs_qR}
         (Color online)
-        Curvature of the pseudo-clock transition for various quadratic shifts $q_R \in [0.2, 0.5]$.
+        Curvature of the synthetic clock transition for various quadratic shifts $q_R \in [0.2, 0.5]$.
         The measured curvature (black points) was determined from polynomial fitting to $(\Delta B, f_{12})$ data shown in \reffig{fig:acquisition_pipeline}(B).
         Vertical and horizontal error bars correspond to the standard error of the regression and uncertainty in $q_R$ (via $u(q)$ and $u(\Omega)$ at each field $B_0$), respectively.
         A linear fit (black, dashed) with 1--sigma confidence band (gray, shaded) are shown, whose intercept can be used to impute $\qRmagic\text{ (expt.)} = 0.350(6)$.
