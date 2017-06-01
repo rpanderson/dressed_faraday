@@ -11,7 +11,7 @@ os.chdir(base_folder)
 
 # Parameters
 bibfile = 'dressed_faraday.bib'
-bibfix_only = True
+bibfix_only = False
 API_KEY = '6ZeKc1MGmP2pGjZCM5lJ363C'
 GROUP_ID = '1276'
 COLLECTION_ID = 'DRJ6GPQG'
