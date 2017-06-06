@@ -8,6 +8,7 @@
 \usepackage{xspace}
 \usepackage{units}
 \usepackage{hhline}
+\usepackage[vskip=0pt]{quoting}
 \usepackage[colorlinks,urlcolor=blue,citecolor=blue,linkcolor=blue]{hyperref}
 \graphicspath{{figures/}}
 \renewcommand{\arraystretch}{1.5}
@@ -28,16 +29,16 @@
 \newcommand{\upd}{\text{d}}
 \newcommand{\totalD}[2]{\frac{\upd #1}{\upd #2}}
 \newcommand{\partialD}[2]{\frac{\partial #1}{\partial #2}}
-\newcommand{\vecop}[1]{\hat{\bum{#1}}\xspace}
+\newcommand{\vecop}[1]{\hat{\mathbf{#1}}\xspace}
 \newcommand{\expect}[1]{\langle #1 \rangle}
 \newcommand{\abs}[1]{\vert #1 \vert \xspace}
 \newcommand{\bra}[1]{\langle #1 \vert \xspace}
 \newcommand{\ket}[1]{\vert #1 \rangle \xspace}
 \newcommand{\braket}[2]{\langle #1 \vert #2 \rangle \xspace}
-\newcommand{\vect}[1]{\boldsymbol{#1}\xspace}
-\newcommand{\uvect}[1]{\hat{\boldsymbol{#1}}\xspace}
-\newcommand{\epvec}{\hat{\boldsymbol{\epsilon}}\xspace}
-\newcommand{\jvect}{\boldsymbol{\tilde{E}}\xspace}
+\newcommand{\vect}[1]{\mathbf{#1}\xspace}
+\newcommand{\uvect}[1]{\hat{\mathbf{#1}}\xspace}
+\newcommand{\epvec}{\hat{\mathbf{\epsilon}}\xspace}
+\newcommand{\jvect}{\mathbf{\tilde{E}}\xspace}
 
 % Underscores in text (from http://tex.stackexchange.com/a/38720)
 \catcode`_=12
