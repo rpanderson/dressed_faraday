@@ -90,8 +90,10 @@ Hamiltonians (quasi-static field along $z$, coupling field along $x$:
         \omega_L(B) &\equiv (E_{m=-1} - E_{m=+1})/2\hbar \, \text{, and} \\
         q(B) &\equiv (E_{m=+1} + E_{m=-1} - 2 E_{m=0})/2\hbar
     \end{align*}
-    are the Larmor frequency and quadratic shift, respectively, which can be gleaned from the Breit-Rabi equation.
-    The rf Rabi frequency $\Omega = \gamma B_{\text{rf}}/2$ and detuning $\Delta(B) = \omega_{\text{rf}} - \omega_L(B)$.
+are the Larmor frequency and quadratic shift, respectively, which can be gleaned from the Breit-Rabi equation.
+The rf Rabi frequency $\Omega = \gamma B_{\text{rf}}/2$ and detuning $\Delta(B) = \omega_{\text{rf}} - \omega_L(B)$.
+
+The control field $\vect{B}(t \geq 0) = B_{\text{rf}} \cos (\omega_{\text{rf}} t) \vect{e}_x + B_z(t) \vect{e}_z$, where $B_z(t) = B_0 + \alpha t + B_{\text{ac}}(t)$ is the sum of a linear ramp and parasitic power-line magnetic noise.
 
 \begin{figure}
     \centering
@@ -200,8 +202,30 @@ For an initially polarized $\ket{\psi(t=0)} = \ket{m=1}$ state driven on resonan
     \begin{align*}
         \expect{\hat{F}_x}_{\text{lab}} &= -\frac{\Omega}{\omega_D} \cos(q_D t) \sin(\omega_D t) \sin(\omega_{\text{rf}} t) - \\ &\frac{q_D \Omega}{\omega_D^2} \sin^2(\omega_D t) \cos(\omega_{\text{rf}} t) \, .
     \end{align*}
-The first term has equal-amplitude sidebands at $\pm(\omega_D \pm q_D)$ and the second term has smaller amplitude sidebands at $\pm 2\omega_D$.
-;
+The first term has equal-amplitude sidebands at $\pm(\omega_D \pm q_D)$ and the second term has smaller amplitude sidebands at $\pm 2\omega_D$, as summarized in Table~\ref{tab:sidebands}.
+The ratio of the $\omega_{13}$ sideband amplitude to the $\omega_{12}$ and $\omega_{23}$) sideband amplitudes is $q_R/\sqrt{4+q_R^2} \approx 0.197$ for $q_R = 0.402$ in \reffig{fig:acquisition_pipeline}.
+For the data in \reffig{fig:static_coupling} we measure the ratio of sideband amplitudes to be $0.699$ and $0.210$ of the $\omega_{23}$ and $\omega_{13}$ peaks relative to the $\omega_{12}$ peak respectively.
+The rf-dressing is applied non-adiabitcally, and as a result we project $\ket{m=-1}$ onto the dressed basis at the initial detuning $\Delta(t=0)$ into a state
+\begin{equation*}
+    \begin{pmatrix}
+        \braket{1}{\psi(t=0)} \\
+        \braket{2}{\psi(t=0)} \\
+        \braket{3}{\psi(t=0)} 
+    \end{pmatrix} \approx 
+    \begin{pmatrix}
+        \frac{1}{\sqrt{4 + q_R \left(q_R + \sqrt{q_R^2+4}\right)}} \\
+        -\frac{1}{\sqrt{2}} \\
+        \frac{1}{\sqrt{4 + q_R \left(q_R - \sqrt{q_R^2+4}\right)}}
+    \end{pmatrix}
+\end{equation*}
+for $\Delta(t=0) \ll \Omega$.
+In the adiabatic limit, the dressed state populations remain constant and the above superposition evolves under phase acquisition $e^{-i \omega_i t}$ by each dressed state $\ket{i}$~\cite{messiah_quantum_1962}. 
+We quantify the stasis of the dressed superposition using the generalized adiabatic parameter $\Gamma \equiv \abs{\vect{\Omega}(t)/\dot{\theta}(t)}$, where $\vect{\Omega} = \vect{B}_{\text{eff}} / \gamma \equiv \Omega \, \vect{e}_x + \Delta \, \vect{e}_x$ and $\tan \theta \equiv \Omega / \Delta$.
+For constant coupling amplitude $\dot{\Omega} = 0$, $\dot{\theta}(t) = -\Omega \dot{\Delta}(t)/\abs{\vect{\Omega}}^2$.
+For the magnetic field sweeps used here, $\Gamma > 200$ and $\sqrt{\expect{\Gamma^2}}_t \gtrsim 600$ where $\expect{\cdot}_t$ denotes the time-average over the duration of the sweep.
+Nevertheless, the continuous spectra when plotted parametrically (\reffig{fig:acquisition_pipeline}(bottom)) exibit some evidence of non-adiabatic following.
+This is corroborated by numerically integrating the Schr\"{o}dinger equation of the known control Hamiltonian; the dressed state populations vary slowly (compared to $\omega_D^{-1}$) but by a few percent near minima of $\Gamma(t)$, i.e. when the sweep is least adiabatic. 
+
 \section{apparatus}
 \label{sec:apparatus}
 Our spinor quantum gas apparatus~\cite{wood_magnetic_2015} and Faraday atom-light interface are described in greater detail elsewhere~\cite{jasperse_magic-wavelength_2017}.
@@ -238,7 +262,7 @@ As we seek to appraise the robustness of the rf-dressed states to varying magnet
 The time-dependent magnetic field shift $\Delta B(t)$ is the sum of an applied linear ramp and the parasitic background fluctuations at the power-line frequency of $50\unit{Hz}$ and its odd harmonics, and typically ranges from $0$ ($\Delta = 0$, resonance) to $B_{\text{rf}}$ ($\Delta = 2\Omega$), \emph{cf.} \reffig{fig:eigensystem_schematic}.
 For each realization (or `shot') of the experiment, we directly calibrate this time-dependent field using ac magnetometry; an rf $\pi/2$-pulse (rather than continuous coupling) initiates Larmor precession of the collective spin the $x$--$y$ plane, and the Faraday signal is composed of two tones, at $\omega_\pm = \omega_L \pm q$.
 For $q \, \tau_f \geq 2\pi$, where $\tau_f$ is the length of the overlapping spectrogram windows, the two tones are spectrally resolved and their mean and difference yields the instantaneous $\omega_L(t)$ and $q(t)$, the former of which is used to find $\Delta B(t)$ by inverting the Breit-Rabi equation~\cite{ramsey_molecular_1956}. 
-The experiment is synchronized to the AC power line; the harmonic composition of which varies little between contiguous shots ($20\unit{s}$ apart), and thus the measured $\Delta B(t)$ and $q(t)$ from the calibration shot serve as a good proxy for the values experienced by the atoms in the subsequent rf-dressed shot.
+The experiment is synchronized to the AC power line; the harmonic composition of which varies little between contiguous shots ($20\unit{s}$ apart), and thus the measured $\Delta B(t)$ and $q(t)$ from the calibration \note{fiducial?} shot serve as a good proxy for the values experienced by the atoms in the subsequent rf-dressed shot.
 
 We measured the dressed spectrum for a range of $q_R \in [0.2, 0.5]$ by varying the resonant magnetic field $B_0$ [applied rf frequency $f_{\text{rf}}$] from $3.549\unit{G}$ [$2.493\unit{MHz}$] to $5.568\unit{G}$ [$3.911\unit{MHz}$], with a fixed Rabi frequency of $\Omega/(2\pi) = 4.505(3)\unit{kHz}$ ($B_{\text{rf}} = 12.83(1)\unit{mG}$).
 For each resonant field $B_0$, we ensured the Rabi frequency was fixed by measuring the voltage drop across the coil at $f_{\text{rf}}$ with a lock-in amplifier which -- in concert with an impedance analyzer -- could be used to ensure the rf current in the coil and thus $B_{\text{rf}}$ and $\Omega$ were constant. 
