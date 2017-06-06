@@ -1,83 +1,155 @@
-# Run this after running analysislib.spinor.faraday.analyse_dressed_spectroscopy in an interactive session
+# make figure of long spectrogram
 
-from faraday_aux import load_stft, plot_stft
-# plt.rc('font', family='serif')
-# plt.rcParams['axes.linewidth'] = 1.2 #set the value globally
+from numpy import sqrt, pi, argsort, 
+import matplotlib.pyplot as plt
+from matplotlib import gridspec
+from faraday_aux import get_alazar_trace, load_stft, plot_stft
+import pandas as pd
+from lmfit.model import Model
+from lmfit.models import SkewedGaussianModel, ConstantModel, GaussianModel
+import peakutils
+from peakutils.plot import plot as pplot
 
-c1  = (1, 1./3, 1./3)
-c2  = (1./3, 1./3, 1)
-c3  = (1./3, 1, 1./3)
-c12 = (2./3, 1./3, 2./3)
-c23 = (1./3, 2./3, 2./3)
-c13 = (2./3, 2./3, 1./3)
 
-def spectrogram_overlay(i, range=[2.75, 5.25], save_plot=True, show_plot=True, figsize=(9, 14),
-                        dBmin=0e-3, dBmax=8e-3, tmin=0e-3, tmax=80e-3, xmin=30e-3, xmax=90e-3):
-    df = all_df[i]
-    u_df = all_u_df[i]
-    frf = all_results[i]['frf']
-    f0 = df.loc[xmin:xmin+1e-3].fL.values[0]+1*all_results[i]['q']
-    results = all_results[i]
+# Fit 7 skewed Gaussain functions using hack on multipeaks 
+def fitNpeaks(f, y, npeaks=5, thres=0.02, min_dist=5, width=300,
+			  plot_prefix=None, model=SkewedGaussianModel, offset=True):
 
-    # Composite figure
-    plt.figure(figsize=figsize)
-    
-    # Calibration shot
-    ax0 = plt.subplot(311)
-    t, f, stft, globs = load_stft(os.path.join(expt_folder, shots[i][0]), all_globals=True)
-    plot_stft(stft, t, f, cmap='gray_r', range=range)
-    ((df.fL + df.q)/1e3).plot(ax=ax0, label=r'$f_{L}+q$', c='gold', yerr=u_df.fL/1e3)
-    ((df.fL - df.q)/1e3).plot(ax=ax0, label=r'$f_{L}-q$', c='chocolate', yerr=u_df.fL/1e3)
-    plt.axis(ymin=f0/1e3-6.25, ymax=f0/1e3+6.25)
-    ax0.legend(shadow=True, numpoints=1, loc='lower right')
-    plt.ylabel('frequency (kHz)')
+	# Guess initial peak centres using peakutils
+	indexes = peakutils.indexes(y, thres=thres, min_dist=min_dist)
+	peaksfound = len(indexes)
+	assert peaksfound >= npeaks, "Looking for %s or more peaks only found %s of them!" %(npeaks, peaksfound)
+	peak_f = peakutils.interpolate(f, y, ind=indexes)
+	
+	# Oder peaks by decreaing height and keep only the first npeaks
+	peak_heights = indexes
+	peak_order = peak_heights.argsort()[::-1]
+	peak_heights = peak_heights[peak_order[:npeaks]]
+	peak_f = peak_f[peak_order[:npeaks]]
+	amplitude_scale = 1.0
+	peak_amplitudes = peak_heights * amplitude_scale       # This is lmfit's annoying definition of a Gaussian `amplitude'
+	print('Initial peaks guessed at ', peak_f)
 
-    # Dressed plot
-    ax1 = plt.subplot(312, sharex=ax0)
-    t, f, stft, globs = load_stft(os.path.join(expt_folder, shots[i][1]), all_globals=True)
-    plot_stft(stft, t, f, cmap='gray_r', range=range)
-    # ax = plt.gca()
-    ((df.f13_theory+frf)/1e3).plot(ax=ax1, label=r'$f_{\mathrm{rf}} + f_{13}$', c=c13, lw=2) #\,\mathrm{ (theory)}$')
-    ((df.f12_theory+frf)/1e3).plot(ax=ax1, label=r'$f_{\mathrm{rf}} + f_{12}$', c=c12, lw=2) #\,\mathrm{(theory)}$')
-    # ((df.f12+frf)/1e3).plot(ax=ax, yerr=all_u_df[i]/1e3, c='g', ecolor='g', label=r'$f_{12}\,\mathrm{(expt.)}$')
-    ((df.f23_theory+frf)/1e3).plot(ax=ax1, label=r'$f_{\mathrm{rf}} + f_{23}$', c=c23, lw=2) #\,\mathrm{ (theory)}$')
-    # ((df.f23+frf)/1e3).plot(ax=ax, yerr=all_u_df[i]/1e3, c='c', ecolor='c', label=r'$f_{23}\,\mathrm{(expt.)}$')
-    plt.axhline(frf/1e3, ls='--', lw=2, c='orange', label=r'$f_{\mathrm{rf}}$')
-    plt.xlabel('time (s)')
-    plt.ylabel('frequency (kHz)')
-    plt.axis(xmin=xmin, xmax=xmax, ymin=frf/1e3-0.1, ymax=frf/1e3+12.5)
-    ds = shots[i][1].split('_')[0]
-    # plt.title(r'{:}; $q_R$ = {:}'.format(ds, format_unc(all_results[i]['qR'], all_results[i]['u_qR'])))
-    ax1.legend(shadow=True, numpoints=1, loc='upper right')
+	# Make multipeak model
+	peaks = []
+	for i in range(npeaks):
+		prefix = 'g{:d}_'.format(i+1)
+		peaks.append(model(prefix=prefix))
+		if i == 0:
+			pars = peaks[i].make_params(x=f)
+		else:
+			pars.update(peaks[i].make_params())
+		if model==SkewedGaussianModel:
+			pars[prefix + 'center'].set(peak_f[i], min=f.min(), max=f.max())
+			pars[prefix + 'sigma'].set(width, min=0.1*width, max=10*width)
+			pars[prefix + 'gamma'].set(0, min=-5, max=5)
+			pars[prefix + 'amplitude'].set(peak_amplitudes[i])
+		elif model == GaussianModel:
+			pars[prefix + 'center'].set(peak_f[i], min=f.min(), max=f.max())
+			pars[prefix + 'sigma'].set(width, min=0.1*width, max=10*width)
+			pars[prefix + 'amplitude'].set(peak_amplitudes[i])
+	model = peaks[0]
+	for i in range(1, npeaks):
+		model += peaks[i]
+	
+	if offset:
+		model+=ConstantModel()
+		pars.update(ConstantModel().make_params())
+		pars['c'].set(0)
+	# Fit first spectrum, creating the ModelResult object which will be used over and over
+	fit = model.fit(y, pars, x=f)
+	return fit
 
-    # Parametric plot
-    ax2 = plt.subplot(313)
-    subdf = df.loc[tmin:tmax].dropna()
-    u_subdf = u_df.loc[tmin:tmax].dropna()
 
-    # Compute theoretical splittings -- with uniformly sampled dB (for plotting)
-    dB_p = np.linspace(dBmin, dBmax, 200)
-    B_p = all_results[i]['B0'] + dB_p
-    fL_p = map(mean_splitting, B_p) 
-    detuning_p = all_results[i]['frf'] - fL_p
-    splittings_p = np.array([splittings(all_results[i]['q'], all_results[i]['fR'], delta) for delta in detuning_p])
-    f12_p, f23_p, f13_p = splittings_p.T
-    dB_mG = 1e3*subdf.dB.values
-    u_dB_mG = 1e3*u_subdf.dB.values
-    plt.errorbar(dB_mG, subdf.f23.values/1e3, xerr=u_dB_mG, yerr=u_subdf.f23.values/1e3, label=r'$f_{23}$ (expt.)', fmt='o', c=c23, ecolor=c23)
-    plt.plot(1e3*dB_p, f23_p/1e3, label='$f_{23}$ (theory)', c=c23)
-    plt.errorbar(dB_mG, subdf.f12.values/1e3, xerr=u_dB_mG, yerr=u_subdf.f12.values/1e3, label=r'$f_{12}$ (expt.)', fmt='o', c=c12, ecolor=c12)
-    plt.plot(1e3*dB_p, f12_p/1e3, label='$f_{12}$ (theory)', c=c12)
-    plt.xlabel(r'$\Delta B$ (mG)')
-    plt.ylabel(r'splitting, $f_{ij}$ (kHz)')
-    ax2.axis(xmin=1e3*dBmin, xmax=1e3*dBmax, ymin=3, ymax=8)
-    # plt.title(plot_title)
-    ax2.legend(shadow=True, numpoints=1, loc='lower right')
-    plt.subplots_adjust(hspace=.1)
-    plt.tight_layout()
+# Set path of shot 
 
-    if save_plot:
-        plt.savefig('plots/spectrogram/{:}_spectrogram.png'.format(ds))
-        plt.savefig('plots/spectrogram/{:}_spectrogram.pdf'.format(ds))
-    if show_plot:
-        plt.show()
+path = 'Z:\\Experiments\\spinor\\crossed_beam_bec\\2017\\05\\16\\20170516T172033_crossed_beam_bec_0.h5'
+
+t, f, stft_whole, globs = load_stft(path, all_globals=True)
+ti, V, globs = get_alazar_trace(path, tmax=1)
+
+# Filter stft to ignore pre tip 
+t_pulse = globs['hobbs_settle'] + globs['faraday_pre_tip_wait']+0.01
+t_sub = t[t >= t_pulse][:-1]
+stft_sub = stft_whole[t >= t_pulse][:-1]
+
+# Sampling rate is 
+fs = 20e6
+
+# Create moving average of peaks
+Pxx = (sum(stft_sub,0)/len(stft_sub[0]))
+Pxx /=max(Pxx)
+
+# Fit 7 peaks to moving average with gaussian model
+fitG = fitNpeaks(f, Pxx, npeaks=7, thres=0.01, model=GaussianModel, offset=False)
+paramsG = [fitG.best_values]
+var_namesG = fitG.var_names
+u_paramsG = [{var: fitG.params[var].stderr for var in var_namesG}]
+
+Pxx_fitG = fitG.eval()
+
+# Include offset for visual purposes
+fitO = fitNpeaks(f, Pxx, npeaks=7, thres=0.01)
+paramsO = [fitO.best_values]
+var_namesO = fitO.var_names
+u_paramsO = [{var: fitO.params[var].stderr for var in var_namesO}]
+
+Pxx_fitO = fitO.eval()
+
+# Fit N peaks using skewed Gaussian model
+fit = fitNpeaks(f, Pxx, npeaks=7, thres=0.01, offset=False)
+params = [fit.best_values]
+var_names = fit.var_names
+u_params = [{var: fit.params[var].stderr for var in var_names}]
+
+Pxx_fit = fit.eval()
+
+# Order peaks
+center_keys = [key for key in fit.params.keys() if 'center' in key]
+peakvals = sorted([fit.params[key].value for key in center_keys])
+peakord = argsort([fit.params[key].value for key in center_keys])
+
+# Get sigma values for skewed peaks and gauss peaks
+sigmavalsG = [(fitG.params['g'+str(num+1)+'_sigma'].value, fitG.params['g'+str(num+1)+'_sigma'].stderr) for num in peakord]
+sigmavals = [(fit.params['g'+str(num+1)+'_sigma'].value, fit.params['g'+str(num+1)+'_sigma'].stderr) for num in peakord]
+
+# Calculate mean width of 23 peaks
+avgsig23 = (sigmavalsG[1][0]+sigmavalsG[1][0])/2
+u_avgsig23 = (sigmavalsG[1][1]+sigmavalsG[1][1])/2
+
+print "Mean E23 peak width = %.1f(%.1f)" %(avgsig23, u_avgsig23)
+
+# Calculate mean width of 12 peaks
+avgsig12 = (sigmavals[2][0]+sigmavals[4][0])/2
+u_avgsig12 = (sigmavals[2][1]+sigmavals[4][1])/2
+
+print "Mean E12 peak width = %.1f(%.1f)" %(avgsig12, u_avgsig12)
+
+# calculate mean skew of 12 peaks
+skewvals = [(fit.params['g'+str(num+1)+'_gamma'].value, fit.params['g'+str(num+1)+'_gamma'].stderr) for num in peakord]
+avgsk12 = (abs(skewvals[2][0])+abs(skewvals[4][0]))/2
+u_avgsk12 = (skewvals[2][1]+skewvals[4][1])/2
+
+print "Mean E12 skew = %.1f(%.1f)" %(avgsk12, u_avgsk12)
+
+# make figure
+plt.figure(figsize=(10,4))
+gs = gridspec.GridSpec(1, 2, width_ratios=[4, 1]) 
+
+ax0 = plt.subplot(gs[0])
+plot_stft(stft_sub, t_sub, f, range=[3,5], cmap = 'gray_r')
+# plt.ylim(f.min, 3.5325e3)
+plt.ylabel('Frequency (kHz)')
+plt.xlabel('time (s)')
+
+ax1 = plt.subplot(gs[1],sharey=ax0)
+plt.semilogx(Pxx, f/1e3, 'k.')
+plt.semilogx(Pxx_fitO, f/1e3, 'r')
+# plt.ylim(3.51e3, 3.5325e3)
+plt.setp(ax1.get_yticklabels(), visible=False)
+plt.xlim(8e-4,2)
+plt.tight_layout()
+plt.xlabel('Power (arb)')
+plt.subplots_adjust(wspace=.0)
+
+plt.show()
