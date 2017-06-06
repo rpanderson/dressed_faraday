@@ -29,12 +29,12 @@ This robust system shares the useful hallmarks of quantum metrology platforms; t
 \begin{itemize}
     \item Minimally insensitive states in other systems, e.g. $\ket{F=1,m=-1} \leftrightarrow \ket{F=2,m=+1}$ at $B=3.23\unit{G}$~\cite{matthews_dynamical_1998}, clocks.
     \item Wide utility of these states for clocks, magnetometers (including microwave, e.g. Treutlein), quantum information, and quantum emulation, e.g. elusive many-body spin-singlet state which requires unforgiving field stability.
-    \item General message of making the eigenspectrum insensitive to one thing while retaining sensitivity to another, and dynamical decoupling in this context.
+    \item General message of making the eigenspectrum insensitive to one thing while retaining sensitivity to another, and dynamical decoupling in this context. \note{Are the synthetic clock states an example of a \emph{protected qubit subspace}~\cite{aharon_general_2013}?}
     \item In electronically/magnetically sensitive spin experiments, magnetic field noise manifest as small perturbations $\Delta \hat{F}_{z}$ which shift the energy eigenvalues.
-    Continuous dynamical decoupling (CDD) occurs when the spin undergoes rotations in a plane perpendicular induce perturbation, i.e $\hat{F}_{x}$ or $\hat{F}_{x}$ most readily achieved through Rabi coupling where $\Omega \gg \Delta B$.
+    Continuous dynamical decoupling (CDD)~\cite{facchi_unification_2004,*fanchini_continuously_2007,*aharon_general_2013} occurs when the spin undergoes rotations in a plane perpendicular induce perturbation, i.e $\hat{F}_{x}$ or $\hat{F}_{x}$ most readily achieved through Rabi coupling where $\Omega \gg \Delta B$.
     Decoupling can be used to increase the coherence time of single qubits \cite{golter_protecting_2014} which can be extended even further by doubly dressing the system and decoupling from noise induced by the first coupling field \cite{cai_robust_2012}.
     It has also been shown theoretically that CDD is superior than pulsed sequence dynamical decoupling for single solid-state qubits for magnetometery \cite{hirose_continuous_2012}.
-    \note{There is a wealth of literature on this topic in NV. Should trace down the biggest results in this field and cite them.}
+    \note{There is a wealth of literature on this topic in NV. Should trace down the biggest results in this field and cite them~\cite{cai_long-lived_2012}.}
 \begin{figure}
     \centering
     \includegraphics[width=\columnwidth]{figure_1.pdf}
@@ -102,6 +102,7 @@ Hamiltonians (quasi-static field along $z$, coupling field along $x$:
     Skewed Gaussian curves are fitted to each peak resulting in a significant skew parameter of $\gamma = 2.4(1)$ for the $\omega_{23}$ splitting width $\sigma_{23} = 243(2)\unit{Hz}$. 
     The fit of the transition most decoupled from magnetic field fluctuations $\omega_{12}$ has a vanishing skew and is well approximated by a Gaussian of width $\sigma_{12} = 109(1)\unit{Hz}$.
     }
+\end{figure}
 
 The control field $\vect{B}(t \geq 0) = B_{\text{rf}} \cos (\omega_{\text{rf}} t) \vect{e}_x + B_z(t) \vect{e}_z$, where $B_z(t) = B_0 + \alpha t + B_{\text{ac}}(t)$ is the sum of a linear ramp and parasitic power-line magnetic noise.
 
