@@ -1,13 +1,12 @@
 # make figure of long spectrogram
 
-from numpy import sqrt, pi
+from numpy import sqrt, pi, argsort, 
 import matplotlib.pyplot as plt
 from matplotlib import gridspec
 from faraday_aux import get_alazar_trace, load_stft, plot_stft
 import pandas as pd
 from lmfit.model import Model
-from lmfit.models import SkewedGaussianModel, ConstantModel
-from lmfit import Parameters
+from lmfit.models import SkewedGaussianModel, ConstantModel, GaussianModel
 import peakutils
 from peakutils.plot import plot as pplot
 
@@ -40,10 +39,15 @@ def fitNpeaks(f, y, npeaks=5, thres=0.02, min_dist=5, width=300,
 			pars = peaks[i].make_params(x=f)
 		else:
 			pars.update(peaks[i].make_params())
-		pars[prefix + 'center'].set(peak_f[i], min=f.min(), max=f.max())
-		pars[prefix + 'sigma'].set(width, min=0.1*width, max=10*width)
-		pars[prefix + 'gamma'].set(0, min=-5, max=5)
-		pars[prefix + 'amplitude'].set(peak_amplitudes[i])
+		if model==SkewedGaussianModel:
+			pars[prefix + 'center'].set(peak_f[i], min=f.min(), max=f.max())
+			pars[prefix + 'sigma'].set(width, min=0.1*width, max=10*width)
+			pars[prefix + 'gamma'].set(0, min=-5, max=5)
+			pars[prefix + 'amplitude'].set(peak_amplitudes[i])
+		elif model == GaussianModel:
+			pars[prefix + 'center'].set(peak_f[i], min=f.min(), max=f.max())
+			pars[prefix + 'sigma'].set(width, min=0.1*width, max=10*width)
+			pars[prefix + 'amplitude'].set(peak_amplitudes[i])
 	model = peaks[0]
 	for i in range(1, npeaks):
 		model += peaks[i]
@@ -76,18 +80,57 @@ fs = 20e6
 Pxx = (sum(stft_sub,0)/len(stft_sub[0]))
 Pxx /=max(Pxx)
 
-# Fit 7 peaks to moving average with skewed gaussian model
-fit = fitNpeaks(f, Pxx, npeaks=7, thres=0.01)
+# Fit 7 peaks to moving average with gaussian model
+fitG = fitNpeaks(f, Pxx, npeaks=7, thres=0.01, model=GaussianModel, offset=False)
+paramsG = [fitG.best_values]
+var_namesG = fitG.var_names
+u_paramsG = [{var: fitG.params[var].stderr for var in var_namesG}]
+
+Pxx_fitG = fitG.eval()
+
+# Include offset for visual purposes
+fitO = fitNpeaks(f, Pxx, npeaks=7, thres=0.01)
+paramsO = [fitO.best_values]
+var_namesO = fitO.var_names
+u_paramsO = [{var: fitO.params[var].stderr for var in var_namesO}]
+
+Pxx_fitO = fitO.eval()
+
+# Fit N peaks using skewed Gaussian model
+fit = fitNpeaks(f, Pxx, npeaks=7, thres=0.01, offset=False)
 params = [fit.best_values]
 var_names = fit.var_names
 u_params = [{var: fit.params[var].stderr for var in var_names}]
 
 Pxx_fit = fit.eval()
 
-# df_params = pd.DataFrame(params, index=t_sub)
-# df_u_params = pd.DataFrame(u_params, index=t_sub)
+# Order peaks
+center_keys = [key for key in fit.params.keys() if 'center' in key]
+peakvals = sorted([fit.params[key].value for key in center_keys])
+peakord = argsort([fit.params[key].value for key in center_keys])
 
+# Get sigma values for skewed peaks and gauss peaks
+sigmavalsG = [(fitG.params['g'+str(num+1)+'_sigma'].value, fitG.params['g'+str(num+1)+'_sigma'].stderr) for num in peakord]
+sigmavals = [(fit.params['g'+str(num+1)+'_sigma'].value, fit.params['g'+str(num+1)+'_sigma'].stderr) for num in peakord]
 
+# Calculate mean width of 23 peaks
+avgsig23 = (sigmavalsG[1][0]+sigmavalsG[1][0])/2
+u_avgsig23 = (sigmavalsG[1][1]+sigmavalsG[1][1])/2
+
+print "Mean E23 peak width = %.1f(%.1f)" %(avgsig23, u_avgsig23)
+
+# Calculate mean width of 12 peaks
+avgsig12 = (sigmavals[2][0]+sigmavals[4][0])/2
+u_avgsig12 = (sigmavals[2][1]+sigmavals[4][1])/2
+
+print "Mean E12 peak width = %.1f(%.1f)" %(avgsig12, u_avgsig12)
+
+# calculate mean skew of 12 peaks
+skewvals = [(fit.params['g'+str(num+1)+'_gamma'].value, fit.params['g'+str(num+1)+'_gamma'].stderr) for num in peakord]
+avgsk12 = (abs(skewvals[2][0])+abs(skewvals[4][0]))/2
+u_avgsk12 = (skewvals[2][1]+skewvals[4][1])/2
+
+print "Mean E12 skew = %.1f(%.1f)" %(avgsk12, u_avgsk12)
 
 # make figure
 plt.figure(figsize=(10,4))
@@ -101,7 +144,7 @@ plt.xlabel('time (s)')
 
 ax1 = plt.subplot(gs[1],sharey=ax0)
 plt.semilogx(Pxx, f/1e3, 'k.')
-plt.semilogx(Pxx_fit, f/1e3, 'r')
+plt.semilogx(Pxx_fitO, f/1e3, 'r')
 # plt.ylim(3.51e3, 3.5325e3)
 plt.setp(ax1.get_yticklabels(), visible=False)
 plt.xlim(8e-4,2)
