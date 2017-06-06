@@ -27,6 +27,9 @@ try:
 		zot = zotero.Zotero(GROUP_ID, 'group', API_KEY)
 		zot.add_parameters(content='bibtex', order='dateAdded', limit=99)
 		items = zot.collection_items(COLLECTION_ID)
+
+		# Discard null items
+		items = [x for x in items if len(x)]
 		print 'Retrieved %i items from collection...' % len(items)
 
 		# Omit language entry (in techreport, this doesn't work in revtex4-1)
