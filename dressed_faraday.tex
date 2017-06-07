@@ -31,9 +31,9 @@ This robust system shares the useful hallmarks of quantum metrology platforms; t
     \item Wide utility of these states for clocks, magnetometers (including microwave, e.g. Treutlein), quantum information, and quantum emulation, e.g. elusive many-body spin-singlet state which requires unforgiving field stability.
     \item General message of making the eigenspectrum insensitive to one thing while retaining sensitivity to another, and dynamical decoupling in this context. \note{Are the synthetic clock states an example of a \textit{protected qubit subspace}~\cite{aharon_general_2013}?}
     \item In electronically/magnetically sensitive spin experiments, magnetic field noise manifest as small perturbations $\Delta \hat{F}_{z}$ which shift the energy eigenvalues.
-    Continuous dynamical decoupling (CDD)~\cite{facchi_unification_2004,*fanchini_continuously_2007,*aharon_general_2013} occurs when the spin undergoes rotations in a plane perpendicular induce perturbation, i.e $\hat{F}_{x}$ or $\hat{F}_{x}$ most readily achieved through Rabi coupling where $\Omega \gg \Delta B$.
-    Decoupling can be used to increase the coherence time of single qubits~\cite{golter_protecting_2014} which can be extended even further by doubly dressing the system and decoupling from noise induced by the first coupling field~\cite{cai_robust_2012}.
-    It has also been shown theoretically that CDD is superior than pulsed sequence dynamical decoupling for single solid-state qubits for magnetometery~\cite{hirose_continuous_2012}.
+    Continuous dynamical decoupling (CoDD)~\cite{facchi_unification_2004,*fanchini_continuously_2007,*aharon_general_2013} occurs when the spin undergoes rotations in a plane perpendicular induce perturbation, i.e $\hat{F}_{x}$ or $\hat{F}_{x}$ most readily achieved through Rabi coupling where $\Omega \gg \Delta B$.
+    Decoupling can be used to increase the coherence time of single qubits~\cite{golter_protecting_2014} which can be extended even further by doubly dressing the system and decoupling from noise induced by the first coupling field~\cite{cai_robust_2012} (concatenated continous decoupling, or CCD).
+    It has also been shown theoretically that CoDD is superior than pulsed sequence dynamical decoupling for single solid-state qubits for magnetometery~\cite{hirose_continuous_2012}.
     \note{There is a wealth of literature on this topic in NV. Should trace down the biggest results in this field and cite them~\cite{cai_long-lived_2012}.}
 \begin{figure}
     \centering
@@ -85,7 +85,7 @@ This robust system shares the useful hallmarks of quantum metrology platforms; t
 \label{sec:background}
 Hamiltonians (quasi-static field along $z$, coupling field along $x$:
     \begin{align*}
-        \hat{H}_{\text{lab}} &= -\omega_L \hat{F}_z + q \hat{F}_z^2 - 2\Omega \cos (\omega_{\text{rf}} t) \hat{F}_x \\
+        \hat{H}_{\text{lab}} &= -\omega_L \hat{F}_z + q \hat{F}_z^2 + 2\Omega \cos (\omega_{\text{rf}} t) \hat{F}_x \\
         \Rightarrow \hat{H}_{\text{rwa}} &= \Delta \hat{F}_z + q \hat{F}_z^2 + \Omega \hat{F}_x \, \text{, where} \\
         \omega_L(B) &\equiv (E_{m=-1} - E_{m=+1})/2\hbar \, \text{, and} \\
         q(B) &\equiv (E_{m=+1} + E_{m=-1} - 2 E_{m=0})/2\hbar
