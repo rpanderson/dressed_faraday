@@ -2,8 +2,8 @@
 
 from faraday_aux import load_stft, plot_stft
 plt.rcParams['axes.linewidth'] = 1.2 #set the value globally
-plt.rcParams['font.size'] = 16.0
-plt.rcParams['legend.fontsize'] = 16.0 # 'large'
+plt.rcParams['font.size'] = 20.0
+plt.rcParams['legend.fontsize'] = 18.0 # 'large'
 plt.rcParams['mathtext.fontset'] = 'stix' # 'cm'
 plt.rcParams['font.family'] = 'STIXGeneral' # [u'serif']
 
@@ -77,7 +77,7 @@ def spectrogram_overlay(i, range=[2.75, 5.25], save_plot=True, show_plot=True, f
     # plt.title(plot_title)
     ax2.legend(shadow=True, numpoints=1, loc='lower right')
     plt.subplots_adjust(hspace=.1)
-    plt.tight_layout()
+    plt.tight_layout(pad=0.2)
 
     if save_plot:
         plt.savefig('plots/spectrogram/{:}_spectrogram.png'.format(ds))
@@ -96,7 +96,7 @@ def spectrogram_overlay(i, range=[2.75, 5.25], save_plot=True, show_plot=True, f
     # ax.set_yticks([5.48, 5.50, 5.52, 5.54])
     ax.set_yticks([5.49, 5.51, 5.53])
     ax.tick_params(left=False, top=False, labelbottom=False, labeltop=False, labelleft=False, labelright=True)
-    plt.tight_layout()
+    plt.tight_layout(0.2)
     if save_plot:
         plt.savefig('plots/spectrogram/{:}_spectrogram_inset.png'.format(ds))
         plt.savefig('plots/spectrogram/{:}_spectrogram_inset.pdf'.format(ds))
