@@ -29,9 +29,10 @@ This robust system shares the useful hallmarks of quantum metrology platforms; t
 \begin{itemize}
     \item Minimally insensitive states in other systems, e.g. $\ket{F=1,m=-1} \leftrightarrow \ket{F=2,m=+1}$ at $B=\unit[3.23]{G}$~\cite{matthews_dynamical_1998}, clocks.
     \item Wide utility of these states for clocks, magnetometers (including microwave, e.g. Treutlein), quantum information, and quantum emulation, e.g. elusive many-body spin-singlet state which requires unforgiving field stability.
-    In electronically/magnetically sensitive spin experiments, magnetic field noise manifest as small perturbations $\Delta \hat{F}_{z}$ which shift the energy eigenvalues.
-    Continuous measurement of spin systems using the Faraday effect necessitate that your state is magnetically sensitive $\langle \hat{F} \rangle \neq 0$, but a protected dark state from magnetic field fluctuations must satisfy $\hat{F}_{z}\ket{\psi} = \hat{0}$ \cite{aharon_general_2013}. 
-    Therefore, no state exists that is both insensitive to magnetic fields fluctuations and capable of generating a continuous Faraday signal, the two are not mutually exclusive.
+    
+    \item In electronically/magnetically sensitive spin experiments, magnetic field noise manifest as small perturbations $\Delta \hat{F}_{z}$ which shift the energy eigenvalues.
+    Continuous measurement of and $F=1$ system using the Faraday effect necessitates the state be magnetically sensitive $\langle \hat{F} \rangle \neq 0$ but dark states, protected from magnetic field fluctuations only exist in the nullspace of $\hat{F}_{z}$ i.e. $\hat{F}_{z}\ket{\psi} = \hat{0}$ \cite{aharon_general_2013}. 
+    Therefore, no state exists which is both insensitive to magnetic fields fluctuations and capable of generating a continuous Faraday signal, the two are not mutually exclusive.
 
     It has been demonstrated that Continuous dynamical decoupling (CoDD)~\cite{facchi_unification_2004,*fanchini_continuously_2007} occurs when the spin undergoes rotations in a plane perpendicular induce perturbation, i.e $\hat{F}_{x}$ or $\hat{F}_{x}$ most readily achieved through Rabi coupling where $\Omega \gg \Delta B$.
     Decoupling can be used to increase the coherence time of single qubits~\cite{golter_protecting_2014} which can be extended even further by doubly dressing the system and decoupling from noise induced by the first coupling field~\cite{cai_robust_2012} (concatenated continous decoupling, or CCD).
@@ -85,6 +86,14 @@ This robust system shares the useful hallmarks of quantum metrology platforms; t
 
 \section{Background + random}
 \label{sec:background}
+\textit{Structure of background theory:}
+\begin{itemize}
+    \item Introduce Hamiltonian for CoDD (clock states have been introduced so splitting will come naturally).
+    \item Show eigenenergies of for varying $q$ and seperations.
+    \item Point out in figure that curvature of $\omega_{12}$ starts positive but becomes negative.
+    By mean value theorem, it must become vanishing.
+    \item Use second order perturbation theory to derive $\qmagic$.
+\end{itemize}
 Hamiltonians (quasi-static field along $z$, coupling field along $x$:
     \begin{align*}
         \hat{H}_{\text{lab}} &= -\omega_L \hat{F}_z + q \hat{F}_z^2 + 2\Omega \cos (\omega_{\text{rf}} t) \hat{F}_x \\
