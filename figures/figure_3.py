@@ -86,7 +86,7 @@ def spectrogram_overlay(i, range=[2.75, 5.25], save_plot=True, show_plot=True, f
         plt.show()
 
     # Draw inset over 3.2mG range
-    plt.figure(figsize=(3.85,1.9))
+    plt.figure(figsize=(3.71571,1.60502))
     ax = plt.subplot(111)
     plt.errorbar(dB_mG, subdf.f12.values/1e3, xerr=u_dB_mG, yerr=u_subdf.f12.values/1e3, label=r'$f_{12}$ (expt.)', fmt='o', c=c12, ecolor=c12)
     plt.plot(1e3*dB_p, f12_p/1e3, label='$f_{12}$ (theory)', c=c12)
