@@ -116,12 +116,13 @@ The control field $\vect{B}(t \geq 0) = -B_{\text{rf}} \cos (\omega_{\text{rf}} 
         (Color online)
         Acquisition and analysis pipeline of the continuous spectrum observation for $q_R = 0.402(3)$ ($f_{\text{rf}}=\unit[3.521]{MHz}$, $B_0=\unit[5.013]{G}$).
         The underlay of (A) and (B) are spectrograms of raw acquisitions from the polarimeter measuring Faraday rotation of the probe beam.
-        (A) Time-resolved magnetometry is used to calibrate the instantaneous magnetic field $B(t) = B_0 + \Delta B(t)$ over the interrogation interval, in which the field [detuning] varies over a range $\sim B_{\text{rf}}$ [$2\Omega$] and the spinor gas is left to Larmor precess in the absence of a dressing field.
-        We fit sinc peaks in the frequency domain for each spectrogram window (time domain) to determine $f_L(t)$ and $q(t)$.
-       (B) The field is swept over the same range but the radiofrequency dressing is applied.
+        (A) Time-resolved magnetometry is used to calibrate the instantaneous magnetic field $B(t) = B_0 + \Delta B(t)$ over the interrogation interval, in which the field [detuning] varies over a range $\sim B_{\text{rf}}$ [$2\Omega$] and the spinor gas is left to Larmor precess in the absence of a dressing field ($\Omega = 0$).
+        We fit sinc peaks in the frequency domain for each spectrogram window (time domain) to determine the instantaneous Larmor frequency $f_L(t)$ and quadratic shift $q(t)$.
+       (B) The field is swept over the same range but the radiofrequency dressing is applied ($\Omega > 0$).
        Three sidebands appear above (shown) and below the carrier at $f_{\text{rf}}$ (dashed, orange), revealing the dressed state splittings $\omega_{ij}$.
-       (C) A parametric plot of $\omega_{12}(t)$ and $\omega_{23}(t)$ versus $\Delta B(t)$ by combining analysis of (A) and (B).
+       (C) A parametric plot of $f_{12}(t)$ and $f_{23}(t)$ versus $\Delta B(t)$ by combining analysis of (A) and (B).
        Solid curves in (B) and (C) are theoretical splittings from an eigenspectrum calculation, provided only $f_{\text{rf}}$, $B(t)$, and $\Omega$, i.e. no free parameters.
+       The synthetic clock transition $f_{12}$ varies by $\unit[39]{Hz}$ for $0 \leq \Delta B \leq B_{\text{rf}}/4 = \unit[3.2]{mG}$, equivalent to $0 \leq \abs{\Delta/\Omega} \leq 0.5$ (C, inset).
     }
 \end{figure}
 
@@ -220,13 +221,23 @@ The ratio of the $\omega_{13}$ sideband amplitude to the $\omega_{12}$ and $\ome
 For the data in \reffig{fig:static_coupling} we measure the ratio of sideband amplitudes to be $0.699$ and $0.210$ of the $\omega_{23}$ and $\omega_{13}$ peaks relative to the $\omega_{12}$ peak respectively.
 
 \textit{Faraday signal for arbitray states:}
-Evaluating $\expect{\hat{F}_x}_{\text{lab}}$ in the dressed basis, one can show analytically that the sideband frequencies are the dressed state splittings $\omega_{ij}$ with amplitudes proportional to the relevant dressed-state coherence $\rho_{ij} = \braket{i}{\psi}\braket{\psi}{j}$.
+Evaluating $\expect{\hat{F}_x}_{\text{lab}}$ in the dressed basis, one can show analytically that the sideband frequencies are the dressed state splittings $\omega_{ij}$ with amplitudes proportional to the relevant dressed-state coherence $\text{Re}\{\rho_{ij}\}$ where $\rho_{ij} = \braket{i}{\psi}\braket{\psi}{j}$.
 The carrier amplitude is $(\rho_{33} - \rho_{11}) \Omega / \omega_D$.
 % (\abs{\braket{3}{\psi}}^2 - \abs{\braket{1}{\psi}}^2) \Omega / \omega_D =
 This explains the relative longevity of the sidebands; the transition most sensitive to detuning is $\omega_{13}$, and thus the coherence $\rho_{13}$ decays the fastest in the presence of detuning noise with a measured $/1e$ signal decay time of $\tau_{s}=44(1)\unit{ms}$ from \reffig{fig:static_coupling}. 
 Furthermore, the decay time of the $\omega_{12}$ and $\omega_{23}$ sidebands are $74(1)\unit{ms}$ and $71(2)\unit{ms}$ respectively. 
-Constrasting these results to an undressed measurement decay time $\tau_{s}=21(1)$, it is clear that rf dressing shields the quantum state from magnetically induced decoherence. 
-
+Constrasting these results to an undressed measurement decay time $\tau_{s}=21(1)$, it is clear that rf dressing shields the quantum state from magnetically induced decoherence.
+The constant of proportionality is the coupling strength of the dressed states.
+\begin{table*}
+\label{tab:sidebands_arb}
+\begin{tabular}{c|c|c}
+transition & sideband frequency & sideband amplitude \\ \hhline{===}
+ -- & $\omega_{\text{rf}}$ & $(\bra{3} \hat{F}_x \ket{3} - \bra{1} \hat{F}_x \ket{1}) (\rho_{33} - \rho_{11})$ \\
+ $\ket{1} \leftrightarrow \ket{2}$ & $\omega_{\text{rf}} + \omega_{12}$ & $-2i \bra{1} \hat{F}_y \ket{2} \text{Re}\{\rho_{12}\} = -2 \bra{2} \hat{F}_z \ket{3} \text{Re}\{\rho_{12}\} $ \\
+ $\ket{2} \leftrightarrow \ket{3}$ & $\omega_{\text{rf}} + \omega_{23}$ & $2i \bra{2} \hat{F}_y \ket{3} \text{Re}\{\rho_{23}\} = 2 \bra{1} \hat{F}_z \ket{2} \text{Re}\{\rho_{23}\}$ \\
+ $\ket{1} \leftrightarrow \ket{3}$ & $\omega_{\text{rf}} + \omega_{13}$ & $2 \bra{1} \hat{F}_x \ket{3} \text{Re}\{\rho_{13}\}$
+\end{tabular}
+\end{table*}
 
 \textit{Adiabatic considerations:}
 The rf-dressing is applied non-adiabitcally, and as a result we project $\ket{m=-1}$ onto the dressed basis at the initial detuning $\Delta(t=0)$ into a state
