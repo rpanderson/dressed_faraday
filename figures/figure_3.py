@@ -1,8 +1,11 @@
 # Run this after running analysislib.spinor.faraday.analyse_dressed_spectroscopy in an interactive session
 
 from faraday_aux import load_stft, plot_stft
-# plt.rc('font', family='serif')
-# plt.rcParams['axes.linewidth'] = 1.2 #set the value globally
+plt.rcParams['axes.linewidth'] = 1.2 #set the value globally
+plt.rcParams['font.size'] = 16.0
+plt.rcParams['legend.fontsize'] = 16.0 # 'large'
+plt.rcParams['mathtext.fontset'] = 'stix' # 'cm'
+plt.rcParams['font.family'] = 'STIXGeneral' # [u'serif']
 
 c1  = (1, 1./3, 1./3)
 c2  = (1./3, 1./3, 1)
@@ -79,5 +82,23 @@ def spectrogram_overlay(i, range=[2.75, 5.25], save_plot=True, show_plot=True, f
     if save_plot:
         plt.savefig('plots/spectrogram/{:}_spectrogram.png'.format(ds))
         plt.savefig('plots/spectrogram/{:}_spectrogram.pdf'.format(ds))
+    if show_plot:
+        plt.show()
+
+    # Draw inset over 3.2mG range
+    plt.figure(figsize=(3.85,1.9))
+    ax = plt.subplot(111)
+    plt.errorbar(dB_mG, subdf.f12.values/1e3, xerr=u_dB_mG, yerr=u_subdf.f12.values/1e3, label=r'$f_{12}$ (expt.)', fmt='o', c=c12, ecolor=c12)
+    plt.plot(1e3*dB_p, f12_p/1e3, label='$f_{12}$ (theory)', c=c12)
+    # ax.axis(xmin=0, xmax=3.2, ymin=5.475, ymax=5.545)
+    ax.axis(xmin=0, xmax=3.2, ymin=5.485, ymax=5.535)
+    ax.set_xticks([0, 1, 2, 3])
+    # ax.set_yticks([5.48, 5.50, 5.52, 5.54])
+    ax.set_yticks([5.49, 5.51, 5.53])
+    ax.tick_params(left=False, top=False, labelbottom=False, labeltop=False, labelleft=False, labelright=True)
+    plt.tight_layout()
+    if save_plot:
+        plt.savefig('plots/spectrogram/{:}_spectrogram_inset.png'.format(ds))
+        plt.savefig('plots/spectrogram/{:}_spectrogram_inset.pdf'.format(ds))
     if show_plot:
         plt.show()
