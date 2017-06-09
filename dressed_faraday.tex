@@ -26,6 +26,8 @@ This robust system shares the useful hallmarks of quantum metrology platforms; t
 
 \section{Introduction}
 \label{sec:introduction}
+
+\subsection{Literature review notes}
 \begin{itemize}
     \item Minimally insensitive states in other systems, e.g. $\ket{F=1,m=-1} \leftrightarrow \ket{F=2,m=+1}$ at $B=\unit[3.23]{G}$~\cite{matthews_dynamical_1998}, clocks.
     \item Wide utility of these states for clocks, magnetometers (including microwave, e.g. Treutlein), quantum information, and quantum emulation, e.g. elusive many-body spin-singlet state which requires unforgiving field stability.
@@ -82,7 +84,6 @@ This robust system shares the useful hallmarks of quantum metrology platforms; t
     \item Spin-orbit coupled spin-1 Bose gases exhibit e.g. tricriticality in $(\Omega, q)$ phase diagrams~\cite{martone_tricriticalities_2016}, where the optimal decoupling $q = \qRmagic \Omega$ is a line traversing multiple phases, in the vicinity of a tricritical point of polar-striped and plane-wave phases. Although here the wavevector of the coupling is zero, the essential results may carry over, and the Faraday probe -- used to detect magnetization -- could constitute one of the Raman beams used to generate the spin-orbit coupling.
     \item Lipkin-Meshkov-Glick Hamiltonian~\cite{lipkin_validity_1965} (see Refs.~[16] of~\cite{muessel_twist-and-turn_2015}). 
 \end{itemize}
-
 
 \section{Background + random}
 \label{sec:background}
@@ -142,7 +143,7 @@ The control field $\vect{B}(t \geq 0) = -B_{\text{rf}} \cos (\omega_{\text{rf}} 
     \item This broken symmetry lifts the degeneracy of the dressed state splittings making them distinguishable in our spectrogram measurements.
     \item We vary the magnetic field to affect a change in the detuning of $\Delta \in [0, 2\Omega]$, the domain of \reffig{fig:eigensystem_schematic}(B).
     \item Variations in $B \mapsto B_0 + \Delta B$ of order $B_{\text{rf}} = 2\Omega/\gamma$ affect the detuning linearly, \textit{viz.} $\Delta = - \gamma \Delta B$ for $\omega_L(B_0) = \omega_{\text{rf}}$ (i.e. rf is resonant when $B=B_0$), and do not affect $q$ appreciably for sufficiently small field strengths.
-        \item Indeed, our data corroborate this since we measure $q(B(t))$ across the calibration sweep and find that $\sigma(q)/(2\pi) = \unit[11.7]{Hz}$ on average (alternatively, inferring $q$ from $\omega_L$ via Breit-Rabi gives $\sigma(q)/(2\pi) = \unit[1.2]{Hz}$).
+        \item Indeed, our data corroborate this since we directly measure $q(B(t))$ during the field sweep and find that $\sigma(q)/(2\pi) = \unit[11.7]{Hz}$ on average (alternatively, inferring $q$ from $\omega_L$ via the Breit-Rabi equation gives $\sigma(q)/(2\pi) = \unit[1.2]{Hz}$).
     \item Thus the horizontal axis $\Delta/\Omega$ in \reffig{fig:eigensystem_schematic} is a proxy for $\Delta B$, and $\omega_{12}$ at $q=\qmagic$ has leading-order quartic sensitivity to $\Delta B$.
         \item At high fields ($B\approx \unit[30]{G}$) this approximation is no longer valid; $q \approx \qmagic$ varies appreciably across $\Delta B \in [0, B_{\text{rf}}]$ and $\omega_{12}$ has weak linear dependence on $\Delta B$~\cite{lundblad_synthetic_2017}.
     \item \textit{On varying $\Omega$ or $q$ to change $q_R=q/\Omega$:}
@@ -158,8 +159,9 @@ The control field $\vect{B}(t \geq 0) = -B_{\text{rf}} \cos (\omega_{\text{rf}} 
 \end{itemize}
 \textit{Lab frame eigenstates:}
 \begin{itemize}
-    \item mean splitting $\omega_L$; quadratic shift $q$.
+    \item Mean splitting $\omega_L$; quadratic shift $q$.
     \item Pairwise coupling between $\ket{m=-1} \leftrightarrow \ket{m=0}$ and $\ket{m=0} \leftrightarrow \ket{m=+1}$ via $\hat{F}_x$ and/or $\hat{F}_y$, i.e. affected by fields transverse to the static field oscillating near $\omega_L$.
+    \item The $F=1$ spin operators in the undressed basis do not span all of $\text{SU}(3)$, i.e. $\sigma_x = (\lambda_1 + \lambda_6)/\sqrt{2}$, $\sigma_y = (\lambda_2 + \lambda_7)/\sqrt{2}$, and $\sigma_z = (\lambda_3 + \sqrt{3} \lambda_8)/2$ ($\lambda_4$ and $\lambda_5$ which include off diagonal terms in rows/columns 1 and 3 are absent) where $\lambda_i, i = 1,\dots,8$ are the Gell-Mann matrices.
 \end{itemize}
 \textit{Dressed states on resonance:}
 \begin{itemize}
@@ -175,7 +177,11 @@ The control field $\vect{B}(t \geq 0) = -B_{\text{rf}} \cos (\omega_{\text{rf}} 
      \end{align*}
     \item Thus $\Omega = \sqrt{\omega_{12} \omega_{23}}_{\Delta=0}$ and $q_D = (\omega_{23} - \omega_{12})_{\Delta=0}/2$, both of which can be attained from the dressed sideband splittings on resonance.
     Such high-bandwidth measurement of $\Omega$ (magnetic field oscillating along $x$ with amplitude $B_{\text{rf}}$ and frequency $\omega_L$) allows (in principle) closed-loop control of $\Omega$ using the atoms.
-    \item For $q=0$ (low-field limit), the dressed states at $\Delta=0$ are eigenstates of $\hat{F}_x$, and: (i) the spectrum has vanishing linear sensitivity to magnetic fields, with the leading quadratic sensitivity (as in spin-$1/2$), and (ii) fields along $y$ or $z$ oscillating near the Rabi frequency $\Omega$ drive transitions between different $\ket{m_x}$ states. \note{Cite other dressed-ception papers on both of these.}
+    \item For $q=0$ (low-field limit), the dressed states at $\Delta=0$ are eigenstates of $\hat{F}_x$, \textit{viz.} $\ket{m_x=-1,0,+1} \equiv \ket{1}$, $\ket{2}$, and $\ket{3}$ respectively.
+    (i) the spectrum has vanishing linear sensitivity to magnetic fields, with the leading quadratic sensitivity (as in spin-$1/2$) of the degenerate $\ket{1} \leftrightarrow \ket{2}$ and $\ket{2} \leftrightarrow \ket{3}$ transitions, and (ii) fields along $y$ or $z$ oscillating near the Rabi frequency $\Omega$ drive transitions between different $\ket{m_x}$ states. \note{Cite other dressed-ception papers on both of these.}
+    \item The $F=1$ spin operators in the resonantly dressed basis span more of $\text{SU}(3)$, as $[\hat{F}_x]_D = (q_D/\omega_D) Q_{x^2-y^2} - (\Omega / \omega_D) \sigma_z = (q_D/\omega_D) \lambda_4 - \Omega / \omega_D ( \lambda_3 +\sqrt{3} \lambda_8) / 2$, $[\hat{F}_y]_D$ is a sum of $\lambda_1, \lambda_2$, and $\lambda_7$, and  $[\hat{F}_z]_D$ is a sum of $\lambda_1$ and $\lambda_6$.
+    The presence of $Q_{x^2-y^2} = \lambda_4$ for $q \neq 0$ signifies the coupling of dressed states $\ket{1}$ and $\ket{3}$, i.e. a non-zero $\bra{1} \hat{F}_x \ket{3}$.
+    \note{The spin operators have no projection onto $\lambda_5$, even for an rf field oscillating along $y$.}
     \item Curvature of the dressed-state energies can be evaluated using perturbation theory;
     \[
     \partialD{^2\omega_n}{\Delta^2} = \sum_{k \neq n} \frac{\abs{\bra{k} \hat{F}_z \ket{n}}^2}{\omega_n - \omega_k} \, .
@@ -204,8 +210,6 @@ The control field $\vect{B}(t \geq 0) = -B_{\text{rf}} \cos (\omega_{\text{rf}} 
     By comparison, the normalized variation at $q_R=0$ is $(\sqrt{5}-2)/2 \approx 0.118$; 14 [20] times higher than the observed [predicted] variation.
     Alternatively, the normalized variation of the $\ket{m=\pm1} \leftrightarrow \ket{0}$ transitions at $q=0$ is $0.5$; 58 [86] times higher than the observed [predicted] variation in the synthetic clock transition frequency.
     \note{Both of these comparisons depend a lot on the range of $\Delta B$! They are far more impressive (theoretically) for smaller ranges.}
-    \item The $F=1$ spin operators in the undressed basis do not span all of $\text{SU}(3)$, i.e. $\sigma_x = (\lambda_1 + \lambda_6)/\sqrt{2}$, $\sigma_y = (\lambda_2 + \lambda_7)/\sqrt{2}$, and $\sigma_z = (\lambda_3 + \sqrt{3} \lambda_8)/2$ ($\lambda_4$ and $\lambda_5$ which include off diagonal terms in rows/columns 1 and 3 are absent) where $\lambda_i, i = 1,\dots,8$ are the Gell-Mann matrices.
-    \item The $F=1$ spin operators in the dressed basis span \note{almost} all of $\text{SU}(3)$, as $[\hat{F}_x]_D = (q_D/\omega_D) Q_{x^2-y^2} - (\Omega / \omega_D) \sigma_z = (q_D/\omega_D) \lambda_4 - \Omega / \omega_D ( \lambda_3 +\sqrt{3} \lambda_8) / 2$, $[\hat{F}_y]_D$ is a sum of $\lambda_1, \lambda_2$, and $\lambda_7$, and  $[\hat{F}_z]_D$ is a sum of $\lambda_1$ and $\lambda_6$. \note{The spin operators have no projection onto $\lambda_5$, even for an rf field oscillating along $y$.}
 \end{itemize}
 \textit{Analytic Faraday signal on resonance:}
 \begin{table}[]
