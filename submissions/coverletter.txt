@@ -1,0 +1,28 @@
+Dear Editor,
+
+We are pleased to submit our manuscript 'Continuous observation of a dynamically decoupled spin-1 spectrum' to Physical Review letters.
+In it we demonstrate a .
+For common parameters used in travelling-wave dipole traps and optical lattices formed at 1064nm, the residual vector light shift can be as high as hundreds of Hertz, forming a large spatially (and usually temporally varying) systematic for magnetometry applications.
+The inherent spatial variation of these substantial shifts leads to fast dephasing of cold spin quanta -- ensemble or lattice -- on millisecond timescales, making vector light shift control an imperative for quantum memory and quantum information processing with cold spins.
+
+We focus on VLS elimination by creating linearly polarised light of exceptional purity, at the location of the atoms, where conventional optical polarimetry is impossible.
+We demonstrate deep suppression of vector light shifts by a factor of 2500, reducing light shifts into the sub-Hertz regime which for many applications will render them negligible.
+This result can be expected to have substantial impact in both precision measurement and quantum information / quantum simulation applications.
+
+To make this precision measurement of vector light shifts, we apply the approach of differential Ramsey interferometry, which we introduced in your journal last year ('Magnetic tensor gradiometry using Ramsey interferometry of spinor condensates', vol 92, 053604).
+The performance of our trapped-atom magnetometers was limited by 'fictitious' magnetic gradients produced by residual elliptical polarisation of the trap beams.
+This inspired us to use the same differential Ramsey interferometer approach to remove the VLS, in essence by making the measurement differential with respect to trap intensity, rather than spatial position.
+Thus when we assert that current-generation atomic magnetometry - in particular emerging cold trapped atom magnetometers - are limited by light shift systematics, we do so from experience!
+Indeed, this manuscript was motivated by the needs of future ultraprecise magnetometers, but has impact wider than magnetometry, including quantum information processing, EDM searches and quantum memory. 
+
+Finally we note that our polarization-purity approach to suppression VLSs does *not* remove the cognate (and very desirable) vector dipole effect of atomic spin on light: the Faraday effect.
+We will shortly submit a further manuscript to Physical Review A showing optimal Faraday measurements free of both scalar and vector light shift systematics, using a combination of magic-zero wavelength operation (to remove scalar light shifts) in concert with VLS nulling, as in this manuscript.
+We have not foreshadowed this result in our manuscript to avoid raising a further topic in an already detailed paper, but look forward to submitting this further manuscript for your consideration in the near future. 
+
+Thank you for considering our manuscript for publication.
+
+Yours faithfully,
+
+Alex Wood et al.
+
+
