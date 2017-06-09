@@ -1,0 +1,5 @@
+Concluding statement about quantum noise
+* A weak measurement gives us information about hte state, coupling, and energies all at once.
+* It doesn't give us information about quantum noise (weak, photon-shot noise limit).
+* With a modification of the probe (atom-shot noise dominated) we could measure and affect the quantum noise dynamically.
+* Under this Hamiltonian probing the dressed state coherences we might be able to observe non-Gaussian quantum noise geometries in a manner analagous to Nature (Mitchell).
