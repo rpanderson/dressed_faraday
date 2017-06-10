@@ -24,36 +24,29 @@ This robust system shares the useful hallmarks of quantum metrology platforms; t
 
 \maketitle
 
-\section{Introduction}
-\label{sec:introduction}
+% \section{Introduction}
+% \label{sec:introduction}
 From Hahn echoes to contemporary dynamical decoupling, abrupt, discrete rotations have been used to protect spin superpositions from inhomogeneities and parasitic fluctuations, prolonging quantum coherence and circumventing deleterious energy shifts \note{nmr,qi,ions}.
 A complementary strategy is to replace the pulse train with an uninterrupted coupling of `bare' spin states, thus admitting new `dressed' spin eigenstates, with a modified quantization direction, spectrum, and coupling, which too are protected from unwanted artifacts of their environment~\cite{fanchini_continuously_2007}.
-This \textit{continuous} dynamical decoupling (CoDD) has proven useful across multiple platforms including nitrogen-vacancy centers~\cite{hirose_continuous_2012,loretz_radio-frequency_2013,cai_robust_2012,*cai_long-lived_2012,golter_protecting_2014} and superconducting qubits~\cite{golter_protecting_2014}, and forms the basis for creating protected qubit~\cite{aharon_general_2013} and decoherence-free~\cite{facchi_quantum_2002,*facchi_unification_2004} subspaces.
-Weak continuous measurement is the natural instrument for appraising and refining dynamical decoupling in real time; to probe stochastic evolution, improve metrological bandwidth, or realize quantum feedback schemes~\cite{vijay_stabilizing_2012}.
-Here we use a minimally perturbative \note{dispersive} optical probe of a `bare' spin component $\hat{F}_x$ to measure the spectrum of a continuously decoupled spin-1 quantum gas in real-time.
+This \textit{continuous} dynamical decoupling (CoDD) has proven useful across multiple platforms including nitrogen-vacancy centers~\cite{hirose_continuous_2012,loretz_radio-frequency_2013,cai_robust_2012,*cai_long-lived_2012,golter_protecting_2014} and superconducting qubits, and forms the basis for creating protected qubit~\cite{aharon_general_2013} and decoherence-free~\cite{facchi_quantum_2002,*facchi_unification_2004} subspaces.
+Weak continuous measurement is a powerful instrument for appraising and refining dynamical decoupling in real time; to probe stochastic evolution, improve metrological bandwidth, or realize quantum feedback schemes~\cite{vijay_stabilizing_2012}.
+Here we use minimally perturbative \note{dispersive} optical readout of a `bare' spin component $\hat{F}_x$ to measure the spectrum of a continuously decoupled spin-1 quantum gas in real-time.
 The rich time-frequency domain data reveal not only multiple dressed-state splittings and their relative immunity to noise, but also dressed state coherences and coupling strengths.
-This potent ability to estimate the eigenspectrum of a multi-level dressed system reveals feature absent in spin-1/2 or composite spin-1/2 qubit systems; principally, we identify a regime in which a subspace of the dressed system is maximally decoupled from noise $\propto \hat{F}_z$.
+This potent  ability to estimate the eigenspectrum of a multi-level dressed system reveals feature absent in spin-1/2 or composite spin-1/2 qubit systems; principally, we identify a regime in which a subspace of the dressed system is maximally decoupled from noise $\propto \hat{F}_z$.
 This protected subspace is spanned by two of the dressed states, termed `synthetic clock states' in a co-publication by Lundblad~\textit{et al.} (Phys. Rev. Lett. \textbf{118}, 2xxxxx (2017)).
 The low-frequency magnetic stability and high-bandwidth detection of these states is immediately applicable to band-tunable (ac) magnetometry~\cite{hirose_continuous_2012,loretz_radio-frequency_2013,ockeloen_quantum_2013,*horsley_frequency-tunable_2016} and experiments preparing delicate spin-entangled many-body states~\cite{stamper-kurn_spinor_2013}; whereas the unconventional cyclic coupling of all $2F+1$ dressed states could be applied to emulation of frustrated quantum spin chains~\cite{mikeska_one-dimensional_2004}.
-% The spin-1 asymmetry arising from $\hat{F}_z^2$ relative to the 
+% The spin-1 asymmetry arising from $\hat{F}_z^2$...
 % The eigenstates produced by CoDD are simply the familiar 'dressed states' of atomic physics.
 
-Weak continuous measurements based on dispersive probes have found broad application in NV centers, superconducting qubits \note{single spin readout (not ensemble), requiring repeated preparation and measurement to obtain a spectrum}, and cold atoms \note{with bare states, magnetometry, spin dynamics, tomography and spin squeezing}... but have not been used in concert with CoDD to date.
+% Weak continuous measurements based on dispersive probes have found broad application in NV centers, superconducting qubits \note{single spin readout (not ensemble), requiring repeated preparation and measurement to obtain a spectrum}, and cold atoms \note{with bare states, magnetometry, spin dynamics, tomography and spin squeezing}... but have not been used in concert with CoDD to date.
 
+Atomic Zeeman states $\ket{m_z=-1,0,1}$ in a magnetic field $\vect{B} = B_z \vect{e}_z$ can be decoupled from fluctuations in $B_z$ by applying a radiofrequency (rf) field perpendicular to the quantization direction $z$, of amplitude $B_{\text{rf}} \vect{e}_x$, and oscillating near the splitting of the `bare' Zeeman states $\omega_L \equiv (E_{m_z=+1}-E_{m_z=-1})/2\hbar$, the Larmor frequency.
+At low magnetic fields, the degeneracy of the composite spin-$1/2$ systems~\cite{majorana_atomi_1932} renders the spin-1 behavior identical to CoDD in spin-$1/2$ qubits.
+The spin is quantized along $x$ in a frame rotating with the radiofrequency $\omega_{\text{rf}}$, i.e. the eigenstates of $\ham_{\text{rwa}} = \Delta \hat{F}_z + \Omega \hat{F}_x$ are $\ket{m_x=-1,0,1}$, with energies $m_x \hbar \sqrt{\Omega^2 + \Delta^2}$, where $\Delta = \omega_{\text{rf}}-\omega_L$ is the detuning and $\Omega_{\text{rf}} = \gamma B_{\text{rf}} / 2$ is the Rabi frequency.
+The rf dressing reduces the leading-order linear sensitivity of the `bare' state energies ($\omega_L \approx \gamma B_z$ where $\gamma$ is the gyromagnetic ratio) to magnetic field variations $\Delta B_z$ to quadratic sensitivity, via the detuning $\Delta$.
+The spin character and symmetries are otherwise unchanged; magnetic fields along $y$ or $z$ oscillating near the Rabi frequency drive transitions $\ket{m_x=-1} \leftrightarrow \ket{m_x=0}$ and $\ket{m_x=0} \leftrightarrow \ket{m_x=+1}$, the basis for ac magnetometry~\cite{hirose_continuous_2012} or concatenated CoDD to mitigate fluctuations in $\Omega$ on the spectrum and coherences~\cite{cai_robust_2012}.
 
-\subsection{Literature review notes}
-\begin{itemize}
-    \item Minimally sensitive states in other systems, e.g. $\ket{F=1,m=-1} \leftrightarrow \ket{F=2,m=+1}$ at $B=\unit[3.23]{G}$~\cite{matthews_dynamical_1998}, clocks.
-    \item Wide utility of these states for clocks, magnetometers (including microwave, e.g. Treutlein~~\cite{ockeloen_quantum_2013,*horsley_frequency-tunable_2016}), quantum information, and quantum emulation, e.g. elusive many-body spin-singlet state which requires unforgiving field stability~\cite{stamper-kurn_spinor_2013}.
-    \item In electronically/magnetically sensitive spin experiments, magnetic field noise manifest as small perturbations $\Delta \hat{F}_{z}$ which shift the energy eigenvalues.
-    Continuous measurement of an $F=1$ system using the Faraday effect necessitates the state be magnetically sensitive $\langle \hat{F}_x \rangle \neq 0$ but dark states~\note{incorrect use of dark states?}, protected from magnetic field fluctuations only exist in the nullspace of $\hat{F}_z$ i.e. $\hat{F}_{z}\ket{\psi} = \hat{0}$~\cite{aharon_general_2013}. 
-    Therefore, no state exists which is both insensitive to magnetic fields fluctuations and capable of generating a continuous Faraday signal, the two are not mutually exclusive.
-    Whereas the aim of a protected qubit subspace is to create \textit{states} that are insensitive to fields, the impetus of metrology is to create \textit{superpositions} and \textit{transitions} insensitive to fields. 
-
-    \item It has been demonstrated that Continuous dynamical decoupling (CoDD)~\cite{facchi_unification_2004,*fanchini_continuously_2007} occurs when the spin undergoes rotations in a plane perpendicular induce perturbation, i.e $\hat{F}_{x}$ or $\hat{F}_{x}$ most readily achieved through Rabi coupling where $\Omega \gg \Delta B$.
-    Decoupling can be used to increase the coherence time of single qubits~\cite{golter_protecting_2014} which can be extended even further by doubly dressing the system and decoupling from noise induced by the first coupling field~\cite{cai_robust_2012} (concatenated continuous decoupling, or CCD).
-    \item It has also been shown theoretically that CoDD is superior than pulsed sequence dynamical decoupling for single solid-state qubits for magnetometery~\cite{hirose_continuous_2012}.
-    \note{There is a wealth of literature on this topic in NV. Should trace down the biggest results in this field and cite them~\cite{cai_long-lived_2012}.}
+However, any $\hat{F}_z^2$ interaction -- arising from nonlinear Zeeman~\cite{ramsey_molecular_1956}, microwave ac-Stark~\cite{gerbier_resonant_2006}, or tensor light~\cite{smith_continuous_2004} shifts -- raises the degeneracy of the $\ket{m_z=-1} \leftrightarrow \ket{m_z=0}$ and $\ket{m_z=0} \leftrightarrow \ket{m_z=+1}$ transitions, and breaks the symmetry of $\ham_{\text{rwa}} = \Delta \hat{F}_z + \Omega \hat{F}_x + q \hat{F}_z^2$, where $q \equiv (E_{m_z=+1} + E_{m_z=-1} - 2 E_{m_z=0})/2\hbar$.
 \begin{figure}
     \centering
     \includegraphics[width=\columnwidth]{figure_1.pdf}
@@ -68,6 +61,32 @@ Weak continuous measurements based on dispersive probes have found broad applica
         When $q=\qmagic$ (bold curves), energies $\omega_1$ and $\omega_2$ share the same curvature, and their difference $\omega_{12}$ (right, purple) is minimally sensitive to detuning and thus magnetic field variations. 
     }
 \end{figure}
+This yields dressed eigenstates $\{\ket{1}, \ket{2}, \ket{3}\}$ that are no longer $\text{SO}(3)$ rotations of the bare Zeeman states $\ket{m_z}$, but have nematic order, and an eigenspectrum $\omega_i(\Delta) = E_{\ket{i}}/\hbar$ shown in \reffig{fig:eigensystem_schematic}(left).
+Moreover, the coupling of these dressed states is significantly different: the spin operators $\hat{F}_{x,y,z}$ in the dressed basis span more of $\text{SU}(3)$ for $q \neq 0$, e.g. $\bra{i} \hat{F}_x \ket{j}$ has a non-zero projection onto the fourth Gell-Mann matrix $Q_{x^2-y^2}$ signifying the direct coupling of dressed states $\ket{1}$ and $\ket{3}$.
+The dressed-state transitions are thus cyclic and non-degenerate (\reffig{fig:eigensystem_schematic}(right)), characterized by a dressed Larmor frequency
+\begin{align}
+    \omega_D \equiv (\omega_3 - \omega_2)_{\Delta=0}/2 &= (\omega_{12} + \omega_{23})_{\Delta=0}/2 \\ &= \sqrt{\Omega^2 + q_D^2}\, ,
+\end{align}
+and dressed quadratic shift
+\begin{align}
+    q_D &\equiv (\omega_3 + \omega_1 -2\omega_2)_{\Delta=0}/2 \\
+        &= (\omega_{23}-\omega_{12})_{\Delta=0}/2\\ 
+        &= -q/2 \, .
+ \end{align}
+
+\subsection{Literature review notes}
+\begin{itemize}
+    \item Minimally sensitive states in other systems, e.g. $\ket{F=1,m=-1} \leftrightarrow \ket{F=2,m=+1}$ at $B=\unit[3.23]{G}$~\cite{matthews_dynamical_1998}, clocks.
+    \item Wide utility of these states for clocks, magnetometers (including microwave, e.g. Treutlein~~\cite{ockeloen_quantum_2013,*horsley_frequency-tunable_2016}), quantum information, and quantum emulation, e.g. elusive many-body spin-singlet state which requires unforgiving field stability~\cite{stamper-kurn_spinor_2013}.
+    \item In electronically/magnetically sensitive spin experiments, magnetic field noise manifest as small perturbations $\Delta \hat{F}_{z}$ which shift the energy eigenvalues.
+    Continuous measurement of an $F=1$ system using the Faraday effect necessitates the state be magnetically sensitive $\langle \hat{F}_x \rangle \neq 0$ but dark states~\note{incorrect use of dark states?}, protected from magnetic field fluctuations only exist in the nullspace of $\hat{F}_z$ i.e. $\hat{F}_{z}\ket{\psi} = \hat{0}$~\cite{aharon_general_2013}. 
+    Therefore, no state exists which is both insensitive to magnetic fields fluctuations and capable of generating a continuous Faraday signal, the two are not mutually exclusive.
+    Whereas the aim of a protected qubit subspace is to create \textit{states} that are insensitive to fields, the impetus of metrology is to create \textit{superpositions} and \textit{transitions} insensitive to fields. 
+
+    \item It has been demonstrated that Continuous dynamical decoupling (CoDD)~\cite{facchi_unification_2004,*fanchini_continuously_2007} occurs when the spin undergoes rotations in a plane perpendicular induce perturbation, i.e $\hat{F}_{x}$ or $\hat{F}_{x}$ most readily achieved through Rabi coupling where $\Omega \gg \Delta B$.
+    Decoupling can be used to increase the coherence time of single qubits~\cite{golter_protecting_2014} which can be extended even further by doubly dressing the system and decoupling from noise induced by the first coupling field~\cite{cai_robust_2012} (concatenated continuous decoupling, or CCD).
+    \item It has also been shown theoretically that CoDD is superior than pulsed sequence dynamical decoupling for single solid-state qubits for magnetometery~\cite{hirose_continuous_2012}.
+    \note{There is a wealth of literature on this topic in NV. Should trace down the biggest results in this field and cite them~\cite{cai_long-lived_2012}.}
 
     \item Motivate continuous measurement, especially in context of measurement bandwidth; it doesn't make sense to measure something in kHz--MHz band using a shot-based ($\unit[0.1]{Hz}$ or less) readout. Why? Can't react, can't feedback, can't always assume periodicity/repeatability.
     \item Whilst the paper is not focused on introducing spectrograms, we can say they provide a new mechanism for appraising spectrum of a quantum system in real-time. 
@@ -188,7 +207,7 @@ The control field $\vect{B}(t \geq 0) = -B_{\text{rf}} \cos (\omega_{\text{rf}} 
     \item Dressed quadratic shift:
     \begin{align*}
         q_D &\equiv (\omega_3 + \omega_1 -2\omega_2)_{\Delta=0}/2 \\
-            &= (\omega_{23}-\omega{12})_{\Delta=0}/2\\ 
+            &= (\omega_{23}-\omega_{12})_{\Delta=0}/2\\ 
             &= -q/2 \, .
      \end{align*}
     \item Thus $\Omega = \sqrt{\omega_{12} \omega_{23}}_{\Delta=0}$ and $q_D = (\omega_{23} - \omega_{12})_{\Delta=0}/2$, both of which can be attained from the dressed sideband splittings on resonance.
