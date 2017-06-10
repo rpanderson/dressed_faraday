@@ -19,30 +19,32 @@ Here we use an atom-light interface with minimal backaction to probe the spectru
 The dressing amplitude sets the radiofrequency band in which oscillating magnetic fields manifest a linear measurand, and we probe the energy spectrum while the system evolves unitarily.
 By varying a symmetry-breaking parameter of the Hamiltonian, we find a regime in which two of the dressed states are maximally insensitive (up to fourth-order) in magnetic field fluctuations that are slow compared to the dressed-state splittings.
 Moreover, we demonstrate the predictive power of our continuous probe to optimize the dynamical decoupling and tune the measurement band.
-This robust system shares the useful hallmarks of quantum metrology platforms; the states are thus termed ``synthetic clock'' states in a co-published result by Lundblad~\textit{et al.} (Phys. Rev. Lett. \textbf{118}, 2xxxxx (2017)) and are candidates for band-tunable magnetometry and color charge analogues in quantum gases. 
+This robust system shares the useful hallmarks of quantum metrology platforms; the states are thus termed ``synthetic clock'' states in a co-published result by Lundblad~\textit{et al.} (Phys. Rev. Lett. \textbf{118}, 2xxxxx (2017)) and are candidates for band-tunable magnetometry and emulation of quantum spin ladders. 
 \end{abstract}
 
 \maketitle
 
 \section{Introduction}
 \label{sec:introduction}
-From Hahn echoes to Uhrig dynamical decoupling to the pulse sequence \textit{du jour}, abrupt, discrete rotations have been used to protect spin superpositions from inhomogeneities and parasitic fluctuations, prolonging quantum coherence and circumventing deleterious energy shifts \note{nmr,qi,ions}.
+From Hahn echoes to contemporary dynamical decoupling, abrupt, discrete rotations have been used to protect spin superpositions from inhomogeneities and parasitic fluctuations, prolonging quantum coherence and circumventing deleterious energy shifts \note{nmr,qi,ions}.
 A complementary strategy is to replace the pulse train with an uninterrupted coupling of `bare' spin states, thus admitting new `dressed' spin eigenstates, with a modified quantization direction, spectrum, and coupling, which too are protected from unwanted artifacts of their environment.
-This \textit{continuous} dynamical decoupling (CoDD) has proven useful across multiple platforms including nitrogen-vacancy centers and superconducting qubits, and forms the basis for creating protected qubit subspaces~\cite{aharon_general_2013}.
+This \textit{continuous} dynamical decoupling (CoDD) has proven useful across multiple platforms including nitrogen-vacancy centers and superconducting qubits~\cite{golter_protecting_2014}, and forms the basis for creating protected qubit subspaces~\cite{aharon_general_2013}.
 Weak continuous measurement is the natural instrument for appraising and refining dynamical decoupling in real time; to probe stochastic evolution, improve metrological bandwidth, or realize quantum feedback schemes~\cite{vijay_stabilizing_2012}.
 Here we use a minimally perturbative \note{dispersive} optical probe of a `bare' spin component $\hat{F}_x$ to measure the spectrum of a continuously decoupled spin-1 quantum gas in real-time.
 The rich time-frequency domain data reveal not only multiple dressed-state splittings and their relative immunity to noise, but also dressed state coherences and coupling strengths.
-This potent ability to estimate the eigenspectrum of a multi-level dressed system reveals surprising features absent in spin-1/2 or composite spin-1/2 qubit systems; we identify a regime in which a subspace of the dressed system is maximally decoupled from noise $\propto \hat{F}_z$.
+This potent ability to estimate the eigenspectrum of a multi-level dressed system reveals feature absent in spin-1/2 or composite spin-1/2 qubit systems; principally, we identify a regime in which a subspace of the dressed system is maximally decoupled from noise $\propto \hat{F}_z$.
 This protected subspace is spanned by two of the dressed states, termed `synthetic clock states' in a co-publication by Lundblad~\textit{et al.} (Phys. Rev. Lett. \textbf{118}, 2xxxxx (2017)).
-% the spin-1 asymmetry arising from $\hat{F}_z^2$ relative to the 
+The low-frequency magnetic stability and high-bandwidth detection of these states is immediately applicable to band-tunable (ac) magnetometry~\cite{loretz_radio-frequency_2013,ockeloen_quantum_2013,*horsley_frequency-tunable_2016} and experiments preparing delicate spin-entangled many-body states~\cite{stamper-kurn_spinor_2013}; whereas the unconventional cyclic coupling of all $2F+1$ dressed states could be applied to emulation of frustrated quantum spin chains~\cite{mikeska_one-dimensional_2004}.
+% The spin-1 asymmetry arising from $\hat{F}_z^2$ relative to the 
+% The eigenstates produced by CoDD are simply the familiar 'dressed states' of atomic physics.
 
 Weak continuous measurements based on dispersive probes have found broad application in NV centers, superconducting qubits \note{single spin readout (not ensemble), requiring repeated preparation and measurement to obtain a spectrum}, and cold atoms \note{with bare states, magnetometry, spin dynamics, tomography and spin squeezing}... but have not been used in concert with CoDD to date.
 
+
 \subsection{Literature review notes}
 \begin{itemize}
-    \item Minimally insensitive states in other systems, e.g. $\ket{F=1,m=-1} \leftrightarrow \ket{F=2,m=+1}$ at $B=\unit[3.23]{G}$~\cite{matthews_dynamical_1998}, clocks.
-    \item Wide utility of these states for clocks, magnetometers (including microwave, e.g. Treutlein), quantum information, and quantum emulation, e.g. elusive many-body spin-singlet state which requires unforgiving field stability.
-    
+    \item Minimally sensitive states in other systems, e.g. $\ket{F=1,m=-1} \leftrightarrow \ket{F=2,m=+1}$ at $B=\unit[3.23]{G}$~\cite{matthews_dynamical_1998}, clocks.
+    \item Wide utility of these states for clocks, magnetometers (including microwave, e.g. Treutlein~~\cite{ockeloen_quantum_2013,*horsley_frequency-tunable_2016}), quantum information, and quantum emulation, e.g. elusive many-body spin-singlet state which requires unforgiving field stability~\cite{stamper-kurn_spinor_2013}.
     \item In electronically/magnetically sensitive spin experiments, magnetic field noise manifest as small perturbations $\Delta \hat{F}_{z}$ which shift the energy eigenvalues.
     Continuous measurement of an $F=1$ system using the Faraday effect necessitates the state be magnetically sensitive $\langle \hat{F}_x \rangle \neq 0$ but dark states~\note{incorrect use of dark states?}, protected from magnetic field fluctuations only exist in the nullspace of $\hat{F}_z$ i.e. $\hat{F}_{z}\ket{\psi} = \hat{0}$~\cite{aharon_general_2013}. 
     Therefore, no state exists which is both insensitive to magnetic fields fluctuations and capable of generating a continuous Faraday signal, the two are not mutually exclusive.
@@ -71,7 +73,8 @@ Weak continuous measurements based on dispersive probes have found broad applica
     \item Whilst the paper is not focused on introducing spectrograms, we can say they provide a new mechanism for appraising spectrum of a quantum system in real-time. 
     \item From a magnetometry perspective, breaking rotational symmetry is bad because you want there to be no anisotropy to the sensitivity. How does this relate to this work?
     \item \note{Not sure about this but many NV center guys study Luminescence as a function of time. Could they make spectrograms with there data? See data from~\cite{cai_robust_2012}.}
-    \item (How) The $\hat{F}_z^2$ interaction has been controlled using static magnetic fields, microwave ac Stark shifts and tensor-light shifts of off-resonant magnetic and electric dipole transitions, respectively. In collective psuedo-spins, it can arise from nonlinear collisional interactions~\cite{riedel_atom-chip-based_2010,*gross_nonlinear_2010}.
+    \item (How) The $\hat{F}_z^2$ interaction has been controlled using static magnetic fields, microwave ac Stark shifts~\cite{gerbier_resonant_2006} and tensor-light shifts of off-resonant electric dipole transitions~\cite{smith_continuous_2004}, respectively.
+    In collective psuedo-spins, it can arise from nonlinear collisional interactions~\cite{riedel_atom-chip-based_2010,*gross_nonlinear_2010}.
     \item (What) This nonlinear term has been used to traverse the magnetic phase space of a spinor quantum gas, drive quantum quenches of same, initiate spin dynamics in optical lattices~\cite{gerbier_resonant_2006}, enact the canonical spin-squeezing of Kitagawa and Ueda~\cite{kitagawa_squeezed_1993}: one-axis twisting (shear of coherent spin state uncertainty regon) that has squeezed atomic spins in cavitities~\cite{leroux_implementation_2010}, Bose-Einstein condensates~\cite{riedel_atom-chip-based_2010,*gross_nonlinear_2010}, and superconducting qubits.
 \end{itemize}
 \textit{Continuous measurement using the linear Faraday effect:}
@@ -153,7 +156,7 @@ The control field $\vect{B}(t \geq 0) = -B_{\text{rf}} \cos (\omega_{\text{rf}} 
     \item For most of the analysis presented here (with $\omega_L$ and $q$ defined as above) these proportionalities need not be met, or the results, e.g. value of $\qmagic$ require a small correction. 
     \item For $q=0$, $\hat{H}_{\text{lab}}$ and $\hat{H}_{\text{rwa}} \propto \vect{B} \cdot \hat{\vect{F}}$ and are thus a generator of rotations, but $q \hat{F}_z^2 \neq 0$ breaks the $\text{SU}(2)$ symmetry and $\expect{\vect{\hat{F}}}^2$ is not preserved.
     \item This broken symmetry lifts the degeneracy of the dressed state splittings making them distinguishable in our spectrogram measurements.
-    \item Moreover, $\hat{H}_{\text{rwa}}$ meets the requirements of reconstructing pure $SU(2F+1)$ states from a weak measurement of $\expect{\hat{F}_x}$~\note{deutsch_random_unitary_maps}; thus one can use the measurement record for quantum state estimation, but the spectrogram is similarly rich in Hamiltonian and density matrix information. 
+    \item Moreover, $\hat{H}_{\text{rwa}}$ meets the requirements of reconstructing pure $SU(2F+1)$ states from a weak measurement of $\expect{\hat{F}_x}$~\cite{merkel_random_2010}; thus one can use the measurement record for quantum state estimation, but the spectrogram is similarly rich in Hamiltonian and density matrix information. 
     \item We vary the magnetic field to affect a change in the detuning of $\Delta \in [0, 2\Omega]$, the domain of \reffig{fig:eigensystem_schematic}(B).
     \item Variations in $B \mapsto B_0 + \Delta B$ of order $B_{\text{rf}} = 2\Omega/\gamma$ affect the detuning linearly, \textit{viz.} $\Delta = - \gamma \Delta B$ for $\omega_L(B_0) = \omega_{\text{rf}}$ (i.e. rf is resonant when $B=B_0$), and do not affect $q$ appreciably for sufficiently small field strengths.
         \item Indeed, our data corroborate this since we directly measure $q(B(t))$ during the field sweep and find that $\sigma(q)/(2\pi) = \unit[11.7]{Hz}$ on average (alternatively, inferring $q$ from $\omega_L$ via the Breit-Rabi equation gives $\sigma(q)/(2\pi) = \unit[1.2]{Hz}$).
@@ -225,16 +228,17 @@ The control field $\vect{B}(t \geq 0) = -B_{\text{rf}} \cos (\omega_{\text{rf}} 
     \note{Both of these comparisons depend a lot on the range of $\Delta B$! They are far more impressive (theoretically) for smaller ranges.}
 \end{itemize}
 \textit{Analytic Faraday signal on resonance:}
-\begin{table}[]
+\begin{table}[t]
 \centering
 \caption{Upper sidebands of the carrier (at $\omega_{\text{rf}}$) of the Faraday rotation signal $\propto \expect{\hat{F}_x}$ of a state $\ket{\psi(t=0)}=\ket{m=1}$ driven on resonance ($\Delta = 0$) in the laboratory frame. Frequency and phase are reported relative to the carrier, along with the transition that each sideband corresponds to. For each upper sideband, there is a lower sideband of the same amplitude, relative frequency and opposite \note{$\pi$} relative phase.}
 \label{tab:sidebands}
-\begin{tabular}{cccc}
-frequency & amplitude & transition \\ \hhline{====}
+\begin{tabular}{ccc}
+\hhline{===}
+frequency & amplitude & transition \\ \hhline{---}
  $0$ & $\frac{q_D \Omega }{2 \omega_D^2}$ & -- \\
  $\omega_D-q_D$ & $\frac{\Omega}{4 \omega_D}$ & $\ket{1} \leftrightarrow \ket{2}$ \\
  $\omega_D+q_D$ & $\frac{\Omega}{4 \omega_D}$ & $\ket{2} \leftrightarrow \ket{3}$\\
- $2 \omega_D$ & $\frac{q_D \Omega}{4 \omega_D^2}$ & $\ket{1} \leftrightarrow \ket{3}$
+ $2 \omega_D$ & $\frac{q_D \Omega}{4 \omega_D^2}$ & $\ket{1} \leftrightarrow \ket{3}$ \\ \hhline{===}
 \end{tabular}
 \end{table}
 The Faraday signal we detect is proportional to $\expect{\hat{F}_x}$ in the laboratory frame, which is given by $\bra{\psi(t)}\hat{S}^{\dagger} \hat{F}_x \hat{S} \ket{\psi(t)}$ where $\ket{\psi(t)} = \exp(-i \hat{H}_{\text{rwa}} t/\hbar) \ket{\psi(t=0)}$, and $\hat{S} = \exp(-i \omega_{\text{rf}} \hat{F}_z t)$.
@@ -254,14 +258,15 @@ This explains the relative longevity of the sidebands; the transition most sensi
 Furthermore, the decay time of the $\omega_{12}$ and $\omega_{23}$ sidebands are $74(1)\unit{ms}$ and $71(2)\unit{ms}$ respectively. 
 Constrasting these results to an undressed measurement decay time $\tau_{s}=21(1)$, it is clear that rf dressing shields the quantum state from magnetically induced decoherence.
 The constant of proportionality is the coupling strength of the dressed states.
-\begin{table*}
+\begin{table*}[t]
 \label{tab:sidebands_arb}
-\begin{tabular}{c|c|c}
-transition & sideband frequency & sideband amplitude \\ \hhline{===}
+\begin{tabular}{ccc}
+\hhline{===}
+transition & sideband frequency & sideband amplitude \\ \hhline{---}
  -- & $\omega_{\text{rf}}$ & $(\bra{3} \hat{F}_x \ket{3} - \bra{1} \hat{F}_x \ket{1}) (\rho_{33} - \rho_{11})$ \\
  $\ket{1} \leftrightarrow \ket{2}$ & $\omega_{\text{rf}} + \omega_{12}$ & $-2i \bra{1} \hat{F}_y \ket{2} \text{Re}\{\rho_{12}\} = -2 \bra{2} \hat{F}_z \ket{3} \text{Re}\{\rho_{12}\} $ \\
  $\ket{2} \leftrightarrow \ket{3}$ & $\omega_{\text{rf}} + \omega_{23}$ & $2i \bra{2} \hat{F}_y \ket{3} \text{Re}\{\rho_{23}\} = 2 \bra{1} \hat{F}_z \ket{2} \text{Re}\{\rho_{23}\}$ \\
- $\ket{1} \leftrightarrow \ket{3}$ & $\omega_{\text{rf}} + \omega_{13}$ & $2 \bra{1} \hat{F}_x \ket{3} \text{Re}\{\rho_{13}\}$
+ $\ket{1} \leftrightarrow \ket{3}$ & $\omega_{\text{rf}} + \omega_{13}$ & $2 \bra{1} \hat{F}_x \ket{3} \text{Re}\{\rho_{13}\}$ \\ [1ex]\hhline{===}
 \end{tabular}
 \end{table*}
 
