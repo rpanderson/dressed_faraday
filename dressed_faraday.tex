@@ -77,22 +77,18 @@ and dressed quadratic shift
 \subsection{Literature review notes}
 \begin{itemize}
     \item Minimally sensitive states in other systems, e.g. $\ket{F=1,m=-1} \leftrightarrow \ket{F=2,m=+1}$ at $B=\unit[3.23]{G}$~\cite{matthews_dynamical_1998}, clocks.
-    \item Wide utility of these states for clocks, magnetometers (including microwave, e.g. Treutlein~~\cite{ockeloen_quantum_2013,*horsley_frequency-tunable_2016}), quantum information, and quantum emulation, e.g. elusive many-body spin-singlet state which requires unforgiving field stability~\cite{stamper-kurn_spinor_2013}.
-    \item In electronically/magnetically sensitive spin experiments, magnetic field noise manifest as small perturbations $\Delta \hat{F}_{z}$ which shift the energy eigenvalues.
-    Continuous measurement of an $F=1$ system using the Faraday effect necessitates the state be magnetically sensitive $\langle \hat{F}_x \rangle \neq 0$ but dark states~\note{incorrect use of dark states?}, protected from magnetic field fluctuations only exist in the nullspace of $\hat{F}_z$ i.e. $\hat{F}_{z}\ket{\psi} = \hat{0}$~\cite{aharon_general_2013}. 
+    \item[\checkmark] Wide utility of these states for clocks, magnetometers (including microwave, e.g. Treutlein~~\cite{ockeloen_quantum_2013,*horsley_frequency-tunable_2016}), quantum information, and quantum emulation, e.g. elusive many-body spin-singlet state which requires unforgiving field stability~\cite{stamper-kurn_spinor_2013}.
+    \item[\checkmark] In electronically/magnetically sensitive spin experiments, magnetic field noise manifest as small perturbations $\Delta \hat{F}_{z}$ which shift the energy eigenvalues.
+    \item Continuous measurement of an $F=1$ system using the Faraday effect necessitates the state be magnetically sensitive $\langle \hat{F}_x \rangle \neq 0$ but dark states~\note{incorrect use of dark states?}, protected from magnetic field fluctuations only exist in the nullspace of $\hat{F}_z$ i.e. $\hat{F}_{z}\ket{\psi} = \hat{0}$~\cite{aharon_general_2013}. 
     Therefore, no state exists which is both insensitive to magnetic fields fluctuations and capable of generating a continuous Faraday signal, the two are not mutually exclusive.
     Whereas the aim of a protected qubit subspace is to create \textit{states} that are insensitive to fields, the impetus of metrology is to create \textit{superpositions} and \textit{transitions} insensitive to fields. 
-
-    \item It has been demonstrated that Continuous dynamical decoupling (CoDD)~\cite{facchi_unification_2004,*fanchini_continuously_2007} occurs when the spin undergoes rotations in a plane perpendicular induce perturbation, i.e $\hat{F}_{x}$ or $\hat{F}_{x}$ most readily achieved through Rabi coupling where $\Omega \gg \Delta B$.
-    Decoupling can be used to increase the coherence time of single qubits~\cite{golter_protecting_2014} which can be extended even further by doubly dressing the system and decoupling from noise induced by the first coupling field~\cite{cai_robust_2012} (concatenated continuous decoupling, or CCD).
+    \item[\checkmark] Continuous dynamical decoupling (CoDD)~\cite{facchi_unification_2004,*fanchini_continuously_2007} occurs when the spin undergoes rotations in a plane perpendicular induce perturbation, i.e $\hat{F}_{x}$ or $\hat{F}_{x}$ most readily achieved through Rabi coupling where $\Omega \gg \Delta B$.
+    \item[\checkmark] Decoupling can be used to increase the coherence time of single qubits~\cite{golter_protecting_2014} which can be extended even further by doubly dressing the system and decoupling from noise induced by the first coupling field~\cite{cai_robust_2012} (concatenated continuous decoupling, or CCD).
     \item It has also been shown theoretically that CoDD is superior than pulsed sequence dynamical decoupling for single solid-state qubits for magnetometery~\cite{hirose_continuous_2012}.
-    \note{There is a wealth of literature on this topic in NV. Should trace down the biggest results in this field and cite them~\cite{cai_long-lived_2012}.}
-
     \item Motivate continuous measurement, especially in context of measurement bandwidth; it doesn't make sense to measure something in kHz--MHz band using a shot-based ($\unit[0.1]{Hz}$ or less) readout. Why? Can't react, can't feedback, can't always assume periodicity/repeatability.
     \item Whilst the paper is not focused on introducing spectrograms, we can say they provide a new mechanism for appraising spectrum of a quantum system in real-time. 
     \item From a magnetometry perspective, breaking rotational symmetry is bad because you want there to be no anisotropy to the sensitivity. How does this relate to this work?
-    \item \note{Not sure about this but many NV center guys study Luminescence as a function of time. Could they make spectrograms with there data? See data from~\cite{cai_robust_2012}.}
-    \item (How) The $\hat{F}_z^2$ interaction has been controlled using static magnetic fields, microwave ac Stark shifts~\cite{gerbier_resonant_2006} and tensor-light shifts of off-resonant electric dipole transitions~\cite{smith_continuous_2004}, respectively.
+    \item[\checkmark] (How) The $\hat{F}_z^2$ interaction has been controlled using static magnetic fields, microwave ac Stark shifts~\cite{gerbier_resonant_2006} and tensor-light shifts of off-resonant electric dipole transitions~\cite{smith_continuous_2004}, respectively.
     In collective psuedo-spins, it can arise from nonlinear collisional interactions~\cite{riedel_atom-chip-based_2010,*gross_nonlinear_2010}.
     \item (What) This nonlinear term has been used to traverse the magnetic phase space of a spinor quantum gas, drive quantum quenches of same, initiate spin dynamics in optical lattices~\cite{gerbier_resonant_2006}, enact the canonical spin-squeezing of Kitagawa and Ueda~\cite{kitagawa_squeezed_1993}: one-axis twisting (shear of coherent spin state uncertainty regon) that has squeezed atomic spins in cavitities~\cite{leroux_implementation_2010}, Bose-Einstein condensates~\cite{riedel_atom-chip-based_2010,*gross_nonlinear_2010}, and superconducting qubits.
 \end{itemize}
@@ -123,8 +119,8 @@ and dressed quadratic shift
 \label{sec:background}
 \textit{Structure of background theory:}
 \begin{itemize}
-    \item Introduce Hamiltonian for CoDD (clock states have been introduced so splitting will come naturally).
-    \item Show eigenenergies of for varying $q$ and seperations.
+    \item[\checkmark] Introduce Hamiltonian for CoDD (clock states have been introduced so splitting will come naturally).
+    \item[\checkmark] Show eigenenergies of for varying $q$ and seperations.
     \item Point out in figure that curvature of $\omega_{12}$ starts positive but becomes negative.
     By mean value theorem, it must become vanishing.
     \item Use second order perturbation theory to derive $\qmagic$.
@@ -194,17 +190,17 @@ The control field $\vect{B}(t \geq 0) = -B_{\text{rf}} \cos (\omega_{\text{rf}} 
 \end{itemize}
 \textit{Lab frame eigenstates:}
 \begin{itemize}
-    \item Mean splitting $\omega_L$; quadratic shift $q$.
-    \item Pairwise coupling between $\ket{m=-1} \leftrightarrow \ket{m=0}$ and $\ket{m=0} \leftrightarrow \ket{m=+1}$ via $\hat{F}_x$ and/or $\hat{F}_y$, i.e. affected by fields transverse to the static field oscillating near $\omega_L$.
+    \item[\checkmark] Mean splitting $\omega_L$; quadratic shift $q$.
+    \item[\checkmark] Pairwise coupling between $\ket{m=-1} \leftrightarrow \ket{m=0}$ and $\ket{m=0} \leftrightarrow \ket{m=+1}$ via $\hat{F}_x$ and/or $\hat{F}_y$, i.e. affected by fields transverse to the static field oscillating near $\omega_L$.
     \item The $F=1$ spin operators in the undressed basis do not span all of $\text{SU}(3)$, i.e. $\sigma_x = (\lambda_1 + \lambda_6)/\sqrt{2}$, $\sigma_y = (\lambda_2 + \lambda_7)/\sqrt{2}$, and $\sigma_z = (\lambda_3 + \sqrt{3} \lambda_8)/2$ ($\lambda_4$ and $\lambda_5$ which include off diagonal terms in rows/columns 1 and 3 are absent) where $\lambda_i, i = 1,\dots,8$ are the Gell-Mann matrices.
 \end{itemize}
 \textit{Dressed states on resonance:}
 \begin{itemize}
-    \item Dressed Larmor frequency:
+    \item[\checkmark] Dressed Larmor frequency:
     \begin{align*}
         \omega_D \equiv (\omega_3 - \omega_2)_{\Delta=0}/2 &= (\omega_{12} + \omega_{23})_{\Delta=0}/2 \\ &= \sqrt{\Omega^2 + q_D^2}\, .
     \end{align*}
-    \item Dressed quadratic shift:
+    \item[\checkmark] Dressed quadratic shift:
     \begin{align*}
         q_D &\equiv (\omega_3 + \omega_1 -2\omega_2)_{\Delta=0}/2 \\
             &= (\omega_{23}-\omega_{12})_{\Delta=0}/2\\ 
@@ -212,9 +208,9 @@ The control field $\vect{B}(t \geq 0) = -B_{\text{rf}} \cos (\omega_{\text{rf}} 
      \end{align*}
     \item Thus $\Omega = \sqrt{\omega_{12} \omega_{23}}_{\Delta=0}$ and $q_D = (\omega_{23} - \omega_{12})_{\Delta=0}/2$, both of which can be attained from the dressed sideband splittings on resonance.
     Such high-bandwidth measurement of $\Omega$ (magnetic field oscillating along $x$ with amplitude $B_{\text{rf}}$ and frequency $\omega_L$) allows (in principle) closed-loop control of $\Omega$ using the atoms.
-    \item For $q=0$ (low-field limit), the dressed states at $\Delta=0$ are eigenstates of $\hat{F}_x$, \textit{viz.} $\ket{m_x=-1,0,+1} \equiv \ket{1}$, $\ket{2}$, and $\ket{3}$ respectively.
+    \item[\checkmark] For $q=0$ (low-field limit), the dressed states at $\Delta=0$ are eigenstates of $\hat{F}_x$, \textit{viz.} $\ket{m_x=-1,0,+1} \equiv \ket{1}$, $\ket{2}$, and $\ket{3}$ respectively.
     (i) the spectrum has vanishing linear sensitivity to magnetic fields, with the leading quadratic sensitivity (as in spin-$1/2$) of the degenerate $\ket{1} \leftrightarrow \ket{2}$ and $\ket{2} \leftrightarrow \ket{3}$ transitions, and (ii) fields along $y$ or $z$ oscillating near the Rabi frequency $\Omega$ drive transitions between different $\ket{m_x}$ states. \note{Cite other dressed-ception papers on both of these.}
-    \item The $F=1$ spin operators in the resonantly dressed basis span more of $\text{SU}(3)$, as $[\hat{F}_x]_D = (q_D/\omega_D) Q_{x^2-y^2} - (\Omega / \omega_D) \sigma_z = (q_D/\omega_D) \lambda_4 - \Omega / \omega_D ( \lambda_3 +\sqrt{3} \lambda_8) / 2$, $[\hat{F}_y]_D$ is a sum of $\lambda_1, \lambda_2$, and $\lambda_7$, and  $[\hat{F}_z]_D$ is a sum of $\lambda_1$ and $\lambda_6$.
+    \item[\checkmark] The $F=1$ spin operators in the resonantly dressed basis span more of $\text{SU}(3)$, as $[\hat{F}_x]_D = (q_D/\omega_D) Q_{x^2-y^2} - (\Omega / \omega_D) \sigma_z = (q_D/\omega_D) \lambda_4 - \Omega / \omega_D ( \lambda_3 +\sqrt{3} \lambda_8) / 2$, $[\hat{F}_y]_D$ is a sum of $\lambda_1, \lambda_2$, and $\lambda_7$, and  $[\hat{F}_z]_D$ is a sum of $\lambda_1$ and $\lambda_6$.
     The presence of $Q_{x^2-y^2} = \lambda_4$ for $q \neq 0$ signifies the coupling of dressed states $\ket{1}$ and $\ket{3}$, i.e. a non-zero $\bra{1} \hat{F}_x \ket{3}$.
     \note{The spin operators have no projection onto $\lambda_5$, even for an rf field oscillating along $y$.}
     \item Curvature of the dressed-state energies can be evaluated using perturbation theory;
