@@ -3,3 +3,13 @@ Concluding statement about quantum noise
 * It doesn't give us information about quantum noise (weak, photon-shot noise limit).
 * With a modification of the probe (atom-shot noise dominated) we could measure and affect the quantum noise dynamically.
 * Under this Hamiltonian probing the dressed state coherences we might be able to observe non-Gaussian quantum noise geometries in a manner analagous to Nature (Mitchell).
+
+quantum spin ladders with frustrated interactions
+XYZ Heisenberg coupling
+
+
+Summary of information richness
+===============================
+Given a known initial state, this amounts to a continuous measurement of all coupling strengths in the new basis (analagous to Hamiltonian parameter estimation / process tomography / Hamiltonian learning).
+Or given the coupling strengths from an independent characterisation of the Hamiltonian is a direct measure of the dressed density matrix (analagous to QST).
+This should be no surprise, as the Hamiltonian 
