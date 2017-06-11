@@ -62,19 +62,34 @@ However, any $\hat{F}_z^2$ interaction -- arising from nonlinear Zeeman~\cite{ra
     }
 \end{figure}
 This yields dressed eigenstates $\{\ket{1}, \ket{2}, \ket{3}\}$ that are no longer $\text{SO}(3)$ rotations of the bare Zeeman states $\ket{m_z}$, but have nematic order, and an eigenspectrum $\omega_i(\Delta) = E_{\ket{i}}/\hbar$ shown in \reffig{fig:eigensystem_schematic}(left) for $q \in [0, \Omega]$.
-Moreover, the coupling of these dressed states is significantly different: the spin operators $\hat{F}_{x,y,z}$ in the dressed basis span more of $\text{SU}(3)$ for $q \neq 0$, e.g. $\bra{i} \hat{F}_x \ket{j}$ has a non-zero projection onto the fourth Gell-Mann matrix $Q_{x^2-y^2}$ signifying the direct coupling of dressed states $\ket{1}$ and $\ket{3}$.
+Moreover, the coupling of these dressed states is markedly different: the spin operators $\hat{F}_{x,y,z}$ in the dressed basis span more of $\text{SU}(3)$ for $q \neq 0$, e.g. $\bra{i} \hat{F}_x \ket{j}$ has a non-zero projection onto the fourth Gell-Mann matrix $Q_{x^2-y^2}$ signifying the direct coupling of dressed states $\ket{1}$ and $\ket{3}$.
 The dressed-state transitions are thus cyclic and non-degenerate (\reffig{fig:eigensystem_schematic}(right)), characterized by a dressed Larmor frequency
 \begin{align}
+\label{eq:dressed_larmor}
     \omega_D \equiv (\omega_3 - \omega_2)_{\Delta=0}/2 &= (\omega_{12} + \omega_{23})_{\Delta=0}/2 \notag\\ &= \sqrt{\Omega^2 + q_D^2}\, ,
 \end{align}
 and dressed quadratic shift
 \begin{align}
+\label{eq:dressed_quadratic}
     q_D &\equiv (\omega_3 + \omega_1 -2\omega_2)_{\Delta=0}/2 \notag\\
         &= (\omega_{23}-\omega_{12})_{\Delta=0}/2 \notag s\\ 
         &= -q/2 \, .
  \end{align}
-The curvature of the dressed state energies $\omega_i(\Delta)$ depends on the ratio $q_R = q/\Omega$, and is equal for states $\ket{1}$ and $\ket{2}$ when $q_R=\qRmagic = \sqrt{(3\sqrt{2} - 4)/2} \approx 0.348$, resulting in vanishing quadratic dependence of their transition frequency $\omega_{12}=\omega_2 - \omega_1$ on $\Delta$~\footnote{}.
-The leading-order quartic sensitivity of these states to field variations at amounts to their optimal CoDD and we join in Lundblad \etal in terming them synthetic clock states.  
+The curvature of the dressed state energies $\omega_i(\Delta)$ depends on the ratio $q_R = q/\Omega$, and is equal for states $\ket{1}$ and $\ket{2}$ when 
+% $q_R=\qRmagic = \sqrt{(3\sqrt{2} - 4)/2} \approx 0.348$,
+\begin{align}
+\label{eq:qRmagic}
+    q_R = \qRmagic = \sqrt{(3\sqrt{2} - 4)/2} \approx 0.348 \, ,
+\end{align}
+resulting in vanishing quadratic dependence of their transition frequency $\omega_{12}=\omega_2 - \omega_1$ on $\Delta$~\footnote{
+    The curvature of the dressed-state energies is evaluated using perturbation theory. In particular, the dimensionless curvature of $\omega_{12}$ is $\partial^2(\omega_{12}/\Omega)/\partial(\Delta/\Omega)^2 = \Omega \, \partial^2\omega_{12}/\partial \Delta^2 = -(3 q_R \sqrt{4 + q_R^2} - q_R^2 - 2)/(2 \sqrt{4 + q_R^2})$.
+    For $q_R = 0$, we recover the spin-1/2 result, $\Omega\, \partial^2\omega_{12}/\partial \Delta^2 = 1$}.
+The leading-order sensitivity of these states to field variations $\delta B_z$ at $\qRmagic$ is quartic~\footnote{
+    We take $\Delta = -\gamma \, \delta B_z$ for $|\Delta | \leq 2\Omega$ ($| \delta B_z | \leq B_{\text{rf}}/2$) and $| \partial q / \partial \Delta | \approx | \gamma^{-1} \partial q / \partial B_z | = |2 B_z q_Z / \gamma| \ll 1$, valid to $10^{-3}$ for the field strengths $B_z \lesssim \unit[5]{G}$ used here, resulting in vanishing third-order derivatives of $\omega_i$ with respect to detuning. 
+    In general, the variation of $q$ with $\Delta$ (or $\delta B_z$) can be accounted for using the Breit-Rabi equation, leading to a residual linear and cubic variation of $\omega_{12}$ with $\delta B_z$, and a small correction to $\qRmagic$ in \refeq{eq:qRmagic}.},
+amounting to their optimal CoDD and we join in Lundblad \etal in terming them synthetic clock states in this configuration.
+
+% It is this dressed spectrum and the optimal CoDD we probe using continuous weak measurement in the remainder of this paper.
 
 \subsection{Literature review notes}
 \begin{itemize}
@@ -125,7 +140,7 @@ The leading-order quartic sensitivity of these states to field variations at amo
     \item[\checkmark] Show eigenenergies of for varying $q$ and seperations.
     \item[\checkmark] Point out in figure that curvature of $\omega_{12}$ starts positive but becomes negative.
     By mean value theorem, it must become vanishing.
-    \item Use second order perturbation theory to derive $\qmagic$.
+    \item[\checkmark] Use second order perturbation theory to derive $\qmagic$. Only in supp. info. if forced to do so.
 \end{itemize}
 Hamiltonians (quasi-static field along $z$, coupling field along $x$:
     \begin{align*}
@@ -169,7 +184,7 @@ The control field $\vect{B}(t \geq 0) = -B_{\text{rf}} \cos (\omega_{\text{rf}} 
 \end{figure}
 
 \begin{itemize}
-    \item At low magnetic field strengths, $\omega_L \propto B_z$ and $q \propto B^2$, and for our parameters we are justified in taking $\omega_L = \gamma B$ and $q = q_Z B_z^2$, where $\gamma = 2\pi \times \unit[702.379]{kHz/G}$ is the gyromagnetic ratio for \Rb $F=1$ and $q_Z = 2\pi \times \unit[71.89]{Hz/G^2}$.
+    \item At low magnetic field strengths, $\omega_L \propto B_z$ and $q \propto B^2$, and for our parameters we are justified in taking $\omega_L = \gamma B$ and $q = q_Z B_z^2$, where $\gamma = 2\pi \times \unit[702.379]{kHz/G}$ is the gyromagnetic ratio for \Rb $F=1$ and $q_Z = 2\pi \times \unit[71.89]{Hz/G^2}$ the quadratic Zeeman coefficient.
     \item For most of the analysis presented here (with $\omega_L$ and $q$ defined as above) these proportionalities need not be met, or the results, e.g. value of $\qmagic$ require a small correction. 
     \item For $q=0$, $\hat{H}_{\text{lab}}$ and $\hat{H}_{\text{rwa}} \propto \vect{B} \cdot \hat{\vect{F}}$ and are thus a generator of rotations, but $q \hat{F}_z^2 \neq 0$ breaks the $\text{SU}(2)$ symmetry and $\expect{\vect{\hat{F}}}^2$ is not preserved.
     \item This broken symmetry lifts the degeneracy of the dressed state splittings making them distinguishable in our spectrogram measurements.
@@ -216,11 +231,11 @@ The control field $\vect{B}(t \geq 0) = -B_{\text{rf}} \cos (\omega_{\text{rf}} 
     The presence of $Q_{x^2-y^2} = \lambda_4$ for $q \neq 0$ signifies the coupling of dressed states $\ket{1}$ and $\ket{3}$, i.e. a non-zero $\bra{1} \hat{F}_x \ket{3}$.
     \note{The spin operators have no projection onto $\lambda_5$, even for an rf field oscillating along $y$.}
     \item To drive the $\ket{1} \leftrightarrow \ket{2}$ transition exclusively (remain in the $\{\ket{1}, \ket{2}\}$ subspace) with an oscillating field along $y$ or $z$, the concatenated coupling strength must be $\ll q_D$, the separation of the two-lowest dressed state transitions. This sets the \textit{dynamic range} of ac magnetometry using the synthetic clock states alone.
-    \item Curvature of the dressed-state energies can be evaluated using perturbation theory;
+    \item[\checkmark] Curvature of the dressed-state energies can be evaluated using perturbation theory;
     \[
     \partialD{^2\omega_n}{\Delta^2} = \sum_{k \neq n} \frac{\abs{\bra{k} \hat{F}_z \ket{n}}^2}{\omega_n - \omega_k} \, .
     \]
-    \item Thus the curvature of the dressed-state splittings can be found. In particular, the dimensionless curvature of $\omega_{12}$ is (presuming $\abs{\partial q / \partial \Delta} \ll 1$) 
+    \item[\checkmark] Thus the curvature of the dressed-state splittings can be found. In particular, the dimensionless curvature of $\omega_{12}$ is (presuming $\abs{\partial q / \partial \Delta} \ll 1$) 
     \begin{align*}
     \partialD{^2(\omega_{12}/\Omega)}{(\Delta/\Omega)^2} &= \Omega \partialD{^2\omega_{12}}{\Delta^2} \\ &= -\frac{3 q_R \sqrt{4 + q_R^2} - q_R^2 - 2}{2 \sqrt{4 + q_R^2}} \, .
     \end{align*}
@@ -229,12 +244,13 @@ The control field $\vect{B}(t \geq 0) = -B_{\text{rf}} \cos (\omega_{\text{rf}} 
     \qRmagic = \sqrt{(3\sqrt{2} - 4)/2} \approx 0.348 \, .
     \]
     For $q_R = 0$, we recover the spin-1/2 result, $\Omega\, \partial^2\omega_{12}/\partial \Delta^2 = 1$.
-    \item Similarly, perturbation theory can be used to show that the third-order derivatives of $\omega_n$ with respect to detuning all vanish when $\abs{\partial q / \partial \Delta} \approx \abs{\gamma^{-1} \partial q / \partial B_z} \ll 1$, and thus the leading sensitivity to detuning (and thus $B_z$) is fourth-order. This validates the choice of our phenomenological even-polynomial model for fitting to $(\delta B_z(t), \omega_{12}(t))$ data extracted from Faraday spectrograms.
-    \item The above can be quantified by noting that $\gamma^{-1} \partial q / \partial B_z = 2 B_z q_Z / \gamma \lesssim 10^{-3}$ for $B_z \lesssim \unit[5]{G}$.
+    \item[\checkmark] Similarly, perturbation theory can be used to show that the third-order derivatives of $\omega_n$ with respect to detuning all vanish when $\abs{\partial q / \partial \Delta} \approx \abs{\gamma^{-1} \partial q / \partial B_z} \ll 1$, and thus the leading sensitivity to detuning (and thus $B_z$) is fourth-order.
+    \item[\checkmark] The above can be quantified by noting that $\gamma^{-1} \partial q / \partial B_z = 2 B_z q_Z / \gamma \lesssim 10^{-3}$ for $B_z \lesssim \unit[5]{G}$.
+    \item This validates the choice of our phenomenological even-polynomial model for fitting to $(\delta B_z(t), \omega_{12}(t))$ data extracted from Faraday spectrograms.
     \item Near $q = \qmagic$, the ratio of the Rabi frequency to the Larmor frequency is approximately:
     \begin{align*}
         \frac{\Omega}{\omega_L} &= \frac{B_\text{rf}}{B_0} \\
-                                &\approx \frac{q_z B_0}{\sqrt{2} \gamma \, \qRmagic} \\
+                                &\approx \frac{q_Z B_0}{\sqrt{2} \gamma \, \qRmagic} \\
                                 &= 2.1\times10^{-4} B_0 \, ,
     \end{align*}
     with $B_0$ is in Gauss.
