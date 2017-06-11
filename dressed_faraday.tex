@@ -19,7 +19,7 @@ Here we use an atom-light interface with minimal backaction to probe the spectru
 The dressing amplitude sets the radiofrequency band in which oscillating magnetic fields manifest a linear measurand, and we probe the energy spectrum while the system evolves unitarily.
 By varying a symmetry-breaking parameter of the Hamiltonian, we find a regime in which two of the dressed states are maximally insensitive (up to fourth-order) in magnetic field fluctuations that are slow compared to the dressed-state splittings.
 Moreover, we demonstrate the predictive power of our continuous probe to optimize the dynamical decoupling and tune the measurement band.
-This robust system shares the useful hallmarks of quantum metrology platforms; the states are thus termed ``synthetic clock'' states in a co-published result by Lundblad~\textit{et al.} (Phys. Rev. Lett. \textbf{118}, 2xxxxx (2017)) and are candidates for band-tunable magnetometry and emulation of quantum spin ladders. 
+This robust system shares the useful hallmarks of quantum metrology platforms; the states are thus termed ``synthetic clock'' states in a complementary result by Lundblad~\etal (\lundblad) and are candidates for band-tunable magnetometry and emulation of quantum magnetism in solid-state systems. 
 \end{abstract}
 
 \maketitle
@@ -33,46 +33,48 @@ Weak continuous measurement is a powerful instrument for appraising and refining
 Here we use minimally perturbative \note{dispersive} optical readout of a `bare' spin component $\hat{F}_x$ to measure the spectrum of a continuously decoupled spin-1 quantum gas in real-time.
 The rich time-frequency domain data reveal not only multiple dressed-state splittings and their relative immunity to noise, but also dressed state coherences and coupling strengths.
 This potent  ability to estimate the eigenspectrum of a multi-level dressed system reveals feature absent in spin-1/2 or composite spin-1/2 qubit systems; principally, we identify a regime in which a subspace of the dressed system is maximally decoupled from noise $\propto \hat{F}_z$.
-This protected subspace is spanned by two of the dressed states, termed `synthetic clock states' in a co-publication by Lundblad~\textit{et al.} (Phys. Rev. Lett. \textbf{118}, 2xxxxx (2017)).
+This protected subspace is spanned by two of the dressed states, termed `synthetic clock states' in a co-submission by Lundblad~\textit{et al.} (\lundblad).
 The low-frequency magnetic stability and high-bandwidth detection of these states is immediately applicable to band-tunable (ac) magnetometry~\cite{hirose_continuous_2012,loretz_radio-frequency_2013,ockeloen_quantum_2013,*horsley_frequency-tunable_2016} and experiments preparing delicate spin-entangled many-body states~\cite{stamper-kurn_spinor_2013}; whereas the unconventional cyclic coupling of all $2F+1$ dressed states could be applied to emulation of frustrated quantum spin chains~\cite{mikeska_one-dimensional_2004}.
 % The spin-1 asymmetry arising from $\hat{F}_z^2$...
 % The eigenstates produced by CoDD are simply the familiar 'dressed states' of atomic physics.
 
 % Weak continuous measurements based on dispersive probes have found broad application in NV centers, superconducting qubits \note{single spin readout (not ensemble), requiring repeated preparation and measurement to obtain a spectrum}, and cold atoms \note{with bare states, magnetometry, spin dynamics, tomography and spin squeezing}... but have not been used in concert with CoDD to date.
 
-Atomic Zeeman states $\ket{m_z=-1,0,1}$ in a magnetic field $\vect{B} = B_z \vect{e}_z$ can be decoupled from fluctuations in $B_z$ by applying a radiofrequency (rf) field perpendicular to the quantization direction $z$, of amplitude $B_{\text{rf}} \vect{e}_x$, and oscillating near the splitting of the `bare' Zeeman states $\omega_L \equiv (E_{m_z=+1}-E_{m_z=-1})/2\hbar$, the Larmor frequency.
+Atomic Zeeman states $\ket{m_z=-1,0,1}$ in a magnetic field $B_z \vect{e}_z$ can be decoupled from fluctuations in $B_z$ by applying a radiofrequency (rf) field perpendicular to the quantization direction $z$, of amplitude $B_{\text{rf}} \vect{e}_x$, and oscillating near the splitting of the `bare' Zeeman states $\omega_L \equiv (E_{m_z=+1}-E_{m_z=-1})/2\hbar$, the Larmor frequency.
 At low magnetic fields, the degeneracy of the composite spin-$1/2$ systems~\cite{majorana_atomi_1932} renders the spin-1 behavior identical to CoDD in spin-$1/2$ qubits.
-The spin is quantized along $x$ in a frame rotating with the radiofrequency $\omega_{\text{rf}}$, i.e. the eigenstates of $\ham_{\text{rwa}} = \Delta \hat{F}_z + \Omega \hat{F}_x$ are $\ket{m_x=-1,0,1}$, with energies $m_x \hbar \sqrt{\Omega^2 + \Delta^2}$, where $\Delta = \omega_{\text{rf}}-\omega_L$ is the detuning and $\Omega_{\text{rf}} = \gamma B_{\text{rf}} / 2$ is the Rabi frequency.
-The rf dressing reduces the leading-order linear sensitivity of the `bare' state energies ($\omega_L \approx \gamma B_z$ where $\gamma$ is the gyromagnetic ratio) to magnetic field variations $\Delta B_z$ to quadratic sensitivity, via the detuning $\Delta$.
+The spin is quantized along $x$ in a frame rotating with the radiofrequency $\omega_{\text{rf}}$, i.e. the eigenstates of $\ham_{\text{rwa}} = \Delta \hat{F}_z + \Omega \hat{F}_x$ are $\ket{m_x=-1,0,1}$, with energies $m_x \hbar \sqrt{\Omega^2 + \Delta^2}$, where $\Delta = \omega_{\text{rf}}-\omega_L$ is the detuning and $\Omega = \gamma B_{\text{rf}} / 2$ is the Rabi frequency.
+The rf dressing reduces the leading-order linear sensitivity of the `bare' state energies ($\omega_L \approx \gamma B_z$ where $\gamma$ is the gyromagnetic ratio) to magnetic field variations $\delta B_z$ to quadratic sensitivity, via the detuning $\Delta$.
 The spin character and symmetries are otherwise unchanged; magnetic fields along $y$ or $z$ oscillating near the Rabi frequency drive transitions $\ket{m_x=-1} \leftrightarrow \ket{m_x=0}$ and $\ket{m_x=0} \leftrightarrow \ket{m_x=+1}$, the basis for ac magnetometry~\cite{hirose_continuous_2012} or concatenated CoDD to mitigate fluctuations in $\Omega$ on the spectrum and coherences~\cite{cai_robust_2012}.
 
-However, any $\hat{F}_z^2$ interaction -- arising from nonlinear Zeeman~\cite{ramsey_molecular_1956}, microwave ac-Stark~\cite{gerbier_resonant_2006}, or tensor light~\cite{smith_continuous_2004} shifts -- raises the degeneracy of the $\ket{m_z=-1} \leftrightarrow \ket{m_z=0}$ and $\ket{m_z=0} \leftrightarrow \ket{m_z=+1}$ transitions, and breaks the symmetry of $\ham_{\text{rwa}} = \Delta \hat{F}_z + \Omega \hat{F}_x + q \hat{F}_z^2$, where $q \equiv (E_{m_z=+1} + E_{m_z=-1} - 2 E_{m_z=0})/2\hbar$.
+However, any $\hat{F}_z^2$ interaction -- arising from nonlinear Zeeman~\cite{ramsey_molecular_1956}, microwave ac-Stark~\cite{gerbier_resonant_2006}, or tensor light~\cite{smith_continuous_2004} shifts -- raises the degeneracy of the $\ket{m_z=-1} \leftrightarrow \ket{m_z=0}$ and $\ket{m_z=0} \leftrightarrow \ket{m_z=+1}$ transitions, and breaks the symmetry of $\ham_{\text{rwa}} = \Delta \hat{F}_z + \Omega \hat{F}_x + q \hat{F}_z^2$, where $q \equiv (E_{m_z=+1} + E_{m_z=-1} - 2 E_{m_z=0})_{\Omega=0}/2\hbar$.
 \begin{figure}
     \centering
     \includegraphics[width=\columnwidth]{figure_1.pdf}
     \caption{
     \label{fig:eigensystem_schematic}
         (Color online)
-        Energy spectrum and splittings of a radiofrequency coupled spin-1 for various $q(B)\in[0,\Omega]$.
+        Energy spectrum and splittings of a radiofrequency coupled spin-1 for various $q \in [0,\Omega]$.
         The transparency of each curve is proportional to the distance of the quadratic shift $q$ from $\qmagic\approx 0.348\Omega$.
-        (Left) Energies $\omega_n$ of dressed states $\ket{n}=\ket{1}$, (red) $\ket{2}$ (blue), and $\ket{3}$ (green) normalized to the rf-coupling strength (Rabi frequency) $\Omega$ as a function of detuning $\Delta(B)=\omega_{\text{rf}}-\omega_L(B)$,
+        (Left) Energies $\omega_n$ of dressed states $\ket{n}=\ket{1}$, (red) $\ket{2}$ (blue), and $\ket{3}$ (green) normalized to the rf-coupling strength (Rabi frequency) $\Omega$ as a function of detuning $\Delta=\omega_{\text{rf}}-\omega_L$,
         Dashed lines indicate the energies of uncoupled states ($\Omega=0$) in a frame rotating at $\omega_{\text{rf}}$.
         (Right) Splittings $\omega_{ij}$ of dressed states $\ket{i}$ and $\ket{j}$ as a function of detuning.
         When $q=\qmagic$ (bold curves), energies $\omega_1$ and $\omega_2$ share the same curvature, and their difference $\omega_{12}$ (right, purple) is minimally sensitive to detuning and thus magnetic field variations. 
     }
 \end{figure}
-This yields dressed eigenstates $\{\ket{1}, \ket{2}, \ket{3}\}$ that are no longer $\text{SO}(3)$ rotations of the bare Zeeman states $\ket{m_z}$, but have nematic order, and an eigenspectrum $\omega_i(\Delta) = E_{\ket{i}}/\hbar$ shown in \reffig{fig:eigensystem_schematic}(left).
+This yields dressed eigenstates $\{\ket{1}, \ket{2}, \ket{3}\}$ that are no longer $\text{SO}(3)$ rotations of the bare Zeeman states $\ket{m_z}$, but have nematic order, and an eigenspectrum $\omega_i(\Delta) = E_{\ket{i}}/\hbar$ shown in \reffig{fig:eigensystem_schematic}(left) for $q \in [0, \Omega]$.
 Moreover, the coupling of these dressed states is significantly different: the spin operators $\hat{F}_{x,y,z}$ in the dressed basis span more of $\text{SU}(3)$ for $q \neq 0$, e.g. $\bra{i} \hat{F}_x \ket{j}$ has a non-zero projection onto the fourth Gell-Mann matrix $Q_{x^2-y^2}$ signifying the direct coupling of dressed states $\ket{1}$ and $\ket{3}$.
 The dressed-state transitions are thus cyclic and non-degenerate (\reffig{fig:eigensystem_schematic}(right)), characterized by a dressed Larmor frequency
 \begin{align}
-    \omega_D \equiv (\omega_3 - \omega_2)_{\Delta=0}/2 &= (\omega_{12} + \omega_{23})_{\Delta=0}/2 \\ &= \sqrt{\Omega^2 + q_D^2}\, ,
+    \omega_D \equiv (\omega_3 - \omega_2)_{\Delta=0}/2 &= (\omega_{12} + \omega_{23})_{\Delta=0}/2 \notag\\ &= \sqrt{\Omega^2 + q_D^2}\, ,
 \end{align}
 and dressed quadratic shift
 \begin{align}
-    q_D &\equiv (\omega_3 + \omega_1 -2\omega_2)_{\Delta=0}/2 \\
-        &= (\omega_{23}-\omega_{12})_{\Delta=0}/2\\ 
+    q_D &\equiv (\omega_3 + \omega_1 -2\omega_2)_{\Delta=0}/2 \notag\\
+        &= (\omega_{23}-\omega_{12})_{\Delta=0}/2 \notag s\\ 
         &= -q/2 \, .
  \end{align}
+The curvature of the dressed state energies $\omega_i(\Delta)$ depends on the ratio $q_R = q/\Omega$, and is equal for states $\ket{1}$ and $\ket{2}$ when $q_R=\qRmagic = \sqrt{(3\sqrt{2} - 4)/2} \approx 0.348$, resulting in vanishing quadratic dependence of their transition frequency $\omega_{12}=\omega_2 - \omega_1$ on $\Delta$~\footnote{}.
+The leading-order quartic sensitivity of these states to field variations at amounts to their optimal CoDD and we join in Lundblad \etal in terming them synthetic clock states.  
 
 \subsection{Literature review notes}
 \begin{itemize}
@@ -80,12 +82,12 @@ and dressed quadratic shift
     \item[\checkmark] Wide utility of these states for clocks, magnetometers (including microwave, e.g. Treutlein~~\cite{ockeloen_quantum_2013,*horsley_frequency-tunable_2016}), quantum information, and quantum emulation, e.g. elusive many-body spin-singlet state which requires unforgiving field stability~\cite{stamper-kurn_spinor_2013}.
     \item[\checkmark] In electronically/magnetically sensitive spin experiments, magnetic field noise manifest as small perturbations $\Delta \hat{F}_{z}$ which shift the energy eigenvalues.
     \item Continuous measurement of an $F=1$ system using the Faraday effect necessitates the state be magnetically sensitive $\langle \hat{F}_x \rangle \neq 0$ but dark states~\note{incorrect use of dark states?}, protected from magnetic field fluctuations only exist in the nullspace of $\hat{F}_z$ i.e. $\hat{F}_{z}\ket{\psi} = \hat{0}$~\cite{aharon_general_2013}. 
-    Therefore, no state exists which is both insensitive to magnetic fields fluctuations and capable of generating a continuous Faraday signal, the two are not mutually exclusive.
-    Whereas the aim of a protected qubit subspace is to create \textit{states} that are insensitive to fields, the impetus of metrology is to create \textit{superpositions} and \textit{transitions} insensitive to fields. 
-    \item[\checkmark] Continuous dynamical decoupling (CoDD)~\cite{facchi_unification_2004,*fanchini_continuously_2007} occurs when the spin undergoes rotations in a plane perpendicular induce perturbation, i.e $\hat{F}_{x}$ or $\hat{F}_{x}$ most readily achieved through Rabi coupling where $\Omega \gg \Delta B$.
+    Therefore, no state exists which is both insensitive to magnetic fields fluctuations and capable of generating a continuous Faraday signal; the two are not mutually exclusive.
+    \item Whereas the aim of a protected qubit subspace is to create \textit{states} that are insensitive to fields, the impetus of metrology is to create \textit{superpositions} and \textit{transitions} insensitive to fields. 
+    \item[\checkmark] Continuous dynamical decoupling (CoDD)~\cite{facchi_unification_2004,*fanchini_continuously_2007} occurs when the spin undergoes rotations in a plane perpendicular induce perturbation, i.e $\hat{F}_{x}$ or $\hat{F}_{x}$ most readily achieved through Rabi coupling where $\Omega \gg \delta B$.
     \item[\checkmark] Decoupling can be used to increase the coherence time of single qubits~\cite{golter_protecting_2014} which can be extended even further by doubly dressing the system and decoupling from noise induced by the first coupling field~\cite{cai_robust_2012} (concatenated continuous decoupling, or CCD).
     \item It has also been shown theoretically that CoDD is superior than pulsed sequence dynamical decoupling for single solid-state qubits for magnetometery~\cite{hirose_continuous_2012}.
-    \item Motivate continuous measurement, especially in context of measurement bandwidth; it doesn't make sense to measure something in kHz--MHz band using a shot-based ($\unit[0.1]{Hz}$ or less) readout. Why? Can't react, can't feedback, can't always assume periodicity/repeatability.
+    \item[\checkmark] Motivate continuous measurement, especially in context of measurement bandwidth; it doesn't make sense to measure something in kHz--MHz band using a shot-based ($\unit[0.1]{Hz}$ or less) readout. Why? Can't react, can't feedback, can't always assume periodicity/repeatability.
     \item Whilst the paper is not focused on introducing spectrograms, we can say they provide a new mechanism for appraising spectrum of a quantum system in real-time. 
     \item From a magnetometry perspective, breaking rotational symmetry is bad because you want there to be no anisotropy to the sensitivity. How does this relate to this work?
     \item[\checkmark] (How) The $\hat{F}_z^2$ interaction has been controlled using static magnetic fields, microwave ac Stark shifts~\cite{gerbier_resonant_2006} and tensor-light shifts of off-resonant electric dipole transitions~\cite{smith_continuous_2004}, respectively.
@@ -121,7 +123,7 @@ and dressed quadratic shift
 \begin{itemize}
     \item[\checkmark] Introduce Hamiltonian for CoDD (clock states have been introduced so splitting will come naturally).
     \item[\checkmark] Show eigenenergies of for varying $q$ and seperations.
-    \item Point out in figure that curvature of $\omega_{12}$ starts positive but becomes negative.
+    \item[\checkmark] Point out in figure that curvature of $\omega_{12}$ starts positive but becomes negative.
     By mean value theorem, it must become vanishing.
     \item Use second order perturbation theory to derive $\qmagic$.
 \end{itemize}
@@ -156,27 +158,27 @@ The control field $\vect{B}(t \geq 0) = -B_{\text{rf}} \cos (\omega_{\text{rf}} 
         (Color online)
         Acquisition and analysis pipeline of the continuous spectrum observation for $q_R = 0.402(3)$ ($f_{\text{rf}}=\unit[3.521]{MHz}$, $B_0=\unit[5.013]{G}$).
         The underlay of (A) and (B) are spectrograms of raw acquisitions from the polarimeter measuring Faraday rotation of the probe beam.
-        (A) Time-resolved magnetometry is used to calibrate the instantaneous magnetic field $B(t) = B_0 + \Delta B(t)$ over the interrogation interval, in which the field [detuning] varies over a range $\sim B_{\text{rf}}$ [$2\Omega$] and the spinor gas is left to Larmor precess in the absence of a dressing field ($\Omega = 0$).
+        (A) Time-resolved magnetometry is used to calibrate the instantaneous magnetic field $B_z(t) = B_0 + \delta B_z(t)$ over the interrogation interval, in which the field [detuning] varies over a range $\sim B_{\text{rf}}$ [$2\Omega$] and the spinor gas is left to Larmor precess in the absence of a dressing field ($\Omega = 0$).
         We fit sinc peaks in the frequency domain for each spectrogram window (time domain) to determine the instantaneous Larmor frequency $f_L(t)$ and quadratic shift $q(t)$.
        (B) The field is swept over the same range but the radiofrequency dressing is applied ($\Omega > 0$).
        Three sidebands appear above (shown) and below the carrier at $f_{\text{rf}}$ (dashed, orange), revealing the dressed state splittings $\omega_{ij}$.
-       (C) A parametric plot of $f_{12}(t)$ and $f_{23}(t)$ versus $\Delta B(t)$ by combining analysis of (A) and (B).
-       Solid curves in (B) and (C) are theoretical splittings from an eigenspectrum calculation, provided only $f_{\text{rf}}$, $B(t)$, and $\Omega$, i.e. no free parameters.
-       The synthetic clock transition $f_{12}$ varies by $\unit[39]{Hz}$ for $0 \leq \Delta B \leq B_{\text{rf}}/4 = \unit[3.2]{mG}$, equivalent to $0 \leq \abs{\Delta/\Omega} \leq 0.5$ (C, inset).
+       (C) A parametric plot of $f_{12}(t)$ and $f_{23}(t)$ versus $\delta B(t)$ by combining analysis of (A) and (B).
+       Solid curves in (B) and (C) are theoretical splittings from an eigenspectrum calculation, provided only $f_{\text{rf}}$, $B_z(t)$, and $\Omega$, i.e. no free parameters.
+       The synthetic clock transition $f_{12}$ varies by $\unit[39]{Hz}$ for $0 \leq \delta B_z \leq B_{\text{rf}}/4 = \unit[3.2]{mG}$, equivalent to $0 \leq \abs{\Delta/\Omega} \leq 0.5$ (C, inset).
     }
 \end{figure}
 
 \begin{itemize}
-    \item At low magnetic field strengths, $\omega_L \propto B$ and $q \propto B^2$, and for our parameters we are justified in taking $\omega_L = \gamma B$ and $q = q_Z B^2$, where $\gamma = 2\pi \times \unit[702.379]{kHz/G}$ is the gyromagnetic ratio for \Rb $F=1$ and $q_Z = 2\pi \times \unit[71.89]{Hz/G^2}$.
+    \item At low magnetic field strengths, $\omega_L \propto B_z$ and $q \propto B^2$, and for our parameters we are justified in taking $\omega_L = \gamma B$ and $q = q_Z B_z^2$, where $\gamma = 2\pi \times \unit[702.379]{kHz/G}$ is the gyromagnetic ratio for \Rb $F=1$ and $q_Z = 2\pi \times \unit[71.89]{Hz/G^2}$.
     \item For most of the analysis presented here (with $\omega_L$ and $q$ defined as above) these proportionalities need not be met, or the results, e.g. value of $\qmagic$ require a small correction. 
     \item For $q=0$, $\hat{H}_{\text{lab}}$ and $\hat{H}_{\text{rwa}} \propto \vect{B} \cdot \hat{\vect{F}}$ and are thus a generator of rotations, but $q \hat{F}_z^2 \neq 0$ breaks the $\text{SU}(2)$ symmetry and $\expect{\vect{\hat{F}}}^2$ is not preserved.
     \item This broken symmetry lifts the degeneracy of the dressed state splittings making them distinguishable in our spectrogram measurements.
     \item Moreover, $\hat{H}_{\text{rwa}}$ meets the requirements of reconstructing pure $SU(2F+1)$ states from a weak measurement of $\expect{\hat{F}_x}$~\cite{merkel_random_2010}; thus one can use the measurement record for quantum state estimation, but the spectrogram is similarly rich in Hamiltonian and density matrix information. 
     \item We vary the magnetic field to affect a change in the detuning of $\Delta \in [0, 2\Omega]$, the domain of \reffig{fig:eigensystem_schematic}(B).
-    \item Variations in $B \mapsto B_0 + \Delta B$ of order $B_{\text{rf}} = 2\Omega/\gamma$ affect the detuning linearly, \textit{viz.} $\Delta = - \gamma \Delta B$ for $\omega_L(B_0) = \omega_{\text{rf}}$ (i.e. rf is resonant when $B=B_0$), and do not affect $q$ appreciably for sufficiently small field strengths.
-        \item Indeed, our data corroborate this since we directly measure $q(B(t))$ during the field sweep and find that $\sigma(q)/(2\pi) = \unit[11.7]{Hz}$ on average (alternatively, inferring $q$ from $\omega_L$ via the Breit-Rabi equation gives $\sigma(q)/(2\pi) = \unit[1.2]{Hz}$).
-    \item Thus the horizontal axis $\Delta/\Omega$ in \reffig{fig:eigensystem_schematic} is a proxy for $\Delta B$, and $\omega_{12}$ at $q=\qmagic$ has leading-order quartic sensitivity to $\Delta B$.
-        \item At high fields ($B\approx \unit[30]{G}$) this approximation is no longer valid; $q \approx \qmagic$ varies appreciably across $\Delta B \in [0, B_{\text{rf}}]$ and $\omega_{12}$ has weak linear dependence on $\Delta B$~\cite{lundblad_synthetic_2017}.
+    \item Variations in $B_z \mapsto B_0 + \delta B_z$ of order $B_{\text{rf}} = 2\Omega/\gamma$ affect the detuning linearly, \textit{viz.} $\Delta = - \gamma \, \delta B_z$ for $\omega_L(B_0) = \omega_{\text{rf}}$ (i.e. rf is resonant when $B_z=B_0$), and do not affect $q$ appreciably for sufficiently small field strengths.
+        \item Indeed, our data corroborate this since we directly measure $q(B_z(t))$ during the field sweep and find that $\sigma(q)/(2\pi) = \unit[11.7]{Hz}$ on average (alternatively, inferring $q$ from $\omega_L$ via the Breit-Rabi equation gives $\sigma(q)/(2\pi) = \unit[1.2]{Hz}$).
+    \item Thus the horizontal axis $\Delta/\Omega$ in \reffig{fig:eigensystem_schematic} is a proxy for $\delta B_z$, and $\omega_{12}$ at $q=\qmagic$ has leading-order quartic sensitivity to $\delta B_z$.
+        \item At high fields ($B\approx \unit[30]{G}$) this approximation is no longer valid; $q \approx \qmagic$ varies appreciably across $\delta B_z \in [0, B_{\text{rf}}]$ and $\omega_{12}$ has weak linear dependence on $\delta B_z$~\cite{lundblad_synthetic_2017}.
     \item \textit{On varying $\Omega$ or $q$ to change $q_R=q/\Omega$:}
     For a given static magnetic field, $q_R$ can be modified via the Rabi frequency.
     However, this is not what is represented in \reffig{fig:eigensystem_schematic}, as the normalization of the horizontal and vertical axes would vary for each $q_R$.
@@ -213,6 +215,7 @@ The control field $\vect{B}(t \geq 0) = -B_{\text{rf}} \cos (\omega_{\text{rf}} 
     \item[\checkmark] The $F=1$ spin operators in the resonantly dressed basis span more of $\text{SU}(3)$, as $[\hat{F}_x]_D = (q_D/\omega_D) Q_{x^2-y^2} - (\Omega / \omega_D) \sigma_z = (q_D/\omega_D) \lambda_4 - \Omega / \omega_D ( \lambda_3 +\sqrt{3} \lambda_8) / 2$, $[\hat{F}_y]_D$ is a sum of $\lambda_1, \lambda_2$, and $\lambda_7$, and  $[\hat{F}_z]_D$ is a sum of $\lambda_1$ and $\lambda_6$.
     The presence of $Q_{x^2-y^2} = \lambda_4$ for $q \neq 0$ signifies the coupling of dressed states $\ket{1}$ and $\ket{3}$, i.e. a non-zero $\bra{1} \hat{F}_x \ket{3}$.
     \note{The spin operators have no projection onto $\lambda_5$, even for an rf field oscillating along $y$.}
+    \item To drive the $\ket{1} \leftrightarrow \ket{2}$ transition exclusively (remain in the $\{\ket{1}, \ket{2}\}$ subspace) with an oscillating field along $y$ or $z$, the concatenated coupling strength must be $\ll q_D$, the separation of the two-lowest dressed state transitions. This sets the \textit{dynamic range} of ac magnetometry using the synthetic clock states alone.
     \item Curvature of the dressed-state energies can be evaluated using perturbation theory;
     \[
     \partialD{^2\omega_n}{\Delta^2} = \sum_{k \neq n} \frac{\abs{\bra{k} \hat{F}_z \ket{n}}^2}{\omega_n - \omega_k} \, .
@@ -226,8 +229,8 @@ The control field $\vect{B}(t \geq 0) = -B_{\text{rf}} \cos (\omega_{\text{rf}} 
     \qRmagic = \sqrt{(3\sqrt{2} - 4)/2} \approx 0.348 \, .
     \]
     For $q_R = 0$, we recover the spin-1/2 result, $\Omega\, \partial^2\omega_{12}/\partial \Delta^2 = 1$.
-    \item Similarly, perturbation theory can be used to show that the third-order derivatives of $\omega_n$ with respect to detuning all vanish when $\abs{\partial q / \partial \Delta} \approx \abs{\gamma^{-1} \partial q / \partial B} \ll 1$, and thus the leading sensitivity to detuning (and thus $B$) is fourth-order. This validates the choice of our phenomenological even-polynomial model for fitting to $(\Delta B(t), \omega_{12}(t))$ data extracted from Faraday spectrograms.
-    \item The above can be quantified by noting that $\gamma^{-1} \partial q / \partial B = 2 B q_Z / \gamma \lesssim 10^{-3}$ for $B \lesssim \unit[5]{G}$.
+    \item Similarly, perturbation theory can be used to show that the third-order derivatives of $\omega_n$ with respect to detuning all vanish when $\abs{\partial q / \partial \Delta} \approx \abs{\gamma^{-1} \partial q / \partial B_z} \ll 1$, and thus the leading sensitivity to detuning (and thus $B_z$) is fourth-order. This validates the choice of our phenomenological even-polynomial model for fitting to $(\delta B_z(t), \omega_{12}(t))$ data extracted from Faraday spectrograms.
+    \item The above can be quantified by noting that $\gamma^{-1} \partial q / \partial B_z = 2 B_z q_Z / \gamma \lesssim 10^{-3}$ for $B_z \lesssim \unit[5]{G}$.
     \item Near $q = \qmagic$, the ratio of the Rabi frequency to the Larmor frequency is approximately:
     \begin{align*}
         \frac{\Omega}{\omega_L} &= \frac{B_\text{rf}}{B_0} \\
@@ -236,11 +239,11 @@ The control field $\vect{B}(t \geq 0) = -B_{\text{rf}} \cos (\omega_{\text{rf}} 
     \end{align*}
     with $B_0$ is in Gauss.
     Thus for $B_0 \lesssim \unit[5]{G}$, $\Omega/\omega_L \lesssim 10^{-3}$ and the rotating-wave approximation is justified.
-    \item For $0 \leq \Delta B \leq B_{\text{rf}}/4 = \unit[3.2]{mG}$ ($0 \leq \abs{\Delta/\Omega} \leq 0.5$) we observe a variation in the splitting $f_{12}$ of $\unit[39]{Hz}$ for the data in \reffig{fig:acquisition_pipeline}, compared to the theoretical estimate of $\unit[26]{Hz}$.
+    \item For $0 \leq \delta B_z \leq B_{\text{rf}}/4 = \unit[3.2]{mG}$ ($0 \leq \abs{\Delta/\Omega} \leq 0.5$) we observe a variation in the splitting $f_{12}$ of $\unit[39]{Hz}$ for the data in \reffig{fig:acquisition_pipeline}, compared to the theoretical estimate of $\unit[26]{Hz}$.
     These correspond to a normalized variation in $\omega_{12}/\Omega$ of $8.6\times10^{-3}$ and $5.8\times10^{-3}$, respectively.
     By comparison, the normalized variation at $q_R=0$ is $(\sqrt{5}-2)/2 \approx 0.118$; 14 [20] times higher than the observed [predicted] variation.
     Alternatively, the normalized variation of the $\ket{m=\pm1} \leftrightarrow \ket{0}$ transitions at $q=0$ is $0.5$; 58 [86] times higher than the observed [predicted] variation in the synthetic clock transition frequency.
-    \note{Both of these comparisons depend a lot on the range of $\Delta B$! They are far more impressive (theoretically) for smaller ranges.}
+    \note{Both of these comparisons depend a lot on the range of $\delta B$! They are far more impressive (theoretically) for smaller ranges.}
 \end{itemize}
 \textit{Analytic Faraday signal on resonance:}
 \begin{table}[t]
@@ -324,7 +327,7 @@ Here we used a wavelength of $\lambda=\unit[781.15]{nm}$ to increase the SNR wit
     \caption{
     \label{fig:curvature_vs_qR}
         Curvature of the synthetic clock transition for various quadratic shifts $q_R \in [0.2, 0.5]$.
-        The measured curvature (black points) was determined from polynomial fitting to $(\Delta B, f_{12})$ data shown in \reffig{fig:acquisition_pipeline}(B).
+        The measured curvature (black points) was determined from polynomial fitting to $(\delta B, f_{12})$ data shown in \reffig{fig:acquisition_pipeline}(B).
         Vertical and horizontal error bars correspond to the standard error of the regression and uncertainty in $q_R$ (via $u(q)$ and $u(\Omega)$ at each field $B_0$), respectively.
         A linear fit (black, dashed) with 1--sigma confidence band (gray, shaded) are shown, whose intercept can be used to impute $\qRmagic\text{ (expt.)} = 0.350(6)$.
         The analytic expression for the curvature (red) is consistent with the data-driven analysis of the curvature, \textit{cf.} $\qRmagic\text{ (theory)} = 0.348$.
@@ -338,11 +341,11 @@ We detect the Faraday rotation of the probe light using a shot-noise limited bal
 Upon applying the radiofrequency (rf) dressing field, $\abs{\expect{\hat{F}_x}} > 0$ and the signature of the coupled spin-1 system is a Faraday signal frequency modulated (FM) about a carrier at the Larmor frequency.
 The frequency difference of each FM sideband from the carrier is a calibration-free measure of each dressed state splitting $\omega_{ij}$.
 
-As we seek to appraise the robustness of the rf-dressed states to varying magnetic fields, we apply a time dependent $\Delta B(t)$ and observe the dynamical change in the frequency composition of the Faraday signal using the short-time Fourier transform, or spectrogram.
-The time-dependent magnetic field shift $\Delta B(t)$ is the sum of an applied linear ramp and the parasitic background fluctuations at the power-line frequency of $\unit[50]{Hz}$ and its odd harmonics, and typically ranges from $0$ ($\Delta = 0$, resonance) to $B_{\text{rf}}$ ($\Delta = 2\Omega$), \textit{cf.} \reffig{fig:eigensystem_schematic}.
+As we seek to appraise the robustness of the rf-dressed states to varying magnetic fields, we apply a time dependent $\delta B_z(t)$ and observe the dynamical change in the frequency composition of the Faraday signal using the short-time Fourier transform, or spectrogram.
+The time-dependent magnetic field shift $\delta B_z(t)$ is the sum of an applied linear ramp and the parasitic background fluctuations at the power-line frequency of $\unit[50]{Hz}$ and its odd harmonics, and typically ranges from $0$ ($\Delta = 0$, resonance) to $B_{\text{rf}}$ ($\Delta = 2\Omega$), \textit{cf.} \reffig{fig:eigensystem_schematic}.
 For each realization (or `shot') of the experiment, we directly calibrate this time-dependent field using ac magnetometry; an rf $\pi/2$-pulse (rather than continuous coupling) initiates Larmor precession of the collective spin the $x$--$y$ plane, and the Faraday signal is composed of two tones, at $\omega_\pm = \omega_L \pm q$.
-For $q \, \tau_f \geq 2\pi$, where $\tau_f$ is the length of the overlapping spectrogram windows, the two tones are spectrally resolved and their mean and difference yields the instantaneous $\omega_L(t)$ and $q(t)$, the former of which is used to find $\Delta B(t)$ by inverting the Breit-Rabi equation~\cite{ramsey_molecular_1956}. 
-The experiment is synchronized to the AC power line; the harmonic composition of which varies little between contiguous shots ($\unit[20]{s}$ apart), and thus the measured $\Delta B(t)$ and $q(t)$ from the calibration \note{fiducial?} shot serve as a good proxy for the values experienced by the atoms in the subsequent rf-dressed shot.
+For $q \, \tau_f \geq 2\pi$, where $\tau_f$ is the length of the overlapping spectrogram windows, the two tones are spectrally resolved and their mean and difference yields the instantaneous $\omega_L(t)$ and $q(t)$, the former of which is used to find $\delta B(t)$ by inverting the Breit-Rabi equation~\cite{ramsey_molecular_1956}. 
+The experiment is synchronized to the AC power line; the harmonic composition of which varies little between contiguous shots ($\unit[20]{s}$ apart), and thus the measured $\delta B_z(t)$ and $q(t)$ from the calibration \note{fiducial?} shot serve as a good proxy for the values experienced by the atoms in the subsequent rf-dressed shot.
 
 We measured the dressed spectrum for a range of $q_R \in [0.2, 0.5]$ by varying the resonant magnetic field $B_0$ [applied rf frequency $f_{\text{rf}}$] from $\unit[3.549]{G}$ [$\unit[2.493]{MHz}$] to $\unit[5.568]{G}$ [$\unit[3.911]{MHz}$], with a fixed Rabi frequency of $\Omega/(2\pi) = \unit[4.505(3)]{kHz}$ ($B_{\text{rf}} = \unit[12.83(1)]{mG}$).
 For each resonant field $B_0$, we ensured the Rabi frequency was fixed by measuring the voltage drop across the coil at $f_{\text{rf}}$ with a lock-in amplifier which -- in concert with an impedance analyzer -- could be used to ensure the rf current in the coil and thus $B_{\text{rf}}$ and $\Omega$ were constant. 
@@ -352,7 +355,7 @@ The measured Rabi frequencies had a standard deviation $\sigma(\Omega) = \unit[9
     Despite long coherence times, the low duty cycle ($D < 0.01$) and large dead time ($T_\text{shot} \gtrsim \unit[10]{s}$) of cold quantum gas experiments make challenging achieving metrological sensitivities per unit bandwidth that are competitive with other platforms.
 Here $D=0.005$ and $T_\text{shot} = \unit[20]{s}$, yet we make many more spin projection measurements (\note{$N_m$ = blah} at a shot-noise limited SNR of $10$--$100$~\cite{jasperse_magic-wavelength_2017}) than traditional cold atom experiments ($N_m = 1$ to several, e.g. absorption or dispersive imaging).
 This intra-shot revelation of the time and frequency domain renders the measurement of these spectra orders of magnitude more efficient.
-For example, the single spectrum shown in \reffig{fig:acquisition_pipeline} would take $\sim (10$ shots per $\Delta B$ per $\omega_{ij} ) \times (100$ different $\Delta B$ values) $\times (3 $ different transition frequencies $\omega_{ij}) = 3000$ shots ($2.5$ times fewer $\Delta B$ values than shown here), or $\sim \unit[6\times10^4]{s} = 1000$ minutes of data acquisition.
+For example, the single spectrum shown in \reffig{fig:acquisition_pipeline} would take $\sim (10$ shots per $\delta B_z$ per $\omega_{ij} ) \times (100$ different $\delta B_z$ values) $\times (3 $ different transition frequencies $\omega_{ij}) = 3000$ shots ($2.5$ times fewer $\delta B_z$ values than shown here), or $\sim \unit[6\times10^4]{s} = 1000$ minutes of data acquisition.
 We acquire this spectrum in a single shot \note{two shots accounting for the field calibration, but that would require $\sim 2\times$ more traditional shots}, i.e. $\unit[20]{s}$.
 The data used to generate \reffig{fig:curvature_vs_qR} was acquired in only $6$ minutes.
   
