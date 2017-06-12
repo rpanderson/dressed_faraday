@@ -11,7 +11,7 @@ os.chdir(base_folder)
 
 # Parameters
 bibfile = 'dressed_faraday.bib'
-bibfix_only = False
+bibfix_only = True
 API_KEY = '6ZeKc1MGmP2pGjZCM5lJ363C'
 GROUP_ID = '1276'
 COLLECTION_ID = 'DRJ6GPQG'
@@ -29,8 +29,9 @@ try:
 		items = zot.collection_items(COLLECTION_ID)
 
 		# Discard null items
-		items = [x for x in items if len(x)]
 		print 'Retrieved %i items from collection...' % len(items)
+		items = [x for x in items if len(x)]
+		print 'Retrieved %i non-empty items from collection...' % len(items)
 
 		# Omit language entry (in techreport, this doesn't work in revtex4-1)
 		items = [x.replace('\tlanguage = {en},\n', '') for x in items]
