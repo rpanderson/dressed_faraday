@@ -101,18 +101,24 @@ Similar polarimetry-based dispersive probes have been used to measured hyperfine
 To probe the dressed state spectrum and coherences, we prepare a superposition of dressed states by suddenly turning on the Rabi coupling $\Omega$ at $t=0$, projecting the polarized collective spin $\ket{m_z=-1}$ onto $\ket{\psi(t=0)} = \sum_i c_i \ket{i}$.
 The total magnetic field in the laboratory frame used to affect this control is $\vect{B}(t \geq 0) = -B_{\text{rf}} \cos (\omega_{\text{rf}} t) \vect{e}_x + B_z(t) \vect{e}_z$, where $B_z(t)$ varies slowly compared to $\Omega$.
 The resulting Faraday signal is presented in the time-frequency domain using the short-time Fourier transform (spectrogram), revealing the rich frequency and amplitude modulation related to the dressed state energies, coherences, and coupling strengths.
-For example, with no deliberate modulation of the Rabi frequency or detuning, we observe the spectrogram amplitude shown in \ref{fig:static_coupling}.
-Amplitude modulation of the Faraday signal about the carrier frequency at $f_{\text{rf}} = \omega_{\text{rf}}/(2\pi)$ results in three upper and lower sidebands, each corresponding to a dressed state transition $\ket{i} \leftrightarrow \ket{j}$.
+For example, with no deliberate variation of the Rabi frequency or detuning, we observe the spectrogram amplitude shown in \reffig{fig:static_coupling}.
+Strong amplitude modulation of the Faraday signal is apparent from the three upper and lower sidebands, each pair equidistant from the carrier frequency at $f_{\text{rf}} = \omega_{\text{rf}}/(2\pi)$. 
 \begin{figure}
     \includegraphics[width=\columnwidth]{figure_2.pdf}
     \caption{
     \label{fig:static_coupling}
-    Continuous measurement of the dressed energy spectra for $q_R = 0.402(3)$, $f_{\text{rf}}=\unit[3.521]{MHz}$ and $B_0=\unit[5.013]{G}$ (left) and the log of the fitted moving average signal strength in normalized units (right). 
-    The shape of the energy spectra in the Fourier domain are Gaussian, but magnetic field fluctuations skew the time average shape.  
-    Skewed Gaussian curves are fitted to each peak resulting in a significant skew parameter of $\gamma = 2.4(1)$ for the $\omega_{23}$ splitting width $\sigma_{23} = \unit[243(2)]{Hz}$. 
-    The fit of the transition most decoupled from magnetic field fluctuations $\omega_{12}$ has a vanishing skew and is well approximated by a Gaussian of width $\sigma_{12} = \unit[109(1)]{Hz}$.
+    Continuous measurement of the dressed energy spectrum for $q_R = 0.402(3)$, $f_{\text{rf}}=\unit[3.521]{MHz}$ and $B_0=\unit[5.013]{G}$ (left) and a periodogram of the $\unit[100]{ms}$ long signal (right). 
+    (Inset) The dressed state energy diagram for resonant coupling ($\abs{\Delta} \ll \Omega$); the mean and difference of transition frequencies $\omega_{12}$ and $\omega_{23}$ is the dressed Larmor frequency $\omega_D$ and quadratic shift $q_D$, respectively.
+    The upper sidebands about the carrier at $f_{\text{rf}}$ are associated with the $\omega_{13}$ (gold), $\omega_{23}$ (turquoise), and $\omega_{12}$ (lavender) transitions.  
+    % The upper sidebands about the carrier at $f_{\text{rf}}$ associated with each of the three transitions are indicated by gold ($\omega_{13}$), turquoise ($\omega_{23}$), and lavender ($\omega_{12}$) annotations.  
+    Magnetic field fluctuations $\delta B_z(t)$ of amplitude $\unit[1]{mG}$ induced by mains power are manifest as asymmetric frequency modulation of the $\omega_{13}$ and $\omega_{23}$ sidebands, while the $\omega_{12}$ transition remains relatively unaffected.
+    The corresponding spectral peaks have linewidths $\unit[xx]{Hz}$, $\unit[126]{Hz}$, and $\unit[36]{Hz}$, respectively.
+    The $\omega_{12}$ linewidth is transform-limited, whereas the broadened peaks of the less decoupled $\omega_{23}$ transition exhibit a skew (third-moment) of $\unit[115]{Hz}$ (upper sideband) and $-\unit[137]{Hz}$.
     }
 \end{figure}
+Each pair of sidebands corresponds to a dressed state transition $\ket{i} \leftrightarrow \ket{j}$; centered at $f_{\text{rf}} \pm f_{ij}$ where $f_{ij} = \omega_{ij}/(2\pi)$, the frequency of the transition.
+In this way, the spectrogram is a calibration-free, real-time measurement of the dressed state spectrum.
+Restricting attention to the upper sidebands, the two closest to the carrier are  ladder-type transitions
 
 \bibliography{dressed_faraday}
 
