@@ -60,7 +60,7 @@ However, any $\hat{F}_z^2$ interaction -- arising from nonlinear Zeeman~\cite{ra
         When $q/\Omega=\qRmagic$ (bold curves), energies $\omega_1$ and $\omega_2$ share the same curvature, and their difference $\omega_{12}$ (right, purple) is minimally sensitive to detuning and thus magnetic field variations.
     }
 \end{figure}
-This yields dressed eigenstates $\{\ket{1}, \ket{2}, \ket{3}\}$ that are no longer $\text{SO}(3)$ rotations of the bare Zeeman states $\ket{m_z}$, but have nematic order, and an eigenspectrum $\omega_i(\Delta) = E_{\ket{i}}/\hbar$ shown in \reffig{fig:eigensystem_schematic}(left) for $q \in [0, \Omega]$.
+This yields dressed eigenstates $\{\ket{1}, \ket{2}, \ket{3}\}$ that are no longer $\text{SO}(3)$ rotations of the bare Zeeman states $\ket{m_z}$, but have nematic order, and an eigenspectrum $\omega_i(\Delta) = E_{\ket{i}}/\hbar$ shown in \reffig{fig:eigensystem_schematic} (left) for $q \in [0, \Omega]$.
 Moreover, the coupling of these dressed states is markedly different: the spin operators $\hat{F}_{x,y,z}$ in the dressed basis span more of $\text{SU}(3)$ for $q \neq 0$, e.g. $\bra{i} \hat{F}_x \ket{j}$ has a non-zero projection onto the fourth Gell-Mann matrix $Q_{x^2-y^2}$ signifying the direct coupling of dressed states $\ket{1}$ and $\ket{3}$.
 The dressed-state transitions are thus cyclic and non-degenerate (\reffig{fig:eigensystem_schematic}(right)), characterized by a dressed Larmor frequency
 \begin{align}
@@ -111,14 +111,55 @@ Strong amplitude modulation of the Faraday signal is apparent from the three upp
     (Inset) The dressed state energy diagram for resonant coupling ($\abs{\Delta} \ll \Omega$); the mean and difference of transition frequencies $\omega_{12}$ and $\omega_{23}$ is the dressed Larmor frequency $\omega_D$ and quadratic shift $q_D$, respectively.
     The upper sidebands about the carrier at $f_{\text{rf}}$ are associated with the $\omega_{13}$ (gold), $\omega_{23}$ (turquoise), and $\omega_{12}$ (lavender) transitions.  
     % The upper sidebands about the carrier at $f_{\text{rf}}$ associated with each of the three transitions are indicated by gold ($\omega_{13}$), turquoise ($\omega_{23}$), and lavender ($\omega_{12}$) annotations.  
-    Magnetic field fluctuations $\delta B_z(t)$ of amplitude $\unit[1]{mG}$ induced by mains power are manifest as asymmetric frequency modulation of the $\omega_{13}$ and $\omega_{23}$ sidebands, while the $\omega_{12}$ transition remains relatively unaffected.
+    Magnetic field fluctuations $\delta B_z(t)$ of amplitude $\unit[1.4]{mG}$ induced by mains power are manifest as asymmetric frequency modulation of the $\omega_{13}$ and $\omega_{23}$ sidebands, while the $\omega_{12}$ transition remains relatively unaffected.
     The corresponding spectral peaks have linewidths $\unit[xx]{Hz}$, $\unit[126]{Hz}$, and $\unit[36]{Hz}$, respectively.
-    The $\omega_{12}$ linewidth is transform-limited, whereas the broadened peaks of the less decoupled $\omega_{23}$ transition exhibit a skew (third-moment) of $\unit[115]{Hz}$ (upper sideband) and $-\unit[137]{Hz}$.
+    The $\omega_{12}$ linewidth is transform-limited, whereas the broadened peaks of the less decoupled $\omega_{23}$ transition exhibit a skew (third-moment) of $\unit[115]{Hz}$ (upper sideband) and $-\unit[137]{Hz}$ (lower sideband).
     }
 \end{figure}
 Each pair of sidebands corresponds to a dressed state transition $\ket{i} \leftrightarrow \ket{j}$; centered at $f_{\text{rf}} \pm f_{ij}$ where $f_{ij} = \omega_{ij}/(2\pi)$, the frequency of the transition.
 In this way, the spectrogram is a calibration-free, real-time measurement of the dressed state spectrum.
-Restricting attention to the upper sidebands, the two closest to the carrier are  ladder-type transitions
+Restricting attention to the upper sidebands, the two closest to the carrier are ladder-type transitions $\omega_{12}$ and $\omega_{23}$ have similar amplitudes and lifetimes, with frequency separations $\omega_D \pm q_D$ from the carrier, respectively, for near-resonant coupling of the bare Zeeman states ($\abs{\Delta} \ll \Omega$).
+The third, weaker sideband near $2\omega_D$ above the carrier is a signature of the cyclic $\ket{1} \leftrightarrow \ket{3}$ transition, permitted only when $q\neq 0$.
+% $\omega_D/(2\pi) = \unit[4611(2)]{Hz}$, $q_D/(2\pi) = \unit[910(5)]{Hz}$, $\Omega/(2\pi) = \unit[4520(2)]{Hz}$, $\omega_{\text{rf}}/(2\pi) = f_{\text{rf}} = \unit[3.521]{MHz}$, 
+No attempt was made to shield the apparatus from parasitic magnetic fields, and mains power induced magnetic field noise causes a temporally varying $\delta B_z(t)$ at the line frequency of $\unit[50]{Hz}$ and odd harmonics of amplitude $\sim\unit[1.4]{mG}$ ($\unit[1]{kHz}$ in frequency units of detuning).
+For these data $q_R = 0.402(3)$, and the each dressed transition is affected by the magnetic fluctuations differently; the sidebands corresponding to the $\omega_{13}$ and $\omega_{23}$ transitions exhibit asymmetric frequency modulation, whereas the optimally decoupled $\omega_{12}$ transition remains relatively unaffected.
+This is signified by a skew (third-moment) of e.g. $\unit[115]{Hz}$ and $-\unit[137]{Hz}$ of the upper and lower sidebands of the $\omega_{23}$ peaks in the periodogram (\reffig{fig:static_coupling}, right), and a $3.5\times$ wider linewidth than the transform-limited peak of the $\omega_{12}$ transition, which has a $\unit[36]{Hz}$ second-moment.
+\begin{figure}
+    \includegraphics[width=\columnwidth]{figure_3.pdf}
+    \caption{
+    \label{fig:acquisition_pipeline}
+        % (Color online)
+        Acquisition and analysis pipeline of the continuous spectrum observation for $q_R = 0.402(3)$ ($f_{\text{rf}}=\unit[3.521]{MHz}$, $B_0=\unit[5.013]{G}$).
+        The underlay of (A) and (B) are spectrograms of raw acquisitions from the polarimeter measuring Faraday rotation of the probe beam.
+        (A) Time-resolved magnetometry is used to calibrate the instantaneous magnetic field $B_z(t) = B_0 + \delta B_z(t)$ over the interrogation interval, in which the field [detuning] varies over a range $\sim B_{\text{rf}}$ [$2\Omega$] and the spinor gas is left to Larmor precess in the absence of a dressing field ($\Omega = 0$).
+        We fit sinc peaks in the frequency domain for each spectrogram window (time domain) to determine the instantaneous Larmor frequency $f_L(t)$ and quadratic shift $q(t)$.
+       (B) The field is swept over the same range but the radiofrequency dressing is applied ($\Omega > 0$).
+       Three sidebands appear above (shown) and below the carrier at $f_{\text{rf}}$ (dashed, orange), revealing the dressed state splittings $\omega_{ij}$.
+       (C) A parametric plot of $f_{12}(t)$ and $f_{23}(t)$ versus $\delta B(t)$ by combining analysis of (A) and (B).
+       Solid curves in (B) and (C) are theoretical splittings from an eigenspectrum calculation, provided only $f_{\text{rf}}$, $B_z(t)$, and $\Omega$, i.e. no free parameters.
+       The synthetic clock transition $f_{12}$ varies by $\unit[39]{Hz}$ for $0 \leq \delta B_z \leq B_{\text{rf}}/4 = \unit[3.2]{mG}$, equivalent to $0 \leq \abs{\Delta/\Omega} \leq 0.5$ (C, inset).
+    }
+\end{figure}
+The amplitude of each sideband is proportional to the corresponding dressed-state coherence $c_i^* c_j = \rho_{ij}$, and the dressed state coupling strength induced by the relevant spin projection operator $\hat{F}_{x,y,z}$.
+\begin{table*}[t]
+    \caption{Upper sidebands of the carrier (at $\omega_{\text{rf}}$) of the Faraday rotation signal $\propto \expect{\hat{F}_x}$ of an arbitrary dressed state superposition driven on resonance ($\Delta = 0$).
+    Frequency and phase are reported relative to the carrier, along with the transition that each sideband corresponds to.
+    For the initial state $\ket{\psi(t=0)}=\ket{m_z=-1}$, the sideband frequencies and amplitudes can be expressed concisely in terms of the dressed Larmor frequency $\omega_D$ and quadratic shift $q_D$. 
+    For each upper sideband, there is a lower sideband of the same amplitude, relative frequency and opposite relative phase.
+    \label{tab:sidebands}
+    }
+    \begin{ruledtabular}
+    \begin{tabular}{ccccc}
+    transition & frequency & $\omega_{ij} - \omega_{\text{rf}}$ ($\Delta=0$) & amplitude ($\Delta = 0$) & amplitude ($\Delta = 0$, $\ket{m_z=-1}$) \\ \hline
+     (carrier) & $\omega_{\text{rf}}$ & 0 & $(\bra{3} \hat{F}_x \ket{3} - \bra{1} \hat{F}_x \ket{1}) (\rho_{33} - \rho_{11})$  & $q_D \Omega/(2 \omega_D^2)$ \\
+     $\ket{1} \leftrightarrow \ket{2}$ & $\omega_{\text{rf}} + \omega_{12}$ & $\omega_D+q_D$ & $-2i \bra{1} \hat{F}_y \ket{2} \text{Re}\{\rho_{12}\} = -2 \bra{2} \hat{F}_z \ket{3} \text{Re}\{\rho_{12}\}$ & $\Omega/(4 \omega_D)$ \\
+     $\ket{2} \leftrightarrow \ket{3}$ & $\omega_{\text{rf}} + \omega_{23}$ & $\omega_D-q_D$ & $2i \bra{2} \hat{F}_y \ket{3} \text{Re}\{\rho_{23}\} = 2 \bra{1} \hat{F}_z \ket{2} \text{Re}\{\rho_{23}\}$ & $\Omega/(4 \omega_D)$ \\
+     $\ket{1} \leftrightarrow \ket{3}$ & $\omega_{\text{rf}} + \omega_{13}$ & $2\omega_D$ & $2 \bra{1} \hat{F}_x \ket{3} \text{Re}\{\rho_{13}\}$ & $q_D \Omega/(4 \omega_D^2)$
+    \end{tabular}
+    \end{ruledtabular}
+\end{table*}
+For near-resonant coupling of the bare Zeeman states, an analytic expression for the amplitudes can be obtained, summarized in Table~\ref{tab:sidebands}.
+These depend on the initial projection onto the dressed basis, which if known permits continuous measurement of all coupling strengths in the dressed basis, an analogue of Hamiltonian parameter estimation \note{process tomography/ Hamiltonian learning}.
 
 \bibliography{dressed_faraday}
 
@@ -185,23 +226,6 @@ Hamiltonians (quasi-static field along $z$, coupling field along $x$:
     are the Larmor frequency and quadratic shift, respectively, which can be gleaned from the Breit-Rabi equation.
     The rf Rabi frequency $\Omega = \gamma B_{\text{rf}}/2$ and detuning $\Delta(B) = \omega_{\text{rf}} - \omega_L(B)$.
 The control field $\vect{B}(t \geq 0) = -B_{\text{rf}} \cos (\omega_{\text{rf}} t) \vect{e}_x + B_z(t) \vect{e}_z$, where $B_z(t) = B_0 + \alpha t + B_{\text{ac}}(t)$ is the sum of a linear ramp and parasitic power-line magnetic noise.
-
-\begin{figure}
-    \includegraphics[width=\columnwidth]{figure_3.pdf}
-    \caption{
-    \label{fig:acquisition_pipeline}
-        % (Color online)
-        Acquisition and analysis pipeline of the continuous spectrum observation for $q_R = 0.402(3)$ ($f_{\text{rf}}=\unit[3.521]{MHz}$, $B_0=\unit[5.013]{G}$).
-        The underlay of (A) and (B) are spectrograms of raw acquisitions from the polarimeter measuring Faraday rotation of the probe beam.
-        (A) Time-resolved magnetometry is used to calibrate the instantaneous magnetic field $B_z(t) = B_0 + \delta B_z(t)$ over the interrogation interval, in which the field [detuning] varies over a range $\sim B_{\text{rf}}$ [$2\Omega$] and the spinor gas is left to Larmor precess in the absence of a dressing field ($\Omega = 0$).
-        We fit sinc peaks in the frequency domain for each spectrogram window (time domain) to determine the instantaneous Larmor frequency $f_L(t)$ and quadratic shift $q(t)$.
-       (B) The field is swept over the same range but the radiofrequency dressing is applied ($\Omega > 0$).
-       Three sidebands appear above (shown) and below the carrier at $f_{\text{rf}}$ (dashed, orange), revealing the dressed state splittings $\omega_{ij}$.
-       (C) A parametric plot of $f_{12}(t)$ and $f_{23}(t)$ versus $\delta B(t)$ by combining analysis of (A) and (B).
-       Solid curves in (B) and (C) are theoretical splittings from an eigenspectrum calculation, provided only $f_{\text{rf}}$, $B_z(t)$, and $\Omega$, i.e. no free parameters.
-       The synthetic clock transition $f_{12}$ varies by $\unit[39]{Hz}$ for $0 \leq \delta B_z \leq B_{\text{rf}}/4 = \unit[3.2]{mG}$, equivalent to $0 \leq \abs{\Delta/\Omega} \leq 0.5$ (C, inset).
-    }
-\end{figure}
 
 \begin{itemize}
     \item At low magnetic field strengths, $\omega_L \propto B_z$ and $q \propto B^2$, and for our parameters we are justified in taking $\omega_L = \gamma B$ and $q = q_Z B_z^2$, where $\gamma = 2\pi \times \unit[702.379]{kHz/G}$ is the gyromagnetic ratio for \Rb $F=1$ and $q_Z = 2\pi \times \unit[71.89]{Hz/G^2}$ the quadratic Zeeman coefficient.
@@ -281,20 +305,6 @@ The control field $\vect{B}(t \geq 0) = -B_{\text{rf}} \cos (\omega_{\text{rf}} 
     Alternatively, the normalized variation of the $\ket{m=\pm1} \leftrightarrow \ket{0}$ transitions at $q=0$ is $0.5$; 58 [86] times higher than the observed [predicted] variation in the synthetic clock transition frequency.
     \note{Both of these comparisons depend a lot on the range of $\delta B$! They are far more impressive (theoretically) for smaller ranges.}
 \end{itemize}
-\textit{Analytic Faraday signal on resonance:}
-\begin{table}[t]
-    \centering
-    \caption{Upper sidebands of the carrier (at $\omega_{\text{rf}}$) of the Faraday rotation signal $\propto \expect{\hat{F}_x}$ of a state $\ket{\psi(t=0)}=\ket{m=1}$ driven on resonance ($\Delta = 0$) in the laboratory frame. Frequency and phase are reported relative to the carrier, along with the transition that each sideband corresponds to. For each upper sideband, there is a lower sideband of the same amplitude, relative frequency and opposite \note{$\pi$} relative phase.}
-    \label{tab:sidebands}
-    \begin{tabular}{ccc}
-    \hhline{===}
-    frequency & amplitude & transition \\ \hhline{---}
-     $0$ & $\frac{q_D \Omega }{2 \omega_D^2}$ & -- \\
-     $\omega_D-q_D$ & $\frac{\Omega}{4 \omega_D}$ & $\ket{1} \leftrightarrow \ket{2}$ \\
-     $\omega_D+q_D$ & $\frac{\Omega}{4 \omega_D}$ & $\ket{2} \leftrightarrow \ket{3}$\\
-     $2 \omega_D$ & $\frac{q_D \Omega}{4 \omega_D^2}$ & $\ket{1} \leftrightarrow \ket{3}$ \\ \hhline{===}
-    \end{tabular}
-\end{table}
 The Faraday signal we detect is proportional to $\expect{\hat{F}_x}$ in the laboratory frame, which is given by $\bra{\psi(t)}\hat{S}^{\dagger} \hat{F}_x \hat{S} \ket{\psi(t)}$ where $\ket{\psi(t)} = \exp(-i \hat{H}_{\text{rwa}} t/\hbar) \ket{\psi(t=0)}$, and $\hat{S} = \exp(-i \omega_{\text{rf}} \hat{F}_z t)$.
 For an initially polarized $\ket{\psi(t=0)} = \ket{m=1}$ state driven on resonance, we get
     \begin{align*}
@@ -312,17 +322,6 @@ This explains the relative longevity of the sidebands; the transition most sensi
 Furthermore, the decay time of the $\omega_{12}$ and $\omega_{23}$ sidebands are $74(1)\unit{ms}$ and $71(2)\unit{ms}$ respectively. 
 Constrasting these results to an undressed measurement decay time $\tau_{s}=21(1)$, it is clear that rf dressing shields the quantum state from magnetically induced decoherence.
 The constant of proportionality is the coupling strength of the dressed states.
-\begin{table*}[t]
-    \label{tab:sidebands_arb}
-    \begin{tabular}{ccc}
-    \hhline{===}
-    transition & sideband frequency & sideband amplitude \\ \hhline{---}
-     -- & $\omega_{\text{rf}}$ & $(\bra{3} \hat{F}_x \ket{3} - \bra{1} \hat{F}_x \ket{1}) (\rho_{33} - \rho_{11})$ \\
-     $\ket{1} \leftrightarrow \ket{2}$ & $\omega_{\text{rf}} + \omega_{12}$ & $-2i \bra{1} \hat{F}_y \ket{2} \text{Re}\{\rho_{12}\} = -2 \bra{2} \hat{F}_z \ket{3} \text{Re}\{\rho_{12}\} $ \\
-     $\ket{2} \leftrightarrow \ket{3}$ & $\omega_{\text{rf}} + \omega_{23}$ & $2i \bra{2} \hat{F}_y \ket{3} \text{Re}\{\rho_{23}\} = 2 \bra{1} \hat{F}_z \ket{2} \text{Re}\{\rho_{23}\}$ \\
-     $\ket{1} \leftrightarrow \ket{3}$ & $\omega_{\text{rf}} + \omega_{13}$ & $2 \bra{1} \hat{F}_x \ket{3} \text{Re}\{\rho_{13}\}$ \\ [1ex]\hhline{===}
-    \end{tabular}
-\end{table*}
 
 \textit{Adiabatic considerations:}
 The rf-dressing is applied non-adiabitcally, and as a result we project $\ket{m=-1}$ onto the dressed basis at the initial detuning $\Delta(t=0)$ into a state
