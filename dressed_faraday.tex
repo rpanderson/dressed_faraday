@@ -42,17 +42,15 @@ The low-frequency magnetic stability and high-bandwidth detection of these state
 
 % Weak continuous measurements based on dispersive probes have found broad application in NV centers, superconducting qubits \note{single spin readout (not ensemble), requiring repeated preparation and measurement to obtain a spectrum}, and cold atoms \note{with bare states, magnetometry, spin dynamics, tomography and spin squeezing}... but have not been used in concert with CoDD to date.
 
-Atomic Zeeman states $\ket{m_z=-1,0,1}$ in a magnetic field $B_z \vect{e}_z$ can be decoupled from fluctuations in $B_z$ by applying a perendicular radiofrequency (rf) field
-%perpendicular to the quantization direction $z$,
-$B_{\text{rf}} \vect{e}_x \cos \omega_\text{rf} t$, oscillating at $\omega_\text{rf}$, tuned near the splitting of the Larmor frequency $\omega_L \equiv (E_{m_z=+1}-E_{m_z=-1})/2\hbar$.
+Atomic Zeeman states $\ket{m_z=-1,0,1}$ in a magnetic field $B_z \vect{e}_z$ can be decoupled from fluctuations in $B_z$ by applying a perpendicular radiofrequency (rf) field $B_{\text{rf}} \vect{e}_x \cos \omega_\text{rf} t$, oscillating at $\omega_\text{rf}$, tuned near the Larmor frequency $\omega_L \equiv (E_{m_z=+1}-E_{m_z=-1})/2\hbar$.
 At low magnetic fields, the degeneracy of the composite spin-$1/2$ systems~\cite{majorana_atomi_1932} renders the spin-1 behavior identical to CoDD in spin-$1/2$ systems.
-In the dressed-state picture, the spin is quantized along $x$ in a frame rotating with the radiofrequency $\omega_{\text{rf}}$, i.e. the eigenstates of $\ham_{\text{rwa}} = \Delta \hat{F}_z + \Omega \hat{F}_x$ are $\ket{m_x=-1,0,1}$, with energies $m_x \hbar \sqrt{\Omega^2 + \Delta^2}$, where $\Delta = \omega_{\text{rf}}-\omega_L$ is the detuning and $\Omega = \gamma B_{\text{rf}} / 2$ is the Rabi frequency.
-Radiofrequency dressing induces an avoided crossing in the dressed energy spectrum, at resonance $\Delta=0$ reducing the leading-order sensitivity of the `bare' state energies ($\omega_L \approx \gamma B_z$ where $\gamma$ is the gyromagnetic ratio) to magnetic field variations $\delta B_z$ from linear to merely quadratic sensitivity.
-%, via the detuning $\Delta$.
+In the dressed-state picture, the spin is quantized along $x$; in a frame rotating with the radiofrequency $\omega_{\text{rf}}$ the eigenstates of $\ham_{\text{rwa}} = \Delta \hat{F}_z + \Omega \hat{F}_x$ are $\ket{m_x=-1,0,1}$, with energies $m_x \hbar \sqrt{\Omega^2 + \Delta^2}$, where $\Delta = \omega_{\text{rf}}-\omega_L$ is the detuning and $\Omega = \gamma B_{\text{rf}} / 2$ is the Rabi frequency.
+Radiofrequency dressing induces an avoided crossing in the dressed energy spectrum, at resonance $\Delta=0$ reducing the leading-order sensitivity of the `bare' state energies ($\omega_L \approx \gamma B_z$ where $\gamma$ is the gyromagnetic ratio) to magnetic field variations $\delta B_z$ from linear to quadratic.
+% RPA: omitted 'merely' for reasons I can answer in person!
 The spin character and symmetries are otherwise unchanged: transverse magnetic fields oscillating near the splitting frequencies drive transitions between eigenstates.
-In the dressed system this means relatively low-frequency ('ac') fields oscillating near the Rabi frequency $\Omega$, such as $B_{\text{y,ac}} \vect{e}_y \cos \Omega t$ and $B_{\text{z,ac}} \vect{e}_z \cos \Omega t$, drive transitions $\ket{m_x=-1} \leftrightarrow \ket{m_x=0}$ and $\ket{m_x=0} \leftrightarrow \ket{m_x=+1}$.
+In the dressed system this means relatively low-frequency (`ac') fields oscillating near the Rabi frequency $\Omega$, such as $B_{y,\text{ac}} \vect{e}_y \cos \Omega t$ and $B_{z,\text{ac}} \vect{e}_z \cos \Omega t$, drive transitions $\ket{m_x=-1} \leftrightarrow \ket{m_x=0}$ and $\ket{m_x=0} \leftrightarrow \ket{m_x=+1}$.
 This is the basis for ac magnetometry~\cite{hirose_continuous_2012} of relatively low-frequency fields; and for concatenated CoDD which protects against fluctuations in $\Omega$~\cite{cai_robust_2012}.
-Insensitivity to wider bandwidth and larger amplitude $\delta B_z$ can be achieved by increasing $\Omega$, opening a broader gap in the dressed spectrum, but doing so changes the detection band of the exquisitely sensitive quantum lock-in detection recently demonstrated using NV centers~\cite{boss_quantum_2017,*schmitt_submillihertz_2017}.
+Insensitivity to wider bandwidth and larger amplitude $\delta B_z$ can be achieved by increasing $\Omega$, opening a broader gap in the dressed spectrum, but doing so changes the detection band of the exquisitely sensitive quantum lock-in detection, recently demonstrated using NV centers~\cite{boss_quantum_2017,*schmitt_submillihertz_2017}.
 Henceforth we presume $\Omega$ is fixed by the application.
 
 Any $\hat{F}_z^2$ interaction -- arising from nonlinear Zeeman~\cite{ramsey_molecular_1956}, microwave ac-Stark~\cite{gerbier_resonant_2006}, or tensor light~\cite{smith_continuous_2004} shifts -- raises the degeneracy of the $\ket{m_z=-1} \leftrightarrow \ket{m_z=0}$ and $\ket{m_z=0} \leftrightarrow \ket{m_z=+1}$ transitions, and breaks the symmetry of $\ham_{\text{rwa}} = \Delta \hat{F}_z + \Omega \hat{F}_x + q \hat{F}_z^2$, where $q \equiv (E_{m_z=+1} + E_{m_z=-1} - 2 E_{m_z=0})_{\Omega=0}/2\hbar$.
@@ -69,23 +67,13 @@ Any $\hat{F}_z^2$ interaction -- arising from nonlinear Zeeman~\cite{ramsey_mole
         When $q/\Omega=\qRmagic$ (bold curves), energies $\omega_1$ and $\omega_2$ share the same curvature, and their difference $\omega_{12}$ (right, purple) is minimally sensitive to detuning and thus magnetic field variations.
     }
 \end{figure}
-This yields dressed eigenstates $\{\ket{1}, \ket{2}, \ket{3}\}$ that are no longer $\text{SO}(3)$ rotations of the bare Zeeman states $\ket{m_z}$, but have nematic order~\note{LDT: $\ket{m_z=0}$ is nematic!}, and an eigenspectrum $\omega_i(\Delta) = E_{\ket{i}}/\hbar$ shown in \reffig{fig:eigensystem_schematic} (left).% for $q$ between  [0, \Omega]$.
-Moreover, the couplings between these dressed states are markedly different: the spin operators $\hat{F}_{x,y,z}$~\note{Susbcript for dressed operators?} in the dressed basis span more of $\text{SU}(3)$ for $q \neq 0$.
+This yields dressed eigenstates $\{\ket{1}, \ket{2}, \ket{3}\}$ that are no longer $\text{SO}(3)$ rotations of the bare Zeeman states $\ket{m_z}$, but instead all have nematic order, and an eigenspectrum $\omega_i(\Delta) = E_{\ket{i}}/\hbar$ shown in \reffig{fig:eigensystem_schematic} (left).
+% for $q$ between  [0, \Omega]$.
+Moreover, the couplings between these dressed states are markedly different: the spin operators $\hat{F}_{x,y,z}$ represented in the dressed basis span more of $\text{SU}(3)$ for $q \neq 0$.
+% LDT: Susbcript for dressed operators?
+% RPA: The operators are the same, it's the matrix representation that's different. 
 The matrix element $\bra{i} \hat{F}_x \ket{j}$ is non-zero for all $i,j$ signifying direct coupling of dressed states $\ket{1}$ and $\ket{3}$, in contrast to the bare states where only adjacent states are coupled. 
-%$\bra{i} \hat{F}_x \ket{j}$ has a non-zero projection onto the fourth Gell-Mann matrix $Q_{x^2-y^2}$ \note{why is this the fourth Gell-mann matrix? $\lambda_{4}$ would be more common} signifying the direct coupling of dressed states $\ket{1}$ and $\ket{3}$.
-Just as for bare states, we can characterize the splittings~\note{we are using splittings and transitions around here...} between dressed states near $\Delta=0$ as arising from a dressed Larmor frequency $\omega_D\equiv(\omega_3-\omega_1)/2=\sqrt{\Omega^2+q_D^2}$, and dressed quadratic shift $q_D \equiv (\omega_3 + \omega_1 -2\omega_2)/2=-q/2$, giving splittings $\omega_{23}=\omega_D-q_D$, $\omega_{12}=\omega_D+q_D$ and $\omega_{13}=2\omega_D$. 
-%The dressed-state transitions are thus cyclic and non-degenerate (\reffig{fig:eigensystem_schematic}(right)), characterized by a dressed Larmor frequency
-%\begin{align}
-%\label{eq:dressed_larmor}
-%    \omega_D \equiv (\omega_3 - \omega_2)_{\Delta=0}/2 &= (\omega_{12} + \omega_{23})_{\Delta=0}/2 \notag\\ &= \sqrt{\Omega^2 + q_D^2}\, ,
-%\end{align}
-%and dressed quadratic shift
-%\begin{align}
-%\label{eq:dressed_quadratic}
-%    q_D &\equiv (\omega_3 + \omega_1 -2\omega_2)_{\Delta=0}/2 \notag\\
-%        &= (\omega_{23}-\omega_{12})_{\Delta=0}/2 \notag s\\ 
-%        &= -q/2 \, .
-% \end{align}
+Just as for bare states, we can characterize the splittings between dressed states near $\Delta=0$ by a dressed Larmor frequency $\omega_D\equiv(\omega_3-\omega_1)/2=\sqrt{\Omega^2+q_D^2}$, and dressed quadratic shift $q_D \equiv (\omega_3 + \omega_1 -2\omega_2)/2=-q/2$, giving splittings $\omega_{23}=\omega_D-q_D$, $\omega_{12}=\omega_D+q_D$ and $\omega_{13}=2\omega_D$.
 
 A figure-of-merit for decoupling is the curvature of the transition frequency at resonance.
 In a dressed two-level system there is one convex and one concave eigenstate and splitting is simply convex.
@@ -95,7 +83,7 @@ This `magic' value is~\footnote{
   The curvature of the dressed-state energies is evaluated using perturbation theory. In particular, the dimensionless curvature of $\omega_{12}$ is $\partial^2(\omega_{12}/\Omega)/\partial(\Delta/\Omega)^2 = \Omega \, \partial^2\omega_{12}/\partial \Delta^2 = -(3 q_R \sqrt{4 + q_R^2} - q_R^2 - 2)/(2 \sqrt{4 + q_R^2})$. For $q_R = 0$, we recover the spin-1/2 result, $\Omega\, \partial^2\omega_{12}/\partial \Delta^2 = 1$.}
 \begin{align}
 \label{eq:qRmagic}
-    \qRmagic = \sqrt{(3\sqrt{2} - 4)/2} \approx 0.348.
+    \qRmagic = \sqrt{(3\sqrt{2} - 4)/2} \approx 0.348 \, ,
 \end{align}
 resulting in vanishing quadratic dependence of their transition frequency $\omega_{12}=\omega_2 - \omega_1$ on $\Delta$~\footnote{
     The curvature of the dressed-state energies is evaluated using perturbation theory. In particular, the dimensionless curvature of $\omega_{12}$ is $\partial^2(\omega_{12}/\Omega)/\partial(\Delta/\Omega)^2 = \Omega \, \partial^2\omega_{12}/\partial \Delta^2 = -(3 q_R \sqrt{4 + q_R^2} - q_R^2 - 2)/(2 \sqrt{4 + q_R^2})$.
@@ -103,20 +91,20 @@ resulting in vanishing quadratic dependence of their transition frequency $\omeg
 The leading-order sensitivity of these states to field variations $\delta B_z$ at $\qRmagic$ is quartic~\footnote{
     We take $\Delta = -\gamma \, \delta B_z$ for $|\Delta | \leq 2\Omega$ ($| \delta B_z | \leq B_{\text{rf}}/2$) and $| \partial q / \partial \Delta | \approx | \gamma^{-1} \partial q / \partial B_z | = |2 B_z q_Z / \gamma| \ll 1$, valid to $10^{-3}$ for the field strengths $B_z \lesssim \unit[5]{G}$ used here, resulting in vanishing third-order derivatives of $\omega_i$ with respect to detuning. 
     In general, the variation of $q$ with $\Delta$ (or $\delta B_z$) can be accounted for using the Breit-Rabi equation, leading to a residual linear and cubic variation of $\omega_{12}$ with $\delta B_z$, and a small correction to $\qRmagic$ in \refeq{eq:qRmagic}.},
-giving the subspace comprised of ${\ket{1},\ket{2}}$ a higher-order decoupling than can be achieved with a two-level system;~\note{... or similar bombastic sentence. This needs oomph.}~\note{Need to decide on spin-1/2 versus two-level etc.}
-we join Lundblad \etal in terming these `synthetic clock states'. 
+giving the subspace comprised of ${\ket{1},\ket{2}}$ a higher-order decoupling than can be achieved with a two-level system; we join Lundblad \etal in terming these `synthetic clock states'.
+% LDT: ... or similar bombastic sentence. This needs oomph.
+% LDT: Need to decide on spin-1/2 versus two-level etc.
 
-% It is this dressed spectrum and the optimal CoDD we probe using continuous weak measurement in the remainder of this paper.
-
-
-We optimise of this high-order decoupling in the laboratory with a continuous measurement of the dressed spectrum of a spin-1 non-degenerate quantum gas.
-Using a single realisation of the quantum gas, we adiabatically increase the detuning from resonance making many successive measurements, each of which simultaneously measures all three splittings $\omega_{ij}$ between the dressed states.
+We optimize of this high-order decoupling in the laboratory with a continuous measurement of the dressed spectrum of a spin-1 non-degenerate quantum gas.
+Using a single realization of the quantum gas, we adiabatically increase the detuning from resonance making many successive measurements, each of which simultaneously measures all three splittings $\omega_{ij}$ between the dressed states.
+% RPA: Out of order/preempts Fig. 2!
 Our spinor quantum gas apparatus~\cite{wood_magnetic_2015} and Faraday atom-light interface~\cite{jasperse_magic-wavelength_2017} are described elsewhere.
 We prepare an ultracold gas ($\sim \unit[1]{\upmu K}$) of approximately $10^6$ \Rb atoms in a crossed-beam optical dipole trap.
 A radiofrequency field of amplitude $\Omega/(2\pi) \leq \unit[100]{kHz}$ couples the three Zeeman states $\ket{m_z=-1,0,+1}$ of the lowest hyperfine ground state.
-To perform a weak measurement of the evolving spin, we focus a linearly polarized far-off-resonant probe beam ($\lambda=781\,nm$) onto the atoms.
-The spin component Larmor precessing transverse to the constant magnetic bias field rotates the polarization of the probe via the paramagnetic Faraday effect; shot-noise limited polarimetry reveals $\expect{\hat{F}_x}$ as an modulated tone near $\omega_\text{rf}$.
+To perform a weak measurement of the evolving spin, we focus a linearly polarized far-off-resonant probe beam ($\lambda=\unit[781]{nm}$) onto the atoms.
+Any spin component transverse to the constant magnetic bias field rotates the polarization of the probe via the paramagnetic Faraday effect; shot-noise limited polarimetry reveals $\expect{\hat{F}_x}$ as an modulated tone near $\omega_L$.
 Similar weak continuous measurements using the paramagnetic Faraday effect have been used to observe spin-mixing dynamics of a polar spinor condensate~\cite{liu_quantum_2009} and perform quantum state tomography~\cite{smith_continuous_2004,*smith_efficient_2006}.
+% RPA: No chaudhury_continuous_2006? It's very much related..
 
 To probe the dressed state spectrum and coherences, we prepare a superposition of dressed states by suddenly turning on the Rabi coupling $\Omega$ at $t=0$, projecting the polarized collective spin $\ket{m_z=-1}$ onto $\ket{\psi(t=0)} = \sum_i c_i \ket{i}$.
 The total magnetic field in the laboratory frame used to affect this control is $\vect{B}(t \geq 0) = -B_{\text{rf}} \cos (\omega_{\text{rf}} t) \vect{e}_x + B_z(t) \vect{e}_z$, where $B_z(t)$ varies slowly compared to $\Omega$.
@@ -131,7 +119,7 @@ Strong amplitude modulation of the Faraday signal is apparent from the three upp
     (Inset) The dressed state energy diagram for resonant coupling ($\abs{\Delta} \ll \Omega$); the mean and difference of transition frequencies $\omega_{12}$ and $\omega_{23}$ is the dressed Larmor frequency $\omega_D$ and quadratic shift $q_D$, respectively.
     The upper sidebands about the carrier at $f_{\text{rf}}$ are associated with the $\omega_{13}$ (gold), $\omega_{23}$ (turquoise), and $\omega_{12}$ (lavender) transitions.  
     % The upper sidebands about the carrier at $f_{\text{rf}}$ associated with each of the three transitions are indicated by gold ($\omega_{13}$), turquoise ($\omega_{23}$), and lavender ($\omega_{12}$) annotations.  
-    Magnetic field fluctuations $\delta B_z = \delta B_{\text{ac}}(t)$ of amplitude $\unit[1.4]{mG}$ induced by mains power are manifest as asymmetric frequency modulation of the $\omega_{13}$ and $\omega_{23}$ sidebands, while the $\omega_{12}$ transition remains relatively unaffected.
+    Magnetic field fluctuations $\delta B_z = \delta B_{\text{line}}(t)$ of amplitude $\unit[1.4]{mG}$ induced by mains power are manifest as asymmetric frequency modulation of the $\omega_{13}$ and $\omega_{23}$ sidebands, while the $\omega_{12}$ transition remains relatively unaffected.
     The corresponding spectral peaks have linewidths $\unit[102]{Hz}$, $\unit[97]{Hz}$, and $\unit[24]{Hz}$, respectively.
     The $\omega_{12}$ linewidth is transform-limited, whereas the broadened peaks of the less decoupled $\omega_{23}$ transition exhibit a skew (third-moment) of $\unit[84]{Hz}$ (upper sideband) and $-\unit[100]{Hz}$ (lower sideband).
     }
@@ -142,12 +130,11 @@ Restricting attention to the upper sidebands, the two closest to the carrier are
 The third, weaker sideband near $2\omega_D$ above the carrier signifies the cyclic $\ket{1} \leftrightarrow \ket{3}$ transition, appearing when $q\neq 0$.
 % $\omega_D/(2\pi) = \unit[4611(2)]{Hz}$, $q_D/(2\pi) = \unit[910(5)]{Hz}$, $\Omega/(2\pi) = \unit[4520(2)]{Hz}$, $\omega_{\text{rf}}/(2\pi) = f_{\text{rf}} = \unit[3.521]{MHz}$, 
 No attempt was made to shield the apparatus from parasitic magnetic fields.
-Power line magnetic field noise causes a temporally varying $\delta B_z = \delta B_{\text{line}}(t)$ at the line frequency of $\unit[50]{Hz}$ and its odd harmonics, of $\sim\unit[1.4]{mG}$ ($\unit[1]{kHz}$) peak-to-peak.
+Power line magnetic field noise causes a temporally varying $\delta B_z = \delta B_{\text{line}}(t)$ at the line frequency of $\unit[50]{Hz}$ and its odd harmonics, of $\sim\unit[1.4]{mG}$ ($\unit[1]{kHz}$) peak-to-peak amplitude.
 For these data $q_R = 0.402(3)$, and each dressed transition is affected by the magnetic fluctuations differently: the sidebands corresponding to the $\omega_{13}$ and $\omega_{23}$ transitions exhibit asymmetric frequency modulation, whereas the optimally decoupled $\omega_{12}$ transition remains unperturbed within the frequency resolution of this spectrogram.
-A periodogram (\reffig{fig:static_coupling}, right) of the entire time-series yields maximum frequency resolution (at the expense of all temporal resolution) shows the outwardly-skewed peaks expected for transitions convex in $\Delta$, e.g. the $\omega_{23}$ sidebands have a substantial third moments
-%of $\unit[84]{Hz}$ (upper) and $-\unit[100]{Hz}$ (lower),
-\note{Are we sure units of third moments are Hz not Hz$^3$?}
-and a second moment (standard deviation) that is $4$ times broader than the transform-limited~\note{no, transform limited should be a few Hz only!} peak of the $\omega_{12}$ transition ($\unit[24]{Hz}$ second-moment).
+A periodogram (\reffig{fig:static_coupling}, right) of the entire time-series yields maximum frequency resolution (at the expense of all temporal resolution) and shows the outwardly-skewed peaks expected for transitions convex in $\Delta$, e.g. the $\omega_{23}$ sidebands have a substantial third moments and a second moment (standard deviation) that is $4$ times broader than the transform-limited peak of the $\omega_{12}$ transition ($\unit[24]{Hz}$ second-moment).
+% LDT: Are we sure units of third moments are Hz not Hz$^3$?
+% LDT: No, transform limited should be a few Hz only! 
 \begin{figure}
     \includegraphics[width=\columnwidth]{figure_3.pdf}
     \caption{
@@ -167,45 +154,56 @@ and a second moment (standard deviation) that is $4$ times broader than the tran
     }
 \end{figure}
 
-The amplitude of each sideband is proportional to the corresponding dressed-state coherence $\rho_{ij} = c_i^* c_j $, and to the dressed state coupling strength induced by the relevant spin projection operator $\hat{F}_{x,y,z}$~\note{Which is relevant to us? How do I know?}.
+The amplitude of each sideband is proportional to the corresponding dressed-state coherence $\rho_{ij} = c_i^* c_j $, and to the dressed state coupling strength induced by the spin projection operator(s) $\hat{F}_{x,y,z}$ that give rise to the transition $\ket{i} \leftrightarrow \ket{j}$.
+% LDT: Which is relevant to us? How do I know?
+% RPA: The projection(s) that give rise to the transition |i> <--> |j>.
 \begin{table*}[t]
     \caption{Upper sidebands of the carrier (at $\omega_{\text{rf}}$) of the Faraday rotation signal $\propto \expect{\hat{F}_x}$ of an arbitrary dressed state superposition driven on resonance ($\Delta = 0$).
     Frequency and phase are reported relative to the carrier, along with the transition that each sideband corresponds to.
     For the initial state $\ket{\psi(t=0)}=\ket{m_z=-1}$, the sideband frequencies and amplitudes can be concisely expressed in terms of the dressed Larmor frequency $\omega_D$ and quadratic shift $q_D$. 
     For each upper sideband, there is a lower sideband of the same amplitude, relative frequency and opposite relative phase.
-    \note{Note removal of curlies and fracbracks in cols 4 and 5 resp of table to reduce symbology. Debatable!}
+    % LDT: Note removal of curlies and fracbracks in cols 4 and 5 resp of table to reduce symbology. Debatable!
     \label{tab:sidebands}
     }
     \begin{ruledtabular}
     \begin{tabular}{ccccc}
     transition & frequency & $\omega_{ij} - \omega_{\text{rf}}$ ($\Delta=0$) & amplitude ($\Delta = 0$) & amplitude ($\Delta = 0$, $\ket{m_z=-1}$) \\ \hline
      (carrier) & $\omega_{\text{rf}}$ & 0 & $(\bra{3} \hat{F}_x \ket{3} - \bra{1} \hat{F}_x \ket{1}) (\rho_{33} - \rho_{11})$  & $q_D \Omega/2 \omega_D^2$ \\
-     $\ket{1} \leftrightarrow \ket{2}$ & $\omega_{\text{rf}} \pm \omega_{12}$ & $\omega_D+q_D$ & $-2i \bra{1} \hat{F}_y \ket{2} \text{Re}\,\rho_{12} = -2 \bra{2} \hat{F}_z \ket{3} \text{Re}\,\rho_{12}$ & $\Omega/4 \omega_D$ \\
-     $\ket{2} \leftrightarrow \ket{3}$ & $\omega_{\text{rf}} \pm \omega_{23}$ & $\omega_D-q_D$ & $2i \bra{2} \hat{F}_y \ket{3} \text{Re}\,\rho_{23} = 2 \bra{1} \hat{F}_z \ket{2} \text{Re}\,\rho_{23}$ & $\Omega/4 \omega_D$ \\
-     $\ket{1} \leftrightarrow \ket{3}$ & $\omega_{\text{rf}} \pm \omega_{13}$ & $2\omega_D$ & $2 \bra{1} \hat{F}_x \ket{3} \text{Re}\,\rho_{13}$ & $q_D \Omega/4 \omega_D^2$
+     $\ket{1} \leftrightarrow \ket{2}$ & $\omega_{\text{rf}} + \omega_{12}$ & $\omega_D+q_D$ & $-2i \bra{1} \hat{F}_y \ket{2} \text{Re}\,\rho_{12} = -2 \bra{2} \hat{F}_z \ket{3} \text{Re}\,\rho_{12}$ & $\Omega/4 \omega_D$ \\
+     $\ket{2} \leftrightarrow \ket{3}$ & $\omega_{\text{rf}} + \omega_{23}$ & $\omega_D-q_D$ & $2i \bra{2} \hat{F}_y \ket{3} \text{Re}\,\rho_{23} = 2 \bra{1} \hat{F}_z \ket{2} \text{Re}\,\rho_{23}$ & $\Omega/4 \omega_D$ \\
+     $\ket{1} \leftrightarrow \ket{3}$ & $\omega_{\text{rf}} + \omega_{13}$ & $2\omega_D$ & $2 \bra{1} \hat{F}_x \ket{3} \text{Re}\,\rho_{13}$ & $q_D \Omega/4 \omega_D^2$
     \end{tabular}
     \end{ruledtabular}
 \end{table*}
+% RPA: The second column shouldn't have \pm as these are explicitly upper sidebands as per table caption and subsequent columns.
 An analytic expression for coupling amplitudes near resonance ($\Delta\ll\Omega$) is summarized in Table~\ref{tab:sidebands}.
-These depend on the initial projection onto the dressed basis, which if known amounts to continuous measurement of all coupling strengths in the dressed basis, effecting Hamiltonian parameter estimation for the dressed-system couplings~\note{process tomography/ Hamiltonian learning}.
-Alternatively, if the dressed state couplings are separately characterized~\cite{lundblad_synthetic_2017}, this amounts to  real-time measurement of the dressed density matrix, effecting quantum state estimation of the dressed system.~\note{I don't like `amounts to'}.
-etrics for the fidelity of dynamical decoupling vary amongst platforms, and in addition to linewidth narrowing include prolonged coherence.
-We nominally observe a three-fold increase in the lifetime of the spectral components correspoding to the $\omega_{12}$ and $\omega_{23}$ transitions as compared with the undressed system (\reffig{fig:acquisition_pipeline}a, $1/e$ decay time \unit[23.8(2)]{ms}).
-The dressed-state coherences are expected to be greater, but were limited here to $\sim\unit[100]{ms}$ by probe-induced photon scattering; admitting a lower signal-to-noise ratio using less perturbative probe~\cite{jasperse_magic-wavelength_2017} would permit even longer coherences to be revealed.
-o appraise the success of decoupling of the dressed state transitions, and their dependence on the quadratic shift $q_R$, 
-we varied the magnetic field over a wider range than was furnished by our power line noise of \reffig{fig:static_coupling}, by sweeping the bias magnetic field along $z$ over a range $B_{\text{rf}}$~\note{What is this $B_{rf}!?$} during the measurement interval.
-\note{We should tread lightly here on this previous comment. We should avoid drawing attention to the question ``If it is optimally decoupled, then it should show the longest decoherence time. Have you done this?''}
+These depend on the initial projection onto the dressed basis, which if known amounts to continuous measurement of all coupling strengths in the dressed basis, effecting Hamiltonian parameter estimation for the dressed-system couplings.
+% RPA: Process tomography / Hamiltonian learning
+Alternatively, if the dressed state couplings are separately characterized~\cite{lundblad_synthetic_2017}, this amounts to real-time measurement of the dressed density matrix, effecting quantum state estimation of the dressed system.
+% LDT: I don't like `amounts to'.
+% RPA: You must since *you* added it twice here!
+Metrics for the fidelity of dynamical decoupling vary amongst platforms, and in addition to linewidth narrowing include prolonged coherence.
+We nominally observe a three-fold increase in the lifetime of the spectral components corresponding to the $\omega_{12}$ and $\omega_{23}$ transitions as compared with the undressed system (\reffig{fig:acquisition_pipeline}a, $1/e$ decay time \unit[23.8(2)]{ms}).
+The dressed-state coherences are expected to be greater, but were limited here to $\sim\unit[100]{ms}$ by probe-induced photon scattering; admitting a lower signal-to-noise ratio using less perturbative probe~\cite{jasperse_magic-wavelength_2017} would permit longer coherences to be revealed.
+To appraise the success of decoupling of the dressed state transitions, and their dependence on the quadratic shift $q_R$, we varied the magnetic field over a wider range than was furnished by our power line noise of \reffig{fig:static_coupling}, by sweeping the bias magnetic field along $z$ over a range $B_{\text{rf}}$ during the measurement interval.
+% LDT: What is this $B_{rf}!?$
+% RPA: Amplitude of the dressing field (Rabi frequency in magnetic field units). See page 1.
+% RPA: Furnish is no longer on the swears list?
+% MJK: We should tread lightly here on this previous comment. We should avoid drawing attention to the question ``If it is optimally decoupled, then it should show the longest decoherence time. Have you done this?''
 The control field $B_z(t) = B_0 + \alpha t + B_{\text{line}}(t)$, where $\alpha = \unit[128]{mG/s}$ is the linear sweep rate; the resulting detuning variation is of order $2\Omega$ (\textit{cf.} the domain of~\reffig{fig:eigensystem_schematic}).
-% To appraise the robustness of the rf-dressed states to varying magnetic fields,
-% we apply a time dependent $\delta B_z(t)$ and observe the dynamical change in the frequency composition of the Faraday signal using the short-time Fourier transform, or spectrogram.
 For each realization (or `shot') of the experiment, we calibrate $B_z(t)$ using magnetometry of the bare Zeeman states: an rf $\pi/2$-pulse (rather than continuous coupling) initiates Larmor precession of the collective spin in the $x$--$y$ plane, and the Faraday signal is composed of two tones at $\omega_\pm = \omega_L \pm q$, the bare Zeeman splittings (\reffig{fig:acquisition_pipeline}, top).
-For $q \, \tau_f \geq 2\pi$, where $\tau_f$ is the length of the spectrogram window, the two tones are spectrally resolved and their mean and difference yields the instantaneous $\omega_L(t)$ and $q(t)$, respectively, $\omega_{L}$ is then used to find $\delta B_z(t)$ (and $\Delta(t)$) by inverting the Breit-Rabi equation~\cite{ramsey_molecular_1956}~\footnote{
-    The experiment is synchronized to the mains power line; the harmonic composition of which varies little between contiguous shots ($\unit[20]{s}$ apart), and thus the measured $\delta B_z(t)$ and $q(t)$ from the calibration \note{fiducial?} shot serve as a good proxy for the values experienced by the atoms in the subsequent decoupled shot.
+For $q \, \tau_f \geq 2\pi$, where $\tau_f$ is the length of the spectrogram window, the two tones are spectrally resolved and their mean and difference yields the instantaneous $\omega_L(t)$ and $q(t)$, respectively.
+We then use $\omega_L$ to find $\delta B_z(t)$ (and $\Delta(t)$) by inverting the Breit-Rabi equation~\cite{ramsey_molecular_1956}~\footnote{
+    The experiment is synchronized to the mains power line; the harmonic composition of which varies little between contiguous shots ($\unit[20]{s}$ apart), and thus the measured $\delta B_z(t)$ and $q(t)$ from the calibration shot serve as a good proxy for the values experienced by the atoms in the subsequent decoupled shot.
 }.
 
-We measured the dressed spectrum for magnetic bias fields $B_0$ ranging from 3.549 to $\unit[5.568]\unit{G}$ (applied rf frequencies $f_{\text{rf}}$ from 2.493 to $\unit[3.911]{MHz}$), with a fixed Rabi frequency of $\Omega = 2\pi\times\unit[4.505(3)]{kHz}$.
+We measured the dressed spectrum for resonant magnetic fields $B_0$ ranging from 3.549 to $\unit[5.568]\unit{G}$ (applied rf frequencies $f_{\text{rf}}$ from 2.493 to $\unit[3.911]{MHz}$), with a fixed Rabi frequency of $\Omega/(2\pi) = \unit[4.505(3)]{kHz}$ ($B_{\text{rf}} = \unit[12.83(1)]{mG}$).
+% RPA: *resonant* magnetic fields $B_0$ is essential syntax and 'bias' is jargon.
 At each field $B_0$ we ensured the Rabi frequency was fixed by measuring the voltage drop across the coil at $f_{\text{rf}}$ with an rf lock-in amplifier which -- in concert with an impedance analyzer -- could be used to ensure the rf current in the coil and thus $\Omega$ was constant.
-The Rabi frequency was ultimately measured using the atoms by analyzing a subset of the dressed energy spectrum during the magnetic field sweep when $\Delta \leq 2\pi\times\unit[100]{Hz}$~\note{no need for $|\cdot|$ as we always swept up, right?}.
+The Rabi frequency was ultimately measured using the atoms by analyzing a subset of the dressed energy spectrum during the magnetic field sweep when $\abs{\Delta}/(2\pi) \leq \unit[100]{Hz}$.
+% LDT: No need for $|\cdot|$ as we always swept up, right?
+% RPA: Needed 
+% RPA: (angular freq) / (2pi) = X Hz is our standard (and more correct) convention.
 The measured Rabi frequencies had a standard deviation $\sigma(\Omega) = \unit[9.4]{Hz}$, validating the above method.
 
 The dressed spectrum for the swept control field with resonant field $B_0=\unit[5.013]{G}$ and $q_R=0.403(2)$ is shown in~\reffig{fig:acquisition_pipeline}b.
@@ -219,11 +217,12 @@ Alternatively, the normalized variation of the $\ket{m_z=\pm1} \leftrightarrow \
 
 In the adiabatic limit, the dressed state populations remain constant and the above superposition evolves under phase acquisition $e^{-i \omega_i t}$ by each dressed state $\ket{i}$~\cite{messiah_quantum_1962}. 
 We quantify the stasis of the dressed superposition using the generalized adiabatic parameter $\Gamma \equiv \abs{\vect{\Omega}(t)/\dot{\theta}(t)}$, where $\vect{\Omega} = \vect{B}_{\text{eff}} / \gamma \equiv \Omega \, \vect{e}_x + \Delta \, \vect{e}_x$ and $\tan \theta \equiv \Omega / \Delta$.
-\note{If using $\Gamma$ must say that $\Gamma\gg 1$ means adiabatic or whatever...}
+(The adiabatic limit is $\Gamma\gg 1$.)
 For constant coupling amplitude $\dot{\Omega} = 0$, $\dot{\theta}(t) = -\Omega \dot{\Delta}(t)/\abs{\vect{\Omega}}^2$.
-For the magnetic field sweeps used here, $\Gamma$ exceeded 200 everywhere and was on average $\gtrsim 600$.
-Nevertheless, the continuous spectra when plotted parametrically (\reffig{fig:acquisition_pipeline}c) exhibit some evidence of non-adiabatic following.~\note{do they?}
-Numerical integration of the Schr\"{o}dinger equation of the known control Hamiltonian confirms that dressed state populations deviate by no more than X\,\% from their initial values.
+For the magnetic field sweeps used here, $\Gamma$ exceeded 200 at all times and was on average $\gtrsim 600$.
+Nevertheless, the continuous spectra when plotted parametrically (\reffig{fig:acquisition_pipeline}c) exhibit some evidence of non-adiabatic following.
+% LDT: Do they?
+Numerical integration of the Schr\"{o}dinger equation of the known control Hamiltonian confirms that dressed state populations vary slowly (compared to $\omega_D^{-1}$) and deviate by no more than several percent from their initial values near minima of $\Gamma(t)$.
 \begin{figure}
     \includegraphics[width=\columnwidth]{figure_4.pdf}
     \caption{
@@ -243,10 +242,11 @@ To test the predictive power of our measurement of dynamical decoupling, we dete
 The results of this model independent analysis are shown in~\reffig{fig:curvature_vs_qR} for $q_R$ between 0.2 and 0.5.
 The curvature $\partial^2 f_{12}/\partial B_z^2$ is predicted analytically to be near-linear in $q_R$ over this range.
 Accordingly, we perform linear regression to the measured curvature versus $q_R$ to infer $\qRmagic$, where the synthetic clock transition has vanishing curvature, and find $\qRmagic\text{ (expt.)} = 0.350(6)$, in agreement with the theoretical value in~\refeq{eq:qRmagic}.
-The minimum curvature measured occured at $q_R = 0.351(2)$, with a value of $\left(\partial^2 f_{12}/\partial B_z^2\right)_{\text{min}} = \unit[1]{Hz/mG^2}$ \note{$\unit[1]{MHz/G^2}$}.
+The minimum curvature measured occurred at $q_R = 0.351(2)$, with a value of $\left(\partial^2 f_{12}/\partial B_z^2\right)_{\text{min}} = \unit[1]{Hz/mG^2}$.
+% \note{$\unit[1]{MHz/G^2}$}
 In dimensionless units -- with the splitting and detuning normalized to the Rabi frequency -- $\left(\Omega\, \partial^2\omega_{12}/\partial \Delta^2\right)_{\text{min}} = 0.02$, fifty times lower than the curvature of this transition for the second-order decoupled ($q_R = 0$) case.
 
-Despite long coherence times, the low duty cycle ($D < 0.01$) and low repitition rate ($T_\text{shot} \gtrsim \unit[10]{s}$) of cold quantum gas experiments make it challenging to achieve metrological sensitivities per unit bandwidth that are competitive with other platforms.
+Despite long coherence times, the low duty cycle ($D < 0.01$) and low repetition rate ($T_\text{shot} \gtrsim \unit[10]{s}$) of cold quantum gas experiments make it challenging to achieve metrological sensitivities per unit bandwidth that are competitive with other platforms.
 Here $D=0.005$ and $T_\text{shot} = \unit[20]{s}$, yet we make many more spin projection measurements (\note{$N_m$ = blah} at a shot-noise limited SNR of $10$--$100$~\cite{jasperse_magic-wavelength_2017}) than traditional cold atom experiments ($N_m = 1$ to several, e.g. absorption or dispersive imaging).
 This intra-shot revelation of the time and frequency domain renders the measurement of these spectra orders of magnitude more efficient.
 For example, the single spectrum shown in \reffig{fig:acquisition_pipeline} would take $\sim (10$ shots per $\delta B_z$ per $\omega_{ij} ) \times (100$ $\delta B_z$ values) $\times (3 $ transitions $\omega_{ij}) = 3000$ shots, or $\sim \unit[6\times10^4]{s} = 1000$ minutes of data acquisition.
@@ -399,7 +399,7 @@ The rf Rabi frequency $\Omega = \gamma B_{\text{rf}}/2$ and detuning $\Delta(B) 
     \item Indeed, our data corroborate this since we directly measure $q(B_z(t))$ during the field sweep and find that $\sigma(q)/(2\pi) = \unit[11.7]{Hz}$ on average (alternatively, inferring $q$ from $\omega_L$ via the Breit-Rabi equation gives $\sigma(q)/(2\pi) = \unit[1.2]{Hz}$).
     \item Thus the horizontal axis $\Delta/\Omega$ in \reffig{fig:eigensystem_schematic} is a proxy for $\delta B_z$, and $\omega_{12}$ at $q=\qmagic$ has leading-order quartic sensitivity to $\delta B_z$.
         \item At high fields ($B\approx \unit[30]{G}$) this approximation is no longer valid; $q \approx \qmagic$ varies appreciably across $\delta B_z \in [0, B_{\text{rf}}]$ and $\omega_{12}$ has weak linear dependence on $\delta B_z$~\cite{lundblad_synthetic_2017}.
-    \item[\checkmark]  The control field $\vect{B}(t \geq 0) = -B_{\text{rf}} \cos (\omega_{\text{rf}} t) \vect{e}_x + B_z(t) \vect{e}_z$, where $B_z(t) = B_0 + \alpha t + B_{\text{ac}}(t)$ is the sum of a linear ramp and parasitic power-line magnetic noise.
+    \item[\checkmark]  The control field $\vect{B}(t \geq 0) = -B_{\text{rf}} \cos (\omega_{\text{rf}} t) \vect{e}_x + B_z(t) \vect{e}_z$, where $B_z(t) = B_0 + \alpha t + B_{\text{line}}(t)$ is the sum of a linear ramp and parasitic power-line magnetic noise.
     \item[\checkmark] \textit{On varying $\Omega$ or $q$ to change $q_R=q/\Omega$:}
     For a given static magnetic field, $q_R$ can be modified via the Rabi frequency.
     However, this is not what is represented in \reffig{fig:eigensystem_schematic}, as the normalization of the horizontal and vertical axes would vary for each $q_R$.
