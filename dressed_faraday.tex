@@ -180,9 +180,9 @@ The amplitude of each sideband is proportional to the corresponding dressed-stat
     \begin{tabular}{ccccc}
     transition & frequency & $\omega_{ij} - \omega_{\text{rf}}$ ($\Delta=0$) & amplitude ($\Delta = 0$) & amplitude ($\Delta = 0$, $\ket{m_z=-1}$) \\ \hline
      (carrier) & $\omega_{\text{rf}}$ & 0 & $(\bra{3} \hat{F}_x \ket{3} - \bra{1} \hat{F}_x \ket{1}) (\rho_{33} - \rho_{11})$  & $q_D \Omega/2 \omega_D^2$ \\
-     $\ket{1} \leftrightarrow \ket{2}$ & $\omega_{\text{rf}} + \omega_{12}$ & $\omega_D+q_D$ & $-2i \bra{1} \hat{F}_y \ket{2} \text{Re}\rho_{12} = -2 \bra{2} \hat{F}_z \ket{3} \text{Re}\rho_{12}$ & $\Omega/4 \omega_D$ \\
-     $\ket{2} \leftrightarrow \ket{3}$ & $\omega_{\text{rf}} + \omega_{23}$ & $\omega_D-q_D$ & $2i \bra{2} \hat{F}_y \ket{3} \text{Re}\rho_{23} = 2 \bra{1} \hat{F}_z \ket{2} \text{Re}\rho_{23}$ & $\Omega/4 \omega_D$ \\
-     $\ket{1} \leftrightarrow \ket{3}$ & $\omega_{\text{rf}} + \omega_{13}$ & $2\omega_D$ & $2 \bra{1} \hat{F}_x \ket{3} \text{Re}\rho_{13}$ & $q_D \Omega/4 \omega_D^2$
+     $\ket{1} \leftrightarrow \ket{2}$ & $\omega_{\text{rf}} \pm \omega_{12}$ & $\omega_D+q_D$ & $-2i \bra{1} \hat{F}_y \ket{2} \text{Re}\,\rho_{12} = -2 \bra{2} \hat{F}_z \ket{3} \text{Re}\,\rho_{12}$ & $\Omega/4 \omega_D$ \\
+     $\ket{2} \leftrightarrow \ket{3}$ & $\omega_{\text{rf}} \pm \omega_{23}$ & $\omega_D-q_D$ & $2i \bra{2} \hat{F}_y \ket{3} \text{Re}\,\rho_{23} = 2 \bra{1} \hat{F}_z \ket{2} \text{Re}\,\rho_{23}$ & $\Omega/4 \omega_D$ \\
+     $\ket{1} \leftrightarrow \ket{3}$ & $\omega_{\text{rf}} \pm \omega_{13}$ & $2\omega_D$ & $2 \bra{1} \hat{F}_x \ket{3} \text{Re}\,\rho_{13}$ & $q_D \Omega/4 \omega_D^2$
     \end{tabular}
     \end{ruledtabular}
 \end{table*}
@@ -424,7 +424,7 @@ The ratio of the $\omega_{13}$ sideband amplitude to the $\omega_{12}$ and $\ome
 For the data in \reffig{fig:static_coupling} we measure the ratio of sideband amplitudes to be $0.699$ and $0.210$ of the $\omega_{23}$ and $\omega_{13}$ peaks relative to the $\omega_{12}$ peak respectively.
 
 \textit{Faraday signal for arbitrary states:}
-Evaluating $\expect{\hat{F}_x}_{\text{lab}}$ in the dressed basis, one can show analytically that the sideband frequencies are the dressed state splittings $\omega_{ij}$ with amplitudes proportional to the relevant dressed-state coherence $\text{Re}\{\rho_{ij}\}$ where $\rho_{ij} = \braket{i}{\psi}\braket{\psi}{j}$.
+Evaluating $\expect{\hat{F}_x}_{\text{lab}}$ in the dressed basis, one can show analytically that the sideband frequencies are the dressed state splittings $\omega_{ij}$ with amplitudes proportional to the relevant dressed-state coherence $\text{Re}\,\{\rho_{ij}\}$ where $\rho_{ij} = \braket{i}{\psi}\braket{\psi}{j}$.
 The carrier amplitude is $(\rho_{33} - \rho_{11}) \Omega / \omega_D$.
 % (\abs{\braket{3}{\psi}}^2 - \abs{\braket{1}{\psi}}^2) \Omega / \omega_D =
 This explains the relative longevity of the sidebands; the transition most sensitive to detuning is $\omega_{13}$, and thus the coherence $\rho_{13}$ decays the fastest in the presence of detuning noise with a measured $/1e$ signal decay time of $\tau_{s}=44(1)\unit{ms}$ from \reffig{fig:static_coupling}. 
