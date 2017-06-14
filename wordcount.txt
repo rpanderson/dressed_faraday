@@ -1,0 +1,9 @@
+Total
+Words in text: 2250
+Words in headers: 11
+Words outside text (captions, etc.): 655
+Number of headers: 1
+Number of floats/tables/figures: 5
+Number of math inlines: 287
+Number of math displayed: 3
+
