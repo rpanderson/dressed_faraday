@@ -232,14 +232,14 @@ Numerical integration of the Schr\"{o}dinger equation of the known control Hamil
 \end{figure}
 
 % The acquisition and analysis of \reffig{fig:acquisition_pipeline} was repeated for several $q_R$.  
-To test the predictive power of our CoDD measurement, we inferred the curvature of the synthetic clock transition with respect to magnetic field variations, inspecting the quadratic coefficient of a polynomial fit to $(\delta B_z, f_{12})$ data.
-The results of this model independent analysis are shown in~\reffig{fig:curvature_vs_qR} for $q_R \in [0.2, 0.5]$.
-The curvature $\partial^2 f_{12}/\partial B_z^2$ can be predicted analytically, and varies near-linearly in $q_R$ over this range.
+To test the predictive power of our measurement of dynamical decoupling, we determined the curvature of the synthetic clock transition with respect to magnetic field variations, inspecting the quadratic coefficient of a polynomial fit to $(\delta B_z, f_{12})$ data.
+The results of this model independent analysis are shown in~\reffig{fig:curvature_vs_qR} for $q_R$ between 0.2 and 0.5.
+The curvature $\partial^2 f_{12}/\partial B_z^2$ is predicted analytically to be near-linear in $q_R$ over this range.
 Accordingly, we perform linear regression to the measured curvature versus $q_R$ to infer $\qRmagic$, where the synthetic clock transition has vanishing curvature, and find $\qRmagic\text{ (expt.)} = 0.350(6)$, in agreement with the theoretical value in~\refeq{eq:qRmagic}.
-The minimum curvature demonstrated here occurs at $q_R = 0.351(2)$, with a value of $\left(\partial^2 f_{12}/\partial B_z^2\right)_{\text{min}} = \unit[10^{-3}]{kHz/mG^2}$ \note{$\unit[1]{MHz/G^2}$}.
-In dimensionless units -- with the splitting and detuning normalized to the Rabi frequency -- $\left(\Omega\, \partial^2\omega_{12}/\partial \Delta^2\right)_{\text{min}} = 0.02$, which is 50 times lower than the curvature of this transition for $q_R = 0$.
+The minimum curvature measured occured at $q_R = 0.351(2)$, with a value of $\left(\partial^2 f_{12}/\partial B_z^2\right)_{\text{min}} = \unit[1]{Hz/mG^2}$ \note{$\unit[1]{MHz/G^2}$}.
+In dimensionless units -- with the splitting and detuning normalized to the Rabi frequency -- $\left(\Omega\, \partial^2\omega_{12}/\partial \Delta^2\right)_{\text{min}} = 0.02$, fifty times lower than the curvature of this transition for the second-order decoupled ($q_R = 0$) case.
 
-Despite long coherence times, the low duty cycle ($D < 0.01$) and large dead time ($T_\text{shot} \gtrsim \unit[10]{s}$) of cold quantum gas experiments make challenging achieving metrological sensitivities per unit bandwidth that are competitive with other platforms.
+Despite long coherence times, the low duty cycle ($D < 0.01$) and low repitition rate ($T_\text{shot} \gtrsim \unit[10]{s}$) of cold quantum gas experiments make it challenging to achieve metrological sensitivities per unit bandwidth that are competitive with other platforms.
 Here $D=0.005$ and $T_\text{shot} = \unit[20]{s}$, yet we make many more spin projection measurements (\note{$N_m$ = blah} at a shot-noise limited SNR of $10$--$100$~\cite{jasperse_magic-wavelength_2017}) than traditional cold atom experiments ($N_m = 1$ to several, e.g. absorption or dispersive imaging).
 This intra-shot revelation of the time and frequency domain renders the measurement of these spectra orders of magnitude more efficient.
 For example, the single spectrum shown in \reffig{fig:acquisition_pipeline} would take $\sim (10$ shots per $\delta B_z$ per $\omega_{ij} ) \times (100$ $\delta B_z$ values) $\times (3 $ transitions $\omega_{ij}) = 3000$ shots \note{$2.5$ times fewer $\delta B_z$ values than shown here}, or $\sim \unit[6\times10^4]{s} = 1000$ minutes of data acquisition.
