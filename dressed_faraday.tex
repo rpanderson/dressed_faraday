@@ -49,7 +49,7 @@ This is the basis for ac magnetometry~\cite{hirose_continuous_2012} of relativel
 Insensitivity to wider bandwidth and larger amplitude $\delta B_z$ can be achieved by increasing $\Omega$, opening a broader gap in the dressed spectrum, but doing so changes the detection band of the exquisitely sensitive quantum lock-in detection, recently demonstrated using NV centers~\cite{boss_quantum_2017,*schmitt_submillihertz_2017}.
 Henceforth we presume $\Omega$ is fixed by the application.
 
-Any $\hat{F}_z^2$ interaction -- arising from nonlinear Zeeman~\cite{ramsey_molecular_1956}, microwave ac-Stark~\cite{gerbier_resonant_2006}, or tensor light~\cite{smith_continuous_2004} shifts -- raises the degeneracy of the $\ket{m_z=-1} \leftrightarrow \ket{m_z=0}$ and $\ket{m_z=0} \leftrightarrow \ket{m_z=+1}$ transitions, and breaks the symmetry of $\ham_{\text{rwa}} = \Delta \hat{F}_z + \Omega \hat{F}_x + q \hat{F}_z^2$, where $q \equiv (E_{m_z=+1} + E_{m_z=-1} - 2 E_{m_z=0})_{\Omega=0}/2\hbar$.
+Any $\hat{F}_z^2$ interaction -- arising from nonlinear Zeeman~\cite{ramsey_molecular_1956}, microwave ac-Stark~\cite{gerbier_resonant_2006}, or tensor light~\cite{smith_continuous_2004} shifts -- raises the degeneracy of the $\ket{m_z=-1} \leftrightarrow \ket{m_z=0}$ and $\ket{m_z=0} \leftrightarrow \ket{m_z=+1}$ transitions, and breaks the symmetry of $\ham_{\text{rwa}} = \Delta \hat{F}_z + \Omega \hat{F}_x + q \hat{F}_z^2/\hbar$, where $q \equiv (E_{m_z=+1} + E_{m_z=-1} - 2 E_{m_z=0})_{\Omega=0}/2\hbar$.
 \begin{figure}
     \includegraphics[width=\columnwidth]{figure_1.pdf}
     \caption{
@@ -161,10 +161,10 @@ The amplitude of each sideband is proportional to the corresponding dressed-stat
     \begin{ruledtabular}
     \begin{tabular}{ccccc}
     transition & frequency & $\omega_{ij} - \omega_{\text{rf}}$ ($\Delta=0$) & amplitude ($\Delta = 0$) & amplitude ($\Delta = 0$, $\ket{m_z=-1}$) \\ \hline
-     (carrier) & $\omega_{\text{rf}}$ & 0 & $(\bra{3} \hat{F}_x \ket{3} - \bra{1} \hat{F}_x \ket{1}) (\rho_{33} - \rho_{11})$  & $q_D \Omega/2 \omega_D^2$ \\
-     $\ket{1} \leftrightarrow \ket{2}$ & $\omega_{\text{rf}} + \omega_{12}$ & $\omega_D+q_D$ & $-2i \bra{1} \hat{F}_y \ket{2} \text{Re}\,\rho_{12} = -2 \bra{2} \hat{F}_z \ket{3} \text{Re}\,\rho_{12}$ & $\Omega/4 \omega_D$ \\
-     $\ket{2} \leftrightarrow \ket{3}$ & $\omega_{\text{rf}} + \omega_{23}$ & $\omega_D-q_D$ & $2i \bra{2} \hat{F}_y \ket{3} \text{Re}\,\rho_{23} = 2 \bra{1} \hat{F}_z \ket{2} \text{Re}\,\rho_{23}$ & $\Omega/4 \omega_D$ \\
-     $\ket{1} \leftrightarrow \ket{3}$ & $\omega_{\text{rf}} + \omega_{13}$ & $2\omega_D$ & $2 \bra{1} \hat{F}_x \ket{3} \text{Re}\,\rho_{13}$ & $q_D \Omega/4 \omega_D^2$
+     (carrier) & $\omega_{\text{rf}}$ & 0 & $(\bra{3} \hat{F}_x \ket{3} - \bra{1} \hat{F}_x \ket{1}) (\rho_{33} - \rho_{11})$  & $q_D \bar \Omega\hbar/2 \omega_D^2$ \\
+     $\ket{1} \leftrightarrow \ket{2}$ & $\omega_{\text{rf}} + \omega_{12}$ & $\omega_D+q_D$ & $-2i \bra{1} \hat{F}_y \ket{2} \text{Re}\,\rho_{12} = -2 \bra{2} \hat{F}_z \ket{3} \text{Re}\,\rho_{12}$ & $\Omega\hbar/4 \omega_D$ \\
+     $\ket{2} \leftrightarrow \ket{3}$ & $\omega_{\text{rf}} + \omega_{23}$ & $\omega_D-q_D$ & $2i \bra{2} \hat{F}_y \ket{3} \text{Re}\,\rho_{23} = 2 \bra{1} \hat{F}_z \ket{2} \text{Re}\,\rho_{23}$ & $\Omega\hbar/4 \omega_D$ \\
+     $\ket{1} \leftrightarrow \ket{3}$ & $\omega_{\text{rf}} + \omega_{13}$ & $2\omega_D$ & $2 \bra{1} \hat{F}_x \ket{3} \text{Re}\,\rho_{13}$ & $q_D \Omega\hbar/4 \omega_D^2$
     \end{tabular}
     \end{ruledtabular}
 \end{table*}
