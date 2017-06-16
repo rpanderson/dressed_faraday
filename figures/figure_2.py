@@ -1,14 +1,26 @@
 # make figure of long spectrogram
 
-from numpy import sqrt, pi, argsort, 
+from __future__ import division
+import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib import gridspec
 from faraday_aux import get_alazar_trace, load_stft, plot_stft
 import pandas as pd
 from lmfit.model import Model
 from lmfit.models import SkewedGaussianModel, ConstantModel, GaussianModel
+from lmfit import Parameters
 import peakutils
 from peakutils.plot import plot as pplot
+from analyse_dressed_spectroscopy import analyse_frequencies
+from scipy import signal, stats
+from scipy.linalg import expm
+
+
+plt.rcParams['axes.linewidth'] = 1.2 #set the value globally
+plt.rcParams['font.size'] = 20.0
+plt.rcParams['legend.fontsize'] = 16.0 # 'large'
+plt.rcParams['mathtext.fontset'] = 'stix' # 'cm'
+plt.rcParams['font.family'] = 'STIXGeneral' # [u'serif']
 
 
 # Fit 7 skewed Gaussain functions using hack on multipeaks 
@@ -76,80 +88,85 @@ stft_sub = stft_whole[t >= t_pulse][:-1]
 # Sampling rate is 
 fs = 20e6
 
+# -- Gaussian fitting to get peak estimates --- #
 # Create moving average of peaks
 Pxx = (sum(stft_sub,0)/len(stft_sub[0]))
 Pxx /=max(Pxx)
 
 # Fit 7 peaks to moving average with gaussian model
-fitG = fitNpeaks(f, Pxx, npeaks=7, thres=0.01, model=GaussianModel, offset=False)
+npeaks = 7
+fitG = fitNpeaks(f, Pxx, npeaks=npeaks, thres=0.01, model=GaussianModel, offset=False)
 paramsG = [fitG.best_values]
 var_namesG = fitG.var_names
 u_paramsG = [{var: fitG.params[var].stderr for var in var_namesG}]
 
-Pxx_fitG = fitG.eval()
 
-# Include offset for visual purposes
-fitO = fitNpeaks(f, Pxx, npeaks=7, thres=0.01)
-paramsO = [fitO.best_values]
-var_namesO = fitO.var_names
-u_paramsO = [{var: fitO.params[var].stderr for var in var_namesO}]
+# Create data frame for params
+df_params = pd.DataFrame(paramsG, index=t_sub)
+df_u_params = pd.DataFrame(u_paramsG, index=t_sub)
+center_freqs = df_params.filter(like='center').values[0]
 
-Pxx_fitO = fitO.eval()
+# Turn periodogram into data frame
+# cut data to ingnore frequency burps at start and finish
+t_min = t_pulse+0.01
+t_max = 0.12
+V[ti<t_min] = 0
+V[ti>t_max] = 0
+freq, Pd = signal.periodogram(V, fs)
+df = pd.DataFrame(Pd, index=freq, columns=['Pd'])
 
-# Fit N peaks using skewed Gaussian model
-fit = fitNpeaks(f, Pxx, npeaks=7, thres=0.01, offset=False)
-params = [fit.best_values]
-var_names = fit.var_names
-u_params = [{var: fit.params[var].stderr for var in var_names}]
+fband = 500
+# filter between peaks based of Gaussian fits
+momdf = pd.DataFrame(columns=('f1','f2','f3'))
 
-Pxx_fit = fit.eval()
+for i, f0 in enumerate(center_freqs):
+	fmin, fmax = (f0-fband/2, f0+fband/2)
+	subdf = df.loc[fmin:fmax]
+	# subdf.plot()
+	# plt.show()
+	f_sub = subdf.Pd.index
+	y = subdf.Pd.values/sum(subdf.Pd.values)
+	n = len(y)
+	f1 = sum(y*f_sub)
+	f2 = sum(y*(f_sub-f1)**2)
+	f3 = sum(y*(f_sub-f1)**3)
 
-# Order peaks
-center_keys = [key for key in fit.params.keys() if 'center' in key]
-peakvals = sorted([fit.params[key].value for key in center_keys])
-peakord = argsort([fit.params[key].value for key in center_keys])
+	g1 = (np.sqrt(n*(n-1))/(n-2))*f3/(f2**(3/2))
+	z1 = g1/np.sqrt((6*n*(n-1))/((n-2)*(n+1)*(n+3)))
+	print z1
 
-# Get sigma values for skewed peaks and gauss peaks
-sigmavalsG = [(fitG.params['g'+str(num+1)+'_sigma'].value, fitG.params['g'+str(num+1)+'_sigma'].stderr) for num in peakord]
-sigmavals = [(fit.params['g'+str(num+1)+'_sigma'].value, fit.params['g'+str(num+1)+'_sigma'].stderr) for num in peakord]
+	momdf.loc[i] = [f1, np.sqrt(f2), np.cbrt(f3)]
 
-# Calculate mean width of 23 peaks
-avgsig23 = (sigmavalsG[1][0]+sigmavalsG[1][0])/2
-u_avgsig23 = (sigmavalsG[1][1]+sigmavalsG[1][1])/2
 
-print "Mean E23 peak width = %.1f(%.1f)" %(avgsig23, u_avgsig23)
 
-# Calculate mean width of 12 peaks
-avgsig12 = (sigmavals[2][0]+sigmavals[4][0])/2
-u_avgsig12 = (sigmavals[2][1]+sigmavals[4][1])/2
+# print out.fit_report()
 
-print "Mean E12 peak width = %.1f(%.1f)" %(avgsig12, u_avgsig12)
-
-# calculate mean skew of 12 peaks
-skewvals = [(fit.params['g'+str(num+1)+'_gamma'].value, fit.params['g'+str(num+1)+'_gamma'].stderr) for num in peakord]
-avgsk12 = (abs(skewvals[2][0])+abs(skewvals[4][0]))/2
-u_avgsk12 = (skewvals[2][1]+skewvals[4][1])/2
-
-print "Mean E12 skew = %.1f(%.1f)" %(avgsk12, u_avgsk12)
-
+# --------------- Use center frequencies to for SNR decay ---------------------- # 
+ytick = range(3512,3534,4)
+ymin, ymax = 3.510e6,3.533e6
 # make figure
-plt.figure(figsize=(10,4))
+plt.figure(figsize=(9,4.787))
 gs = gridspec.GridSpec(1, 2, width_ratios=[4, 1]) 
 
 ax0 = plt.subplot(gs[0])
-plot_stft(stft_sub, t_sub, f, range=[3,5], cmap = 'gray_r')
+plot_stft(stft_sub, (t_sub-t_sub.min())*1e3, f, range=[3,5], cmap = 'gray_r')
 # plt.ylim(f.min, 3.5325e3)
-plt.ylabel('Frequency (kHz)')
-plt.xlabel('time (s)')
+plt.ylabel('frequency (kHz)')
+plt.xlabel('time (ms)')
+plt.xlim(0,90)
+ax0.tick_params(direction='in')
+plt.yticks(ytick)
 
 ax1 = plt.subplot(gs[1],sharey=ax0)
-plt.semilogx(Pxx, f/1e3, 'k.')
-plt.semilogx(Pxx_fitO, f/1e3, 'r')
-# plt.ylim(3.51e3, 3.5325e3)
+plt.semilogx(df.Pd.values/df.Pd[ymin:ymax].max(), df.index/1e3, 'k', linewidth=0.5)
+plt.ylim(ymin/1e3, ymax/1e3)
 plt.setp(ax1.get_yticklabels(), visible=False)
-plt.xlim(8e-4,2)
-plt.tight_layout()
-plt.xlabel('Power (arb)')
-plt.subplots_adjust(wspace=.0)
+plt.xlim(1e-4,2)
+plt.xlabel('PSD')
+plt.tight_layout(pad=0.2)
+plt.subplots_adjust(wspace=.02)
+
+
+# plt.savefig('figure3.pdf')
 
 plt.show()
