@@ -25,3 +25,15 @@ and dressed quadratic shift
        &= (\omega_{23}-\omega_{12})_{\Delta=0}/2 \notag s\\ 
        &= -q/2 \, .
 \end{align}
+
+We characterize the splittings between dressed states at $\Delta=0$ by a dressed Larmor frequency $\omega_D\equiv(\omega_3-\omega_1)/2=\sqrt{\Omega^2+q_D^2}$, and dressed quadratic shift $q_D \equiv (\omega_3 + \omega_1 -2\omega_2)/2=-q/2$, giving splittings $\omega_{23}=\omega_D-q_D$, $\omega_{12}=\omega_D+q_D$ and $\omega_{13}=2\omega_D$.
+
+
+% ADIABATIC CONSIDERATIONS (FINAL DRAFT)
+In the adiabatic limit, the dressed state populations $\rho_{ii}$ remain constant and each dressed state $\ket{i}$ acquires phase $e^{-i \omega_i t}$~\cite{messiah_quantum_1962}. 
+We quantify the stasis of the dressed superposition using the adiabatic parameter $\Gamma \equiv \abs{\vect{\Omega}(t)/\dot{\theta}(t)}$, where $\tan \theta \equiv \Omega / \Delta$.
+(The adiabatic limit is $\Gamma\gg 1$.)
+For constant coupling amplitude $\dot{\Omega} = 0$, $\dot{\theta}(t) = -\Omega \dot{\Delta}(t)/\abs{\vect{\Omega}}^2$.
+For the magnetic field sweeps used here, $\Gamma$ exceeded 200 at all times and was on average $\gtrsim 600$.
+Nevertheless, the continuous spectra when plotted parametrically (\reffig{fig:acquisition_pipeline}c) exhibit some evidence of non-adiabatic following.
+Numerical integration of the Schr\"{o}dinger equation of the known control Hamiltonian confirms that dressed state populations vary slowly (compared to $\omega_D^{-1}$) and deviate by no more than several percent from their initial values near minima of $\Gamma(t)$.

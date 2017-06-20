@@ -1,0 +1,7 @@
+* Amend skew metrics
+* Fig. 2 Illustrator edits
+* Fig. 3 amend bottom horizontal axis (\Delta to \delta) and add (a), (b), (c)
+* Fig. 4 squash aspect ratio
+* Forward refs of Loretz PRL
+* Breit-Rabi cite and collision with footnote
+* Fix tense (present in single shot; past for experiment design?)
