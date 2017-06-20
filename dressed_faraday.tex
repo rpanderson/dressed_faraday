@@ -53,12 +53,12 @@ Now $\ham_{\text{rwa}} = \Delta \hat{F}_z + \Omega \hat{F}_x + q \hat{F}_z^2/\hb
     \includegraphics[width=\columnwidth]{figure_1.pdf}
     \caption{
     \label{fig:eigensystem_schematic}
-        Energy spectrum and splittings of a radiofrequency coupled spin-1 for various $q \in [0,\Omega]$.
-        The transparency of each curve is proportional to the distance of $q/\Omega$ from $\qRmagic$ in \refeq{eq:qRmagic}.
-        (Left) Energies $\omega_n$ of dressed states $\ket{n}=\ket{1}$, (red) $\ket{2}$ (blue), and $\ket{3}$ (green) normalized to the rf-coupling strength (Rabi frequency) $\Omega$ as a function of detuning $\Delta=\omega_{\text{rf}}-\omega_L$,
+        Energy spectrum and splittings of a radiofrequency coupled spin-1 for various $q_R = q/\Omega \in [0,1]$.
+        The transparency of each curve is proportional to the distance of $q_R$ from $\qRmagic$ in \refeq{eq:qRmagic}.
+        (Left) Energies $\omega_n$ of dressed states $\ket{n}=\ket{1}$, (red) $\ket{2}$ (blue), and $\ket{3}$ (green) normalized to the Rabi frequency $\Omega$ as a function of detuning $\Delta$,
         Dashed lines indicate the energies of uncoupled states ($\Omega=0$) in a frame rotating at $\omega_{\text{rf}}$.
         (Right) Splittings $\omega_{ij} = \omega_j - \omega_i$ of dressed states $\ket{i}$ and $\ket{j}$ as a function of detuning.
-        When $q/\Omega=\qRmagic$ (bold curves), energies $\omega_1$ and $\omega_2$ share the same curvature, and their difference $\omega_{12}$ (right, purple) is minimally sensitive to detuning and thus magnetic field variations.
+        When $q_R=\qRmagic$ (bold curves), energies $\omega_1$ and $\omega_2$ share the same curvature, and their difference $\omega_{12}$ is minimally sensitive to detuning and thus magnetic field variations.
     }
 \end{figure}
 This yields dressed eigenstates $\{\ket{1}, \ket{2}, \ket{3}\}$ that are no longer $\text{SO}(3)$ rotations of the bare Zeeman states $\ket{m_z}$, and an eigenspectrum $\omega_i(\Delta) = E_{\ket{i}}/\hbar$ shown in \reffig{fig:eigensystem_schematic} (left).
@@ -126,12 +126,12 @@ The $\omega_{12}$ transition is unskewed and has a near transform-limited width,
     \includegraphics[width=\columnwidth]{figure_3.pdf}
     \caption{
     \label{fig:acquisition_pipeline}
-        Real-time CoDD observation for $q_R = 0.402(3)$.
+        Real-time observation of continuous dynamical decoupling for $q_R = 0.402(3)$.
         (a) and (b) are spectrograms of a continuous weak measurement of $\expect{\hat{F}_x}$.
-        (a) Magnetometry of the bare Zeeman states ($\Omega=0$) used to calibrate $B_z(t) = B_0 + \delta B_z(t)$ over the interrogation interval, in which the field [detuning] varies over a range $\sim B_{\text{rf}}$ [$2\Omega$].
-        We numerically track the bare Zeeman splittings (gold/orange) to determine the instantaneous Larmor frequency $f_L(t)$ and quadratic shift $q(t)$.
+        (a) Magnetometry of the bare Zeeman states ($\Omega=0$) is used to calibrate $B_z(t) = B_0 + \delta B_z(t)$ during the measurement interval, in which the field [detuning] varies over a range $\sim B_{\text{rf}}$ [$2\Omega$].
+        We numerically track the Zeeman splittings (gold/orange) to determine the instantaneous Larmor frequency $\omega_L(t)$ and quadratic shift $q(t)$.
        (b) The field is swept over the same range but the rf dressing is applied ($\Omega > 0$).
-       Three sidebands above (shown) and below the carrier at $f_{\text{rf}}=\unit[3.521]{MHz}$ (dashed, orange) reveal the dressed state splittings $f_{ij} = \omega_{ij}/(2\pi)$.
+       Three sidebands above (shown) and below the carrier at $f_{\text{rf}}=\unit[3.521]{MHz}$ (dashed, orange) reveal the dressed state splittings $f_{ij} = \omega_{ij}/2\pi$.
        (c) A parametric plot of $f_{12}(t)$ and $f_{23}(t)$ versus $\delta B_z(t)$ by combining analysis of (a) and (b).
        Solid curves in (b) and (c) are theoretical splittings from an eigenspectrum calculation, provided only $f_{\text{rf}}$, $B_z(t)$, and $\Omega$, i.e. no free parameters.
        Variation of the synthetic clock transition $f_{12}$ for $0 \leq \delta B_z \leq B_{\text{rf}}/4 = \unit[3.2]{mG}$ (c, inset).
@@ -180,7 +180,7 @@ At each field $B_0$ we ensured the Rabi frequency was fixed by measuring the vol
 The Rabi frequency was ultimately measured using the atoms by analyzing the dressed energy spectrum near resonance ($\abs{\Delta}/2\pi \leq \unit[100]{Hz}$) where $\Omega = \sqrt{\omega_{12} \omega_{23}}$.
 The measured Rabi frequencies had a standard deviation $\sigma(\Omega)/2\pi = \unit[9.4]{Hz}$, validating the above method.
 
-Figure~\ref{fig:acquisition_pipeline} shows the dressed spectrum measured as $\delta B_z$ varies across a range $B_{\text{rf}}$ during a single-shot.
+Figure~\ref{fig:acquisition_pipeline} shows the dressed spectrum measured as $\delta B_z$ varies across a range $\sim B_{\text{rf}}$ during a single-shot.
 The instantaneous dressed state splittings for all three transitions were predicted with no free parameters, and are plotted atop the spectrogram data, showing excellent agreement with the measured sidebands.
 Line noise renders $\delta B_z(t)$ neither linear nor monotonic.
 By tracking the instantaneous peaks in the calibration and dressed spectrograms we plot $(\delta B_z(t), f_{ij}(t))$ parametrically, eliminating the line noise systematic.
@@ -195,11 +195,11 @@ Alternatively, the normalized variation of the $\ket{m_z=\pm1} \leftrightarrow \
     \includegraphics[width=\columnwidth]{figure_4.pdf}
     \caption{
     \label{fig:curvature_vs_qR}
-        Curvature of the synthetic clock transition for normalized quadratic shifts $q_R \in [0.2, 0.5]$.
-        The measured curvature (black points) was determined from polynomial fitting to $(\delta B_z, f_{12})$ data shown in \reffig{fig:acquisition_pipeline}(c).
+        Curvature of the synthetic clock transition for relative quadratic shifts $q_R \in [0.2, 0.5]$.
+        The measured curvature (black points) was determined from polynomial fitting to $(\delta B_z, f_{12})$ data, e.g. \reffig{fig:acquisition_pipeline}(c).
         Vertical and horizontal error bars correspond to the standard error of the regression and uncertainty in $q_R$ (via $u(q)$ and $u(\Omega)$ at each field $B_0$), respectively.
         A linear fit (black, dashed) with 1$\sigma$ confidence band (gray, shaded) are shown, whose intercept can be used to impute $\qRmagic\text{ (expt.)} = 0.350(6)$.
-        The analytic expression for the curvature (red) is consistent with the data-driven analysis of the curvature, \textit{cf.} $\qRmagic\text{ (theory)} = 0.348$.
+        The analytic expression for the curvature (red)~\cite{Note1} is consistent with the data-driven analysis of the curvature, \textit{cf.} $\qRmagic\text{ (theory)} = 0.348$.
         The left [right] vertical axis shows the curvature $\partial^2 f_{12}/\partial B_z^2$ [$\Omega\, \partial^2\omega_{12}/\partial \Delta^2$] in absolute units of $\unit{kHz/G^2}$ [dimensionless units].
         The normalized curvature is unity when $q_R=0$.
     }
