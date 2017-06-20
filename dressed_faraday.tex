@@ -7,7 +7,7 @@
 \title{Continuously observing the spectrum of a dynamically decoupled spin-1 quantum gas}
 
 \author{R.\,P.~Anderson}
-\author{M.\,J.~Kewming }
+\author{M.\,J.~Kewming}
 \author{L.\,D.~Turner}
 \affiliation{School of Physics \& Astronomy, Monash University, Victoria 3800, Australia.}
 
@@ -38,7 +38,7 @@ The low-frequency magnetic stability and high-bandwidth detection of these state
 
 Atomic Zeeman states $\ket{m_z=-1,0,1}$ in a magnetic field $B_z \vect{e}_z$ can be decoupled from fluctuations in $B_z$ by applying a perpendicular radiofrequency (rf) field $B_{\text{rf}} \vect{e}_x \cos \omega_\text{rf} t$, oscillating at $\omega_\text{rf}$, tuned near the Larmor frequency $\omega_L \equiv (E_{m_z=-1}-E_{m_z=+1})/2\hbar$.
 At low magnetic fields, the degeneracy of the composite spin-$1/2$ systems~\cite{majorana_atomi_1932} renders the spin-1 behavior identical to CoDD in spin-$1/2$ systems.
-The spin is quantized along $\vect{\Omega} = \Omega \, \vect{e}_x + \Delta \, \vect{e}_z$ in a frame rotating with the radiofrequency $\omega_{\text{rf}}$; the eigenvalues of $\ham_{\text{rwa}} = \Delta \hat{F}_z + \Omega \hat{F}_x$ are $m_x \hbar \sqrt{\Omega^2 + \Delta^2}$, where $\Delta = \omega_{\text{rf}}-\omega_L$ is the detuning and $\Omega = \gamma B_{\text{rf}} / 2$ is the Rabi frequency, and $\ket{m_x=-1,0,1}$ is the corresponding eigenstate at resonance $\Delta=0$.
+The spin is quantized along $\vect{\Omega} = \Omega \, \vect{e}_x + \Delta \, \vect{e}_z$ in a frame rotating with the radiofrequency $\omega_{\text{rf}}$; the eigenvalues of $\ham_{\text{rwa}} = \Delta \hat{F}_z + \Omega \hat{F}_x$ are $m_x \hbar \sqrt{\Omega^2 + \Delta^2}$, where $\Delta = \omega_{\text{rf}}-\omega_L$ is the detuning, $\Omega = \gamma B_{\text{rf}} / 2$ is the Rabi frequency, and $\ket{m_x=-1,0,1}$ is the corresponding eigenstate at resonance $\Delta=0$.
 Radiofrequency dressing induces an avoided crossing in the spectrum; whereas the `bare' state energies are linearly sensitive to magnetic field variations $\delta B_z$ ($\omega_L \approx \gamma B_z$ where $\gamma$ is the gyromagnetic ratio), the dressed energies are only quadratically sensitive near resonance.
 
 The spin character and symmetries are otherwise unchanged: transverse magnetic fields oscillating near the splitting frequencies drive transitions between eigenstates.
@@ -140,15 +140,17 @@ The $\omega_{12}$ transition is unskewed and has a near transform-limited width,
 
 The amplitude of each sideband is proportional to the corresponding dressed-state coherence $\rho_{ij} = c_i^* c_j $, and the non-vanishing dressed state coupling(s) $\bra{i} \hat{F}_{x,y,z} \ket{j}$.
 \begin{table*}[t]
-    \caption{Upper sidebands of the carrier (at $\omega_{\text{rf}}$) of the Faraday rotation signal $\propto \expect{\hat{F}_x}$ of an arbitrary dressed state superposition driven on resonance ($\Delta = 0$).
-    Frequency and phase are reported relative to the carrier, along with the transition that each sideband corresponds to.
-    For the initial state $\ket{\psi(t=0)}=\ket{m_z=-1}$, the sideband frequencies and amplitudes can be concisely expressed in terms of the dressed Larmor frequency $\omega_D$ and quadratic shift $q_D$. 
-    For each upper sideband, there is a lower sideband of the same amplitude, relative frequency and opposite relative phase.
+    \caption{Upper sidebands of the Faraday rotation signal $\propto \expect{\hat{F}_x}$ of an arbitrary dressed state superposition.
+    Each sideband is identified with a dressed-state transition $\ket{i} \leftrightarrow \ket{j}$.
+    Sideband frequencies are reported in both absolute terms and relative to the carrier at $\omega_{\text{rf}}$.
+    Sideband amplitudes are for resonant coupling ($\Delta = 0$), and
+    for the initial state $\ket{\psi(t=0)}=\ket{m_z=-1}$ these can be concisely expressed in terms of the dressed Larmor frequency $\omega_D$ and quadratic shift $q_D$.
+    For each upper sideband, there is a lower sideband of the same amplitude, relative frequency, and opposite phase.
     \label{tab:sidebands}
     }
     \begin{ruledtabular}
     \begin{tabular}{ccccc}
-    transition & frequency & $\omega_{ij} - \omega_{\text{rf}}$ ($\Delta=0$) & amplitude ($\Delta = 0$) & amplitude ($\Delta = 0$, $\ket{m_z=-1}$) \\ \hline
+    transition & frequency & $\omega_{ij} - \omega_{\text{rf}}$ & amplitude ($\Delta = 0$) & amplitude ($\Delta = 0$, $\ket{m_z=-1}$) \\ \hline
      (carrier) & $\omega_{\text{rf}}$ & 0 & $(\bra{3} \hat{F}_x \ket{3} - \bra{1} \hat{F}_x \ket{1}) (\rho_{33} - \rho_{11})$  & $\hbar q_D \Omega/2 \omega_D^2$ \\
      $\ket{1} \leftrightarrow \ket{2}$ & $\omega_{\text{rf}} + \omega_{12}$ & $\omega_D+q_D$ & $-2i \bra{1} \hat{F}_y \ket{2} \text{Re}\,\rho_{12} = -2 \bra{2} \hat{F}_z \ket{3} \text{Re}\,\rho_{12}$ & $\hbar \Omega/4 \omega_D$ \\
      $\ket{2} \leftrightarrow \ket{3}$ & $\omega_{\text{rf}} + \omega_{23}$ & $\omega_D-q_D$ & $2i \bra{2} \hat{F}_y \ket{3} \text{Re}\,\rho_{23} = 2 \bra{1} \hat{F}_z \ket{2} \text{Re}\,\rho_{23}$ & $\hbar \Omega/4 \omega_D$ \\
