@@ -208,7 +208,7 @@ Alternatively, the normalized variation of the $\ket{m_z=\pm1} \leftrightarrow \
 To optimally suppress the sensitivity of the synthetic clock states to small field variations, we experimentally determined the curvature of $\omega_{12}$  for $q_R$ between 0.2 and 0.5, independent of the predicted spectrum of $\ham_{\text{rwa}}$.
 For each $q_R$, we fit a polynomial to $(\delta B_z, f_{12})$ data to extract $\partial^2 f_{12}/\partial B_z^2$ (\reffig{fig:curvature_vs_qR}).
 The predictive power of the measured dressed spectrum and this model-independent analysis is affirmed by the agreement with the theoretical curvature.
-We perform linear regression of the measured curvature versus $q_R$ to infer $\qRmagic\text{ (expt.)} = 0.350(6)$, in agreement with the theoretical value in~\refeq{eq:qRmagic}.
+We perform linear~\note{LDT: explain why!} regression of the measured curvature versus $q_R$ to infer $\qRmagic\text{ (expt.)} = 0.350(6)$, in agreement with the theoretical value in~\refeq{eq:qRmagic}.
 The lowest curvature we measured was $\left(\partial^2 f_{12}/\partial B_z^2\right)_{\text{min}} = \unit[0.7]{Hz/mG^2}$ at $q_R = 0.351(2)$.
 In dimensionless units -- with the splitting and detuning normalized to the Rabi frequency -- $\left(\Omega\, \partial^2\omega_{12}/\partial \Delta^2\right)_{\text{min}} = 0.013$, $\sim 75$ times lower than the curvature of this transition for quadratic decoupling ($q_R = 0$).
 
@@ -217,15 +217,21 @@ For example, the single spectrum shown in \reffig{fig:acquisition_pipeline} woul
 We acquire this spectrum in a single shot, i.e. $\unit[20]{s}$.
 The data used to generate \reffig{fig:curvature_vs_qR} was acquired in only $5$ minutes.
 
-In summary, we have demonstrated real-time measurement of continuous dynamical decoupling in a spin-1 quantum gas, and expeditious optimization of this decoupling by varying the the relative asymmetry of the Zeeman state splittings.
-Continuous weak measurement via the Faraday effect yields information about the rf-dressed superposition, the dressed-state couplings and energies, simultaneously.
+In summary, we have demonstrated contiuous measurement of continuous dynamical decoupling in a spin-1 quantum gas.
+%and expeditious optimization of this decoupling by varying the the relative asymmetry of the Zeeman state splittings.
+Continuous weak measurement via the Faraday effect yields information about the rf-dressed superposition, the dressed-state couplings and energies, simultaneously, making possible full characterisation over detunings in a single experimental shot. 
+The cyclic coupling we observe is a sought-after for emaulation of quantum spin ladders with frustrated interactions~\cite{??}.
+The phase space of spin-orbit coupled spin-1 Bose gases 
+the coupling spatially dependent, the optimal decoupling of the synthetic clock states demonstrated can be applied to , as $q = \qRmagic \Omega$ traverses the polar-striped and plane-wave phases in the vicinity of a tricritical point of the $(\Omega, q)$ phase diagram~\cite{martone_tricriticalities_2016}.
+% Remove: negative
 In this measurement regime, we do not resolve the quantum noise of the decoupled collective spin.
 With a modification of the probe (atom-shot noise dominated) we could measure and affect the quantum noise dynamically,
 and probing the dressed state coherences in this regime may expose non-Gaussian quantum noise geometries in a manner analogous to Ref.~\cite{colangelo_simultaneous_2017}.
-Our time-frequency reduction of the weak measurement record make plain the cyclic coupling of all three dressed states, which could be applied to emulating quantum spin ladders with frustrated interactions.
-By making the coupling spatially dependent, the optimal decoupling of the synthetic clock states demonstrated can be applied to critical phenomena in spin-orbit coupled spin-1 Bose gases, as $q = \qRmagic \Omega$ traverses the polar-striped and plane-wave phases in the vicinity of a tricritical point of the $(\Omega, q)$ phase diagram~\cite{martone_tricriticalities_2016}.
+Our time-frequency reduction of the weak measurement record makes plain the cyclic coupling of all three dressed states, which could be applied to emulating quantum spin ladders with frustrated interactions~\cite{??}.
+
 Indeed the Faraday probe beam -- used to detect magnetization -- could constitute one of the Raman beams used to generate the spin-orbit coupling.
 
+Acknowledgements: We thank Alex Wood for helpful discussions. This work was supported by ARC LP130100857. 
 \bibliography{dressed_faraday}
 
 \end{document}
