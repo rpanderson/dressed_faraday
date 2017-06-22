@@ -14,17 +14,19 @@
 \date{\today}
 
 \begin{abstract}
-Quantum states and spectra can be made sensitive to particular measurands whilst simultaneously insensitive to environmental perturbations using continuous dynamical decoupling.
-Here we present continuous observations of the radiofrequency-dressed energy spectrum in a dynamically decoupled spin-1 quantum gas using a minimally perturbative atom-light interface. 
-Furthermore, by carefully choosing the Hamiltonian parameters, we confirm the existence of a regime where the energy difference of two dressed states is shielded against background magnetic field fluctuations up to fourth order.
-This robust system shares the useful hallmarks of quantum metrology platforms and are ideal candidates for band-tunable magnetometry and emulation of quantum magnetism in solid-state systems.
+% What did we do? Fewest words that include CoDD, spin-1, quantum gas, weak optical probe
+We continuously observe a dynamically decoupled spin-1 quantum gas using a minimally perturbative atom-light interface.
+% Continuous measurement + rf dressing = new type of signal
+This weak measurement `listens' to the precessing spin, which under constant radiofrequency (rf) drive transforms from a quavering Larmor tone to a stable `chord' of three notes modulated onto a carrier. 
+% What the measurement tells us: dressed spectrum and friends
+Spectrogram analysis of the recording quantifies the splittings, coherences and coupling strengths between the three rf-dressed eigenstates, continuously in a single preparation of the quantum gas.
+% What we do with the measurement: explore quartic decoupling
+We vary the ratio of quadratic Zeeman shift to rf amplitude, locating where one of the three dressed state transitions is isolated from magnetic field fluctuations up to fourth order.
+% Impact of marrying dynamical decoupling with continuous weak measurement
+This highly protected transition in a microscale quantum gas gains a new magnetic sensitivity in a tunable band persisting for many milliseconds: this is the length scale, frequency, and duration relevant to biomagnetic phenomena such as neural spike trains.
+% Navel-gazing alternative
+% This system weds the useful hallmarks of clock-state metrology with continuous measurement, a platform for new magnetometry protocols and emulating quantum magnetism in solid-state systems.
 \end{abstract}
-%
-% Here we use an atom-light interface with minimal backaction to probe the spectrum of a radiofrequency-dressed spin-1 quantum gas continuously and in-situ.
-% The dressing amplitude sets the radiofrequency band in which oscillating magnetic fields manifest a linear measurand, and we probe the energy spectrum and coupling strengths during unitary evolution of the system.
-% By varying a symmetry-breaking parameter of the Hamiltonian, we find a regime in which two of the dressed states are maximally insensitive (up to fourth-order) in magnetic field fluctuations that are slow compared to the dressed-state splittings.
-% Moreover, we demonstrate the predictive power of our continuous probe to optimize the dynamical decoupling and tune the measurement band.
-% This robust system shares the useful hallmarks of quantum metrology platforms; the states are thus termed `synthetic clock' states in a complementary result by Dimitris~\etal (\dimitris) and are candidates for band-tunable magnetometry and emulation of quantum magnetism in solid-state systems.
 
 \maketitle
 
@@ -39,19 +41,19 @@ Time-resolved Fourier spectroscopy of this measurement record reveals not only a
 % Unless you're driving transitions populations don't tell you about couplings. Fx ``is'' driving transitions. 
 %Fourier transform spectroscopy using projective measurements of dressed state populations tells you about the spectrum
 Estimating the eigenspectrum of the multi-level dressed system brings into view a higher-order decoupling than exists in dynamically-decoupled spin-1/2 systems.
-In this regime, a synthetic clock transition arises which is only quartically-sensitive to noise, surviving much larger amplitude fluctations than conventional quadratic decoupling.
+In this regime, a synthetic clock transition arises which is only quartically-sensitive to noise, surviving much larger amplitude fluctuations than conventional quadratic decoupling.
 Further, a new transition arises between states which are otherwise uncoupled, completing a cyclic coupling of all dressed states. 
 This low-frequency magnetic stability combined with continuous detection is immediately applicable to band-tunable magnetometry~\cite{hirose_continuous_2012,loretz_radio-frequency_2013,ockeloen_quantum_2013,*horsley_frequency-tunable_2016} and experiments preparing delicate spin-entangled many-body states~\cite{stamper-kurn_spinor_2013}; whereas the unconventional cyclic coupling could be applied to emulation of frustrated quantum spin chains~\cite{mikeska_one-dimensional_2004}.
 
 Atomic Zeeman states $\ket{m_z=-1,0,1}$ in a magnetic field $B_z \vect{e}_z$ can be decoupled from fluctuations in $B_z$ by applying a perpendicular radiofrequency (rf) field $B_{\text{rf}} \vect{e}_x \cos \omega_\text{rf} t$, oscillating at $\omega_\text{rf}$, tuned near the Larmor frequency $\omega_L \equiv (E_{m_z=-1}-E_{m_z=+1})/2\hbar$.
-At low magnetic fields, the degeneracy of the composite spin-$1/2$ systems~\cite{majorana_atomi_1932} renders the spin-1 behavior identical to CoDD in spin-$1/2$ systems.
+At low magnetic fields, the degeneracy of the composite spin-$1/2$ systems~\cite{majorana_atomi_1932} renders the spin-1 behavior identical to continuous dynamical decoupling in spin-$1/2$ systems.
 The spin is quantized along $\vect{\Omega} = \Omega \, \vect{e}_x + \Delta \, \vect{e}_z$ in a frame rotating with the radiofrequency $\omega_{\text{rf}}$; the eigenvalues of $\ham_{\text{rwa}} = \Delta \hat{F}_z + \Omega \hat{F}_x$ are $m_x \hbar \sqrt{\Omega^2 + \Delta^2}$, where $\Delta = \omega_{\text{rf}}-\omega_L$ is the detuning, $\Omega = \gamma B_{\text{rf}} / 2$ is the Rabi frequency, and $\ket{m_x=-1,0,1}$ is the corresponding eigenstate at resonance $\Delta=0$.
 Radiofrequency dressing induces an avoided crossing in the spectrum; whereas the `bare' state energies are linearly sensitive to magnetic field variations $\delta B_z$ ($\omega_L \approx \gamma B_z$ where $\gamma$ is the gyromagnetic ratio), the dressed energies are only quadratically sensitive near resonance.
 
 The spin character and symmetries are otherwise unchanged: transverse magnetic fields oscillating near the splitting frequencies drive transitions between eigenstates.
 In the dressed system this means relatively low-frequency (`ac') fields oscillating near the Rabi frequency, such as $B_{y,\text{ac}} \vect{e}_y \cos \Omega t$ and $B_{z,\text{ac}} \vect{e}_z \cos \Omega t$, drive transitions $\ket{m_x=-1} \leftrightarrow \ket{m_x=0}$ and $\ket{m_x=0} \leftrightarrow \ket{m_x=+1}$.
-This is the basis for ac magnetometry~\cite{hirose_continuous_2012} of relatively low-frequency fields; and for concatenated CoDD (CDD) which protects against fluctuations in $\Omega$~\cite{cai_robust_2012}.
-Insensitivity to wider bandwidth and larger amplitude $\delta B_z$ can be achieved by increasing $\Omega$, opening a broader gap in the dressed spectrum, but doing so changes the detection band of ac magnetometry using CDD~\cite{loretz_radio-frequency_2013} or pulsed dynamical decoupling~\cite{boss_quantum_2017,*schmitt_submillihertz_2017}.
+This is the basis for ac magnetometry~\cite{hirose_continuous_2012} of relatively low-frequency fields; and for concatenated dynamical decoupling  which protects against fluctuations in $\Omega$~\cite{cai_robust_2012}.
+Insensitivity to wider bandwidth and larger amplitude $\delta B_z$ can be achieved by increasing $\Omega$, opening a broader gap in the dressed spectrum, but doing so changes the detection band of ac magnetometry~\cite{loretz_radio-frequency_2013} or pulsed dynamical decoupling~\cite{boss_quantum_2017,*schmitt_submillihertz_2017}.
 Henceforth we presume $\Omega$ is fixed by the application.
 
 Any $\hat{F}_z^2$ interaction -- from nonlinear Zeeman~\cite{ramsey_molecular_1956}, microwave ac-Stark~\cite{gerbier_resonant_2006}, or tensor light~\cite{smith_continuous_2004} shifts -- raises the degeneracy of the $\ket{m_z=-1} \leftrightarrow \ket{m_z=0}$ and $\ket{m_z=0} \leftrightarrow \ket{m_z=+1}$ transitions. 
@@ -233,9 +235,9 @@ Our measurement is readily extended into the back-action regime, where
 measurement of bare precessing spins induces simultaneous two-axis squeezing~\cite{colangelo_simultaneous_2017}.
 Strong measurement of dressed precessing spins adds the third axis and may expose non-Gaussian quantum noise geometries.
 
-% We thank A. A. Wood, N. Lundblad, I. B. Spielman, and F. A. Pollock for enlightening discussions.
-% This work was supported by ARC LP130100857 and a Monash University IDR seed grant. 
-% In finalizing this work we became aware of measurements of the same rf-dressed system by Dimitris \etal~\cite{dimitris_synthetic_2017} using Rabi spectroscopy and projective readout. 
+We thank A. A. Wood, N. Lundblad, I. B. Spielman, and F. A. Pollock for enlightening discussions.
+This work was supported by ARC LP130100857 and a Monash University IDR seed grant. 
+In finalizing this work we became aware of measurements of the same rf-dressed system by Dimitris \etal~\cite{dimitris_synthetic_2017} using Rabi spectroscopy and projective readout. 
 
 \bibliography{dressed_faraday}
 
