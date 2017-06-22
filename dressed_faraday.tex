@@ -29,10 +29,10 @@ The new spectrum protects against damaging low-frequency fluctuations, while the
 Continuous dynamical decoupling has been applied to nitrogen-vacancy centers~\cite{hirose_continuous_2012,loretz_radio-frequency_2013,cai_robust_2012,*cai_long-lived_2012,golter_protecting_2014} and superconducting qubits, and creates protected qubit~\cite{aharon_general_2013} and decoherence-free~\cite{facchi_quantum_2002,*facchi_unification_2004} subspaces.
 Marrying continuous dynamical decoupling with weak continuous measurement may open a window on stochastic evolution, dynamical metrology, and quantum feedback schemes~\cite{vijay_stabilizing_2012}.
 
-Here we demonstrate weak continuous measurement -- dispersive readout of spin precession -- to probe the spectrum of a continuously decoupled spin-1 quantum gas in a single experimental preparation ('shot').
+Here we demonstrate weak continuous measurement -- dispersive readout of spin precession -- to probe the spectrum of a continuously decoupled spin-1 quantum gas in a single experimental preparation (`shot').
 Time-resolved Fourier spectroscopy of this measurement record reveals not only all dressed-state splittings and their relative immunity to use but also dressed state coherences and coupling strengths.
 Estimating the eigenspectrum of the multi-level dressed system brings into view a higher-order decoupling than exists in dynamically-decoupled spin-1/2 systems.
-In this regime, a synthetic clock transition arises which is only quartically-sensitive to noise, surviving much larger amplitude fluctuations than conventional quadratic decoupling.
+In this regime, one transition is only quartically-sensitive to noise, surviving much larger amplitude fluctuations than conventional quadratic decoupling.
 Further, a new transition arises between states which are otherwise uncoupled, completing a cyclic coupling of all dressed states. 
 This low-frequency magnetic stability combined with continuous detection is immediately applicable to band-tunable magnetometry~\cite{hirose_continuous_2012,loretz_radio-frequency_2013,ockeloen_quantum_2013,*horsley_frequency-tunable_2016} and experiments preparing delicate spin-entangled many-body states~\cite{stamper-kurn_spinor_2013}; whereas the unconventional cyclic coupling could be applied to emulation of frustrated quantum spin chains~\cite{mikeska_one-dimensional_2004}.
 
@@ -53,7 +53,7 @@ Now $\ham_{\text{rwa}} = \Delta \hat{F}_z + \Omega \hat{F}_x + q \hat{F}_z^2/\hb
     \includegraphics[width=\columnwidth]{figure_1.pdf}
     \caption{
     \label{fig:eigensystem_schematic}
-        Energy spectrum and splittings of a radiofrequency coupled spin-1 for various $q_R = q/\Omega \in [0,1]$.
+        Energy spectrum and splittings of a radiofrequency coupled spin-1 for several $q_R = q/\Omega$ between $0$ and $1$.
         The transparency of each curve is proportional to the distance of $q_R$ from $\qRmagic$ in \refeq{eq:qRmagic}.
         (Left) Energies $\omega_n$ of dressed states $\ket{n}=\ket{1}$, (red) $\ket{2}$ (blue), and $\ket{3}$ (green) normalized to the Rabi frequency $\Omega$ as a function of detuning $\Delta$,
         Dashed lines indicate the energies of uncoupled states ($\Omega=0$) in a frame rotating at $\omega_{\text{rf}}$.
@@ -83,7 +83,7 @@ resulting in the vanishing quadratic dependence of the transition frequency $\om
 The leading-order sensitivity of these states to field variations $\delta B_z$ at $\qRmagic$ is quartic~\footnote{
     We take $\Delta = -\gamma \, \delta B_z$ for $|\Delta | \leq 2\Omega$ ($| \delta B_z | \leq B_{\text{rf}}/2$) and $| \partial q / \partial \Delta | \approx | \gamma^{-1} \partial q / \partial B_z | = |2 B_z q_Z / \gamma| \ll 1$, valid to $10^{-3}$ for the field strengths $B_z \lesssim \unit[5]{G}$ used here, resulting in vanishing third-order derivatives of $\omega_i$ with respect to detuning. 
     In general, the variation of $q$ with $\Delta$ (or $\delta B_z$) can be accounted for using the Breit-Rabi equation, leading to a residual linear and cubic variation of $\omega_{12}$ with $\delta B_z$, and a small correction to $\qRmagic$ in \refeq{eq:qRmagic}.},
-giving the subspace comprised of ${\ket{1},\ket{2}}$ a higher-order decoupling than can be achieved with a two-level system; we join Dimitris~\etal in terming these `synthetic clock states'.
+giving the subspace comprised of ${\ket{1},\ket{2}}$ a higher-order decoupling than can be achieved with a two-level system; we term these the `hyper-decoupled states'.
 
 We explore this high-order decoupling in the laboratory with a continuous measurement of the dressed spectrum of a spin-1 non-degenerate quantum gas.
 Using a single realization of the quantum gas we make many successive weak measurements, revealing all three splittings $\omega_{ij}$ simultaneously.
@@ -134,7 +134,7 @@ We quantify this asymmetry using the Pearson skew coefficient, which for the $\o
        Three sidebands above (shown) and below the carrier at $f_{\text{rf}}=\unit[3.521]{MHz}$ (dashed, orange) reveal the dressed state splittings $f_{ij} = \omega_{ij}/2\pi$.
        (c) A parametric plot of $f_{12}(t)$ and $f_{23}(t)$ versus $\delta B_z(t)$ by combining analysis of (a) and (b).
        Solid curves in (b) and (c) are theoretical splittings from an eigenspectrum calculation, provided only $f_{\text{rf}}$, $B_z(t)$, and $\Omega$, i.e. no free parameters.
-       Variation of the synthetic clock transition $f_{12}$ for $0 \leq \delta B_z \leq B_{\text{rf}}/4 = \unit[3.2]{mG}$ (c, inset).
+       Variation of the hyper-decoupled transition $f_{12}$ for $0 \leq \delta B_z \leq B_{\text{rf}}/4 = \unit[3.2]{mG}$ (c, inset).
     }
 \end{figure}
 
@@ -167,7 +167,7 @@ We observe a three-fold increase in the lifetime of the spectral components corr
 Dressed-state coherences are expected to last longer, but were limited here by the $\sim\unit[100]{ms}$ probe-induced photon scattering time.
 A less perturbative probe~\cite{jasperse_magic-wavelength_2017} should reveal even longer dressed coherence times at the expense of signal-to-noise ratio. 
 
-To better expose the enhanced decoupling of the synthetic clock states in the vicinity of $\qRmagic$, we swept the the magnetic field over a wider range than was furnished by the power line noise.
+To better expose the enhanced insensitivity of the hyper-decoupled states in the vicinity of $\qRmagic$, we swept the the magnetic field over a wider range than was furnished by the power line noise.
 The longitudinal field $B_z(t) = B_0 + \alpha t + B_{\text{line}}(t)$, where $\alpha = \unit[128]{mG/s}$ is the linear sweep rate; the resulting detuning sweeps across $2\Omega$ (\textit{cf.} the domain of~\reffig{fig:eigensystem_schematic}) during the single-shot measurement.
 We interleave each rf-dressed shot with a magnetometry shot calibrating $B_z(t)$: an rf $\pi/2$-pulse initiates Larmor precession of the undressed collective spin, and the Faraday signal is composed of two tones at $\omega_\pm = \omega_L \pm q$, the Zeeman splittings (\reffig{fig:acquisition_pipeline}, top).
 For $q \, \tau_f \geq 2\pi$, where $\tau_f$ is the length of the spectrogram window, $\omega_\pm$ are resolved yielding the instantaneous $\omega_L(t)$ and $q(t)$.
@@ -185,17 +185,24 @@ The instantaneous dressed state splittings for all three transitions were predic
 Line noise renders $\delta B_z(t)$ neither linear nor monotonic.
 By tracking the instantaneous peaks in the calibration and dressed spectrograms we plot $(\delta B_z(t), f_{ij}(t))$ parametrically, eliminating the line noise systematic.
 The sensitivity of the $\ket{1} \leftrightarrow \ket{2}$ and $\ket{2} \leftrightarrow \ket{3}$ transitions to magnetic field variations is shown in \reffig{fig:acquisition_pipeline}c.
-The synthetic clock transition is most insensitive; $f_{12}$ varies by $\unit[39]{Hz}$ (expt.), $\unit[26]{Hz}$ (theory) for $0 \leq \delta B_z \leq B_{\text{rf}}/4 = \unit[3.2]{mG}$ (\reffig{fig:acquisition_pipeline}c, inset).
+The hyper-decoupled transition is least sensitive; $f_{12}$ varies by $\unit[39]{Hz}$ (expt.), $\unit[26]{Hz}$ (theory) for $0 \leq \delta B_z \leq B_{\text{rf}}/4 = \unit[3.2]{mG}$ (\reffig{fig:acquisition_pipeline}c, inset).
 Normalizing the variation to the Rabi frequency makes possible a comparison of the decoupling across platforms and ac magnetometry bandwidths. 
 The normalized variation $\omega_{12}/\Omega = 8.6\times10^{-3}$ (expt.) and $5.8\times10^{-3}$ (theory) across a detuning range of half a Rabi frequency.
 By comparison, the normalized variation for conventional decoupling ($q_R=0$) is $(\sqrt{5}-2)/2 \approx 0.118$; 14 (expt.) and 20 (theory) times higher than the variation.
-Alternatively, the normalized variation of the $\ket{m_z=\pm1} \leftrightarrow \ket{m_z = 0}$ Zeeman transitions in the low-field limit is $0.5$; 58 (expt.) and 86 (theory) times higher than the variation in the synthetic clock transition frequency.
+Alternatively, the normalized variation of the $\ket{m_z=\pm1} \leftrightarrow \ket{m_z = 0}$ Zeeman transitions in the low-field limit is $0.5$; 58 (expt.) and 86 (theory) times higher than the variation in the hyper-decoupled transition frequency.
+
+To optimally suppress the sensitivity of the hyper-decoupled states to small field variations, we experimentally determined the curvature of $\omega_{12}$  for $q_R$ between 0.2 and 0.5, independent of the predicted spectrum of $\ham_{\text{rwa}}$.
+For each $q_R$, we fit a polynomial to $(\delta B_z, f_{12})$ data to extract $\partial^2 f_{12}/\partial B_z^2$ (\reffig{fig:curvature_vs_qR}).
+We perform linear regression of the measured curvature versus $q_R$ to infer $\qRmagic\text{ (expt.)} = 0.350(6)$.
+The predictive power of the measured dressed spectrum and this model-independent analysis is affirmed by the agreement with the theoretical curvature (red curve, \reffig{fig:curvature_vs_qR}) and $\qRmagic$ in~\refeq{eq:qRmagic}.
+The lowest curvature we measured was $\left(\partial^2 f_{12}/\partial B_z^2\right)_{\text{min}} = \unit[0.7]{Hz/mG^2}$ at $q_R = 0.351(2)$.
+In dimensionless units with the splitting and detuning normalized to the Rabi frequency $\left(\Omega\, \partial^2\omega_{12}/\partial \Delta^2\right)_{\text{min}} = 0.013$, $75$ times lower than the curvature of this transition for quadratic decoupling ($q_R = 0$).
 
 \begin{figure}
     \includegraphics[width=\columnwidth]{figure_4.pdf}
     \caption{
     \label{fig:curvature_vs_qR}
-        Curvature of the synthetic clock transition for relative quadratic shifts $q_R \in [0.2, 0.5]$.
+        Curvature of the hyper-decoupled $\ket{1} \leftrightarrow \ket{2}$ transition for relative quadratic shifts $q_R$ from $0.2$ to $0.5$.
         The measured curvature (black points) was determined from polynomial fitting to $(\delta B_z, f_{12})$ data, e.g. \reffig{fig:acquisition_pipeline}(c).
         Vertical and horizontal error bars correspond to the standard error of the regression and uncertainty in $q_R$ (via $u(q)$ and $u(\Omega)$ at each field $B_0$), respectively.
         A linear fit (black, dashed) with 1$\sigma$ confidence band (gray, shaded) are shown, whose intercept can be used to impute $\qRmagic\text{ (expt.)} = 0.350(6)$.
@@ -204,13 +211,6 @@ Alternatively, the normalized variation of the $\ket{m_z=\pm1} \leftrightarrow \
         The normalized curvature is unity when $q_R=0$.
     }
 \end{figure}
-
-To optimally suppress the sensitivity of the synthetic clock states to small field variations, we experimentally determined the curvature of $\omega_{12}$  for $q_R$ between 0.2 and 0.5, independent of the predicted spectrum of $\ham_{\text{rwa}}$.
-For each $q_R$, we fit a polynomial to $(\delta B_z, f_{12})$ data to extract $\partial^2 f_{12}/\partial B_z^2$ (\reffig{fig:curvature_vs_qR}).
-We perform linear regression of the measured curvature versus $q_R$ to infer $\qRmagic\text{ (expt.)} = 0.350(6)$.
-The predictive power of the measured dressed spectrum and this model-independent analysis is affirmed by the agreement with the theoretical curvature (red curve, \reffig{fig:curvature_vs_qR}) and $\qRmagic$ in~\refeq{eq:qRmagic}.
-The lowest curvature we measured was $\left(\partial^2 f_{12}/\partial B_z^2\right)_{\text{min}} = \unit[0.7]{Hz/mG^2}$ at $q_R = 0.351(2)$.
-In dimensionless units with the splitting and detuning normalized to the Rabi frequency $\left(\Omega\, \partial^2\omega_{12}/\partial \Delta^2\right)_{\text{min}} = 0.013$, $75$ times lower than the curvature of this transition for quadratic decoupling ($q_R = 0$).
 
 This intra-shot revelation of the time and frequency domain renders the measurement of these spectra orders of magnitude more efficient.
 For example, the single spectrum shown in \reffig{fig:acquisition_pipeline} would take $\sim (10$ shots per $\delta B_z$ per $\omega_{ij} ) \times (20$ distinct $\delta B_z$) $\times (3 $ transitions $\omega_{ij}) = 600$ shots, or $\sim \unit[1.2\times10^4]{s} = 200$ minutes of data acquisition.

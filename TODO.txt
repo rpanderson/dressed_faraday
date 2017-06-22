@@ -1,10 +1,6 @@
-* Amend skew metrics in body and Fig. 2 caption. (MJK)
 * Fig. 2 Illustrator edits. (RPA)
 * Fig. 3 amend bottom horizontal axis (\Delta to \delta) and add (a), (b), (c). (RPA)
-* Fig. 4 squash aspect ratio. (RPA, done)
-* Forward refs of Loretz PRL. (LDT)
 * Breit-Rabi cite and collision with footnote. (LDT)
 
 Next paper torture:
 * Fix tense (present in single shot; past for experiment design?)
-* Conclusion, intro, abstract.
