@@ -112,9 +112,8 @@ Strong amplitude modulation of the Faraday signal is apparent as three pairs of 
     Continuous measurement of the dressed energy spectrum for $q_R = 0.402(3)$, $f_{\text{rf}}=\unit[3.521]{MHz}$ and $B_0=\unit[5.013]{G}$ (left) and the power spectral density (PSD, normalized) of the $\unit[90]{ms}$ long signal (right). 
     (Inset) The dressed state energy diagram for resonant coupling ($\abs{\Delta} \ll \Omega$); the mean and difference of transition frequencies $\omega_{12}$ and $\omega_{23}$ is the dressed Larmor frequency $\omega_D$ and quadratic shift $q_D$, respectively.
     The upper sidebands about the carrier at $f_{\text{rf}}$ are associated with the $\omega_{13}$ (gold), $\omega_{23}$ (turquoise), and $\omega_{12}$ (lavender) transitions.
-    % Magnetic field fluctuations induced by mains power are manifest as asymmetric frequency modulation of the $\omega_{13}$ and $\omega_{23}$ sidebands, while the $\omega_{12}$ transition remains relatively unaffected.
-    The corresponding spectral peaks have linewidths $\unit[102]{Hz}$, $\unit[97]{Hz}$, and $\unit[24]{Hz}$, respectively.
-    The $\omega_{12}$ linewidth is near transform-limited, whereas the broadened peaks of the less decoupled $\omega_{23}$ transition exhibit a skew (third-moment) of $\unit[84]{Hz}$ (upper sideband) and $-\unit[100]{Hz}$ (lower sideband).
+    Magnetic field fluctuations are manifest as asymmetric frequency modulation of the $\omega_{13}$ and $\omega_{23}$ sidebands, while the $\omega_{12}$ transition remains relatively unaffected.
+    The corresponding spectral peaks have linewidths $\unit[102]{Hz}$, $\unit[97]{Hz}$, and $\unit[24]{Hz}$ (near transform-limited), respectively.
     }
 \end{figure}
 Each pair of sidebands corresponds to a dressed state transition $\ket{i} \leftrightarrow \ket{j}$; with sideband frequencies  $f_{\text{rf}} \pm f_{ij}$ where $f_{ij} = \omega_{ij}/2\pi$.
@@ -122,10 +121,11 @@ Thus the spectrogram is a calibration-free, real-time measurement of the dressed
 Restricting attention to the upper sidebands, the two closest to the carrier are from adjacent state transitions $\omega_{12}$ and $\omega_{23}$ with similar amplitudes and at frequencies $\omega_D \pm q_D$ above the carrier.
 The third, weaker sideband $2\omega_D$ above the carrier signifies the cyclic $\ket{1} \leftrightarrow \ket{3}$ transition, appearing when $q\neq 0$. 
 No attempt was made to shield the apparatus from magnetic noise.
-The power line causes a temporally varying $\delta B_z = \delta B_{\text{line}}(t)$ at the line frequency of $\unit[50]{Hz}$ and its odd harmonics, of $\unit[1.4]{mG}$ ($\unit[1]{kHz}$) peak-to-peak amplitude.
+The power line causes a temporally varying $\delta B_z = \delta B_{\text{line}}(t)$ at the line frequency of $\unit[50]{Hz}$ and its odd harmonics, of $\unit[3.6]{mG}$ ($\unit[2.5]{kHz}$) peak-to-peak amplitude.
 Each dressed transition is affected by the magnetic fluctuations differently: the sidebands corresponding to the $\omega_{13}$ and $\omega_{23}$ transitions exhibit asymmetric frequency modulation, whereas the optimally decoupled $\omega_{12}$ transition remains unperturbed within the frequency resolution of this spectrogram.
 The normalized power spectral density (\reffig{fig:static_coupling}, right) of the entire time-series yields maximum frequency resolution at the expense of all temporal resolution.
-The $\omega_{12}$ transition is unskewed and has a near transform-limited width, four times narrower than the outwardly-skewed $\omega_{23}$ and $\omega_{13}$ sidebands. We quantify the skew using the Pearson skew coefficient which is significant for the $\omega_{23}$ band with an average of 0.875, 11 times larger than the $\omega_{12}$ band coefficient of 0.08. 
+The $\omega_{12}$ transition is unskewed and has a near transform-limited width, four times narrower than the $\omega_{23}$ and $\omega_{13}$ sidebands, which are outwardly-skewed as expected transitions convex in $\Delta$.
+We quantify this asymmetry using the Pearson skew coefficient, which for the $\omega_{23}$ peaks has a mean magnitude of $0.88$ (statistically significant), compared to the insignificant skew of the $\omega_{12}$ peak ($0.08$). 
 \begin{figure}
     \includegraphics[width=\columnwidth]{figure_3.pdf}
     \caption{
