@@ -172,9 +172,10 @@ To better expose the enhanced insensitivity of the hyper-decoupled states in the
 The longitudinal field $B_z(t) = B_0 + \alpha t + B_{\text{line}}(t)$, where $\alpha = \unit[128]{mG/s}$ is the linear sweep rate; the resulting detuning sweeps across $2\Omega$ (\textit{cf.} the domain of~\reffig{fig:eigensystem_schematic}) during the single-shot measurement.
 We interleave each rf-dressed shot with a magnetometry shot calibrating $B_z(t)$: an rf $\pi/2$-pulse initiates Larmor precession of the undressed collective spin, and the Faraday signal is composed of two tones at $\omega_\pm = \omega_L \pm q$, the Zeeman splittings (\reffig{fig:acquisition_pipeline}, top).
 For $q \, \tau_f \geq 2\pi$, where $\tau_f$ is the length of the spectrogram window, $\omega_\pm$ are resolved yielding the instantaneous $\omega_L(t)$ and $q(t)$.
-We then use $\omega_L(t)$ to find $\delta B_z(t)$ (and $\Delta(t)$) by inverting the Breit-Rabi equation~\cite{ramsey_molecular_1956}~\footnote{
-    The experiment is synchronized to the mains power line; the harmonic composition varies little between successive shots ($\unit[20]{s}$ apart), and thus the calibration $\delta B_z(t)$ and $q(t)$ are good proxies for the values experienced by the atoms in the subsequent decoupled shot.
-}.
+We then use $\omega_L(t)$ to find $\delta B_z(t)$ (and $\Delta(t)$) by inverting the Breit-Rabi equation~\cite{ramsey_molecular_1956,Note3}.
+% ~\footnote{
+%     The experiment is synchronized to the mains power line; the harmonic composition varies little between successive shots ($\unit[20]{s}$ apart), and thus the calibration $\delta B_z(t)$ and $q(t)$ are good proxies for the values experienced by the atoms in the subsequent decoupled shot.
+% }.
 
 We measure the dressed spectrum for resonant magnetic fields $B_0$ ranging from $3.549$ to $\unit[5.568]{G}$ (applied rf frequencies $f_{\text{rf}}$ from $2.493$ to $\unit[3.911]{MHz}$), with a mean Rabi frequency of $\Omega/2\pi = \unit[4.505(3)]{kHz}$ ($B_{\text{rf}} = \unit[12.83(1)]{mG}$).
 At each field $B_0$ we ensure the Rabi frequency is fixed by measuring the voltage drop across the coil at $f_{\text{rf}}$ with an rf lock-in amplifier.
@@ -192,11 +193,11 @@ The normalized variation $\omega_{12}/\Omega = 8.6\times10^{-3}$ (expt.) and $5.
 By comparison, the normalized variation for conventional decoupling ($q_R=0$) is $(\sqrt{5}-2)/2 \approx 0.118$; 14 (expt.) and 20 (theory) times higher than the variation.
 Alternatively, the normalized variation of the $\ket{m_z=\pm1} \leftrightarrow \ket{m_z = 0}$ Zeeman transitions in the low-field limit is $0.5$; 58 (expt.) and 86 (theory) times higher than the variation in the hyper-decoupled transition frequency.
 
-To optimally suppress the sensitivity of the hyper-decoupled states to small field variations, we experimentally determined the curvature of $\omega_{12}$  for $q_R$ between 0.2 and 0.5, independent of the predicted spectrum of $\ham_{\text{rwa}}$.
+To optimally suppress the sensitivity of the hyper-decoupled states to small field variations, we experimentally determine the curvature of $\omega_{12}$  for $q_R$ between 0.2 and 0.5, independent of the predicted spectrum of $\ham_{\text{rwa}}$.
 For each $q_R$, we fit a polynomial to $(\delta B_z, f_{12})$ data to extract $\partial^2 f_{12}/\partial B_z^2$ (\reffig{fig:curvature_vs_qR}).
 We perform linear regression of the measured curvature versus $q_R$ to infer $\qRmagic\text{ (expt.)} = 0.350(6)$.
 The predictive power of the measured dressed spectrum and this model-independent analysis is affirmed by the agreement with the theoretical curvature (red curve, \reffig{fig:curvature_vs_qR}) and $\qRmagic$ in~\refeq{eq:qRmagic}.
-The lowest curvature we measured was $\left(\partial^2 f_{12}/\partial B_z^2\right)_{\text{min}} = \unit[0.7]{Hz/mG^2}$ at $q_R = 0.351(2)$.
+The lowest curvature we measure is $\left(\partial^2 f_{12}/\partial B_z^2\right)_{\text{min}} = \unit[0.7]{Hz/mG^2}$ at $q_R = 0.351(2)$.
 In dimensionless units with the splitting and detuning normalized to the Rabi frequency $\left(\Omega\, \partial^2\omega_{12}/\partial \Delta^2\right)_{\text{min}} = 0.013$, $75$ times lower than the curvature of this transition for quadratic decoupling ($q_R = 0$).
 
 \begin{figure}
@@ -204,7 +205,7 @@ In dimensionless units with the splitting and detuning normalized to the Rabi fr
     \caption{
     \label{fig:curvature_vs_qR}
         Curvature of the hyper-decoupled $\ket{1} \leftrightarrow \ket{2}$ transition for relative quadratic shifts $q_R$ from $0.2$ to $0.5$.
-        The measured curvature (black points) was determined from polynomial fitting to $(\delta B_z, f_{12})$ data, e.g. \reffig{fig:acquisition_pipeline}(c).
+        The measured curvature (black points) is determined from polynomial fitting to $(\delta B_z, f_{12})$ data, e.g. \reffig{fig:acquisition_pipeline}(c).
         Vertical and horizontal error bars correspond to the standard error of the regression and uncertainty in $q_R$ (via $u(q)$ and $u(\Omega)$ at each field $B_0$), respectively.
         A linear fit (black, dashed) with 1$\sigma$ confidence band (gray, shaded) are shown, whose intercept can be used to impute $\qRmagic\text{ (expt.)} = 0.350(6)$.
         The analytic expression for the curvature (red)~\cite{Note1} is consistent with the data-driven analysis of the curvature, \textit{cf.} $\qRmagic\text{ (theory)} = 0.348$.
@@ -215,20 +216,20 @@ In dimensionless units with the splitting and detuning normalized to the Rabi fr
 
 This intra-shot revelation of the time and frequency domain renders the measurement of these spectra orders of magnitude more efficient.
 For example, the single spectrum shown in \reffig{fig:acquisition_pipeline} would take $\sim (10$ shots per $\delta B_z$ per $\omega_{ij} ) \times (20$ distinct $\delta B_z$) $\times (3 $ transitions $\omega_{ij}) = 600$ shots, or $\sim \unit[1.2\times10^4]{s} = 200$ minutes of data acquisition.
-We acquire this spectrum in a single shot, i.e. $\unit[20]{s}$.
+We acquired this spectrum in a single shot, i.e. $\unit[20]{s}$.
 The data used to generate \reffig{fig:curvature_vs_qR} was acquired in only $5$ minutes.
 
 In summary, we have demonstrated continuous measurement of continuous dynamical decoupling in a spin-1 quantum gas.
 Continuous weak measurement via the Faraday effect yields information about the rf-dressed superposition, the dressed-state couplings and energies, simultaneously, making possible full characterization over detunings in a single experimental shot.
 We posit that when viewed as an ac magnetometer, this information will not only measure fields oscillating at the dynamically-tunable Rabi frequency, but self-certifies both band center and residual detuning error, in real time, while remaining fourth-order decoupled.
-More broadly, the cyclic coupling we observe is sought-after for emulation of quantum spin ladders with frustrated interactions~\cite{mikeska_one-dimensional_2004}.
+More broadly, the cyclic coupling we observe may emulate quantum spin ladders with frustrated interactions~\cite{mikeska_one-dimensional_2004}.
 Our measurement is readily extended into the back-action regime, where
 measurement of bare precessing spins induces simultaneous two-axis squeezing~\cite{colangelo_simultaneous_2017}.
 Strong measurement of dressed precessing spins adds the third axis and may expose non-Gaussian quantum noise geometries.
 
 We thank A. A. Wood, N. Lundblad, I. B. Spielman, and F. A. Pollock for enlightening discussions.
 This work was supported by ARC LP130100857 and a Monash University IDR seed grant. 
-In finalizing this work we became aware of measurements of the same rf-dressed system by Dimitris \etal~\cite{dimitris_synthetic_2017} using Rabi spectroscopy and projective readout. 
+In finalizing this work we became aware of measurements of the same rf-dressed system by Dimitris \etal~\cite{dimitris_synthetic_2017} using projective readout of dressed state populations. 
 
 \bibliography{dressed_faraday}
 
