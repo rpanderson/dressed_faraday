@@ -4,7 +4,7 @@
 
 \begin{document}
 
-\title{Continuously observing the spectrum of a dynamically decoupled spin-1 quantum gas}
+\title{Continuously observing a dynamically decoupled spin-1 quantum gas}
 
 \author{R.\,P.~Anderson}
 \author{M.\,J.~Kewming}
@@ -14,18 +14,11 @@
 \date{\today}
 
 \begin{abstract}
-% What did we do? Fewest words that include CoDD, spin-1, quantum gas, weak optical probe
-We continuously observe dynamical decoupling in a spin-1 quantum gas using a  weak optical measurement to `listen' to the precessing spin.
-% Continuous measurement + rf dressing = new type of signal
-Radiofrequency (rf) drive transforms a quavering Larmor tone into a stable `chord' of three notes.
-% What the measurement tells us: dressed spectrum and friends
-Spectrogram analysis parses these notes as splittings, coherences and coupling strengths between the rf-dressed eigenstates, continuously in a single preparation of the quantum gas.
-% What we do with the measurement: explore quartic decoupling
-We locate a quadratic Zeeman shift that isolates one of dressed state transitions from magnetic field fluctuations up to fourth order.
-% Impact of marrying dynamical decoupling with continuous weak measurement
-% This highly protected transition in a microscale quantum gas gains a new magnetic sensitivity in a tunable band persisting for many milliseconds: this is the length scale, frequency, and duration relevant to biomagnetic phenomena such as neural spike trains.
-% Navel-gazing alternative
-Marrying clock-state metrology with continuous measurement provides a platform for new magnetometry protocols and emulating quantum magnetism in solid-state systems.
+We continuously `listen' to the precessing spin of a dynamically decoupled quantum gas using a weak optical measurement.
+Radiofrequency (rf) coupling of the Zeeman states transforms quavering Larmor tones into a stable `chord' of three pure notes.
+Spectrogram analysis parses these notes as splittings, coherences and coupling strengths between the rf-dressed eigenstates, measured in a single preparation of the quantum gas.
+We locate a quadratic Zeeman shift that isolates one of the dressed state transitions from magnetic field instabilities up to fourth order.
+This marries clock-state metrology with continuous measurement, advancing a platform for measuring oscillating magnetic fields in real-world noisy environments.
 \end{abstract}
 
 \maketitle
@@ -38,8 +31,6 @@ Marrying continuous dynamical decoupling with weak continuous measurement may op
 
 Here we demonstrate weak continuous measurement -- dispersive readout of spin precession -- to probe the spectrum of a continuously decoupled spin-1 quantum gas in a single experimental preparation ('shot').
 Time-resolved Fourier spectroscopy of this measurement record reveals not only all dressed-state splittings and their relative immunity to use but also dressed state coherences and coupling strengths.
-% Unless you're driving transitions populations don't tell you about couplings. Fx ``is'' driving transitions. 
-%Fourier transform spectroscopy using projective measurements of dressed state populations tells you about the spectrum
 Estimating the eigenspectrum of the multi-level dressed system brings into view a higher-order decoupling than exists in dynamically-decoupled spin-1/2 systems.
 In this regime, a synthetic clock transition arises which is only quartically-sensitive to noise, surviving much larger amplitude fluctuations than conventional quadratic decoupling.
 Further, a new transition arises between states which are otherwise uncoupled, completing a cyclic coupling of all dressed states. 
@@ -89,7 +80,6 @@ Indeed we find an analytic value of the normalized quadratic shift $q_R=q/\Omega
     \qRmagic = \sqrt{(3\sqrt{2} - 4)/2} \approx 0.348 \, ,
 \end{align}
 resulting in the vanishing quadratic dependence of the transition frequency $\omega_{12}=\omega_2 - \omega_1$ on $\Delta$.
-% A similar regime was identified in a multiply-dressed three-level $V$-system~\cite{rabl_strong_2009,*xu_coherence-protected_2012}.
 The leading-order sensitivity of these states to field variations $\delta B_z$ at $\qRmagic$ is quartic~\footnote{
     We take $\Delta = -\gamma \, \delta B_z$ for $|\Delta | \leq 2\Omega$ ($| \delta B_z | \leq B_{\text{rf}}/2$) and $| \partial q / \partial \Delta | \approx | \gamma^{-1} \partial q / \partial B_z | = |2 B_z q_Z / \gamma| \ll 1$, valid to $10^{-3}$ for the field strengths $B_z \lesssim \unit[5]{G}$ used here, resulting in vanishing third-order derivatives of $\omega_i$ with respect to detuning. 
     In general, the variation of $q$ with $\Delta$ (or $\delta B_z$) can be accounted for using the Breit-Rabi equation, leading to a residual linear and cubic variation of $\omega_{12}$ with $\delta B_z$, and a small correction to $\qRmagic$ in \refeq{eq:qRmagic}.},
@@ -214,7 +204,7 @@ Alternatively, the normalized variation of the $\ket{m_z=\pm1} \leftrightarrow \
         The normalized curvature is unity when $q_R=0$.
     }
 \end{figure}
- 
+
 To optimally suppress the sensitivity of the synthetic clock states to small field variations, we experimentally determined the curvature of $\omega_{12}$  for $q_R$ between 0.2 and 0.5, independent of the predicted spectrum of $\ham_{\text{rwa}}$.
 For each $q_R$, we fit a polynomial to $(\delta B_z, f_{12})$ data to extract $\partial^2 f_{12}/\partial B_z^2$ (\reffig{fig:curvature_vs_qR}).
 We perform linear regression of the measured curvature versus $q_R$ to infer $\qRmagic\text{ (expt.)} = 0.350(6)$.
