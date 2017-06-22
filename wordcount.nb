@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[      5827,        156]
-NotebookOptionsPosition[      4952,        129]
-NotebookOutlinePosition[      5324,        145]
-CellTagsIndexPosition[      5281,        142]
+NotebookDataLength[      6003,        162]
+NotebookOptionsPosition[      5128,        135]
+NotebookOutlinePosition[      5500,        151]
+CellTagsIndexPosition[      5457,        148]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -26,9 +26,9 @@ Cell[BoxData[
    RowBox[{"Text", " ", "count"}], " ", "*)"}], "\[IndentingNewLine]", 
   RowBox[{
    RowBox[{
-    RowBox[{"wordsInText", "=", "2136"}], ";"}], "\[IndentingNewLine]", 
+    RowBox[{"wordsInText", "=", "2093"}], ";"}], "\[IndentingNewLine]", 
    RowBox[{
-    RowBox[{"wordsOutsideText", "=", "623"}], ";"}], "\[IndentingNewLine]", 
+    RowBox[{"wordsOutsideText", "=", "620"}], ";"}], "\[IndentingNewLine]", 
    RowBox[{
     RowBox[{"numInlineMath", "=", "268"}], ";"}], "\[IndentingNewLine]", 
    RowBox[{"textWords", "=", 
@@ -47,14 +47,14 @@ Cell[BoxData[
      RowBox[{"{", "\[IndentingNewLine]", 
       RowBox[{
        RowBox[{"{", 
-        RowBox[{"4.61", ",", "3.03"}], "}"}], ",", "\[IndentingNewLine]", 
+        RowBox[{"9.0", ",", "4.79"}], "}"}], ",", "\[IndentingNewLine]", 
        RowBox[{"{", 
         RowBox[{"9.0", ",", "4.74"}], "}"}], ",", "\[IndentingNewLine]", 
        RowBox[{"{", 
         RowBox[{"9.0", ",", "13.17"}], "}"}], ",", "\[IndentingNewLine]", 
        RowBox[{"{", 
         RowBox[{"9.0", ",", "4.74"}], "}"}]}], "\[IndentingNewLine]", "}"}]}],
-     ";"}], "\n", "\[IndentingNewLine]", 
+     ";"}], "\[IndentingNewLine]", "\n", 
    RowBox[{
     RowBox[{"aspectRatios", "=", 
      RowBox[{"Map", "[", 
@@ -65,7 +65,7 @@ Cell[BoxData[
           RowBox[{"[", "1", "]"}], "]"}], "/", 
          RowBox[{"#", "[", 
           RowBox[{"[", "2", "]"}], "]"}]}], "&"}], ",", "figureDimensions"}], 
-      "]"}]}], ";"}], "\[IndentingNewLine]", "\n", 
+      "]"}]}], ";"}], "\n", "\[IndentingNewLine]", 
    RowBox[{
     RowBox[{"figureWordCounts", "=", 
      RowBox[{"Ceiling", "[", 
@@ -88,43 +88,49 @@ Cell[BoxData[
     "tableWords"}]}]}]], "Input",
  CellChangeTimes->{{3.706936956872692*^9, 3.7069372215241547`*^9}, {
   3.7069372658925915`*^9, 3.706937266349637*^9}, {3.7069604041401997`*^9, 
-  3.706960446797639*^9}},ExpressionUUID->"fd57c287-c72e-401d-8f24-\
+  3.706960446797639*^9}, {3.707104349513693*^9, 
+  3.707104384126116*^9}},ExpressionUUID->"fd57c287-c72e-401d-8f24-\
 e080d698e988"],
 
-Cell[BoxData["3027"], "Output",
+Cell[BoxData["2981"], "Output",
  CellChangeTimes->{
   3.7069370407230763`*^9, 3.706937090912095*^9, {3.7069371997819805`*^9, 
    3.7069372218311853`*^9}, 3.706937270569059*^9, {3.7069604267164907`*^9, 
-   3.706960447530681*^9}},ExpressionUUID->"e8d8f097-c789-42dd-92da-\
-3a68a3038b31"],
+   3.706960447530681*^9}, 
+   3.707104403906138*^9},ExpressionUUID->"336667e6-3a40-4480-ac87-\
+056fafde713e"],
 
 Cell[BoxData["16"], "Output",
  CellChangeTimes->{
   3.7069370407230763`*^9, 3.706937090912095*^9, {3.7069371997819805`*^9, 
    3.7069372218311853`*^9}, 3.706937270569059*^9, {3.7069604267164907`*^9, 
-   3.7069604475346813`*^9}},ExpressionUUID->"27d59941-9911-4b25-ac68-\
-961de79b1e44"],
+   3.706960447530681*^9}, 
+   3.7071044039101377`*^9},ExpressionUUID->"1eff2121-19b4-447c-9ebe-\
+ccf4df02f2a3"],
 
-Cell[BoxData["559"], "Output",
+Cell[BoxData["540"], "Output",
  CellChangeTimes->{
   3.7069370407230763`*^9, 3.706937090912095*^9, {3.7069371997819805`*^9, 
    3.7069372218311853`*^9}, 3.706937270569059*^9, {3.7069604267164907`*^9, 
-   3.7069604475386815`*^9}},ExpressionUUID->"f98b1837-72ad-4f33-8525-\
-4c1fc3ed7b8b"],
+   3.706960447530681*^9}, 
+   3.707104403912137*^9},ExpressionUUID->"667f8b09-704a-4a58-b5b0-\
+32da674f47b0"],
 
 Cell[BoxData["91"], "Output",
  CellChangeTimes->{
   3.7069370407230763`*^9, 3.706937090912095*^9, {3.7069371997819805`*^9, 
    3.7069372218311853`*^9}, 3.706937270569059*^9, {3.7069604267164907`*^9, 
-   3.7069604475426817`*^9}},ExpressionUUID->"4c5dcfd3-7c59-4c98-8cb5-\
-39f475da1e4c"],
+   3.706960447530681*^9}, 
+   3.7071044039151373`*^9},ExpressionUUID->"d3759102-9775-4c7e-97c2-\
+4c816316e766"],
 
-Cell[BoxData["3693"], "Output",
+Cell[BoxData["3628"], "Output",
  CellChangeTimes->{
   3.7069370407230763`*^9, 3.706937090912095*^9, {3.7069371997819805`*^9, 
    3.7069372218311853`*^9}, 3.706937270569059*^9, {3.7069604267164907`*^9, 
-   3.706960447546682*^9}},ExpressionUUID->"7e981196-a08c-454a-97d3-\
-9c782c3aecc6"]
+   3.706960447530681*^9}, 
+   3.707104403917137*^9},ExpressionUUID->"baf848e4-7a8c-4f2c-a793-\
+62c954ffc132"]
 }, Open  ]]
 },
 WindowSize->{942, 1010},
@@ -145,18 +151,18 @@ CellTagsIndex->{}
 (*NotebookFileOutline
 Notebook[{
 Cell[CellGroupData[{
-Cell[580, 22, 2915, 69, 1962, "Input", "ExpressionUUID" -> \
+Cell[580, 22, 2963, 70, 1930, "Input", "ExpressionUUID" -> \
 "fd57c287-c72e-401d-8f24-e080d698e988"],
-Cell[3498, 93, 285, 5, 111, "Output", "ExpressionUUID" -> \
-"e8d8f097-c789-42dd-92da-3a68a3038b31"],
-Cell[3786, 100, 285, 5, 111, "Output", "ExpressionUUID" -> \
-"27d59941-9911-4b25-ac68-961de79b1e44"],
-Cell[4074, 107, 286, 5, 111, "Output", "ExpressionUUID" -> \
-"f98b1837-72ad-4f33-8525-4c1fc3ed7b8b"],
-Cell[4363, 114, 285, 5, 111, "Output", "ExpressionUUID" -> \
-"4c5dcfd3-7c59-4c98-8cb5-39f475da1e4c"],
-Cell[4651, 121, 285, 5, 111, "Output", "ExpressionUUID" -> \
-"7e981196-a08c-454a-97d3-9c782c3aecc6"]
+Cell[3546, 94, 311, 6, 111, "Output", "ExpressionUUID" -> \
+"336667e6-3a40-4480-ac87-056fafde713e"],
+Cell[3860, 102, 311, 6, 111, "Output", "ExpressionUUID" -> \
+"1eff2121-19b4-447c-9ebe-ccf4df02f2a3"],
+Cell[4174, 110, 310, 6, 111, "Output", "ExpressionUUID" -> \
+"667f8b09-704a-4a58-b5b0-32da674f47b0"],
+Cell[4487, 118, 311, 6, 111, "Output", "ExpressionUUID" -> \
+"d3759102-9775-4c7e-97c2-4c816316e766"],
+Cell[4801, 126, 311, 6, 111, "Output", "ExpressionUUID" -> \
+"baf848e4-7a8c-4f2c-a793-62c954ffc132"]
 }, Open  ]]
 }
 ]
