@@ -28,7 +28,12 @@ def spectrogram_overlay(i, range=[2.75, 5.25], save_plot=True, show_plot=True, f
     # Calibration shot
     ax0 = plt.subplot(311)
     t, f, stft, globs = load_stft(os.path.join(expt_folder, shots[i][0]), all_globals=True)
-    plot_stft(stft, t, f, cmap='gray_r', range=range)
+    t_ms = 1e3*(t-t[0])
+    plot_stft(stft, t_ms, f, cmap='gray_r', range=range)
+    df.index -= df.index[0]
+    df.index *= 1e3
+    u_df.index -= u_df.index[0]
+    u_df.index *= 1e3
     ((df.fL + df.q)/1e3).plot(ax=ax0, label=r'$f_{L}+q$', c='gold', yerr=u_df.fL/1e3)
     ((df.fL - df.q)/1e3).plot(ax=ax0, label=r'$f_{L}-q$', c='chocolate', yerr=u_df.fL/1e3)
     plt.axis(ymin=f0/1e3-6.25, ymax=f0/1e3+6.25)
@@ -38,7 +43,8 @@ def spectrogram_overlay(i, range=[2.75, 5.25], save_plot=True, show_plot=True, f
     # Dressed plot
     ax1 = plt.subplot(312, sharex=ax0)
     t, f, stft, globs = load_stft(os.path.join(expt_folder, shots[i][1]), all_globals=True)
-    plot_stft(stft, t, f, cmap='gray_r', range=range)
+    t_ms = 1e3*(t-t[0])
+    plot_stft(stft, t_ms, f, cmap='gray_r', range=range)
     # ax = plt.gca()
     ((df.f13_theory+frf)/1e3).plot(ax=ax1, label=r'$f_{\mathrm{rf}} + f_{13}$', c=c13, lw=2) #\,\mathrm{ (theory)}$')
     ((df.f12_theory+frf)/1e3).plot(ax=ax1, label=r'$f_{\mathrm{rf}} + f_{12}$', c=c12, lw=2) #\,\mathrm{(theory)}$')
@@ -46,17 +52,17 @@ def spectrogram_overlay(i, range=[2.75, 5.25], save_plot=True, show_plot=True, f
     ((df.f23_theory+frf)/1e3).plot(ax=ax1, label=r'$f_{\mathrm{rf}} + f_{23}$', c=c23, lw=2) #\,\mathrm{ (theory)}$')
     # ((df.f23+frf)/1e3).plot(ax=ax, yerr=all_u_df[i]/1e3, c='c', ecolor='c', label=r'$f_{23}\,\mathrm{(expt.)}$')
     plt.axhline(frf/1e3, ls='--', lw=2, c='orange', label=r'$f_{\mathrm{rf}}$')
-    plt.xlabel('time (s)')
+    plt.xlabel('time (ms)')
     plt.ylabel('frequency (kHz)')
-    plt.axis(xmin=xmin, xmax=xmax, ymin=frf/1e3-0.1, ymax=frf/1e3+12.5)
+    plt.axis(xmin=(xmin-xmin)*1e3, xmax=(xmax-xmin)*1e3, ymin=frf/1e3-0.1, ymax=frf/1e3+12.5)
     ds = shots[i][1].split('_')[0]
     # plt.title(r'{:}; $q_R$ = {:}'.format(ds, format_unc(all_results[i]['qR'], all_results[i]['u_qR'])))
     ax1.legend(shadow=True, numpoints=1, loc='upper right')
 
     # Parametric plot
     ax2 = plt.subplot(313)
-    subdf = df.loc[tmin:tmax].dropna()
-    u_subdf = u_df.loc[tmin:tmax].dropna()
+    subdf = df.loc[tmin*1e3:tmax*1e3].dropna()
+    u_subdf = u_df.loc[tmin*1e3:tmax*1e3].dropna()
 
     # Compute theoretical splittings -- with uniformly sampled dB (for plotting)
     dB_p = np.linspace(dBmin, dBmax, 200)
@@ -71,7 +77,7 @@ def spectrogram_overlay(i, range=[2.75, 5.25], save_plot=True, show_plot=True, f
     plt.plot(1e3*dB_p, f23_p/1e3, label='$f_{23}$ (theory)', c=c23)
     plt.errorbar(dB_mG, subdf.f12.values/1e3, xerr=u_dB_mG, yerr=u_subdf.f12.values/1e3, label=r'$f_{12}$ (expt.)', fmt='o', c=c12, ecolor=c12)
     plt.plot(1e3*dB_p, f12_p/1e3, label='$f_{12}$ (theory)', c=c12)
-    plt.xlabel(r'$\Delta B$ (mG)')
+    plt.xlabel(r'$\delta B$ (mG)')
     plt.ylabel(r'splitting, $f_{ij}$ (kHz)')
     ax2.axis(xmin=1e3*dBmin, xmax=1e3*dBmax, ymin=3, ymax=8)
     # plt.title(plot_title)
