@@ -1,0 +1,1 @@
+For example, the curvature of the synthetic clock transition is measured for several control Hamiltonians in a dozen 20 second preparations of the quantum gas.

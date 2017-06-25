@@ -1,23 +1,23 @@
 Dear Editor,
 
-We are pleased to submit our manuscript 'Continuous observation of a dynamically decoupled spin-1 spectrum' to Physical Review Letters.
-In it we observe the continuous dynamical decoupling of a spin-1 quantum gas in real-time, dynamically probing its spectrum, coherences, and coupling strengths.
+We are pleased to submit our manuscript 'Continuously observing a dynamically decoupled spin-1 quantum gas' to Physical Review Letters.
+In it we observe in real-time the continuous dynamical decoupling of a spin-1 quantum gas, probing its spectrum, coherences, and coupling strengths.
 Dynamical decoupling a system from its environment is not only applicable to quantum information but has broad application to quantum metrology and quantum state/process tomography.
 Yet few systems permit the appraisal and refinement of dynamical deocupling in real-time; even weak measurements of single qubits and NV centers require on the order of 10^4 repeated preparation and detection cycles.
+This weds clock-state metrology with continuous measurement, ingredients for new experiments that emulate quantum magnetism in solid-state systems, and advancing a platform for measuring oscillating magnetic fields in noisy environments.
+More broadly still, the decoupled microscale quantum gas offers magnetic sensitivity in a tunable band, persistent over many milliseconds: this is the length scale, frequency, and duration relevant to sensing biomagnetic phenomena such as neural spike trains.
 
-We advance the time-frequency domain reduction of a weak measurement record to extract rich information about the quantum state, dressed-state coupling, and energies simultaneously.
-The utility of this reduction is widely understood, most notably for visualising gravitational wave signals with spectrograms; for quantum observables, we feel that the spectrogram is a unique and potent signature of dynamically probing an eigenspectrum.
+We advance spectrogram analysis as a time-frequency reduction of the measurement record to extract rich information about the quantum state and Hamiltonian simultaneously.
+The utility of spectrograms are widely understood, from visualizing gravitational wave signals, to analyzing human speech.
+We 'listen' to spin precession of the decoupled quantum gas, and use spectrogram analysis to parse the recorded tones as a signature of dynamical decouping.
 
-This manuscript forms a co-submission with N. Lundblad, I. B. Spielman of NIST, who recently brought to our attention the synthetic clock states, and with whom we discussed the complementary nature of our minimally perturbative atom-light interface to demonstrate the insensitivity of these states to magnetic field variations (temporal and spatial).
-While these works both elucidate this protected subspace of a non-degenerate, driven spin-1 system, they do so in a complementary way; a distinguishing focus of our work is the continuous weak measurement of the states and the ability to use this to expeditiously optimize the decoupling scheme.
-For example, the curvature of the synthetic clock transition is measured for several control Hamiltonians in a dozen 20 second realizations of our experiment.
-Additionally, we demonstrate the ability to probe dressed-state coupling strengths without driving transitions, a form of Hamiltonian parameter estimation based on prior knowledge of the initial state.
-Our work is further distinguished by the analytic results on the synthetic clock states, applicable to our implementation at lower magnetic fields where the linear and quadratic Zeeman effect are both separable and closely approximate the hyperfine interaction.
+This manuscript forms a co-submission with D. Trypogeorgos, A. Valdes-Curiel, N. Lundblad, and I. B. Spielman of NIST, who present a complementary characterization of the high-order decouling manifest in this system as insensitivity of the states to magnetic field variations.
+A distinguishing focus of our work is the continuous weak measurement of the states, which could give rise to new forms of quantum sensing exploting synchronous detection and feedback.
+Additionally, we demonstrate the ability to probe dressed-state coupling strengths without driving transitions, a form of Hamiltonian parameter estimation.
+Our work is further distinguished by the analytic results on high-order decoupling, applicable to analagous high-order decoupling in NV centers.
 
 Thank you for considering our manuscript for publication.
 
 Yours faithfully,
 
 R. P. Anderson, M. J. Kewming, and L. D. Turner
-
-
