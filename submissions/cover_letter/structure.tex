@@ -40,6 +40,7 @@
 %----------------------------------------------------------------------------------------
 
 \usepackage{geometry} % Required for adjusting page dimensions
+\usepackage{xcolor}
 
 \geometry{
 	top=1cm, % Top margin
@@ -91,7 +92,7 @@
 	\hspace{0.2\textwidth}\headerlinetwo\hfill \normalsize % Second line of institution name, adjust hspace if your logo is wide
 	\makebox[0ex][r]{\textbf{School of Physics and Astronomy}} \hspace{-0.018\textwidth} % Print author name and title with a little whitespace to the right
 	~\\[-0.005\textheight] % Reduce the whitespace above the horizontal rule
-	\hspace{0.072\textwidth}\vhrulefill{1pt} \\[-0.01\textheight] % Horizontal rule, adjust hspace if your logo is wide and \vhrulefill for the thickness of the rule
+	\hspace{0.072\textwidth}{\color{gray}\vhrulefill{1pt}} \\[-0.01\textheight] % Horizontal rule, adjust hspace if your logo is wide and \vhrulefill for the thickness of the rule
 	\authordetailsblock % Include the letter author's details on the right side of the page under the horizontal rule
 	\hspace{-0.28\textwidth} % Horizontal position of the author details block, increase to move left, decrease to move right
 	\vspace{-0.05\textheight} % Move the date and letter content up for a more compact look
