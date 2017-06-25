@@ -68,13 +68,15 @@
 %----------------------------------------------------------------------------------------
 
 \newcommand{\authordetailsblock}{
-	\hspace{\fill} % Move the author details to the far right
-	\parbox[t]{0.48\textwidth}{ % Box holding the author details; width value specifies where it starts and ends, increase to move details left
-		\footnotesize % Use a smaller font size for the details
+	% \hspace{\fill} % Move the author details to the far right
+	% \parbox[t]{0.48\textwidth}{ % Box holding the author details; width value specifies where it starts and ends, increase to move details left
+	\begin{flushright}
+		% \footnotesize % Use a smaller font size for the details
 		% \Who\\ % Author name
 		% \textit{\authordetails} % The author details text, all italicised
 		\authordetails % The author details text, all italicised
-	}
+	\end{flushright}
+	% }
 }
 
 %----------------------------------------------------------------------------------------
@@ -87,9 +89,9 @@
 	\vskip -0.09\textheight~\\ % Position of the large header text in relation to the institution logo, increase to move down, decrease to move up
 	\Large\hspace{0.2\textwidth}\headerlineone\hfill ~\\[0.006\textheight] % First line of institution name, adjust hspace if your logo is wide
 	\hspace{0.2\textwidth}\headerlinetwo\hfill \normalsize % Second line of institution name, adjust hspace if your logo is wide
-	\makebox[0ex][r]{\textbf{School of Physics and Astronomy}}\hspace{0.01\textwidth} % Print author name and title with a little whitespace to the right
-	~\\[-0.01\textheight] % Reduce the whitespace above the horizontal rule
-	\hspace{0.2\textwidth}\\ %\vhrulefill{1pt} \\ % Horizontal rule, adjust hspace if your logo is wide and \vhrulefill for the thickness of the rule
+	\makebox[0ex][r]{\textbf{School of Physics and Astronomy}} \hspace{-0.018\textwidth} % Print author name and title with a little whitespace to the right
+	~\\[-0.005\textheight] % Reduce the whitespace above the horizontal rule
+	\hspace{0.072\textwidth}\vhrulefill{1pt} \\[-0.01\textheight] % Horizontal rule, adjust hspace if your logo is wide and \vhrulefill for the thickness of the rule
 	\authordetailsblock % Include the letter author's details on the right side of the page under the horizontal rule
 	\hspace{-0.28\textwidth} % Horizontal position of the author details block, increase to move left, decrease to move right
 	\vspace{-0.05\textheight} % Move the date and letter content up for a more compact look
