@@ -18,7 +18,7 @@ We continuously observe dynamical decoupling in a spin-1 quantum gas using a wea
 Continuous dynamical decoupling aims to dramatically modify the character and energy spectrum of spin states to render them insensitive to parasitic fluctuations. 
 Continuous observation measures this new spectrum in a single-preparation of the quantum gas.
 The measured time-series contains seven tones, which spectrogram analysis parses as splittings, coherences, and coupling strengths between the decoupled states in real-time.
-With this we locate a regime where a transition between two states is decoupled from magnetic field instabilities up to fourth order.
+With this we locate a regime where a transition between two states is decoupled from magnetic field instabilities up to fourth order, complementary to the parallel work at higher fields by Trypogeorgos \etal (\href{https://arxiv.org/abs/1706.07876}{arXiv:1706.07876}).
 The decoupled microscale quantum gas offers magnetic sensitivity in a tunable band, persistent over many milliseconds: the length scales, frequencies, and durations relevant to many applications, including sensing biomagnetic phenomena such as neural spike trains.
 \end{abstract}
 
@@ -83,7 +83,7 @@ Indeed we find an analytic value of the normalized quadratic shift $q_R=q/\Omega
 resulting in the vanishing quadratic dependence of the transition frequency $\omega_{12}=\omega_2 - \omega_1$ on $\Delta$.
 The leading-order sensitivity of these states to field variations $\delta B_z$ at $\qRmagic$ is quartic~\footnote{
     We take $\Delta = -\gamma \, \delta B_z$ for $|\Delta | \leq 2\Omega$ ($| \delta B_z | \leq B_{\text{rf}}/2$) and $| \partial q / \partial \Delta | \approx | \gamma^{-1} \partial q / \partial B_z | = |2 B_z q_Z / \gamma| \ll 1$, valid to $10^{-3}$ for the field strengths $B_z \lesssim \unit[5]{G}$ used here, resulting in vanishing third-order derivatives of $\omega_i$ with respect to detuning. 
-    In general, the variation of $q$ with $\Delta$ (or $\delta B_z$) can be accounted for using the Breit-Rabi equation, leading to a residual linear and cubic variation of $\omega_{12}$ with $\delta B_z$, and a small correction to $\qRmagic$ in \refeq{eq:qRmagic}.},
+    In general, the variation of $q$ with $\Delta$ (or $\delta B_z$) can be accounted for using the Breit-Rabi equation, leading to a residual linear and cubic variation of $\omega_{12}$ with $\delta B_z$~\cite{trypogeorgos_synthetic_2017}.},
 giving the subspace comprised of ${\ket{1},\ket{2}}$ a higher-order decoupling than can be achieved with a two-level system; we term these the `hyper-decoupled states'.
 
 We explore this high-order decoupling in the laboratory with a continuous measurement of the dressed spectrum of a spin-1 non-degenerate quantum gas.
@@ -162,7 +162,7 @@ The amplitude of each sideband is proportional to the corresponding dressed-stat
 \end{table*}
 Analytic expressions for the sideband amplitudes near resonance ($\abs{\Delta} \ll \Omega$) are summarized in Table~\ref{tab:sidebands}.
 If the projection onto the dressed basis (and hence $\rho_{ij}$) is known, our measurement constitutes a single-shot estimation of the coupling strengths.  
-Alternatively, if the couplings are separately characterized~\cite{dimitris_synthetic_2017}, this amounts to continuous measurement of the dressed density matrix, effecting quantum state estimation of the dressed system.
+Alternatively, if the couplings are separately characterized~\cite{trypogeorgos_synthetic_2017}, this amounts to continuous measurement of the dressed density matrix, effecting quantum state estimation of the dressed system.
 
 Different platforms use different metrics for the fidelity of dynamical decoupling, and in addition to linewidth narrowing include prolonged coherence.
 We observe a three-fold increase in the lifetime of the spectral components corresponding to the $\omega_{12}$ and $\omega_{23}$ transitions as compared with the undressed system (\reffig{fig:acquisition_pipeline}a, $1/e$ decay time \unit[23.8(2)]{ms}).
@@ -230,7 +230,7 @@ Strong measurement of dressed precessing spins adds the third axis and may expos
 
 We thank A. A. Wood, I. B. Spielman, N. Lundblad, and F. A. Pollock for enlightening discussions.
 This work was supported by ARC LP130100857 and a Monash University IDR seed grant. 
-In finalizing this work we became aware of measurements of the same rf-dressed system by Trypogeorgos \etal~\cite{dimitris_synthetic_2017} using projective readout of dressed state populations. 
+This work complements parallel measurements of the same rf-dressed system by Trypogeorgos \etal~\cite{trypogeorgos_synthetic_2017} using projective readout of dressed state populations at higher magnetic fields.
 
 \bibliography{dressed_faraday}
 
