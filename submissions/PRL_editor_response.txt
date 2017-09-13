@@ -1,0 +1,19 @@
+We would like to thank the referee for their comments.
+The article by Baumgart et al, PRL 111, 240801 involves a demonstration of continuous dynamical decoupling for ac magnetometry in a two level system and is similar in spirit to Sarkany et al. Phys. Rev. A 90, 053416 and Kazakov et al., Phys. Rev. A 91, 023404 published in 2014 and 2015 respectively.
+We have now cited all these articles in our manuscript.
+
+Although these articles are relevant for magnetometry, our work is generally applicable to multilevel atomic systems and enables non-trivial topological characteristics.
+Moreover, we make no assumption about the internal atomic structure and use a single driving field to achieve decoupling of the coherent subspace.
+Baumgart et al. use an effective *two level system*, and one of the dedicated qubit levels does not participate in the dressing.
+This is qualitatively different to our system, since it does not involve full coupling of *all* dressed levels with non-zero transition amplitudes between them.
+
+Given the referee did not have any comments on the validity or presentation of the manuscript except that the 'paper is well written and the conclusions are sound' we resubmit the manuscript to PRL for further review.
+
+
+### Need to cite
+
+[Baumgart et al, PRL 111, 240801](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.116.240801)
+
+[Sarkany et al. Phys. Rev. A 90, 053416](https://journals.aps.org/pra/abstract/10.1103/PhysRevA.90.053416)
+
+[G. A. Kazakov and T. Schumm, Phys. Rev. A 91, 023404](https://journals.aps.org/pra/abstract/10.1103/PhysRevA.91.023404)
