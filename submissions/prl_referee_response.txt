@@ -1,0 +1,26 @@
+Referee couldn't see utility of (a) fourth order decoupling for magnetometry, (b) continuous measurement.
+
+Whacks of single atom:
+(a) 14 MHz is not ac, it's rf! Not bio-interesting. Why can't they go lower?
+(b) Technique is great, but not generally applicable. Requires four level spin-0 + spin-1 system.
+
+Point to benefits of continuous measurement:
+* Continuous measuremnt shows you what the amplitude flucctuatiions are: quadrature demodulation will lead to self-certifying, phase sensitive ac magnetometer.
+* Closed-loop control and quantum feedback schemes.
+
+"No new insights into dressed state physics"
+* No experiment will reveal insights into "dressed state physics" in 2017!
+* Our measurements revealed the previously unappreciated or uncommented on third coupling.
+* If couplings are known, this amounts to a new form of quantum state estimation.
+
+Referee cares only about sensing (*splittings*) and not the dressed *states* themselves.
+Pointing toward the states themselves it what distinguishes us from a soley metrological advancement.
+
+Novel topological states are a huge field and not just a cold atoms ghetto.
+
+Having discussed with each other the review of our co-submission, and the similarity of the single reports returned by your referee.
+
+The referee comments that while our paper does not measure an applied field. In neither case was the paper predicated on achieving a new sensitivity but decoupling is also useful for non-metrology purposes.
+This referee has only viewed the paper from the perspective of metrology and commented on the broad significance from this perspective.
+
+Fix: continuous measurement is not continuous decoupling.
