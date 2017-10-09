@@ -14,10 +14,10 @@ WORD COUNT SUMMARY
           receipt date, acknowledgments, and references.
 
 
-              Text word count   3006
+              Text word count   3036
         Equations word equiv.     16
           Figures word equiv.    542
            Tables word equiv.    156
                               ------
-                       TOTAL    3720 (Maximum length is 3750)
-                      EXCESS     -30 words
+                       TOTAL    3750 (Maximum length is 3750)
+                      EXCESS       0 words

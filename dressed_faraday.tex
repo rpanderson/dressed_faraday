@@ -40,7 +40,7 @@ This low-frequency magnetic stability combined with continuous detection is imme
 Atomic Zeeman states $\ket{m_z=-1,0,1}$ in a magnetic field $B_z \vect{e}_z$ can be decoupled from fluctuations in $B_z$ by applying a perpendicular radiofrequency (rf) field $B_{\text{rf}} \vect{e}_x \cos \omega_\text{rf} t$, oscillating at $\omega_\text{rf}$, tuned near the Larmor frequency $\omega_L \equiv (E_{m_z=-1}-E_{m_z=+1})/2\hbar$.
 At low magnetic fields, the degeneracy of the composite spin-$1/2$ systems~\cite{majorana_atomi_1932} renders the spin-1 behavior identical to continuous dynamical decoupling in spin-$1/2$ systems.
 The spin is quantized along $\vect{\Omega} = \Omega \, \vect{e}_x + \Delta \, \vect{e}_z$ in a frame rotating with the radiofrequency $\omega_{\text{rf}}$; the eigenvalues of $\ham_{\text{rwa}} = \Delta \hat{F}_z + \Omega \hat{F}_x$ are $m_x \hbar \sqrt{\Omega^2 + \Delta^2}$, where $\Delta = \omega_{\text{rf}}-\omega_L$ is the detuning, $\Omega$ is the Rabi frequency, and $\ket{m_x=-1,0,1}$ is the corresponding eigenstate at resonance $\Delta=0$.
-Radiofrequency dressing induces an avoided crossing in the spectrum; whereas the bare state energies are linearly sensitive to magnetic field variations $\delta B_z$ ($\omega_L \approx \gamma B_z$ where $\gamma$ is the gyromagnetic ratio), the dressed energies are only quadratically sensitive near resonance.
+Dressing induces an avoided crossing in the spectrum; whereas the bare state energies are linearly sensitive to magnetic field variations $\delta B_z$ ($\omega_L \approx \gamma B_z$ where $\gamma$ is the gyromagnetic ratio), the dressed energies are only quadratically sensitive near resonance.
 
 The spin character and symmetries are otherwise unchanged: transverse magnetic fields oscillating near the splitting frequencies drive transitions between eigenstates.
 In the dressed system this means relatively low-frequency (`ac') fields oscillating near the Rabi frequency, along $\hat{y}$ or $\hat{z}$, drive transitions $\ket{m_x=-1} \leftrightarrow \ket{m_x=0}$ and $\ket{m_x=0} \leftrightarrow \ket{m_x=+1}$.
@@ -118,8 +118,8 @@ Considering the upper sidebands, the two closest to the carrier are from adjacen
 The third, weaker sideband $2\omega_D$ above the carrier signifies the cyclic $\ket{1} \leftrightarrow \ket{3}$ transition, appearing when $q\neq 0$. 
 The apparatus is not shielded from magnetic noise, and the power line causes a $\delta B_z = \delta B_{\text{line}}(t)$ at $\unit[50]{Hz}$ and its odd harmonics.
 Each dressed transition is affected by the magnetic fluctuations differently: the sidebands corresponding to the $\omega_{13}$ and $\omega_{23}$ transitions exhibit asymmetric frequency modulation, whereas the optimally decoupled $\omega_{12}$ transition remains unperturbed within the frequency resolution of this spectrogram.
-The normalized power spectral density (\reffig{fig:static_coupling}, right) of the entire time-series yields maximum frequency resolution at the expense of all temporal resolution.
-The $\omega_{12}$ transition has a near transform-limited width, four times narrower than the $\omega_{23}$ and $\omega_{13}$ sidebands, which are also outwardly-skewed as expected transitions convex in $\Delta$. 
+%%% The normalized power spectral density (\reffig{fig:static_coupling}, right) of the entire time-series yields maximum frequency resolution at the expense of all temporal resolution.
+%%% The $\omega_{12}$ transition has a near transform-limited width, four times narrower than the $\omega_{23}$ and $\omega_{13}$ sidebands, which are also outwardly-skewed as expected transitions convex in $\Delta$. 
 \begin{figure}
     \includegraphics[width=\columnwidth]{figure_3.pdf}
     \caption{
@@ -131,7 +131,10 @@ The $\omega_{12}$ transition has a near transform-limited width, four times narr
        (b) The field is swept over the same range but the rf dressing is applied ($\Omega/2\pi = \unit[4.520(2)]{kHz}$).
        Three sidebands above (shown) and below the carrier at $f_{\text{rf}}=\unit[3.521]{MHz}$ (dashed, orange) reveal the dressed state splittings $f_{ij} = \omega_{ij}/2\pi$.
        (c) A parametric plot of $f_{12}(t)$ and $f_{23}(t)$ versus $\delta B_z(t)$ by combining analysis of (a) and (b).
-       Solid curves in (b) and (c) are theoretical splittings from an eigenspectrum calculation, provided only $f_{\text{rf}}$, $B_z(t)$, and $\Omega$, i.e. no free parameters.
+       Solid curves in (b) and (c) are from an eigenspectrum calculation
+       , provided only $f_{\text{rf}}$, $B_z(t)$, and $\Omega$.
+       %, i.e.
+       %with no free parameters.
        Variation of the hyper-decoupled transition $f_{12}$ for $0 \leq \delta B_z \leq \Omega/(2\gamma) = \unit[3.2]{mG}$ (c, inset).
     }
 \end{figure}
@@ -160,7 +163,8 @@ Analytic expressions for the sideband amplitudes near resonance ($\abs{\Delta} \
 If the projection onto the dressed basis (and hence $\rho_{ij}$) is known, our measurement constitutes a single-shot estimation of the coupling strengths.  
 Alternatively, if the couplings are separately characterized~\cite{trypogeorgos_synthetic_2017}, this amounts to continuous measurement of the dressed density matrix, effecting quantum state estimation of the dressed system.
 
-Different platforms use different metrics for the fidelity of dynamical decoupling, and in addition to linewidth narrowing include prolonged coherence.
+Prolonged coherence time is further indicator of decoupled states.
+%%% Different platforms use different metrics for the fidelity of dynamical decoupling, and in addition to linewidth narrowing include prolonged coherence.
 We observe a three-fold increase in the lifetime of the spectral components corresponding to the $\omega_{12}$ and $\omega_{23}$ transitions as compared with the undressed system (\reffig{fig:acquisition_pipeline}a, $1/e$ decay time \unit[23.8(2)]{ms}).
 Dressed-state coherences are expected to last longer, but were limited here by the $\sim\unit[100]{ms}$ probe-induced photon scattering time.
 A less perturbative probe~\cite{jasperse_magic-wavelength_2017} should reveal even longer dressed coherence times at the expense of signal-to-noise ratio. 
@@ -189,11 +193,12 @@ Normalizing the variation to the Rabi frequency makes possible a comparison of t
 The normalized variation $\omega_{12}/\Omega = 8.6\times10^{-3}$ over $0<\Delta<\Omega/2$.
 Conventional decoupling ($q_R=0$) has variation $(\sqrt{5}-2)/2 \approx 0.118$ across this range, while the undressed Zeeman transition in the low-field limit has $\omega_{12}/\Omega=0.5$.
 
-To optimally suppress the sensitivity of the hyper-decoupled states to small field variations, we experimentally determine the curvature of $\omega_{12}$  for $q_R$ between 0.2 and 0.5, independent of the predicted spectrum of $\ham_{\text{rwa}}$.
+To optimally suppress the sensitivity of the hyper-decoupled states to small field variations, we experimentally determine the curvature of $\omega_{12}$  for $q_R$ between 0.2 and 0.5.
+%%%, independent of the predicted spectrum of $\ham_{\text{rwa}}$.
 For each $q_R$, we fit a polynomial to $(\delta B_z, f_{12})$ data to extract $\partial^2 f_{12}/\partial B_z^2$ (\reffig{fig:curvature_vs_qR}).
 A linear fit of the measured curvature versus $q_R$ infers $\qRmagic\text{ (expt.)} = 0.350(6)$.
 The predictive power of the measured dressed spectrum and this model-independent analysis is affirmed by the agreement with the theoretical curvature (red curve, \reffig{fig:curvature_vs_qR}) and $\qRmagic$ in~\refeq{eq:qRmagic}.
-In dimensionless units with the splitting and detuning normalized to the Rabi frequency $\left(\Omega\, \partial^2\omega_{12}/\partial \Delta^2\right)_{\text{min}} = 0.013$, $75$ times lower than the curvature of this transition for quadratic decoupling ($q_R = 0$).
+In dimensionless units with the splitting and detuning normalized to $\Omega$, the lowest curvature we measure is $\left(\Omega\, \partial^2\omega_{12}/\partial \Delta^2\right)_{\text{min}} = 0.013$, $75$ times lower than for quadratic decoupling.
 
 \begin{figure}
     \includegraphics[width=\columnwidth]{figure_4.pdf}
