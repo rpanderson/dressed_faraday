@@ -66,7 +66,7 @@ This yields dressed eigenstates $\{\ket{1}, \ket{2}, \ket{3}\}$ with eigenspectr
 % ($\expect{\vect{\hat{F}}^2} < \hbar^2$)
 
 Moreover, the couplings between these dressed states when $q \neq 0$ are markedly different:
-$\bra{1} \hat{F}_x \ket{3}$ becomes non-zero.
+$\bra{1} \hat{F}_{y,z} \ket{2}$ and $\bra{2} \hat{F}_{y,z} \ket{3}$ remain non-vanishing but $\bra{1} \hat{F}_x \ket{3}$ becomes non-zero.
 The transitions are thus cyclic ($\ket{1} \leftrightarrow \ket{2} \leftrightarrow \ket{3} \leftrightarrow \ket{1}$) and non-degenerate, characterized by a dressed Larmor frequency $\omega_D\equiv(\omega_3-\omega_1)/2$, and dressed quadratic shift $q_D \equiv (\omega_3 + \omega_1 -2\omega_2)/2$, giving splittings $\omega_{23}=\omega_D-q_D$, $\omega_{12}=\omega_D+q_D$ and $\omega_{13}=2\omega_D$.
 On resonance, $\omega_D=\sqrt{\Omega^2+q_D^2}$ and $q_D = -q/2$.
 
@@ -138,7 +138,15 @@ Each dressed transition is affected by the magnetic fluctuations differently: th
     }
 \end{figure}
 
-The amplitude of each sideband is proportional to the corresponding dressed-state coherence $\rho_{ij} = c_i^* c_j $, and the non-vanishing dressed state coupling(s) $\bra{i} \hat{F}_{x,y,z} \ket{j}$, as summarised for near-resonant coupling ($\abs{\Delta} \ll \Omega$) in Table~\ref{tab:sidebands}.
+The amplitude of each sideband is proportional to the corresponding dressed-state coherence $\rho_{ij} = c_i^* c_j $, and the non-vanishing dressed state coupling(s) $\bra{i} \hat{F}_{x,y,z} \ket{j}$, as summarized for near-resonant coupling ($\abs{\Delta} \ll \Omega$) in Table~\ref{tab:sidebands}.
+If the projection onto the dressed basis (and hence $\rho_{ij}$) is known, our measurement constitutes a single-shot estimation of the coupling strengths.  
+Alternatively, if the couplings are separately characterized~\cite{trypogeorgos_synthetic_2017}, this amounts to continuous measurement of the dressed density matrix, effecting quantum state estimation of the dressed system.
+
+Different platforms use different metrics for the fidelity of dynamical decoupling, and in addition to linewidth narrowing include prolonged coherence.
+We observe a three-fold increase in the lifetime of the spectral components corresponding to the $\omega_{12}$ and $\omega_{23}$ transitions as compared with the undressed system (\reffig{fig:acquisition_pipeline}a, $1/e$ decay time \unit[23.8(2)]{ms}).
+Dressed-state coherences are expected to last longer, but were limited here by the $\sim\unit[100]{ms}$ probe-induced photon scattering time.
+A less perturbative probe~\cite{jasperse_magic-wavelength_2017} should reveal even longer dressed coherence times at the expense of signal-to-noise ratio. 
+
 \begin{table*}[t]
     \caption{Upper sidebands of the Faraday rotation signal $\propto \expect{\hat{F}_x}$ of an arbitrary dressed state superposition.
     Each sideband is identified with a dressed-state transition $\ket{i} \leftrightarrow \ket{j}$.
@@ -156,14 +164,6 @@ The amplitude of each sideband is proportional to the corresponding dressed-stat
     \end{tabular}
     \end{ruledtabular}
 \end{table*}
-If the projection onto the dressed basis (and hence $\rho_{ij}$) is known, our measurement constitutes a single-shot estimation of the coupling strengths.  
-Alternatively, if the couplings are separately characterized~\cite{trypogeorgos_synthetic_2017}, this amounts to continuous measurement of the dressed density matrix, effecting quantum state estimation of the dressed system.
-
-Prolonged coherence time is further indicator of decoupled states.
-%%% Different platforms use different metrics for the fidelity of dynamical decoupling, and in addition to linewidth narrowing include prolonged coherence.
-We observe a three-fold increase in the lifetime of the spectral components corresponding to the $\omega_{12}$ and $\omega_{23}$ transitions as compared with the undressed system (\reffig{fig:acquisition_pipeline}a, $1/e$ decay time \unit[23.8(2)]{ms}).
-Dressed-state coherences are expected to last longer, but were limited here by the $\sim\unit[100]{ms}$ probe-induced photon scattering time.
-A less perturbative probe~\cite{jasperse_magic-wavelength_2017} should reveal even longer dressed coherence times at the expense of signal-to-noise ratio. 
 
 To better expose the enhanced insensitivity of the hyper-decoupled states in the vicinity of $\qRmagic$, we sweep the the magnetic field over a wider range than is furnished by the power line noise.
 The longitudinal field $B_z(t) = B_0 + \alpha t + B_{\text{line}}(t)$, where $\alpha = \unit[128]{mG/s}$ is the linear sweep rate; the resulting detuning sweeps across $2\Omega$ (the domain of~\reffig{fig:eigensystem_schematic}) during the single-shot measurement.
@@ -187,14 +187,13 @@ The sensitivity of the $\ket{1} \leftrightarrow \ket{2}$ and $\ket{2} \leftright
 The hyper-decoupled transition is least sensitive; $f_{12}$ varies by $\unit[39]{Hz}$ for $\delta B_z$ up to $\Omega/(2\gamma) = \unit[3.2]{mG}$ (\reffig{fig:acquisition_pipeline}c, inset).
 Normalizing the variation to the Rabi frequency makes possible a comparison of decoupling across platforms and ac magnetometry bandwidths. 
 The normalized variation $\delta \omega_{12}/\Omega = 8.6\times10^{-3}$ over $0 < \abs{\Delta} < \Omega/2$.
-Conventional decoupling ($q_R=0$) has variation $(\sqrt{5}-2)/2 \approx 0.118$ across this range, while the undressed Zeeman transitions in the low-field limit have normalized variation 0.5.
+Conventional decoupling ($q_R=0$) has variation $(\sqrt{5}-2)/2 \approx 0.118$ across this range, while the undressed Zeeman transitions in the low-field limit have a normalized variation of 0.5.
 
-To optimally suppress the sensitivity of the hyper-decoupled states to small field variations, we experimentally determine the curvature of $\omega_{12}$ for $q_R$ between 0.2 and 0.5.
-%%%, independent of the predicted spectrum of $\ham_{\text{rwa}}$.
+To optimally suppress the sensitivity of the hyper-decoupled states to small field variations, we experimentally determine the curvature of $\omega_{12}$ for $q_R$ between 0.2 and 0.5, independent of the predicted spectrum of $\ham_{\text{rwa}}$.
 For each $q_R$, we fit a polynomial to $(\delta B_z, f_{12})$ data extracting $\partial^2 f_{12}/\partial B_z^2$ (\reffig{fig:curvature_vs_qR}).
 A linear fit of the measured curvature versus $q_R$ infers $\qRmagic\text{ (expt.)} = 0.350(6)$.
 The predictive power of the measured dressed spectrum and this model-independent analysis is affirmed by the agreement with the theoretical curvature (red curve, \reffig{fig:curvature_vs_qR}) and $\qRmagic$ in~\refeq{eq:qRmagic}.
-In dimensionless units with the splitting and detuning normalized to $\Omega$, the lowest curvature we measure is $\left(\Omega\, \partial^2\omega_{12}/\partial \Delta^2\right)_{\text{min}} = 0.013$, $75$ times lower than for quadratic decoupling.
+In dimensionless units with the splitting and detuning normalized to the Rabi frequency, the lowest curvature we measure is $\left(\Omega\, \partial^2\omega_{12}/\partial \Delta^2\right)_{\text{min}} = 0.013$, $75$ times lower than the curvature of this transition for quadratic decoupling ($q_R = 0$).
 
 \begin{figure}
     \includegraphics[width=\columnwidth]{figure_4.pdf}
@@ -206,7 +205,7 @@ In dimensionless units with the splitting and detuning normalized to $\Omega$, t
         A linear fit (black, dashed) with 1$\sigma$ confidence band (gray, shaded) are shown; the intercept gives $\qRmagic\text{ (expt.)} = 0.350(6)$.
         The analytic expression for the curvature (red)~\cite{Note1} is consistent.
         Left axis is curvature $\partial^2 f_{12}/\partial B_z^2$ in  $\unit{kHz/G^2}$.
-        Right axis is $\Omega\, \partial^2\omega_{12}/\partial \Delta^2$, i.e. normalised to curvature of quadratic decoupling ($q_R=0$).
+        Right axis is $\Omega\, \partial^2\omega_{12}/\partial \Delta^2$, i.e. normalized to curvature of quadratic decoupling ($q_R=0$).
     }
 \end{figure}
 
