@@ -4,19 +4,20 @@ import sys
 # Inputs
 files = ['dressed_faraday.tex']
 output = 'wordcount.txt'
-figureDimensions = [(9.00, 4.79), (8.94, 4.65), (9.00, 13.17), (9.00, 4.79)]
+# figureDimensions = [(9.00, 4.79), (8.94, 4.65), (9.00, 13.17), (9.00, 4.79)]
+figureDimensions = [(2.00, 1.00), (1.82, 1.00), (0.67, 1.00), (1.82, 1.00)]
 tableLines = [10]
 
 try:
     texcount_output = subprocess.check_output('texcount -total ' + ' '.join(files))
-    if not textcount_output.startswith('Total'):
+    if not texcount_output.startswith('Total'):
         raise Exception
     else:
         with file(output, 'w') as f:
-            f.write(textcount_output)
-        lines = textcount_output.split('\r\n')
+            f.write(texcount_output.replace('\r', ''))
+        lines = texcount_output.split('\r\n')
 except:
-    'Failed to run texcount... getting counts from wordcount.txt instead'
+    print('Failed to run texcount... getting counts from wordcount.txt instead')
     with file(output, 'r') as f:
         lines = f.readlines()
 
@@ -38,7 +39,7 @@ displayMathWords = wordsPerDisplayMath * counts['Number of math displayed']
 
 # Figures
 aspectRatios = [x[0]/x[1] for x in figureDimensions]
-figureWordCounts = [int(150/x) + 21 for x in aspectRatios]
+figureWordCounts = [int(150/x) + 20 for x in aspectRatios]
 figureWords = sum(figureWordCounts)
 
 # Tables
