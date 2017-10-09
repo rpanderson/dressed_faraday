@@ -5,7 +5,7 @@ from os import path
 import re
 
 mathmode = 0
-old_rev = 86
+old_rev = 172
 
 new_tex = "dressed_faraday.tex"
 old_tex = "dressed_faraday@%i.tex" % old_rev
@@ -18,5 +18,5 @@ with open(diff_out, "w") as f:
                 # "--exclude-safecmd=",
                 old_tex, new_tex], stdout=f, stderr=None)
 
-check_call(["pdflatex", diff_out,
-            "--interaction=errorstopmode", "--include-directory=.."], shell=True)
+# check_call(["pdflatex", diff_out,
+            # "--interaction=errorstopmode", "--include-directory=.."], shell=True)
