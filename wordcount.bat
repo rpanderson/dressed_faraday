@@ -1,3 +1,3 @@
-set output=wordcount.txt
 set input=dressed_faraday.tex
-start cmd.exe /k "texcount -total %input% > %output% & type %output%"
+set output=wordcount.txt
+start cmd.exe /k "ipython --no-banner --no-confirm-exit -i wordcount.py"
