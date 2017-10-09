@@ -1,0 +1,23 @@
+Figure   Aspect Ratio   Wide?   Word Equivalent
+     1         1.88         No        100
+     2         1.92         No         99
+     3         0.68         No        240
+     4         1.88         No        100
+
+
+  Table   Lines   Wide?   Word Equivalent
+     1      10    Yes       156
+
+
+WORD COUNT SUMMARY
+    Note: Text word count excludes title, abstract, byline, PACS,
+          receipt date, acknowledgments, and references.
+
+
+              Text word count   3188
+        Equations word equiv.     16
+          Figures word equiv.    539
+           Tables word equiv.    156
+                              ------
+                       TOTAL    3899 (Maximum length is 3750)
+                      EXCESS     149 words
