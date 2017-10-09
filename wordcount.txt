@@ -1,5 +1,5 @@
 Total
-Words in text: 2129
+Words in text: 2115
 Words in headers: 9
 Words outside text (captions, etc.): 569
 Number of headers: 2
