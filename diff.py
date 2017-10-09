@@ -5,7 +5,7 @@ from os import path
 import re
 
 mathmode = 0
-old_rev = 166
+old_rev = 163
 
 new_tex = "dressed_faraday.tex"
 old_tex = "dressed_faraday@%i.tex" % old_rev
