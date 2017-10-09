@@ -1,8 +1,8 @@
 Figure   Aspect Ratio   Wide?   Word Equivalent
-     1         1.88         No        100
-     2         1.92         No         99
-     3         0.68         No        240
-     4         1.88         No        100
+     1         2.00         No         95
+     2         1.82         No        102
+     3         0.67         No        243
+     4         1.82         No        102
 
 
   Table   Lines   Wide?   Word Equivalent
@@ -16,8 +16,8 @@ WORD COUNT SUMMARY
 
               Text word count   3188
         Equations word equiv.     16
-          Figures word equiv.    539
+          Figures word equiv.    542
            Tables word equiv.    156
                               ------
-                       TOTAL    3899 (Maximum length is 3750)
-                      EXCESS     149 words
+                       TOTAL    3902 (Maximum length is 3750)
+                      EXCESS     152 words
