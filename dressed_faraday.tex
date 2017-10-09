@@ -43,7 +43,7 @@ The spin is quantized along $\vect{\Omega} = \Omega \, \vect{e}_x + \Delta \, \v
 Dressing induces an avoided crossing in the spectrum; whereas the bare state energies are linearly sensitive to magnetic field variations $\delta B_z$ ($\omega_L \approx \gamma B_z$ where $\gamma$ is the gyromagnetic ratio), the dressed energies are only quadratically sensitive near resonance.
 
 The spin character and symmetries are otherwise unchanged: transverse magnetic fields oscillating near the splitting frequencies drive transitions between eigenstates.
-In the dressed system this means relatively low-frequency (`ac') fields oscillating near the Rabi frequency, along $\hat{y}$ or $\hat{z}$, drive transitions $\ket{m_x=-1} \leftrightarrow \ket{m_x=0}$ and $\ket{m_x=0} \leftrightarrow \ket{m_x=+1}$.
+In the dressed system this means relatively low-frequency (`ac') fields oscillating near the Rabi frequency, along $y$ or $z$, drive transitions $\ket{m_x=-1} \leftrightarrow \ket{m_x=0}$ and $\ket{m_x=0} \leftrightarrow \ket{m_x=+1}$.
 This is the basis for ac magnetometry~\cite{hirose_continuous_2012} and for concatenated dynamical decoupling  which protects against fluctuations in $\Omega$~\cite{cai_robust_2012}.
 Insensitivity to wider bandwidth and larger amplitude $\delta B_z$ can be achieved by increasing $\Omega$, opening a broader gap in the dressed spectrum, but doing so changes the detection band of ac magnetometry~\cite{loretz_radio-frequency_2013} or pulsed dynamical decoupling~\cite{boss_quantum_2017,*schmitt_submillihertz_2017}.
 Henceforth we presume $\Omega$ is fixed by the application.
@@ -56,7 +56,7 @@ Now $\ham_{\text{rwa}} = \Delta \hat{F}_z + \Omega \hat{F}_x + q \hat{F}_z^2/\hb
     \label{fig:eigensystem_schematic}
         Energy spectrum and splittings of a radiofrequency coupled spin-1 for several $q_R = q/\Omega$ between $0$ and $1$.
         The boldest curves have $q_R = \qRmagic$.
-        (Left) Energies $\omega_n$ of dressed states $\ket{n}=\ket{1}$, (red) $\ket{2}$ (blue), and $\ket{3}$ (green) normalized to the Rabi $\Omega$.
+        (Left) Energies $\omega_n$ of dressed states $\ket{n}=\ket{1}$, (red) $\ket{2}$ (blue), and $\ket{3}$ (green) normalized to the Rabi frequency.
         Dashed lines indicate the energies of uncoupled states ($\Omega=0$) in a frame rotating at $\omega_{\text{rf}}$.
         (Right) Splittings $\omega_{ij} = \omega_j - \omega_i$ of dressed states $\ket{i}$ and $\ket{j}$ as a function of detuning.
         When $q_R=\qRmagic$ (bold curves), $\omega_1$ and $\omega_2$ share the same curvature, and their difference $\omega_{12}$ is minimally sensitive to detuning and thus magnetic field variations.
@@ -66,7 +66,7 @@ This yields dressed eigenstates $\{\ket{1}, \ket{2}, \ket{3}\}$ with eigenspectr
 % ($\expect{\vect{\hat{F}}^2} < \hbar^2$)
 
 Moreover, the couplings between these dressed states when $q \neq 0$ are markedly different:
-$\hat{F}_x \ket{3}$ becomes non-zero.
+$\bra{1} \hat{F}_x \ket{3}$ becomes non-zero.
 The transitions are thus cyclic ($\ket{1} \leftrightarrow \ket{2} \leftrightarrow \ket{3} \leftrightarrow \ket{1}$) and non-degenerate, characterized by a dressed Larmor frequency $\omega_D\equiv(\omega_3-\omega_1)/2$, and dressed quadratic shift $q_D \equiv (\omega_3 + \omega_1 -2\omega_2)/2$, giving splittings $\omega_{23}=\omega_D-q_D$, $\omega_{12}=\omega_D+q_D$ and $\omega_{13}=2\omega_D$.
 On resonance, $\omega_D=\sqrt{\Omega^2+q_D^2}$ and $q_D = -q/2$.
 
@@ -95,7 +95,7 @@ The spin component parallel to the wavevector of the probe rotates its polarizat
 To probe the dressed state spectrum and coherences, we prepare a superposition of dressed states by suddenly turning on Rabi coupling $\Omega$, projecting the polarized collective spin $\ket{m_z=-1}$ onto $\ket{\psi(t=0)} = \sum_i c_i \ket{i}$.
 The total magnetic field in the laboratory frame is $\vect{B}(t \geq 0) = -B_{\text{rf}} \cos (\omega_{\text{rf}} t) \vect{e}_x + B_z(t) \vect{e}_z$, where $B_z(t)$ varies slowly compared to $\Omega$.
 The resulting Faraday signal is analyzed in the time-frequency domain using the short-time Fourier transform (STFT), revealing the rich frequency and amplitude modulation arising from the dressed state energies, coherences, and coupling strengths.
-Weak measurement allows this Fourier transform spectroscopy to be performed many times in one shot~\cite[cf.]{valdes-curiel_fourier_2017}.
+Weak measurement allows this Fourier transform spectroscopy to be performed many times in one shot~\cite[cf.][]{valdes-curiel_fourier_2017}.
 
 With no deliberate variation of the Rabi frequency or detuning, we observe the STFT amplitude (spectrogram) shown in \reffig{fig:static_coupling}.
 Strong amplitude modulation of the Faraday signal is apparent as three pairs of sidebands, each equidistant from the carrier frequency $f_{\text{rf}} = \omega_{\text{rf}}/2\pi$. 
@@ -188,10 +188,10 @@ The instantaneous dressed state splittings for all three transitions are predict
 Line noise renders $\delta B_z(t)$ neither linear nor monotonic.
 By tracking the instantaneous peaks in the calibration and dressed spectrograms we plot $(\delta B_z(t), f_{ij}(t))$ parametrically, eliminating the line noise systematic.
 The sensitivity of the $\ket{1} \leftrightarrow \ket{2}$ and $\ket{2} \leftrightarrow \ket{3}$ transitions to magnetic field variations is shown in \reffig{fig:acquisition_pipeline}c.
-The hyper-decoupled transition is least sensitive; $f_{12}$ varies by $\unit[39]{Hz}$ for $\delta B_z$ up to $B_{\text{rf}}/4 = \unit[3.2]{mG}$ (\reffig{fig:acquisition_pipeline}c, inset).
+The hyper-decoupled transition is least sensitive; $f_{12}$ varies by $\unit[39]{Hz}$ for $\delta B_z$ up to $\Omega/(2\gamma) = \unit[3.2]{mG}$ (\reffig{fig:acquisition_pipeline}c, inset).
 Normalizing the variation to the Rabi frequency makes possible a comparison of the decoupling across platforms and ac magnetometry bandwidths. 
-The normalized variation $\omega_{12}/\Omega = 8.6\times10^{-3}$ over $0<\Delta<\Omega/2$.
-Conventional decoupling ($q_R=0$) has variation $(\sqrt{5}-2)/2 \approx 0.118$ across this range, while the undressed Zeeman transition in the low-field limit has $\omega_{12}/\Omega=0.5$.
+The normalized variation $\delta \omega_{12}/\Omega = 8.6\times10^{-3}$ over $0< \abs{\Delta} <\Omega/2$.
+Conventional decoupling ($q_R=0$) has variation $(\sqrt{5}-2)/2 \approx 0.118$ across this range, while the undressed Zeeman transitions in the low-field have normalized variation 0.5.
 
 To optimally suppress the sensitivity of the hyper-decoupled states to small field variations, we experimentally determine the curvature of $\omega_{12}$  for $q_R$ between 0.2 and 0.5.
 %%%, independent of the predicted spectrum of $\ham_{\text{rwa}}$.
