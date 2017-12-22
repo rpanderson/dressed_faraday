@@ -87,35 +87,49 @@ decoherence.
 Report of Referee B -- LF16722/Anderson
 ----------------------------------------------------------------------
 
-The manuscript describes the generation of dressed states in a spin 1 quantum gas using continuous
-dynamical decoupling and shows how carefully choosing experimental parameters can lead to
-additional protection against magnetic field noise. The manuscript also demonstrates a very nice and
-fast technique for measuring the dressed state spectrum as well as the state coherences and
-coupling strengths. This may be particularly interesting for magnetometry. The data is well
-presented, and sufficient error analysis has been performed.
+The manuscript describes the generation of dressed states in a spin 1 
+quantum gas using continuous dynamical decoupling and shows how 
+carefully choosing experimental parameters can lead to
+additional protection against magnetic field noise. The manuscript 
+also demonstrates a very nice and fast technique for measuring the 
+dressed state spectrum as well as the state coherences and coupling 
+strengths. This may be particularly interesting for magnetometry. The 
+data is well presented, and sufficient error analysis has been 
+performed.
 
-The use of continuous dynamical decoupling for the protection against ambient magnetic field noise
-is well established and has led to a number of publications especially in the fields of NV centres and
-trapped ions and beyond (see references in the manuscript and within). I particularly note the work
-of Timoney et al Nature 476, 185 (2011) which covers pioneering work in this area, presenting a
-system which is protected against magnetic field fluctuations as well as Rabi frequency fluctuations
-of the dressing fields. I recommend including this reference in the manuscript. The work of Baumgart
-et al PRL 116, 240801 (2016) is based on the underlying concept of this work and very nicely makes
-use of the protected subspace (against magnetic field and Rabi frequency fluctuations) to
-demonstrate the suitability of continuous dynamical decoupling for magnetometry.
+The use of continuous dynamical decoupling for the protection against 
+ambient magnetic field noise is well established and has led to a 
+number of publications especially in the fields of NV centres and 
+trapped ions and beyond (see references in the manuscript and within).
+I particularly note the work of Timoney et al Nature 476, 185 (2011) 
+which covers pioneering work in this area, presenting a system which 
+is protected against magnetic field fluctuations as well as Rabi 
+frequency fluctuations of the dressing fields. I recommend including 
+this reference in the manuscript. The work of Baumgart et al PRL 116, 
+240801 (2016) is based on the underlying concept of this work and very
+nicely makes use of the protected subspace (against magnetic field and
+Rabi frequency fluctuations) to demonstrate the suitability of 
+continuous dynamical decoupling for magnetometry.
 
-The work presented in this manuscript makes a nice addition to the broad range of continuous
-dynamical decoupling work and I believe it may find useful applications. However, I do not believe
-that in its current form it is of sufficiently broad interest to warrant publication in PRL. While it is of
-course very interesting to utilize ‘magic’ experimental parameters to increase the protection against
-magnetic field noise and combine this with a very efficient measurement technique, given previous
-work in the area of continuous dynamical decoupling which appears to share many similarities with
-this work and in some cases has some advantages such as inherent protection against dressing field
-amplitude noise I believe the advances in this manuscript are not sufficient and more is needed to
-warrant publication in PRL. As stated in the introduction and conclusion, one of the prime potential
-applications is magnetometry. To be of broader interest I believe significantly more work is required
-to show the suitability of this work for magnetometry and beyond as it is not clear at all from the
-manuscript how well this system will perform in this and other potential application areas.
+The work presented in this manuscript makes a nice addition to the 
+broad range of continuous dynamical decoupling work and I believe it 
+may find useful applications. However, I do not believe that in its 
+current form it is of sufficiently broad interest to warrant 
+publication in PRL. While it is of course very interesting to utilize 
+‘magic’ experimental parameters to increase the protection against
+magnetic field noise and combine this with a very efficient 
+measurement technique, given previous work in the area of continuous 
+dynamical decoupling which appears to share many similarities with
+this work and in some cases has some advantages such as inherent 
+protection against dressing field amplitude noise I believe the 
+advances in this manuscript are not sufficient and more is needed to
+warrant publication in PRL. As stated in the introduction and 
+conclusion, one of the prime potential applications is magnetometry. 
+To be of broader interest I believe significantly more work is 
+required to show the suitability of this work for magnetometry and 
+beyond as it is not clear at all from the manuscript how well this 
+system will perform in this and other potential application areas.
 
-I do believe the work in its current form is of interest and in my opinion, would fit well with the
-requirements of NJP or PRA for example.
+I do believe the work in its current form is of interest and in my 
+opinion, would fit well with the requirements of NJP or PRA for 
+example.
