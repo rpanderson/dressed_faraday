@@ -1,0 +1,246 @@
+\documentclass[letterpaper]{article}
+\usepackage{upgreek,color}
+\usepackage{amsmath,amssymb}
+\usepackage{xspace}
+\usepackage{units}
+
+%--- MATH OPERATORS ---%
+\newcommand{\ket}[1]{\left| #1 \right \rangle \xspace}
+\newcommand{\spinup}{\ensuremath{\left| \uparrow \right\rangle \xspace}}
+\newcommand{\spindown}{\ensuremath{\left| \downarrow \right\rangle \xspace}}
+
+%--- TEXT SHORTCUTS ---%
+\newcommand{\Rb}{$^{87}$Rb\xspace}
+
+% Spacing
+\usepackage[left=1.55in,right=1.55in,top=1.2in,bottom=1in]{geometry}
+\usepackage{setspace}
+\onehalfspacing
+
+\usepackage{titling}
+\setlength{\droptitle}{-5em}
+\pretitle{\begin{center}\Large}
+\posttitle{\par\end{center}}
+\postdate{\vspace{-1em}\par\end{center}}
+
+\setlength{\parindent}{0em}
+\setlength{\parskip}{1em}
+
+\usepackage{quoting}
+\quotingsetup{vskip=-3pt}
+
+\usepackage{enumitem}
+
+% Referee comment environment and response macro
+\usepackage{etoolbox}
+\usepackage{verbatim}
+\makeatletter
+\preto{\@verbatim}{\topsep=0pt \partopsep=0pt}
+\makeatother
+
+\newenvironment{refcomment}{\singlespacing\verbatim}{\endverbatim}
+\newcommand{\response}{\emph{Authors' response---}}
+
+% Notes, etc.
+\definecolor{darkgreen}{rgb}{0.01, 0.75, 0.24}
+\newcommand{\note}[2][darkgreen]{\textcolor{#1}{[\textrm{#2}]}}
+\newcommand{\todo}[1]{{\color{blue}$\blacksquare$~\textsf{[TODO: #1]}}}
+
+% Begin document
+\title{Response to Referee Comments: LF16722/Anderson}
+\author{R. P. Anderson, M. J. Kewming, and L. D. Turner}
+
+\begin{document}
+
+% \maketitle
+
+\textbf{Response to referee report for manuscript LF16722/Anderson}
+
+December 22, 2017
+
+Dear Dr. Wang,
+
+Thank you for considering our manuscript LF16722 for publication in \textit{Physical Review A} without further review.
+
+Below we respond to the comments made by the referees, and outline associated changes to the manuscript. 
+
+Kind regards,
+
+R. P. Anderson, M. J. Kewming, and L. D. Turner
+
+\newpage
+\begin{refcomment}
+----------------------------------------------------------------------
+Second Report of Referee A -- LF16722/Anderson
+----------------------------------------------------------------------
+
+In their reply to my comments the authors boil down my comments to the
+fact "that our results lack novelty, because they
+essentially replicate the work of Baumgart et al".
+First, I want to clarify that I did neither write this in my report
+nor did I intend to. Baumgart et al. is just one example out of a host
+of papers on dynamical decoupling that I used to stress my point that
+this field has been worked on for long. The work of the authors does
+add something new, but this in my opinion is just an add-on to
+existing work on dynamical decoupling.
+
+In October 2013 Pierre Meystre posted an editorial
+(10.1103/PhysRevLett.111.180001), where referees are asked to address
+the following points:
+
+"We will ask both authors and referees to address more explicitly than
+in the past how the paper (i) substantially advances a particular
+field; or (ii) opens a significant new area of research; or (iii)
+solves a critical outstanding problem, or makes a significant step
+toward solving such a problem; or (iv) is of great general interest,
+based, for example, on scientific aesthetics."
+\end{refcomment}
+\response We apologize for giving the referee the impression that we mis-characterized their first report, and thank them for the helpful explanation of their review in terms of \textit{Physical Review Letters} policies.
+
+\begin{refcomment}
+Judged the present manuscripts, I get to the following conclusions: i)
+Advancing a particular field: Dynamical decoupling is a quite mature
+field, and many robust schemes have been developed especially in the
+field of NMR and cold ions. To show advancement of another field (e.g.
+atomic clocks), the authors would have to prove that their method
+allows to surpass the present state-of-the-art. Considering e.g. the
+10^-16 sensitivity of state-of-the-art clocks, this is definitely
+hard. Considering the example of artificial gauge fields or spinor
+dynamics, typical cold atoms experiments currently are limited by
+decoherence due to scattering of light, as for state-selective lattice
+potentials the detuning can not be larger than the fine-structure
+splitting, and not by the residual noise. Actually, the experiments I
+know of do not involve dynamical decoupling at all, as this would not
+change their results.
+\end{refcomment}
+\response
+
+
+\begin{refcomment}
+ii) Open a new area: This is clearly not the case, as dynamical
+decoupling is quite mature and routinely used in e.g. NMR.
+
+iii) The present manuscripts do not solve an outstanding problem, it
+is clearly a subproblem existing in the dynamical decoupling
+community. The authors mention "Typical noise levels in
+unshielded environments are often comparable to these
+Rabi frequency", but unshieded environments can be simply shielded
+by mu-metal shieldings, or by using existing pulse sequences (which
+admittedly requires control of the pulses, but as e.g. the ion trap
+community has shown this is doable to a high precision).
+\end{refcomment}
+\response
+
+
+\begin{refcomment}
+iv) "is of great general interest": This is of course always a
+debatable issue, as "general interest" is a rather unclear definition.
+Nevertheless, I doubt that the majority of readers of PRL cares about
+the fact that dynamical decoupling now has yet another twist to make
+it yet a little better. Thus, I personally would deny the fact that
+this is of general interest.
+\end{refcomment}
+\response
+
+
+\begin{refcomment}
+In their reply, the authors state "the transition matrix
+elements between dressed states enable the design of
+new Hamiltonians with non-trivial topological 
+characteristics." This is obviously true, but this is not the focus
+of both manuscripts. Thus, if the authors find an interesting
+Hamiltonian with non-trivial features I am happy to hear about it, but
+the present manuscripts do not provide any insight here. The reply by
+the authors did not provide any material that would change my previous
+opinion, and correspondingly I still can not recommend publication in
+PRL.
+\end{refcomment}
+\response
+
+
+\begin{refcomment}
+I would also like to mention that for the general audience the
+terminology is rather confusing (which is not the authors fault, as
+the terms are around already quite some time). The term "continuous
+dynamical decoupling" would have been called "dressed state physics" a
+decade or two ago, and there is no dynamics required, the pulses are
+static. In the end, by adding a control field new eigenstates are
+prepared in the system, which have different properties from the bare
+states.I fully agree with the authors that the dressed states have
+sometimes useful properties (as the quartic decoupling), but this
+deviates strongly from the "classical" field of dynamical decoupling,
+where a sequence of tailored rephasing pulses was used to battle
+decoherence.
+\end{refcomment}
+\response 
+
+
+\newpage
+\begin{refcomment}
+----------------------------------------------------------------------
+Report of Referee B -- LF16722/Anderson
+----------------------------------------------------------------------
+
+The manuscript describes the generation of dressed states in a spin 1 
+quantum gas using continuous dynamical decoupling and shows how 
+carefully choosing experimental parameters can lead to
+additional protection against magnetic field noise. The manuscript 
+also demonstrates a very nice and fast technique for measuring the 
+dressed state spectrum as well as the state coherences and coupling 
+strengths. This may be particularly interesting for magnetometry. The 
+data is well presented, and sufficient error analysis has been 
+performed.
+\end{refcomment}
+\response 
+
+
+\begin{refcomment}
+The use of continuous dynamical decoupling for the protection against 
+ambient magnetic field noise is well established and has led to a 
+number of publications especially in the fields of NV centres and 
+trapped ions and beyond (see references in the manuscript and within).
+I particularly note the work of Timoney et al Nature 476, 185 (2011) 
+which covers pioneering work in this area, presenting a system which 
+is protected against magnetic field fluctuations as well as Rabi 
+frequency fluctuations of the dressing fields. I recommend including 
+this reference in the manuscript. The work of Baumgart et al PRL 116, 
+240801 (2016) is based on the underlying concept of this work and very
+nicely makes use of the protected subspace (against magnetic field and
+Rabi frequency fluctuations) to demonstrate the suitability of 
+continuous dynamical decoupling for magnetometry.
+\end{refcomment}
+\response 
+
+
+\begin{refcomment}
+The work presented in this manuscript makes a nice addition to the 
+broad range of continuous dynamical decoupling work and I believe it 
+may find useful applications. However, I do not believe that in its 
+current form it is of sufficiently broad interest to warrant 
+publication in PRL. While it is of course very interesting to utilize 
+‘magic’ experimental parameters to increase the protection against
+magnetic field noise and combine this with a very efficient 
+measurement technique, given previous work in the area of continuous 
+dynamical decoupling which appears to share many similarities with
+this work and in some cases has some advantages such as inherent 
+protection against dressing field amplitude noise I believe the 
+advances in this manuscript are not sufficient and more is needed to
+warrant publication in PRL. As stated in the introduction and 
+conclusion, one of the prime potential applications is magnetometry. 
+To be of broader interest I believe significantly more work is 
+required to show the suitability of this work for magnetometry and 
+beyond as it is not clear at all from the manuscript how well this 
+system will perform in this and other potential application areas.
+\end{refcomment}
+\response
+
+
+\begin{refcomment}
+I do believe the work in its current form is of interest and in my 
+opinion, would fit well with the requirements of NJP or PRA for 
+example.
+\end{refcomment}
+\response 
+
+
+\end{document}
