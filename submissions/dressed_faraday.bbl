@@ -6,7 +6,7 @@
 %Control: page (0) single
 %Control: year (1) truncated
 %Control: production of eprint (0) enabled
-\begin{thebibliography}{37}%
+\begin{thebibliography}{36}%
 \makeatletter
 \providecommand \@ifxundefined [1]{%
  \@ifx{#1\undefined}
@@ -290,6 +290,21 @@
   {\bibinfo  {journal} {Il Nuovo Cimento (1924-1942)}\ }\textbf {\bibinfo
   {volume} {9}},\ \bibinfo {pages} {43} (\bibinfo {year} {1932})}\BibitemShut
   {NoStop}%
+\bibitem [{\citenamefont {Timoney}\ \emph {et~al.}(2011)\citenamefont
+  {Timoney}, \citenamefont {Baumgart}, \citenamefont {Johanning}, \citenamefont
+  {Varón}, \citenamefont {Plenio}, \citenamefont {Retzker},\ and\
+  \citenamefont {Wunderlich}}]{timoney_quantum_2011}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {N.}~\bibnamefont
+  {Timoney}}, \bibinfo {author} {\bibfnamefont {I.}~\bibnamefont {Baumgart}},
+  \bibinfo {author} {\bibfnamefont {M.}~\bibnamefont {Johanning}}, \bibinfo
+  {author} {\bibfnamefont {A.~F.}\ \bibnamefont {Varón}}, \bibinfo {author}
+  {\bibfnamefont {M.~B.}\ \bibnamefont {Plenio}}, \bibinfo {author}
+  {\bibfnamefont {A.}~\bibnamefont {Retzker}}, \ and\ \bibinfo {author}
+  {\bibfnamefont {C.}~\bibnamefont {Wunderlich}},\ }\href
+  {http://dx.doi.org/10.1038/nature10319} {\bibfield  {journal} {\bibinfo
+  {journal} {Nature}\ }\textbf {\bibinfo {volume} {476}},\ \bibinfo {pages}
+  {185} (\bibinfo {year} {2011})}\BibitemShut {NoStop}%
 \bibitem [{\citenamefont {Boss}\ \emph {et~al.}(2017)\citenamefont {Boss},
   \citenamefont {Cujia}, \citenamefont {Zopes},\ and\ \citenamefont
   {Degen}}]{boss_quantum_2017}%
@@ -438,30 +453,6 @@
   \bibinfo {author} {\bibfnamefont {L.~D.}\ \bibnamefont {Turner}},\ }\href
   {http://arxiv.org/abs/1705.10965} {\bibfield  {journal} {\bibinfo  {journal}
   {arXiv:1705.10965}\ } (\bibinfo {year} {2017})}\BibitemShut {NoStop}%
-\bibitem [{\citenamefont {Liu}\ \emph {et~al.}(2009)\citenamefont {Liu},
-  \citenamefont {Jung}, \citenamefont {Maxwell}, \citenamefont {Turner},
-  \citenamefont {Tiesinga},\ and\ \citenamefont {Lett}}]{liu_quantum_2009}%
-  \BibitemOpen
-  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {Y.}~\bibnamefont
-  {Liu}}, \bibinfo {author} {\bibfnamefont {S.}~\bibnamefont {Jung}}, \bibinfo
-  {author} {\bibfnamefont {S.~E.}\ \bibnamefont {Maxwell}}, \bibinfo {author}
-  {\bibfnamefont {L.~D.}\ \bibnamefont {Turner}}, \bibinfo {author}
-  {\bibfnamefont {E.}~\bibnamefont {Tiesinga}}, \ and\ \bibinfo {author}
-  {\bibfnamefont {P.~D.}\ \bibnamefont {Lett}},\ }\href {\doibase
-  10.1103/PhysRevLett.102.125301} {\bibfield  {journal} {\bibinfo  {journal}
-  {Physical Review Letters}\ }\textbf {\bibinfo {volume} {102}},\ \bibinfo
-  {pages} {125301} (\bibinfo {year} {2009})}\BibitemShut {NoStop}%
-\bibitem [{\citenamefont {Smith}\ \emph {et~al.}(2006)\citenamefont {Smith},
-  \citenamefont {Silberfarb}, \citenamefont {Deutsch},\ and\ \citenamefont
-  {Jessen}}]{smith_efficient_2006}%
-  \BibitemOpen
-  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {G.~A.}\ \bibnamefont
-  {Smith}}, \bibinfo {author} {\bibfnamefont {A.}~\bibnamefont {Silberfarb}},
-  \bibinfo {author} {\bibfnamefont {I.~H.}\ \bibnamefont {Deutsch}}, \ and\
-  \bibinfo {author} {\bibfnamefont {P.~S.}\ \bibnamefont {Jessen}},\ }\href
-  {\doibase 10.1103/PhysRevLett.97.180403} {\bibfield  {journal} {\bibinfo
-  {journal} {Physical Review Letters}\ }\textbf {\bibinfo {volume} {97}},\
-  \bibinfo {pages} {180403} (\bibinfo {year} {2006})}\BibitemShut {NoStop}%
 \bibitem [{\citenamefont {Vald{\'e}s-Curiel}\ \emph {et~al.}(2017)\citenamefont
   {Vald{\'e}s-Curiel}, \citenamefont {Trypogeorgos}, \citenamefont {Marshall},\
   and\ \citenamefont {Spielman}}]{valdes-curiel_fourier_2017}%
